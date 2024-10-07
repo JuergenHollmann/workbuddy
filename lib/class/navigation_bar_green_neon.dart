@@ -1,18 +1,13 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 
-class NavigationBarGreenNeon extends StatefulWidget {
-// -----------------------------------------------------------------------------
+class NavigationBarGreenNeon extends StatelessWidget {
   const NavigationBarGreenNeon({
     super.key,
   });
-
-  @override
-  State<NavigationBarGreenNeon> createState() => _NavigationBarGreenNeonState();
-}
-
-class _NavigationBarGreenNeonState extends State<NavigationBarGreenNeon> {
   // final String image1Path = "assets/neon_green_line.png";
+  // final String image2Path = "assets/neon_green_line.png";
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -65,9 +60,6 @@ class _NavigationBarGreenNeonState extends State<NavigationBarGreenNeon> {
           // --> Wenn die Icons beschriftet sind / NavigationBar height: 140
           // bottom: 45, // neon_green_line bottom --> Unten: 45 / oder Oben: 120
           height: 60,
-
-          //child: Image.asset('assets/neon_green_line.png'),
-          //child: Image.asset(image2Path),
           child: Image.asset("assets/neon_green_line.png"),
         ),
       ],
