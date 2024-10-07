@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:workbuddy/widgets/button_accounting.dart';
 import 'package:workbuddy/class/navigation_bar_green_neon.dart';
+import 'package:workbuddy/widgets/button_communication.dart';
+import 'package:workbuddy/widgets/button_companies.dart';
+import 'package:workbuddy/widgets/button_customer.dart';
 
 class SelectionPage extends StatelessWidget {
   const SelectionPage({super.key});
@@ -21,45 +25,15 @@ class SelectionPage extends StatelessWidget {
           children: [
             Image(image: AssetImage("assets/workbuddy_patch_and_slogan.png")),
 
-// Das kann man besser gestalten mit "xxx" --> und "SingleChildScrollView"
+// "SingleChildScrollView" für kleine Bildschirme einfügen
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(padding: EdgeInsets.fromLTRB(0, 0, 0, 20)),
-                SizedBox(
-                  width: 180,
-                  height: 200,
-                  child: Image(
-                      image: AssetImage("assets/icon_button_buchhaltung.png")),
-                ),
-                Padding(padding: EdgeInsets.fromLTRB(20, 0, 0, 0)),
-                SizedBox(
-                  width: 180,
-                  height: 180,
-                  child: Image(
-                      image:
-                          AssetImage("assets/icon_button_kommunikation.png")),
-                ),
-              ],
+              children: [ButtonAccounting(), ButtonCommunication()],
             ),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 180,
-                  height: 200,
-                  child:
-                      Image(image: AssetImage("assets/icon_button_kunden.png")),
-                ),
-                Padding(padding: EdgeInsets.fromLTRB(20, 0, 0, 0)),
-                SizedBox(
-                  width: 180,
-                  height: 200,
-                  child:
-                      Image(image: AssetImage("assets/icon_button_firmen.png")),
-                ),
-              ],
+              children: [ButtonCustomer(), ButtonCompanies()],
             ),
 // -----------------------------------------------------------------------------
 // Eigenen Divider mit Stack über der NavigationBar anlegen:

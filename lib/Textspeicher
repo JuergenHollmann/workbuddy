@@ -12,8 +12,59 @@
 // import 'package:soundpool/soundpool.dart';
 // import: "package:audiofileplayer/audiofileplayer.dart";
 
+GestureDetector(
+onTap: () {
+Navigator.push(
+context,
+MaterialPageRoute(
+builder: (context) => const SelectionPage()
+),
+);
+},
+),
+
 // const primeColor = Color.fromRGBO(210, 210, 255, 1); // helles lila = fromRGBO(210, 210, 255,1)
 // const primeColor = Color.fromRGBO(212, 213, 251, 1); // sehr helles blau = fromRGBO(212, 213, 251, 1)
 // const primeColor = Color.fromRGBO(91, 159, 31, 1); // sehr grün
 // const primeColor = Color.fromARGB(255, 255, 255, 255); // hellgraublau
 
+      // bottomNavigationBar: NavigationBarTheme(
+      //   data: NavigationBarThemeData(
+      //     labelTextStyle: WidgetStateProperty.resolveWith<TextStyle>(
+      //       (Set<WidgetState> states) => const TextStyle(color: Colors.white),
+      //     ),
+      //     indicatorColor: Colors.teal,
+      //   ),
+      //   child: NavigationBar(
+      //     backgroundColor: Colors.teal[800],
+      //     selectedIndex: _selectedIndex,
+      //     onDestinationSelected: _onItemTapped,
+      //     labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+      //     destinations: const <NavigationDestination>[
+      //       NavigationDestination(
+      //         icon: Icon(Icons.home, color: Colors.white70),
+      //         selectedIcon: Icon(Icons.home, color: Colors.white),
+      //         label: 'Home',
+      //       ),
+      //       NavigationDestination(
+      //         icon: Icon(Icons.airplane_ticket, color: Colors.white70),
+      //         selectedIcon: Icon(Icons.airplane_ticket, color: Colors.white),
+      //         label: 'Trips',
+      //       ),
+      //       NavigationDestination(
+      //         icon: Icon(Icons.explore, color: Colors.white70),
+      //         selectedIcon: Icon(Icons.explore, color: Colors.white),
+      //         label: 'Destina...',
+      //       ),
+      //       NavigationDestination(
+      //         icon: Icon(Icons.favorite, color: Colors.white70),
+      //         selectedIcon: Icon(Icons.favorite, color: Colors.white),
+      //         label: 'Favorites',
+      //       ),
+      //       NavigationDestination(
+      //         icon: Icon(Icons.settings, color: Colors.white70),
+      //         selectedIcon: Icon(Icons.settings, color: Colors.white),
+      //         label: 'Settings',
+      //       ),
+      //     ],
+      //   ),
