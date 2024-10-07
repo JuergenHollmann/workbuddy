@@ -1,0 +1,19 @@
+// appBar: DoubleImageNavigationBar(
+// image1Path: 'assets/assets/neon_green_line.png',
+// image2Path: 'assets/assets/neon_green_line.png'),
+
+// child: DoubleImageNavigationBar(
+// image1Path: 'assets/neon_green_line.png',
+// image2Path: 'iassets/neon_green_line.png',
+
+// import 'package:flutter/widgets.dart';
+// import 'package:flutter/services.dart';
+// import 'package:audioplayers/audioplayers.dart';
+// import 'package:soundpool/soundpool.dart';
+// import: "package:audiofileplayer/audiofileplayer.dart";
+
+// const primeColor = Color.fromRGBO(210, 210, 255, 1); // helles lila = fromRGBO(210, 210, 255,1)
+// const primeColor = Color.fromRGBO(212, 213, 251, 1); // sehr helles blau = fromRGBO(212, 213, 251, 1)
+// const primeColor = Color.fromRGBO(91, 159, 31, 1); // sehr grün
+// const primeColor = Color.fromARGB(255, 255, 255, 255); // hellgraublau
+
