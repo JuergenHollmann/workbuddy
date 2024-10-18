@@ -1,12 +1,20 @@
-  // Probleme mit dem Splashscreen:
-  // flutter_native_splash: ^2.4.1
-  // color: "#9363F4"
-  // image: assets/splash/splash.png
-  // android_12:
-  // image: assets/splash/splash.png
-  // color: "#9363F4"
-  // icon_background_color: "#9363F4"
-
+//----------------------------------------------------------------------------------
+// war vorher im pubspec.yaml:
+// flutter_native_splash:
+//  color: "#FFFFFF"
+//  image: assets/splash/workbuddy_splashscreen_transparent.png
+//  android_12:
+//    image: assets/splash/workbuddy_splashscreen_transparent.png
+//    color: "#FFFFFF"
+//    icon_background_color: "#FFFFFF"
+//----------------------------------------------------------------------------------
+// war vorher im flutter_native_splash.yaml:
+// flutter_native_splash:
+//   #color: "#42a5f5"
+//   background_image: assets/splash/workbuddy_splashscreen_transparent.png
+//   android_12:
+//     background_image: assets/splash/workbuddy_splashscreen_transparent.png
+//----------------------------------------------------------------------------------
 // GestureDetector(
 // onTap: () {
 // Navigator.push(
@@ -17,12 +25,12 @@
 // );
 // },
 // ),
-
+//----------------------------------------------------------------------------------
 // const primeColor = Color.fromRGBO(210, 210, 255, 1); // helles lila = fromRGBO(210, 210, 255,1)
 // const primeColor = Color.fromRGBO(212, 213, 251, 1); // sehr helles blau = fromRGBO(212, 213, 251, 1)
 // const primeColor = Color.fromRGBO(91, 159, 31, 1); // sehr grün
 // const primeColor = Color.fromARGB(255, 255, 255, 255); // hellgraublau
-
+//----------------------------------------------------------------------------------
       // bottomNavigationBar: NavigationBarTheme(
       //   data: NavigationBarThemeData(
       //     labelTextStyle: WidgetStateProperty.resolveWith<TextStyle>(
@@ -63,3 +71,5 @@
       //       ),
       //     ],
       //   ),
+//----------------------------------------------------------------------------------
+

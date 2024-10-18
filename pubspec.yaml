@@ -18,12 +18,10 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^4.0.0
   flutter_launcher_icons: ^0.14.1
-
   flutter_native_splash: ^2.4.1
-  #image: "assets/workbuddy_logo_neon_green_512x512.png"
 
 flutter:
   uses-material-design: true
   assets:
    - assets/
-   #- assets/"sound05xylophon.wav"
+   #- assets/"sound05xylophon.wav" 
