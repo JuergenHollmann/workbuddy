@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class WelcomeText extends StatelessWidget {
   const WelcomeText({super.key});
+  
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -10,7 +11,7 @@ class WelcomeText extends StatelessWidget {
           // Image "workbuddy_glow_logo" einbinden:
           const Padding(
             padding: EdgeInsets.fromLTRB(120, 0, 120, 20),
-            child: Image(image: AssetImage("assets/workbuddy_glow_logo.png")),
+            child: Image(image: AssetImage("assets/workbuddy_logo_neon_green_512x512.png")),
           ),
           const Divider(
             thickness: 4,

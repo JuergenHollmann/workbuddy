@@ -24,8 +24,10 @@ class SelectionPage extends StatelessWidget {
         child: Column(
           children: [
             Image(image: AssetImage("assets/workbuddy_patch_and_slogan.png")),
-
-// "SingleChildScrollView" für kleine Bildschirme einfügen
+// -----------------------------------------------------------------------------
+// "SingleChildScrollView" für kleine Bildschirme oder "GridView" einfügen
+// -----------------------------------------------------------------------------
+// GridView(gridDelegate: )
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [ButtonAccounting(), ButtonCommunication()],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workbuddy/class/selection_page.dart';
+import 'package:workbuddy/class/selection_screen.dart';
 import 'package:workbuddy/class/welcome_text.dart';
 
 void main() {
@@ -11,18 +11,23 @@ const primeColor =
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         // den gesamten Hintergrund einfärben:
-        backgroundColor: primeColor,
+        // backgroundColor: primeColor, // rgb(200 210 255)
+        backgroundColor:
+            const Color.fromRGBO(200, 210, 255, 1), // rgb(200 210 255)
+
         body: const SafeArea(
           child: Login(),
         ),
         drawer: Drawer(
           backgroundColor: const Color.fromARGB(255, 146, 221, 255),
+          // 2096f3
           // hier den Drawer mit SafeArea
           child: ListView(
             children: const [

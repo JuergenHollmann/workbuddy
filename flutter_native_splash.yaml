@@ -1,0 +1,98 @@
+flutter_native_splash:
+  #color: "#42a5f5"
+  background_image: „assets/splash.png“
+  android_12:
+    background_image: „assets/splash.png“
+# -------------------------------------------------------------------------------
+# Text ins deutsche übersetzt:
+# -------------------------------------------------------------------------------
+# flutter_native_splash:
+# Dieses Paket generiert nativen Code, um Flutters standardmäßigen weißen nativen Begrüßungsbildschirm mit Hintergrundfarbe und Begrüßungsbild anzupassen.
+
+# Passen Sie die folgenden Parameter an und führen Sie den folgenden Befehl im Terminal aus:
+# ---> dart run flutter_native_splash:create <---
+
+# Um Flutters standardmäßigen weißen Begrüßungsbildschirm wiederherzustellen, führen Sie den folgenden Befehl im Terminal aus:
+# dart run flutter_native_splash:remove
+
+# WICHTIGER HINWEIS:
+# Diese Parameter wirken sich nicht auf die Konfiguration von Android 12 und höher aus, die Begrüßungsbildschirme anders handhaben als frühere Android-Versionen. Android 12 und höher muss ​speziell im Abschnitt android_12 unten konfiguriert werden.
+
+#color oder #background_image ist der einzige erforderliche Parameter.
+# Verwenden Sie color, um den Hintergrund Ihres Begrüßungsbildschirms auf eine Volltonfarbe einzustellen. Verwenden Sie background_image, um den Hintergrund Ihres Begrüßungsbildschirms auf ein PNG-Bild einzustellen. Dies ist nützlich für Farbverläufe. Das Bild wird auf die Größe der App gestreckt.
+
+# Es kann nur ---> EIN <--- Parameter verwendet werden, Farbe und Hintergrundbild können ---> NICHT <--- gleichzeitig festgelegt werden.
+#color: „#42a5f5“
+#background_image: „assets/background.png“
+
+# Optionale Parameter sind unten aufgeführt. Um einen Parameter zu aktivieren, heben Sie die Kommentierung der Zeile auf, indem Sie das führende # Zeichen entfernen.
+
+# Mit dem Bildparameter können Sie ein Bild angeben, das im Begrüßungsbildschirm verwendet wird. Es muss eine PNG-Datei sein und sollte eine 4-fache Pixeldichte aufweisen.
+#image: Assets/splash.png
+
+# Mit der Branding-Eigenschaft können Sie ein Bild angeben, das als Branding im Begrüßungsbildschirm verwendet wird.
+# Es muss eine PNG-Datei sein. Es wird für Android, iOS und das Web unterstützt. Für Android 12, siehe den Abschnitt Android 12 weiter unten.
+#branding: Assets/dart.png
+
+# Um das Branding-Bild am unteren Bildschirmrand zu positionieren, können Sie bottom, bottomRight und bottomLeft verwenden. Der Standardwert ist bottom, wenn nicht angegeben oder etwas anderes angegeben wird.
+#branding_mode: bottom
+
+# Branding-Padding vom unteren Bildschirmrand aus festlegen.
+# Der Standardwert ist 0.
+#branding_bottom_padding: 24
+
+# color_dark, background_image_dark, image_dark, branding_dark sind Parameter, die den Hintergrund und das Bild festlegen, wenn sich das Gerät im Dunkelmodus befindet. Wenn sie nicht angegeben sind, verwendet die App die Parameter von oben. Wenn der Parameter image_dark angegeben ist, muss color_dark oder background_image_dark angegeben werden. color_dark und background_image_dark können nicht beide festgelegt werden.
+#color_dark: „#042a49“
+#background_image_dark: „assets/dark-background.png“
+#image_dark: asset/splash-invert.png
+#branding_dark: asset/dart_dark.png
+
+# Ab Android 12 wird der Begrüßungsbildschirm anders gehandhabt als in früheren Versionen. # Bitte besuchen Sie https://developer.android.com/guide/topics/ui/splash-screen
+
+# Im Folgenden finden Sie spezifische Parameter für Android 12+.
+
+#android_12:
+# Der Bildparameter legt das Symbolbild des Begrüßungsbildschirms fest. Wenn dieser Parameter nicht angegeben ist, wird stattdessen das Launcher-Symbol der App verwendet. Bitte beachten Sie, dass der Begrüßungsbildschirm auf einen Kreis in der Mitte des Bildschirms zugeschnitten wird.
+# App-Symbol mit Symbolhintergrund: Dieses sollte 960 × 960 Pixel groß sein und in einen Kreis mit 640 Pixel Durchmesser passen.
+# App-Symbol ohne Symbolhintergrund: Dieses sollte 1152 × 1152 Pixel groß sein und in einen Kreis mit 768 Pixel Durchmesser passen.
+#image: Assets/android12splash.png
+
+# Hintergrundfarbe des Begrüßungsbildschirms.
+#color: „#42a5f5“
+
+# Hintergrundfarbe des App-Symbols.
+#icon_background_color: "#111111"
+
+# Mit der Branding-Eigenschaft können Sie ein Bild angeben, das als Branding im Begrüßungsbildschirm verwendet wird.
+#branding: asset/dart.png
+
+# Die Werte image_dark, color_dark, icon_background_color_dark und branding_dark legen Werte fest, die gelten, wenn sich das Gerät im Dunkelmodus befindet. Wenn sie nicht angegeben sind, verwendet die App die Parameter von oben.
+#image_dark: asset/android12splash-invert.png
+#color_dark: "#042a49"
+#icon_background_color_dark: "#eeeeee"
+
+# Mit den Parametern android, ios und web können Sie die Generierung eines Begrüßungsbildschirms auf einer bestimmten Plattform deaktivieren.
+#android: false
+#ios: false
+#web: false
+
+# Plattformspezifische Bilder können mit den folgenden Parametern angegeben werden, die den jeweiligen Parameter überschreiben. Sie können alle, ausgewählte oder keinen dieser Parameter angeben:
+#color_android: "#42a5f5"
+#color_dark_android: "#042a49"
+#color_ios: "#42a5f5"
+#color_dark_ios: "#042a49"
+#color_web: "#42a5f5"
+#color_dark_web: "#042a49"
+#image_android: asset/splash-android.png
+#image_dark_android: asset/splash-invert-android.png
+#image_ios: asset/splash-ios.png
+#image_dark_ios: asset/splash-invert-ios.png
+#image_web: asset/splash-web.gif
+#image_dark_web: asset/splash-invert-web.gif
+#background_image_android: "assets/background-android.png"
+#background_image_dark_android: „assets/dark-background-android.png“
+#background_image_ios: „assets/background-ios.png“
+#background_image_dark_ios: „assets/dark-back
+# -------------------------------------------------------------------------------
+# ENDE der Übersetzung
+# -------------------------------------------------------------------------------

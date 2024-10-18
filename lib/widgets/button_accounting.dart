@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/main.dart';
+import 'package:workbuddy/accounting/accounting_screen.dart';
 
 class ButtonAccounting extends StatelessWidget {
   const ButtonAccounting({super.key});
@@ -16,7 +16,7 @@ class ButtonAccounting extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const MainApp(),
+              builder: (context) => const AccountingScreen(),
             ),
           );
         },
