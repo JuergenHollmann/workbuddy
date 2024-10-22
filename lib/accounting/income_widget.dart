@@ -15,12 +15,28 @@ class _IncomeWidgetState extends State<IncomeWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // ------ Wo eingekauft? ------
+
+// // ---------- entweder einen Code erstellen, der die Schrift und die Farbe der AppBar ändert, oder die Position verschieben ----------
+//         AppBar(
+//           title: const Text(
+//             'Einnahme erfassen',
+//             style: TextStyle(
+//               fontSize: 30,
+//               fontWeight: FontWeight.w900,
+//               color: Colors.white,
+//             ),
+//           ),
+//           backgroundColor: Colors.green,
+//           foregroundColor: Colors.white,
+//           //toolbarHeight: 60,
+//         ),
+
+        // ------ Wem wurde etwas verkauft (Kunde)? ------
         const SizedBox(
           width: 400,
           child: Text(
             textAlign: TextAlign.left,
-            "Wo eingekauft?",
+            "Wem wurde etwas verkauft (Kunde)?",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -47,11 +63,16 @@ class _IncomeWidgetState extends State<IncomeWidget> {
                 color: Colors.black,
               ),
               items: const [
-                DropdownMenuItem(value: "Wo_01", child: Text("OgBI")),
+                DropdownMenuItem(value: "Wo_01", child: Text("OBI")),
                 DropdownMenuItem(value: "Wo_02", child: Text("TOOM")),
                 DropdownMenuItem(value: "Wo_03", child: Text("Kaufland")),
                 DropdownMenuItem(value: "Wo_04", child: Text("ACTION")),
                 DropdownMenuItem(value: "Wo_05", child: Text("WOOLWORTH")),
+                DropdownMenuItem(value: "Wo_06", child: Text("Klaus Mayer")),
+                DropdownMenuItem(value: "Wo_07", child: Text("Paula Müller")),
+                DropdownMenuItem(value: "Wo_08", child: Text("Josef Schuster")),
+                DropdownMenuItem(value: "Wo_09", child: Text("Gerda Gärtner")),
+                DropdownMenuItem(value: "Wo_10", child: Text("Peter Petersen")),
               ],
               onChanged: (String? newValue) {
                 setState(() {
@@ -62,13 +83,13 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           ),
         ),
 
-        // ------ Was eingekauft? ------
+        // ------ Was wurde verkauft? ------
         const SizedBox(height: 16),
         const SizedBox(
           width: 400,
           child: Text(
             textAlign: TextAlign.left,
-            "Was eingekauft?",
+            "Was wurde verkauft?",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -79,7 +100,6 @@ class _IncomeWidgetState extends State<IncomeWidget> {
 
         Container(
           height: 40,
-          //margin: const EdgeInsets.only(top: 16),
           padding: const EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
             color: Colors.grey[300],
@@ -118,7 +138,6 @@ class _IncomeWidgetState extends State<IncomeWidget> {
             // ------ Anzahl ------
             Expanded(
               child: Column(
-                //mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Padding(
@@ -460,14 +479,14 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           ),
         ),
 
-        // ------ Wer hat eingekauft? ------
+        // ------ Wer hat verkauft? ------
         const SizedBox(height: 16),
 
         const SizedBox(
           width: 400,
           child: Text(
             textAlign: TextAlign.left,
-            "Wer hat eingekauft?",
+            "Wer hat verkauft?",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -478,7 +497,6 @@ class _IncomeWidgetState extends State<IncomeWidget> {
 
         Container(
           height: 40,
-          //margin: const EdgeInsets.only(top: 16),
           padding: const EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
             color: Colors.grey[300],
@@ -516,7 +534,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           width: 400,
           child: Text(
             textAlign: TextAlign.left,
-            "Notizen",
+            "Notizen zum Verkauf",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -535,15 +553,11 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           ),
 
           child: TextFormField(
-            //expands: true,
-            // child: const TextField(
             maxLines: 4,
             textAlign: TextAlign.left,
             textAlignVertical: TextAlignVertical.top,
             style: const TextStyle(
               fontSize: 18,
-              // height: 0.01, // 0.01,
-              // overflow: TextOverflow.visible,
             ),
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.only(bottom: 0),
@@ -632,7 +646,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
 
         // Button aus Vorlage verwenden:
         // solange die Pflichtfelder nicht ausgefüllt sind, soll der Button rot sein und beim Anklicken einen Alert ausgeben, sonst Button grün und Daten speichern + Dialog-Bestätigung.
-        const WBRedButton(), // WBGreenIncomeButton(),
+        const WBGreenIncomeButton(), // WBGreenIncomeButton(),
       ],
     );
   }

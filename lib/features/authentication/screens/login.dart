@@ -17,16 +17,6 @@ class Login extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
-
-
-
-
-
-
-
-
-
-
             const WelcomeText(),
             Container(height: 8),
             const Text(

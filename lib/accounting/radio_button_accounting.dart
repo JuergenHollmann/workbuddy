@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 class RadioButtonAccounting extends StatefulWidget {
-//  RadioButtonAccounting({Key? key}) : super(key: key); // Original
   const RadioButtonAccounting({super.key, required this.onChange});
 
   final void Function(String) onChange;
@@ -14,9 +13,6 @@ class RadioButtonAccounting extends StatefulWidget {
 
 class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
   String groupValue = "Ausgabe";
-  // int _selectedOption = 0;
-  //String currentOption = options[0];
-  //static get options => null;
 
   @override
   Widget build(BuildContext context) {

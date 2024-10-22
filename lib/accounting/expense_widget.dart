@@ -15,12 +15,12 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // ------ Wem verkauft? ------
+        // ------ Wo wurde eingekauft? ------
         const SizedBox(
           width: 400,
           child: Text(
             textAlign: TextAlign.left,
-            "Wem verkauft?",
+            "Wo wurde eingekauft?",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -62,13 +62,13 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
           ),
         ),
 
-        // ------ Was eingekauft? ------
+        // ------ Was wurde eingekauft? ------
         const SizedBox(height: 16),
         const SizedBox(
           width: 400,
           child: Text(
             textAlign: TextAlign.left,
-            "Was eingekauft?",
+            "Was wurde eingekauft?",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -516,7 +516,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
           width: 400,
           child: Text(
             textAlign: TextAlign.left,
-            "Notizen",
+            "Notizen zum Einkauf",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,

@@ -1,12 +1,8 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:workbuddy/accounting/expense_widget.dart';
 import 'package:workbuddy/accounting/income_widget.dart';
+import 'package:workbuddy/accounting/expense_widget.dart';
 import 'package:workbuddy/accounting/radio_button_accounting.dart';
 import 'package:workbuddy/config/wb_colors.dart';
-import 'package:workbuddy/main.dart';
 
 //   TextEditingController _anzahlController = TextEditingController();
 //   TextEditingController _einheitController = TextEditingController();
@@ -24,8 +20,6 @@ class _AccountingScreenState extends State<AccountingScreen> {
   //get groupValue => RadioButtonAccounting(onChange: (String newValue) { log("new value: $newValue");},);
   String groupValue = "Einnahme";
 
-  //String _selectedValue = "1";
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +35,7 @@ class _AccountingScreenState extends State<AccountingScreen> {
         ),
         backgroundColor: Colors.red,
         foregroundColor: Colors.white,
-        //toolbarHeight: 20,
+        //toolbarHeight: 60,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -78,7 +72,10 @@ class _AccountingScreenState extends State<AccountingScreen> {
 
               // -- Divider ---------------------------------------------
               const Divider(thickness: 3, height: 32, color: wbLogoBlue),
-              if (groupValue == "Einnahme") IncomeWidget() else ExpenseWidget(),
+              if (groupValue == "Einnahme")
+                const IncomeWidget()
+              else
+                const ExpenseWidget(),
               // const RadioButtonAccounting(),
               const SizedBox(height: 8),
               // -- Divider ---------------------------------------------

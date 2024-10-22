@@ -390,7 +390,7 @@ class WBGreenIncomeButton extends StatelessWidget {
                         right: 48,
                       ), // dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist )
                       child: Text(
-                        'Einnnahme speichern',
+                        'Einnahme speichern',
                         style: TextStyle(
                           color: Colors.white,
                           shadows: [
@@ -401,7 +401,7 @@ class WBGreenIncomeButton extends StatelessWidget {
                               spreadRadius: 0,
                             )
                           ],
-                          fontSize: 18,
+                          fontSize: 20,
                           // fontFamily: 'Roboto' oder 'SF Pro Display', soll ich die verwenden? todo?
                           fontWeight: FontWeight.w900,
                           // height: 1, // nur wenn der Text innerhalb des Buttons verschoben werden soll
