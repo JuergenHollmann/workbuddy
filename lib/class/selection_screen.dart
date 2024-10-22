@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/widgets/button_accounting.dart';
 import 'package:workbuddy/class/navigation_bar_green_neon.dart';
 import 'package:workbuddy/widgets/button_communication.dart';
@@ -15,7 +16,7 @@ class SelectionPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Was möchtest Du tun?'),
         foregroundColor: Colors.white, // Schriftfarbe
-        backgroundColor: const Color.fromARGB(255, 4, 85, 151), // dunkles Blau
+        backgroundColor: wbAppBarBlue, // dunkles Blau
         shadowColor: Colors.black87, // funzt nicht
         elevation: 20, // graue Zone unter der AppBar
       ),

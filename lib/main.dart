@@ -1,126 +1,418 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/class/selection_screen.dart';
-import 'package:workbuddy/class/welcome_text.dart';
+import 'package:workbuddy/config/wb_colors.dart';
+import 'package:workbuddy/features/authentication/screens/login.dart';
 
 void main() {
   runApp(const MainApp());
 }
-
-const primeColor =
-    Color.fromRGBO(200, 210, 255, 1); // hellblau = fromRGBO(200, 210, 255, 1)
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // den gesamten Hintergrund einfärben:
-        // backgroundColor: primeColor, // rgb(200 210 255)
-        backgroundColor:
-            const Color.fromRGBO(200, 210, 255, 1), // rgb(200 210 255)
-
-        body: const SafeArea(
-          child: Login(),
-        ),
-        drawer: Drawer(
-          backgroundColor: const Color.fromARGB(255, 146, 221, 255),
-          // 2096f3
-          // hier den Drawer mit SafeArea
-          child: ListView(
-            children: const [
-              ListTile(
-                title: Text("Einstellungen"),
-                subtitle: Text("Ja genau hier"),
-              ),
+        backgroundColor: wbBackgroundBlue,
+        body: SafeArea(
+          child: Column(
+            children: [
+              Login(),
             ],
           ),
+
+          //     drawer: Drawer(
+          //   backgroundColor: wbDrawerLightOrange,
+          //   // hier den Drawer mit SafeArea
+          //   child: ListView(
+          //     children: const [
+          //       ListTile(
+          //         title: Text("Einstellungen"),
+          //         subtitle: Text("Ja genau hier"),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ),
       ),
     );
   }
 }
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class StartPageDrawer extends StatelessWidget {
+  const StartPageDrawer({super.key, required Padding child});
 
-  //get pool => "assets/sound05xylophon.wav";
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
+    return Drawer(
+      child: ListView(
+        // WICHTIG: Alle Paddings von der ListView entfernen!
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: wbDrawerLightOrange,
+            ),
+            child: Text('WorkBuddy'),
+          ),
+          ListTile(
+            title: const Text('Über uns'),
+            onTap: () {
+              // Update the state of the app.
+              // ...
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            title: const Text('Item 2'),
+            onTap: () {
+              // Update the state of the app.
+              // ...
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class WBGreenButton extends StatelessWidget {
+  const WBGreenButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Button erstellen:
+    return Container(
+      width: 380,
+      height: 60,
+      decoration: ShapeDecoration(
+        shadows: const [
+          BoxShadow(
+            color: Colors.black,
+            blurRadius: 8,
+            offset: Offset(4, 4),
+            spreadRadius: 0,
+          )
+        ],
+        color: wbOKButtonGreen,
+        shape: RoundedRectangleBorder(
+          side: const BorderSide(
+            width: 2,
+            color: Colors.white,
+          ),
+          borderRadius: BorderRadius.circular(
+            16,
+          ),
+        ),
+        // shadows: const [
+        //   BoxShadow(
+        //     color: wbButtonShadowGrey,
+        //     blurRadius: 5,
+        //     offset: Offset(0, 12),
+        //     spreadRadius: 0,
+        //   )
+        // ],
+      ),
+      child: GestureDetector(
+        onTap: () {
+// wechsle die Farbe des Buttons beim Anklicken:
+// String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator
+
+          log("Wechsle zur Seite 2 = SelectionPage");
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const SelectionPage(),
+            ),
+          );
+        },
+        child: const Column(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const WelcomeText(),
-            Container(height: 8),
-            const Text(
-              "Benutzername",
-              textScaler: TextScaler.linear(1.5),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 16),
+                  child: Icon(
+                    Icons.input_outlined,
+                    color: Colors.white,
+                    size: 40,
+                    shadows: [
+                      BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 8,
+                        offset: Offset(4, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
+                  ),
+                ),
+
+                // Expanded(flex: 1, child:SizedBox.shrink( //todo (siehe 434/F4)
+                Expanded(
+                  //flex: 1,
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: 48,
+                      ), // dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist )
+                      child: Text(
+                        'Login',
+                        style: TextStyle(
+                          color: Colors.white,
+                          shadows: [
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 8,
+                              offset: Offset(4, 4),
+                              spreadRadius: 0,
+                            )
+                          ],
+                          fontSize: 32,
+                          // fontFamily: 'Roboto' oder 'SF Pro Display', soll ich die verwenden? todo?
+                          fontWeight: FontWeight.w900,
+                          // height: 1, // nur wenn der Text innerhalb des Buttons verschoben werden soll
+                          letterSpacing: 2, // Zwischenraum der Buchtstaben
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            const TextField(
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                    color: Color.fromARGB(255, 255, 0, 0)),
-                textAlign: TextAlign.center),
-            Container(height: 32),
-            const Text(
-              "Passwort",
-              textScaler: TextScaler.linear(1.5),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class WBRedButton extends StatelessWidget {
+  const WBRedButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Button erstellen:
+    return Container(
+      width: 380,
+      height: 60,
+      decoration: ShapeDecoration(
+        shadows: const [
+          BoxShadow(
+            color: Colors.black,
+            blurRadius: 8,
+            offset: Offset(4, 4),
+            spreadRadius: 0,
+          )
+        ],
+        color: Colors.red,
+        shape: RoundedRectangleBorder(
+          side: const BorderSide(
+            width: 2,
+            color: Colors.white,
+          ),
+          borderRadius: BorderRadius.circular(
+            16,
+          ),
+        ),
+        // shadows: const [
+        //   BoxShadow(
+        //     color: wbButtonShadowGrey,
+        //     blurRadius: 5,
+        //     offset: Offset(0, 12),
+        //     spreadRadius: 0,
+        //   )
+        // ],
+      ),
+      child: GestureDetector(
+        onTap: () {
+// wechsle die Farbe des Buttons beim Anklicken:
+// String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator
+
+          log("Wechsle zur Seite 2 = SelectionPage");
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const SelectionPage(),
             ),
-            const TextField(
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                    color: Color.fromRGBO(30, 130, 0, 1)), // grün
-                textAlign: TextAlign.center),
-            Container(height: 60),
-            ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SelectionPage()),
-                  );
+          );
+        },
+        child: const Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 16),
+                  child: Icon(
+                    Icons.payments_outlined,
+                    color: Colors.white,
+                    size: 40,
+                    shadows: [
+                      BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 8,
+                        offset: Offset(4, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
+                  ),
+                ),
 
-                  // Code: soll einen Ton abspielen und ins Auswahlmenü wechseln // todo
+                // Expanded(flex: 1, child:SizedBox.shrink( //todo (siehe 434/F4)
+                Expanded(
+                  //flex: 1,
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: 48,
+                      ), // dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist )
+                      child: Text(
+                        'Ausgabe speichern',
+                        style: TextStyle(
+                          color: Colors.white,
+                          shadows: [
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 8,
+                              offset: Offset(4, 4),
+                              spreadRadius: 0,
+                            )
+                          ],
+                          fontSize: 20,
+                          // fontFamily: 'Roboto' oder 'SF Pro Display', soll ich die verwenden? todo?
+                          fontWeight: FontWeight.w900,
+                          // height: 1, // nur wenn der Text innerhalb des Buttons verschoben werden soll
+                          letterSpacing: 2, // Zwischenraum der Buchtstaben
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
-                  // Scaffold.of(context).openDrawer();  // startet den Drawer
+class WBGreenIncomeButton extends StatelessWidget {
+  const WBGreenIncomeButton({super.key});
 
-                  // final player = Audio.load("asset/sound05xylophon.wav");
-                  // player.play();
-                  /* NoSuchMethodError (NoSuchMethodError: The method 'play' was called on null.
-                     Receiver: null
-                     Tried calling: play("asset/sound05xylophon.wav")) */
+  @override
+  Widget build(BuildContext context) {
+    // Button erstellen:
+    return Container(
+      width: 380,
+      height: 60,
+      decoration: ShapeDecoration(
+        shadows: const [
+          BoxShadow(
+            color: Colors.black,
+            blurRadius: 8,
+            offset: Offset(4, 4),
+            spreadRadius: 0,
+          )
+        ],
+        color: Colors.green,
+        shape: RoundedRectangleBorder(
+          side: const BorderSide(
+            width: 2,
+            color: Colors.white,
+          ),
+          borderRadius: BorderRadius.circular(
+            16,
+          ),
+        ),
+        // shadows: const [
+        //   BoxShadow(
+        //     color: wbButtonShadowGrey,
+        //     blurRadius: 5,
+        //     offset: Offset(0, 12),
+        //     spreadRadius: 0,
+        //   )
+        // ],
+      ),
+      child: GestureDetector(
+        onTap: () {
+// wechsle die Farbe des Buttons beim Anklicken:
+// String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator
 
-                  // int soundId = await rootBundle
-                  //     .load("assets/sound05xylophon.wav")
-                  //     .then((ByteData soundData) {
-                  //   /* NoSuchMethodError (NoSuchMethodError: Class 'String' has no instance method 'load'.
-                  //      Receiver: "assets/sound05xylophon.wav"
-                  //      Tried calling: load(_UnmodifiableByteDataView)) */
-                  //   return pool.load(soundData);
-                  // });
-                  // await pool.play(soundId);
+          log("Wechsle zur Seite 2 = SelectionPage");
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const SelectionPage(),
+            ),
+          );
+        },
+        child: const Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 16),
+                  child: Icon(
+                    Icons.payments_outlined,
+                    color: Colors.white,
+                    size: 40,
+                    shadows: [
+                      BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 8,
+                        offset: Offset(4, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
+                  ),
+                ),
 
-                  // AudioCache player = AudioCache();
-                  // const alarmAudioPath = "sound05xylophon.wav";
-                  // player.play(alarmAudioPath);
-                },
-                icon: const Icon(Icons.login, size: 34, fill: 1, weight: 80),
-                label: const Text("  Login"),
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.black, // Textfarbe
-                  backgroundColor: Colors.blue, // Buttonfarbe
-                  shadowColor: Colors.black,
-                  iconColor: Colors.white,
-                  textStyle: const TextStyle(
-                      fontSize: 30, fontWeight: FontWeight.w900),
-                )),
+                // Expanded(flex: 1, child:SizedBox.shrink( //todo (siehe 434/F4)
+                Expanded(
+                  //flex: 1,
+                  child: Center(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        right: 48,
+                      ), // dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist )
+                      child: Text(
+                        'Einnnahme speichern',
+                        style: TextStyle(
+                          color: Colors.white,
+                          shadows: [
+                            BoxShadow(
+                              color: Colors.black,
+                              blurRadius: 8,
+                              offset: Offset(4, 4),
+                              spreadRadius: 0,
+                            )
+                          ],
+                          fontSize: 18,
+                          // fontFamily: 'Roboto' oder 'SF Pro Display', soll ich die verwenden? todo?
+                          fontWeight: FontWeight.w900,
+                          // height: 1, // nur wenn der Text innerhalb des Buttons verschoben werden soll
+                          letterSpacing: 2, // Zwischenraum der Buchtstaben
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

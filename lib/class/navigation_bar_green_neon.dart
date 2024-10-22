@@ -2,9 +2,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 class NavigationBarGreenNeon extends StatelessWidget {
-  const NavigationBarGreenNeon({
-    super.key,
-  });
+  const NavigationBarGreenNeon({super.key});
   // final String image1Path = "assets/neon_green_line.png";
   // final String image2Path = "assets/neon_green_line.png";
 
@@ -66,5 +64,3 @@ class NavigationBarGreenNeon extends StatelessWidget {
     );
   }
 }
-
-
