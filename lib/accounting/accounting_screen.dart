@@ -26,15 +26,15 @@ class _AccountingScreenState extends State<AccountingScreen> {
       backgroundColor: const Color.fromARGB(255, 250, 242, 242),
       appBar: AppBar(
         title: const Text(
-          'Ausgabe erfassen',
+          'Beleg erfassen',
           style: TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.w900,
-            color: Colors.white,
+            color: Colors.black, // Schriftfarbe
           ),
         ),
-        backgroundColor: Colors.red,
-        foregroundColor: Colors.white,
+        backgroundColor: wbBackgroundBlue, // Hintergrundfarbe
+        foregroundColor: Colors.black, // Icon-/Button-/Chevron-Farbe
         //toolbarHeight: 60,
       ),
       body: SingleChildScrollView(

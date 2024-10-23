@@ -39,12 +39,14 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
                     setState(() {
                       groupValue = value!;
                       widget.onChange(value);
+
                       // groupValue == "Einnahme"
                       //     ? const RadioButtonInOutGreen()
                       //     : const RadioButtonInOutRed();
                       // const RadioButtonInOutGreen();
                       // const WBGreenIncomeButton();
                       //const RadioButtonInOutGreen();
+
                       log("Einnahme wurde angeklickt");
                     });
                   }),
@@ -70,12 +72,14 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
                     setState(() {
                       groupValue = value!;
                       widget.onChange(value);
+
                       // groupValue == "Ausgabe"
                       //     ? const RadioButtonInOutRed()
                       //     : const RadioButtonInOutGreen();
                       //const RadioButtonInOutRed();
                       //const WBRedButton();
                       //const RadioButtonInOutRed();
+
                       log("Ausgabe wurde angeklickt");
                     });
                   }),

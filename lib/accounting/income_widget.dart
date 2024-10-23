@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:workbuddy/config/wb_colors.dart';
+import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/config/wb_textfield_currency.dart';
 import 'package:workbuddy/main.dart';
 
 class IncomeWidget extends StatefulWidget {
@@ -15,7 +17,6 @@ class _IncomeWidgetState extends State<IncomeWidget> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-
 // // ---------- entweder einen Code erstellen, der die Schrift und die Farbe der AppBar ändert, oder die Position verschieben ----------
 //         AppBar(
 //           title: const Text(
@@ -84,7 +85,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
         ),
 
         // ------ Was wurde verkauft? ------
-        const SizedBox(height: 16),
+        wbNormSpaceBetweenTextFields,
         const SizedBox(
           width: 400,
           child: Text(
@@ -131,7 +132,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           ),
         ),
 
-        const SizedBox(height: 16),
+        wbNormSpaceBetweenTextFields,
 
         Row(
           children: [
@@ -199,7 +200,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
             ),
 
             // Expanded-Zwischenraum:
-            const SizedBox(width: 16),
+            wbNormSpaceBetweenExpanded,
 
             // ------ Einheit ------
             Expanded(
@@ -261,7 +262,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
             ),
 
             // Expanded-Zwischenraum:
-            const SizedBox(width: 16),
+            wbNormSpaceBetweenExpanded,
 
             // ------ MwSt. % ------
             Expanded(
@@ -320,7 +321,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           ],
         ),
 
-        const SizedBox(height: 16),
+        wbNormSpaceBetweenTextFields,
 
         Row(
           children: [
@@ -365,73 +366,20 @@ class _IncomeWidgetState extends State<IncomeWidget> {
               ),
             ),
 
-            // Expanded-Zwischenraum:
-            const SizedBox(width: 16),
+            wbNormSpaceBetweenExpanded,
 
             // ------ Endpreis € ------
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      "Endpreis in €",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    height: 40,
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: TextField(
-                      textAlign: TextAlign.right,
-                      textAlignVertical: TextAlignVertical.center,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w900,
-                      ),
-
-                      // es dürfen nur Ziffern (auch dezimale) eingetragen werden = Keyboard nur mit Ziffern und decimal:
-                      keyboardType: const TextInputType.numberWithOptions(
-                        decimal: true,
-                      ),
-                      // der Input muss mit Regex überprüft werden:
-                      inputFormatters: <TextInputFormatter>[
-                        FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
-                        //FilteringTextInputFormatter.digitsOnly
-                      ],
-
-                      decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.only(bottom: 14),
-                        hintText: 'Endpreis eingeben!',
-                        hintStyle: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.red,
-                        ),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                ],
+            const Expanded(
+              child: WBTextFieldCurrency(
+                headlineCurrencyField: "Endpreis in €",
+                hintCurrencyField: "Endpreis in € eintragen!",
               ),
             ),
           ],
         ),
 
         // ------ Warengruppe ------
-        const SizedBox(height: 16),
+        wbNormSpaceBetweenTextFields,
 
         const SizedBox(
           width: 400,
@@ -478,10 +426,8 @@ class _IncomeWidgetState extends State<IncomeWidget> {
             ),
           ),
         ),
-
+        wbNormSpaceBetweenTextFields,
         // ------ Wer hat verkauft? ------
-        const SizedBox(height: 16),
-
         const SizedBox(
           width: 400,
           child: Text(
@@ -528,7 +474,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
         ),
 
         // ------ Notizen ------
-        const SizedBox(height: 16),
+        wbNormSpaceBetweenTextFields,
 
         const SizedBox(
           width: 400,

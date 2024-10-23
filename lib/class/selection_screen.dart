@@ -14,7 +14,16 @@ class SelectionPage extends StatelessWidget {
       // den gesamten Hintergrund einfärben:
       backgroundColor: Colors.blue, // vorher: primeColor
       appBar: AppBar(
-        title: const Text('Was möchtest Du tun?'),
+        title: const Text(
+          'Was möchtest Du tun?',
+
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w900,
+            color: Colors.white,
+          ), // Schriftfarbe
+        ),
+
         foregroundColor: Colors.white, // Schriftfarbe
         backgroundColor: wbAppBarBlue, // dunkles Blau
         shadowColor: Colors.black87, // funzt nicht
