@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workbuddy/config/wb_drodown_menu_statefulwidget.dart';
+import 'package:workbuddy/config/wb_dropdownmenu.dart';
 import 'package:workbuddy/config/wb_textfield_quantity.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
@@ -20,40 +20,9 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
     return Column(
       children: [
         // ------ Wo wurde eingekauft? ------
-        const WBDrodownMenu(headlineText: "Wo du kaufen", hintText: "hint wo"),
-
-        // Container(
-        //   height: 40,
-        //   //margin: const EdgeInsets.only(top: 16),
-        //   padding: const EdgeInsets.symmetric(horizontal: 8),
-        //   decoration: BoxDecoration(
-        //     color: Colors.grey[300],
-        //     border: Border.all(color: Colors.grey),
-        //     borderRadius: BorderRadius.circular(12),
-        //   ),
-        //   child: DropdownButtonHideUnderline(
-        //     child: DropdownButton<String>(
-        //       isExpanded: true,
-        //       //value: _selectedValue,
-        //       style: const TextStyle(
-        //         fontSize: 24,
-        //         color: Colors.black,
-        //       ),
-        //       items: const [
-        //         DropdownMenuItem(value: "Wo_01", child: Text("OBI")),
-        //         DropdownMenuItem(value: "Wo_02", child: Text("TOOM")),
-        //         DropdownMenuItem(value: "Wo_03", child: Text("Kaufland")),
-        //         DropdownMenuItem(value: "Wo_04", child: Text("ACTION")),
-        //         DropdownMenuItem(value: "Wo_05", child: Text("WOOLWORTH")),
-        //       ],
-        //       onChanged: (String? newValue) {
-        //         setState(() {
-        //           // _selectedValue = newValue!;
-        //         });
-        //       },
-        //     ),
-        //   ),
-        // ),
+        const WBDropdownMenu(
+          headlineText: "Wo wurde eingekauft?",
+        ),
 
         // ------ Was wurde eingekauft? ------
         wbNormSpaceBetweenTextFields,

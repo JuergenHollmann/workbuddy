@@ -37,8 +37,8 @@ class _IncomeWidgetState extends State<IncomeWidget> {
         const SizedBox(
           width: 400,
           child: Text(
-            textAlign: TextAlign.left,
             "Wem wurde etwas verkauft (Kunde)?",
+            textAlign: TextAlign.left,
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -65,11 +65,6 @@ class _IncomeWidgetState extends State<IncomeWidget> {
                 color: Colors.black,
               ),
               items: const [
-                DropdownMenuItem(value: "Wo_01", child: Text("OBI")),
-                DropdownMenuItem(value: "Wo_02", child: Text("TOOM")),
-                DropdownMenuItem(value: "Wo_03", child: Text("Kaufland")),
-                DropdownMenuItem(value: "Wo_04", child: Text("ACTION")),
-                DropdownMenuItem(value: "Wo_05", child: Text("WOOLWORTH")),
                 DropdownMenuItem(value: "Wo_06", child: Text("Klaus Mayer")),
                 DropdownMenuItem(value: "Wo_07", child: Text("Paula Müller")),
                 DropdownMenuItem(value: "Wo_08", child: Text("Josef Schuster")),

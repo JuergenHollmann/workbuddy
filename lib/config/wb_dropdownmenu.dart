@@ -1,30 +1,19 @@
 import 'package:flutter/material.dart';
 
-class WBDrodownMenu extends StatefulWidget {
-  const WBDrodownMenu({
+class WBDropdownMenu extends StatefulWidget {
+  const WBDropdownMenu({
     super.key,
     required this.headlineText,
-    required this.hintText,
   });
 
   final String headlineText;
-  final String hintText;
-  //   final void Function(String) onChange;  // Original
 
   @override
-  State<WBDrodownMenu> createState() => _WBDrodownMenuState();
+  State<WBDropdownMenu> createState() => _WBDropdownMenuState();
 }
 
-class _WBDrodownMenuState extends State<WBDrodownMenu> {
-  // final String headlineText;
-  // final String hintText;
-  // String groupValue = "Ausgabe"; // Original
-  // final void Function(String) onChange;
-  void headlineText() {
-    setState(() {
-      headlineText;
-    });
-  }
+class _WBDropdownMenuState extends State<WBDropdownMenu> {
+  //final String headlineText = "";
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +22,7 @@ class _WBDrodownMenuState extends State<WBDrodownMenu> {
         SizedBox(
           width: 400,
           child: Text(
-            headlineText as String, //"Wo wurde eingekauft?", // ERROR!
+            widget.headlineText, //"Wo wurde eingekauft?", // ERROR!
 
             textAlign: TextAlign.left,
             style: const TextStyle(
