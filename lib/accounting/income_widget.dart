@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:workbuddy/config/wb_textfield_notice.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_textfield_currency.dart';
+import 'package:workbuddy/config/wb_textfield_quantity.dart';
 import 'package:workbuddy/main.dart';
 
 class IncomeWidget extends StatefulWidget {
@@ -136,70 +137,14 @@ class _IncomeWidgetState extends State<IncomeWidget> {
 
         Row(
           children: [
-            // ------ Anzahl ------
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      //textAlign: TextAlign.right,
-                      "Anzahl",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        // height: 8,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    height: 40,
-                    //margin: const EdgeInsets.only(top: 8),
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-
-                    child: TextField(
-                      textAlign: TextAlign.center,
-                      textAlignVertical: TextAlignVertical.center,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        // height: 0.01, // 0.01,
-                        // overflow: TextOverflow.visible,
-                      ),
-                      // es dürfen nur Ziffern (auch dezimale) eingetragen werden = Keyboard nur mit Ziffern und decimal:
-                      keyboardType: const TextInputType.numberWithOptions(
-                        decimal: true,
-                      ),
-                      // der Input muss mit Regex überprüft werden:
-                      inputFormatters: <TextInputFormatter>[
-                        FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
-                        //FilteringTextInputFormatter.digitsOnly
-                      ],
-
-                      decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.only(bottom: 14),
-                        hintText: 'Anzahl',
-                        hintStyle: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.red,
-                        ),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                ],
+            const Expanded(
+              // ------ Anzahl ------
+              child: WBTextfieldQuantity(
+                headlineText: "Anzahl",
+                hintText: "Anzahl",
               ),
             ),
 
-            // Expanded-Zwischenraum:
             wbNormSpaceBetweenExpanded,
 
             // ------ Einheit ------
@@ -261,7 +206,6 @@ class _IncomeWidgetState extends State<IncomeWidget> {
               ),
             ),
 
-            // Expanded-Zwischenraum:
             wbNormSpaceBetweenExpanded,
 
             // ------ MwSt. % ------
@@ -371,16 +315,16 @@ class _IncomeWidgetState extends State<IncomeWidget> {
             // ------ Endpreis € ------
             const Expanded(
               child: WBTextFieldCurrency(
-                headlineCurrencyField: "Endpreis in €",
-                hintCurrencyField: "Endpreis in € eintragen!",
+                headlineText: "Endpreis in €",
+                hintText: "Endpreis in € eintragen!",
               ),
             ),
           ],
         ),
 
-        // ------ Warengruppe ------
         wbNormSpaceBetweenTextFields,
 
+        // ------ Warengruppe ------
         const SizedBox(
           width: 400,
           child: Text(
@@ -473,122 +417,15 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           ),
         ),
 
-        // ------ Notizen ------
         wbNormSpaceBetweenTextFields,
 
-        const SizedBox(
-          width: 400,
-          child: Text(
-            textAlign: TextAlign.left,
-            "Notizen zum Verkauf",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
+        // ------ Notizen ------
+        const WBTextfieldNotice(
+          headlineText: "Notizen zum Verkauf",
+          hintText: "- Notizen zum Verkauf HIER eingeben -",
         ),
 
-        Container(
-          height: 120,
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          decoration: BoxDecoration(
-            color: Colors.grey[300],
-            border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(12),
-          ),
-
-          child: TextFormField(
-            maxLines: 4,
-            textAlign: TextAlign.left,
-            textAlignVertical: TextAlignVertical.top,
-            style: const TextStyle(
-              fontSize: 18,
-            ),
-            decoration: const InputDecoration(
-              contentPadding: EdgeInsets.only(bottom: 0),
-              hintText: '- Notizen hier eingeben -',
-              hintStyle: TextStyle(fontSize: 18),
-              border: InputBorder.none,
-            ),
-          ),
-
-          // child: DropdownButtonHideUnderline(
-          //   child: DropdownButton<String>(
-          //     isExpanded: true,
-          //     //value: _selectedValue,
-          //     style: const TextStyle(
-          //       fontSize: 24,
-          //       color: Colors.black,
-          //     ),
-          //     items: const [
-          //       DropdownMenuItem(value: "EK_0006", child: Text("Klaus")),
-          //       DropdownMenuItem(value: "EK_0007", child: Text("Paul")),
-          //       DropdownMenuItem(value: "EK_0008", child: Text("Carla")),
-          //       DropdownMenuItem(value: "EK_0009", child: Text("Paula")),
-          //       DropdownMenuItem(
-          //           value: "EK_0010", child: Text("Schorsch")),
-          //     ],
-          //     onChanged: (String? newValue) {
-          //       setState(() {
-          //         //_selectedValue = newValue!;
-          //       });
-          //     },
-          //   ),
-          // ),
-        ),
-
-        // // ------ Notizen ------
-        // Expanded(
-        //   child: Column(
-        //     crossAxisAlignment: CrossAxisAlignment.start,
-        //     children: [
-        //       const Padding(
-        //         padding: EdgeInsets.only(right: 8.0),
-        //         child: Text(
-        //           textAlign: TextAlign.right,
-        //           "Notizen:",
-        //           style: TextStyle(
-        //             fontSize: 18,
-        //             fontWeight: FontWeight.bold,
-        //             color: Colors.black,
-        //           ),
-        //         ),
-        //       ),
-
-        //       Container(
-        //         alignment: Alignment.topLeft,
-        //         height: 120,
-        //         //margin: const EdgeInsets.only(top: 8),
-        //         padding: const EdgeInsets.symmetric(horizontal: 8),
-
-        //         decoration: BoxDecoration(
-        //           color: Colors.grey[300],
-        //           border: Border.all(color: Colors.grey),
-        //           borderRadius: BorderRadius.circular(12),
-        //         ),
-
-        //         child: const Text(
-        //           "Notizen",
-        //           textAlign: TextAlign.right,
-        //           // textAlignVertical: TextAlignVertical.center,
-        //           style: TextStyle(
-        //             fontSize: 24,
-        //           ),
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
-
-        // ------ ENDE ------
-        //    ],
-        //
-
-        // -- Divider ---------------------------------------------
         const Divider(thickness: 3, height: 32, color: wbLogoBlue),
-
-        //TextField(Text("so ne Grütze!")),
 
         // Button aus Vorlage verwenden:
         // solange die Pflichtfelder nicht ausgefüllt sind, soll der Button rot sein und beim Anklicken einen Alert ausgeben, sonst Button grün und Daten speichern + Dialog-Bestätigung.

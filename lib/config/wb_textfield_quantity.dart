@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class WBTextFieldCurrency extends StatelessWidget {
-  const WBTextFieldCurrency({
+class WBTextfieldQuantity extends StatelessWidget {
+  const WBTextfieldQuantity({
     super.key,
     required this.headlineText,
     required this.hintText,
@@ -14,13 +14,12 @@ class WBTextFieldCurrency extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.only(right: 8.0),
           child: Text(
-            headlineText,
-            textAlign: TextAlign.right,
+            headlineText, //"Anzahl",
             style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -29,7 +28,7 @@ class WBTextFieldCurrency extends StatelessWidget {
           ),
         ),
         Container(
-          alignment: Alignment.centerRight,
+          alignment: Alignment.center,
           height: 40,
           padding: const EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
@@ -38,13 +37,11 @@ class WBTextFieldCurrency extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           child: TextField(
-            textAlign: TextAlign.right,
+            textAlign: TextAlign.center,
             textAlignVertical: TextAlignVertical.center,
             style: const TextStyle(
               fontSize: 24,
-              fontWeight: FontWeight.w900,
             ),
-
             // es dürfen nur Ziffern (auch dezimale) eingetragen werden = Keyboard nur mit Ziffern und decimal:
             keyboardType: const TextInputType.numberWithOptions(
               decimal: true,
@@ -52,12 +49,11 @@ class WBTextFieldCurrency extends StatelessWidget {
             // der Input muss mit Regex überprüft werden:
             inputFormatters: <TextInputFormatter>[
               FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),
-              //FilteringTextInputFormatter.digitsOnly
             ],
 
             decoration: InputDecoration(
               contentPadding: const EdgeInsets.only(bottom: 14),
-              hintText: hintText,
+              hintText: hintText, //'Anzahl',
               hintStyle: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w900,
