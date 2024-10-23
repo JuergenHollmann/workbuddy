@@ -18,7 +18,7 @@ class AccountingScreen extends StatefulWidget {
 
 class _AccountingScreenState extends State<AccountingScreen> {
   //get groupValue => RadioButtonAccounting(onChange: (String newValue) { log("new value: $newValue");},);
-  String groupValue = "Einnahme";
+  String groupValue = "Ausgabe";
 
   @override
   Widget build(BuildContext context) {
@@ -49,17 +49,10 @@ class _AccountingScreenState extends State<AccountingScreen> {
                 //width: 200,
               ),
 
-              // -- Divider ---------------------------------------------
               const Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
-              //const RadioButtonAccounting(),
-
               Row(
-                //    children: [
                 children: [
-                  //const RadioButtonInOutRed(), // funzt
-                  // RadioButtonInOutGreen(), // funzt
-                  //RadioButtonAccounting(),
                   RadioButtonAccounting(
                     onChange: (newValue) {
                       groupValue = newValue;
@@ -67,7 +60,6 @@ class _AccountingScreenState extends State<AccountingScreen> {
                     },
                   )
                 ],
-                //        ],
               ),
 
               // -- Divider ---------------------------------------------

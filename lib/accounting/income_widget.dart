@@ -6,7 +6,6 @@ import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_textfield_currency.dart';
 import 'package:workbuddy/config/wb_textfield_quantity.dart';
-import 'package:workbuddy/main.dart';
 
 class IncomeWidget extends StatefulWidget {
   const IncomeWidget({super.key});
