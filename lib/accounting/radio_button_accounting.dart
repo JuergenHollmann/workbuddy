@@ -79,6 +79,8 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
                   Radio(
                       value: "Ausgabe",
                       groupValue: groupValue,
+                      //key: Key(AccountingScreen._buttonExpenseKey),
+                      //key: AccountingScreen. _buttonExpenseKey,
                       onChanged: (value) {
                         setState(() {
                           groupValue = value!;

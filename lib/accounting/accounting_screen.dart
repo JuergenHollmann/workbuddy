@@ -10,6 +10,8 @@ import 'package:workbuddy/config/wb_colors.dart';
 //   TextEditingController _preisController = TextEditingController();
 
 class AccountingScreen extends StatefulWidget {
+  // static String groupValue;
+
   const AccountingScreen({super.key});
 
   @override
@@ -17,8 +19,8 @@ class AccountingScreen extends StatefulWidget {
 }
 
 class _AccountingScreenState extends State<AccountingScreen> {
-  //get groupValue => RadioButtonAccounting(onChange: (String newValue) { log("new value: $newValue");},);
   String groupValue = "Ausgabe";
+      // final GlobalKey _buttonExpenseKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +56,7 @@ class _AccountingScreenState extends State<AccountingScreen> {
               Row(
                 children: [
                   RadioButtonAccounting(
+                    // Key: _buttonExpenseKey,
                     onChange: (newValue) {
                       groupValue = newValue;
                       setState(() {});
