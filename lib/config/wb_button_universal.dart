@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WbButtonUniversal extends StatelessWidget {
-  const WbButtonUniversal({
+  const WbButtonUniversal( {
     super.key,
     required this.wbColor,
     required this.icon,

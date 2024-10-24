@@ -26,6 +26,19 @@
 // },
 // ),
 //----------------------------------------------------------------------------------
+                    // AlertDialog(
+                    //   title: const Text('Update-Hinweis 112'),
+                    //   content: const Text('Diese Funktion kommt bald in einem kostenlosen Update!'),
+                    //   actions: <Widget>[
+                    //     TextButton(
+                    //       child: const Text('OK'),
+                    //       onPressed: () {
+                    //         Navigator.of(context).pop();
+                    //       },
+                    //     ),
+                    //   ],
+                    // );
+//----------------------------------------------------------------------------------
 // const primeColor = Color.fromRGBO(210, 210, 255, 1); // helles lila = fromRGBO(210, 210, 255,1)
 // const primeColor = Color.fromRGBO(212, 213, 251, 1); // sehr helles blau = fromRGBO(212, 213, 251, 1)
 // const primeColor = Color.fromRGBO(91, 159, 31, 1); // sehr grün

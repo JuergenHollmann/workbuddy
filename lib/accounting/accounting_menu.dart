@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:workbuddy/accounting/accounting_screen.dart';
-import 'package:workbuddy/config/wb_button_uni_shadow.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
@@ -93,10 +92,6 @@ class AccountingMenu extends StatelessWidget {
                       ),
                     );
                   },
-                  // child: const WbButtonUniShadow(
-                  //   wbColor: wbOKButtonGreen,
-                  //   wbButtonUniShadowText: "Einnahme buchen",
-                  // ),
                   child: WbButtonUniversal(
                     wbColor: wbColorButtonGreen,
                     wbButtonUniversalText: "Einnahme buchen",
@@ -112,20 +107,35 @@ class AccountingMenu extends StatelessWidget {
                 const Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
                 GestureDetector(
-                  // onTap: () {
-                  //   log("Auf - AccountingMenu - Übersicht aller Ausgaben - angeklickt");
-                  //   Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //       builder: (context) => const AccountingScreen(
-                  //         startGroupValue: "Ausgabe",
-                  //       ),
-                  //     ),
-                  //   );
-                  // },
-                  child: const WbButtonUniShadow(
+                  onTap: () {
+                    log("Auf - AccountingMenu - Übersicht aller Ausgaben - Update-Hinweis 112 - angeklickt");
+
+                    AlertDialog(
+                      title: const Text('Update-Hinweis 112'),
+                      content: const Text(
+                          'Diese Funktion kommt bald in einem kostenlosen Update!'),
+                      actions: <Widget>[
+                        TextButton(
+                          child: const Text('OK'),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                    log("Auf - AccountingMenu - Übersicht aller Ausgaben - 2. Update-Hinweis 112 - angeklickt");
+                  },
+
+                  /* Dieser Button ist OHNE Icon (nur Text und Farbe) */
+                  // child: const WbButtonUniShadow(
+                  //     wbColor: wbColorButtonDarkRed,
+                  //     wbButtonUniShadowText: "Alle Ausgaben zeigen"),
+
+                  child: WbButtonUniversal(
                     wbColor: wbColorAppBarBlue,
-                    wbButtonUniShadowText: "Übersicht aller Ausgaben",
+                    wbButtonUniversalText: "Alle Ausgaben",
+                    icon: Icons.receipt_long_outlined,
+                    onButtonTap: () {},
                   ),
                 ),
 
@@ -144,9 +154,12 @@ class AccountingMenu extends StatelessWidget {
                   //     ),
                   //   );
                   // },
-                  child: const WbButtonUniShadow(
+
+                  child: WbButtonUniversal(
                     wbColor: wbColorAppBarBlue,
-                    wbButtonUniShadowText: "Übersicht aller Einnahmen",
+                    wbButtonUniversalText: "Alle Einnahmen",
+                    icon: Icons.receipt_long_outlined,
+                    onButtonTap: () {},
                   ),
                 ),
 
@@ -165,9 +178,12 @@ class AccountingMenu extends StatelessWidget {
                   //     ),
                   //   );
                   // },
-                  child: const WbButtonUniShadow(
-                    wbColor: Color.fromRGBO(195, 117, 0, 1),
-                    wbButtonUniShadowText: " Ausgaben-Beleg finden",
+
+                  child: WbButtonUniversal(
+                    wbColor: wbColorOrangeDarker,
+                    wbButtonUniversalText: "Ausgaben finden",
+                    icon: Icons.manage_search_outlined,
+                    onButtonTap: () {},
                   ),
                 ),
 
@@ -186,9 +202,12 @@ class AccountingMenu extends StatelessWidget {
                   //     ),
                   //   );
                   // },
-                  child: const WbButtonUniShadow(
-                    wbColor: Color.fromRGBO(195, 117, 0, 1),
-                    wbButtonUniShadowText: " Einnahme-Beleg finden",
+
+                  child: WbButtonUniversal(
+                    wbColor: wbColorOrangeDarker,
+                    wbButtonUniversalText: "Einnahmen finden",
+                    icon: Icons.query_stats, //receipt_long_outlined,
+                    onButtonTap: () {},
                   ),
                 ),
 
@@ -198,19 +217,18 @@ class AccountingMenu extends StatelessWidget {
               ],
             )
 
+                /* Das hier wäre eine Lösung mit einer "ListView.separated" */
                 // child: ListView.separated(
                 //   padding: const EdgeInsets.all(8),
                 //   itemCount: entries.length,
                 //   itemBuilder: (context, index) {
                 //     return const WbButtonUniversal(
                 //       wbColor: wbColorAppBarBlue,
-                //       wbButtonUniversalText: "wbButtonUniversalText",
-                //     );
+                //       wbButtonUniversalText: "wbButtonUniversalText",);
 
                 //     // return const WbButtonUniversal(
                 //     //   wbColor: wbColorAppBarBlue,
-                //     //   iconSelector: Icon(Icons.accessible_sharp),
-                //     // );
+                //     //   iconSelector: Icon(Icons.accessible_sharp));
 
                 //     // return Container(
                 //     //   height: 80,
@@ -220,15 +238,12 @@ class AccountingMenu extends StatelessWidget {
                 //     //     style: const TextStyle(
                 //     //       fontSize: 30,
                 //     //       fontWeight: FontWeight.w900,
-                //     //       color: Colors.white, // Schriftfarbe
-                //     //     ),
-                //     //   ),
-                //     // );
-                //   },
-                //   separatorBuilder: (BuildContext context, int index) =>
-                //       // const Divider(thickness: 3, height: 32, color: wbLogoBlue),
-                //       const SizedBox(height: 32),
-                // ),
+                //     //       color: Colors.white, // Schriftfarbe), ), );
+                // },
+                //     separatorBuilder: (BuildContext context, int index) =>
+                //     // const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                //     const SizedBox(height: 32)),
+
                 ),
             const Divider(thickness: 3, height: 32, color: wbLogoBlue),
           ],
