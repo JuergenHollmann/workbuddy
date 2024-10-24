@@ -3,16 +3,24 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 class RadioButtonAccounting extends StatefulWidget {
-  const RadioButtonAccounting({super.key, required this.onChange});
+  const RadioButtonAccounting(
+      {super.key, required this.onChange, required this.startGroupValue});
 
   final void Function(String) onChange;
+  final String startGroupValue;
 
   @override
   State<RadioButtonAccounting> createState() => _RadioButtonAccountingState();
 }
 
 class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
-  String groupValue = "Ausgabe";
+  late String groupValue;
+
+  @override
+  void initState() {
+    super.initState();
+    groupValue = widget.startGroupValue;
+  }
 
   @override
   Widget build(BuildContext context) {

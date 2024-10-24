@@ -1,19 +1,18 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/class/selection_screen.dart';
 
 class WbButtonUniversal extends StatelessWidget {
   const WbButtonUniversal({
     super.key,
     required this.wbColor,
     required this.wbButtonUniversalText,
-    // required Icon iconSelector,
+    required this.icon,
+    required this.onButtonTap,
   });
 
   final Color wbColor;
   final String wbButtonUniversalText;
-  // final dynamic NavigateToPageName;
-  // final String iconSelector;
+  final IconData icon;
+  final void Function() onButtonTap;
 
   @override
   Widget build(BuildContext context) {
@@ -42,48 +41,50 @@ class WbButtonUniversal extends StatelessWidget {
         ),
       ),
       child: GestureDetector(
-        onTap: () {
-          /* 
-        Wechsle die Farbe des Buttons beim Anklicken:
-        String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator*/
+        onTap: onButtonTap,
 
-          log("wb_button_universal.dart - angeklickt");
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              /* anstelle von "SelectionPage" eine Liste mit Verknüpfungen "NavigateToPageName" zu allen Seiten anlegen */
-              builder: (context) =>
-                  const SelectionPage(), // NavigateToPageName(), //SelectionPage(),
-            ),
-          );
-        },
-        child: const Column(
+        // onTap: () {
+        //   /*
+        // Wechsle die Farbe des Buttons beim Anklicken:
+        // String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator*/
+
+        //   log("wb_button_universal.dart - angeklickt");
+        //   Navigator.push(
+        //     context,
+        //     MaterialPageRoute(
+        //       /* anstelle von "SelectionPage" eine Liste mit Verknüpfungen "NavigateToPageName" zu allen Seiten anlegen */
+        //       builder: (context) =>
+        //           const SelectionPage(), // NavigateToPageName(), //SelectionPage(),
+        //     ),
+        //   );
+        // },
+
+        child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
               children: [
-                // Padding(
-                //   padding: EdgeInsets.only(left: 16),
-                //   child: Icon(
-                //     Icons
-                //         .payments_outlined, // iconSelector, //payments_outlined,
-                //     color: Colors.white,
-                //     size: 40,
-                //     shadows: [
-                //       BoxShadow(
-                //         color: Colors.black,
-                //         blurRadius: 8,
-                //         offset: Offset(4, 4),
-                //         spreadRadius: 0,
-                //       )
-                //     ],
-                //   ),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 16),
+                  child: Icon(
+                    icon, // iconSelector, //payments_outlined,
+                    color: Colors.white,
+                    size: 40,
+                    shadows: const [
+                      BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 8,
+                        offset: Offset(4, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
+                  ),
+                ),
 
                 // Expanded(flex: 1, child:SizedBox.shrink( //todo (siehe 434/F4)
-                Expanded(
+                const Expanded(
                   //flex: 1,
                   child: Center(
                     child: Padding(

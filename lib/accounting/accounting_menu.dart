@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:workbuddy/accounting/accounting_screen.dart';
 import 'package:workbuddy/config/wb_button_uni_shadow.dart';
+import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 
@@ -48,6 +49,29 @@ class AccountingMenu extends StatelessWidget {
                 child: ListView(
               padding: const EdgeInsets.all(8),
               children: [
+                WbButtonUniversal(
+                  wbColor: wbAppBarBlue,
+                  wbButtonUniversalText: "wertzhgfds",
+                  icon: Icons.party_mode_outlined,
+                  onButtonTap: () {
+                    log("Auf - AccountingMenu - Eine Einnahme erfassen - angeklickt");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AccountingScreen(
+                          startGroupValue: "Einnahme",
+                        ),
+
+                        // auf der Seite "AccountingScreen" die Einstellung "groupValue = Einnahme" automatisch anklicken:
+
+                        // AccountingScreen.groupValue.toExternalReference(groupValue.name: "Einnahme"),
+                        // groupValue = "Einnahme",
+                      ),
+                    );
+                  },
+                ),
+                // WbButtonUniversal(
+                //     wbColor: wbAppBarBlue, wbButtonUniversalText: "wurstbrot"),
                 // ---------- Eine Ausgabe erfassen ----------
                 GestureDetector(
                   onTap: () {
@@ -55,7 +79,9 @@ class AccountingMenu extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(),
+                        builder: (context) => const AccountingScreen(
+                          startGroupValue: "Ausgabe",
+                        ),
                       ),
                     );
                   },
@@ -75,11 +101,12 @@ class AccountingMenu extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(),
+                        builder: (context) => const AccountingScreen(
+                          startGroupValue: "Einnahme",
+                        ),
                         // auf der Seite "AccountingScreen" die Einstellung "groupValue = Einnahme" automatisch anklicken:
                         // AccountingScreen.groupValue.toExternalReference(groupValue.name: "Einnahme"),
                         // groupValue = "Einnahme",
-
                       ),
                     );
                   },
@@ -98,7 +125,9 @@ class AccountingMenu extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(),
+                        builder: (context) => const AccountingScreen(
+                          startGroupValue: "Ausgabe",
+                        ),
                       ),
                     );
                   },
@@ -117,7 +146,9 @@ class AccountingMenu extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(),
+                        builder: (context) => const AccountingScreen(
+                          startGroupValue: "Einnahme",
+                        ),
                       ),
                     );
                   },
@@ -136,7 +167,9 @@ class AccountingMenu extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(),
+                        builder: (context) => const AccountingScreen(
+                          startGroupValue: "Ausgabe",
+                        ),
                       ),
                     );
                   },
@@ -155,7 +188,9 @@ class AccountingMenu extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(),
+                        builder: (context) => const AccountingScreen(
+                          startGroupValue: "Einnahme",
+                        ),
                       ),
                     );
                   },
