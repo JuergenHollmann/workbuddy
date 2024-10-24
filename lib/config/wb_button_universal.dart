@@ -4,14 +4,15 @@ class WbButtonUniversal extends StatelessWidget {
   const WbButtonUniversal({
     super.key,
     required this.wbColor,
-    required this.wbButtonUniversalText,
     required this.icon,
+    required this.wbButtonUniversalText,
     required this.onButtonTap,
   });
 
   final Color wbColor;
-  final String wbButtonUniversalText;
   final IconData icon;
+  final String wbButtonUniversalText;
+
   final void Function() onButtonTap;
 
   @override
@@ -43,21 +44,11 @@ class WbButtonUniversal extends StatelessWidget {
       child: GestureDetector(
         onTap: onButtonTap,
 
-        // onTap: () {
-        //   /*
-        // Wechsle die Farbe des Buttons beim Anklicken:
-        // String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator*/
+/* Wechsle die Farbe des Buttons beim Anklicken:
+String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator? */
 
-        //   log("wb_button_universal.dart - angeklickt");
-        //   Navigator.push(
-        //     context,
-        //     MaterialPageRoute(
-        //       /* anstelle von "SelectionPage" eine Liste mit Verknüpfungen "NavigateToPageName" zu allen Seiten anlegen */
-        //       builder: (context) =>
-        //           const SelectionPage(), // NavigateToPageName(), //SelectionPage(),
-        //     ),
-        //   );
-        // },
+/* anstelle von "SelectionPage" eine Liste mit Verknüpfungen "NavigateToPageName" zu allen Seiten anlegen:
+builder: (context) => const SelectionPage(), // NavigateToPageName(), //SelectionPage(),*/
 
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -67,9 +58,9 @@ class WbButtonUniversal extends StatelessWidget {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 16),
+                  padding: const EdgeInsets.only(left: 24),
                   child: Icon(
-                    icon, // iconSelector, //payments_outlined,
+                    icon,
                     color: Colors.white,
                     size: 40,
                     shadows: const [
@@ -82,18 +73,15 @@ class WbButtonUniversal extends StatelessWidget {
                     ],
                   ),
                 ),
-
-                // Expanded(flex: 1, child:SizedBox.shrink( //todo (siehe 434/F4)
-                const Expanded(
-                  //flex: 1,
+                Expanded(
                   child: Center(
+                    /* dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist ) */
                     child: Padding(
-                      padding: EdgeInsets.only(
-                        right: 48,
-                      ), // dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist )
+                      padding: const EdgeInsets.only(right: 56),
                       child: Text(
-                        'Einnahme speichern', //"$wbButtonUniversalText", //'Einnahme speichern',
-                        style: TextStyle(
+                        // ignore: unnecessary_string_interpolations
+                        "$wbButtonUniversalText",
+                        style: const TextStyle(
                           color: Colors.white,
                           shadows: [
                             BoxShadow(
@@ -104,9 +92,7 @@ class WbButtonUniversal extends StatelessWidget {
                             )
                           ],
                           fontSize: 20,
-                          // fontFamily: 'Roboto' oder 'SF Pro Display', soll ich die verwenden? todo?
                           fontWeight: FontWeight.w900,
-                          // height: 1, // nur wenn der Text innerhalb des Buttons verschoben werden soll
                           letterSpacing: 2, // Zwischenraum der Buchtstaben
                         ),
                       ),
@@ -120,8 +106,4 @@ class WbButtonUniversal extends StatelessWidget {
       ),
     );
   }
-}
-
-class NavigateToPageName {
-  const NavigateToPageName();
 }

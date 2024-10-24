@@ -21,7 +21,7 @@ class WBGreenIncomeButton extends StatelessWidget {
             spreadRadius: 0,
           )
         ],
-        color: wbOKButtonGreen,
+        color: wbColorButtonGreen,
         shape: RoundedRectangleBorder(
           side: const BorderSide(
             width: 2,

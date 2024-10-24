@@ -45,8 +45,6 @@ class WbButtonUniShadow extends StatelessWidget {
             children: [
               // ignore: unnecessary_string_interpolations
               Text("$wbButtonUniShadowText",
-                // WbButtonUniShadow(wbColor: wbColor, wbButtonUniShadowText: wbButtonUniShadowText)
-                // 'Einnahme speichern', //"$wbButtonUniShadowText", //'Einnahme speichern',
                 style: const TextStyle(
                   color: Colors.white,
                   shadows: [

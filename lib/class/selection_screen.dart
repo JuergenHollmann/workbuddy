@@ -25,7 +25,7 @@ class SelectionPage extends StatelessWidget {
         ),
 
         foregroundColor: Colors.white, // Schriftfarbe
-        backgroundColor: wbAppBarBlue, // dunkles Blau
+        backgroundColor: wbColorAppBarBlue, // dunkles Blau
         shadowColor: Colors.black87, // funzt nicht
         elevation: 20, // graue Zone unter der AppBar
       ),

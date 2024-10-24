@@ -14,8 +14,10 @@ class RadioButtonAccounting extends StatefulWidget {
 }
 
 class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
+  // mit "late" wird eine Variable initialisiert ohne ihr sofort einen Wert zuzuweisen:
   late String groupValue;
-
+  
+  // mit "initState" wird der State aufgerufen wenn ein StatefulWidget erstellt wird:
   @override
   void initState() {
     super.initState();

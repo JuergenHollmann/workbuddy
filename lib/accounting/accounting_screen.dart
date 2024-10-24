@@ -24,8 +24,10 @@ class AccountingScreen extends StatefulWidget {
 }
 
 class _AccountingScreenState extends State<AccountingScreen> {
+  // mit "late" wird eine Variable initialisiert ohne ihr sofort einen Wert zuzuweisen:
   late String groupValue;
 
+  // mit "initState" wird der State aufgerufen wenn ein StatefulWidget erstellt wird:
   @override
   void initState() {
     super.initState();

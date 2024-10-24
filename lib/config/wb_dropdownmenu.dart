@@ -47,7 +47,7 @@ class _WBDropdownMenuState extends State<WBDropdownMenu> {
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w900,
-                  color: wbAppBarBlue,
+                  color: wbColorAppBarBlue,
                 ),
               ),
               isExpanded: true,

@@ -12,12 +12,12 @@ class AccountingMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final List<String> entries = <String>[
-    //   "Eine Buchung erfassen",
-    //   "Eine Buchung erfassen",
-    //   "Eine Buchung erfassen",
-    //   "Eine Buchung erfassen",
-    //   "Eine Buchung erfassen",
-    //   "Eine Buchung erfassen",
+    //   "Eine Buchung buchen",
+    //   "Eine Buchung buchen",
+    //   "Eine Buchung buchen",
+    //   "Eine Buchung buchen",
+    //   "Eine Buchung buchen",
+    //   "Eine Buchung buchen",
     // ];
 
     // final GlobalKey _buttonKey = GlobalKey();
@@ -49,33 +49,10 @@ class AccountingMenu extends StatelessWidget {
                 child: ListView(
               padding: const EdgeInsets.all(8),
               children: [
-                WbButtonUniversal(
-                  wbColor: wbAppBarBlue,
-                  wbButtonUniversalText: "wertzhgfds",
-                  icon: Icons.party_mode_outlined,
-                  onButtonTap: () {
-                    log("Auf - AccountingMenu - Eine Einnahme erfassen - angeklickt");
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(
-                          startGroupValue: "Einnahme",
-                        ),
-
-                        // auf der Seite "AccountingScreen" die Einstellung "groupValue = Einnahme" automatisch anklicken:
-
-                        // AccountingScreen.groupValue.toExternalReference(groupValue.name: "Einnahme"),
-                        // groupValue = "Einnahme",
-                      ),
-                    );
-                  },
-                ),
-                // WbButtonUniversal(
-                //     wbColor: wbAppBarBlue, wbButtonUniversalText: "wurstbrot"),
-                // ---------- Eine Ausgabe erfassen ----------
+                // ---------- Eine Ausgabe buchen ----------
                 GestureDetector(
                   onTap: () {
-                    log("Auf - AccountingMenu - Eine Ausgabe erfassen - angeklickt");
+                    log("Auf - AccountingMenu - Eine Ausgabe buchen - angeklickt");
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -85,54 +62,69 @@ class AccountingMenu extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const WbButtonUniShadow(
-                    wbColor: wbButtonDarkRed,
-                    wbButtonUniShadowText: "Eine Ausgabe erfassen",
-                  ),
+
+                  /* Dieser Button ist OHNE Icon (nur Text und Farbe) */
+                  // child: const WbButtonUniShadow(
+                  //     wbColor: wbColorButtonDarkRed,
+                  //     wbButtonUniShadowText: "Ausgabe buchen"),
+
+                  child: WbButtonUniversal(
+                      wbColor: wbColorButtonDarkRed,
+                      wbButtonUniversalText: "Ausgabe buchen",
+                      icon: Icons
+                          .payments_outlined, // credit_card, // add_shopping_cart,
+                      onButtonTap:
+                          /* das geht hier nur, weil es eine (leere) Funktion ist. */
+                          () {}),
                 ),
 
                 wbNormSpaceBetweenTextFields,
-                const Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
-                // ---------- Eine Einnahme erfassen ----------
+                // ---------- Eine Einnahme buchen ----------
                 GestureDetector(
                   onTap: () {
-                    log("Auf - AccountingMenu - Eine Einnahme erfassen - angeklickt");
+                    log("Auf - AccountingMenu - Eine Einnahme buchen - angeklickt");
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const AccountingScreen(
                           startGroupValue: "Einnahme",
                         ),
-                        // auf der Seite "AccountingScreen" die Einstellung "groupValue = Einnahme" automatisch anklicken:
-                        // AccountingScreen.groupValue.toExternalReference(groupValue.name: "Einnahme"),
-                        // groupValue = "Einnahme",
                       ),
                     );
                   },
-                  child: const WbButtonUniShadow(
-                    wbColor: wbOKButtonGreen,
-                    wbButtonUniShadowText: "Eine Einnahme erfassen",
+                  // child: const WbButtonUniShadow(
+                  //   wbColor: wbOKButtonGreen,
+                  //   wbButtonUniShadowText: "Einnahme buchen",
+                  // ),
+                  child: WbButtonUniversal(
+                    wbColor: wbColorButtonGreen,
+                    wbButtonUniversalText: "Einnahme buchen",
+                    icon: Icons
+                        .add_card_outlined, // credit_score_outlined, //payments_outlined,
+                    onButtonTap:
+                        () {}, /* das geht hier nur, weil es eine (leere) Funktion ist. */
                   ),
                 ),
 
                 // ---------- Übersicht aller Ausgaben ----------
                 wbNormSpaceBetweenTextFields,
                 const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+
                 GestureDetector(
-                  onTap: () {
-                    log("Auf - AccountingMenu - Übersicht aller Ausgaben - angeklickt");
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(
-                          startGroupValue: "Ausgabe",
-                        ),
-                      ),
-                    );
-                  },
+                  // onTap: () {
+                  //   log("Auf - AccountingMenu - Übersicht aller Ausgaben - angeklickt");
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => const AccountingScreen(
+                  //         startGroupValue: "Ausgabe",
+                  //       ),
+                  //     ),
+                  //   );
+                  // },
                   child: const WbButtonUniShadow(
-                    wbColor: wbAppBarBlue,
+                    wbColor: wbColorAppBarBlue,
                     wbButtonUniShadowText: "Übersicht aller Ausgaben",
                   ),
                 ),
@@ -141,19 +133,19 @@ class AccountingMenu extends StatelessWidget {
                 wbNormSpaceBetweenTextFields,
                 //const Divider(thickness: 3, height: 32, color: wbLogoBlue),
                 GestureDetector(
-                  onTap: () {
-                    log("Auf - AccountingMenu - Übersicht aller Einnahmen - angeklickt");
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(
-                          startGroupValue: "Einnahme",
-                        ),
-                      ),
-                    );
-                  },
+                  // onTap: () {
+                  //   log("Auf - AccountingMenu - Übersicht aller Einnahmen - angeklickt");
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => const AccountingScreen(
+                  //         startGroupValue: "Einnahme",
+                  //       ),
+                  //     ),
+                  //   );
+                  // },
                   child: const WbButtonUniShadow(
-                    wbColor: wbAppBarBlue,
+                    wbColor: wbColorAppBarBlue,
                     wbButtonUniShadowText: "Übersicht aller Einnahmen",
                   ),
                 ),
@@ -162,17 +154,17 @@ class AccountingMenu extends StatelessWidget {
                 wbNormSpaceBetweenTextFields,
                 const Divider(thickness: 3, height: 32, color: wbLogoBlue),
                 GestureDetector(
-                  onTap: () {
-                    log("Auf - AccountingMenu - Ausgaben-Beleg finden - angeklickt");
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(
-                          startGroupValue: "Ausgabe",
-                        ),
-                      ),
-                    );
-                  },
+                  // onTap: () {
+                  //   log("Auf - AccountingMenu - Ausgaben-Beleg finden - angeklickt");
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => const AccountingScreen(
+                  //         startGroupValue: "Ausgabe",
+                  //       ),
+                  //     ),
+                  //   );
+                  // },
                   child: const WbButtonUniShadow(
                     wbColor: Color.fromRGBO(195, 117, 0, 1),
                     wbButtonUniShadowText: " Ausgaben-Beleg finden",
@@ -183,17 +175,17 @@ class AccountingMenu extends StatelessWidget {
                 wbNormSpaceBetweenTextFields,
                 // const Divider(thickness: 3, height: 32, color: wbLogoBlue),
                 GestureDetector(
-                  onTap: () {
-                    log("Auf - AccountingMenu - Einnahme-Beleg finden - angeklickt");
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AccountingScreen(
-                          startGroupValue: "Einnahme",
-                        ),
-                      ),
-                    );
-                  },
+                  // onTap: () {
+                  //   log("Auf - AccountingMenu - Einnahme-Beleg finden - angeklickt");
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => const AccountingScreen(
+                  //         startGroupValue: "Einnahme",
+                  //       ),
+                  //     ),
+                  //   );
+                  // },
                   child: const WbButtonUniShadow(
                     wbColor: Color.fromRGBO(195, 117, 0, 1),
                     wbButtonUniShadowText: " Einnahme-Beleg finden",
@@ -211,12 +203,12 @@ class AccountingMenu extends StatelessWidget {
                 //   itemCount: entries.length,
                 //   itemBuilder: (context, index) {
                 //     return const WbButtonUniversal(
-                //       wbColor: wbAppBarBlue,
+                //       wbColor: wbColorAppBarBlue,
                 //       wbButtonUniversalText: "wbButtonUniversalText",
                 //     );
 
                 //     // return const WbButtonUniversal(
-                //     //   wbColor: wbAppBarBlue,
+                //     //   wbColor: wbColorAppBarBlue,
                 //     //   iconSelector: Icon(Icons.accessible_sharp),
                 //     // );
 
