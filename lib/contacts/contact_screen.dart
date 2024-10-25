@@ -7,7 +7,7 @@ class ContactScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 242, 242),
+      backgroundColor: wbColorLightYellowGreen, // sehr helles Gelbgrün
       appBar: AppBar(
         title: const Text(
           'Kontakt bearbeiten',
@@ -21,12 +21,27 @@ class ContactScreen extends StatelessWidget {
         foregroundColor: Colors.black, // Icon-/Button-/Chevron-Farbe
         //toolbarHeight: 60,
       ),
-      body: const SingleChildScrollView(
-        child: Divider(thickness: 3, color: wbLogoBlue),
-
+      body: Center(
+        child: Column(
+          children: [
+            const Divider(thickness: 3, color: wbLogoBlue),
+            const SizedBox(
+              height: 0,
+            ),
+            Container(
+              height: 160,
+              width: 160,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage("assets/workbuddy_glow_logo.png"),
+                ),
+              ),
+            ),
+            const Divider(thickness: 3, color: wbLogoBlue),
+          ],
+        ),
       ),
-                       // const Divider(thickness: 3, color: wbLogoBlue),
-
     );
   }
 }
