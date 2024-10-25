@@ -15,8 +15,6 @@ class AccountingScreen extends StatefulWidget {
     required this.startGroupValue,
   });
 
-  //AccountingScreen.expense() : startGroupValue = "Ausgabe";
-
   final String startGroupValue;
 
   @override
@@ -33,8 +31,6 @@ class _AccountingScreenState extends State<AccountingScreen> {
     super.initState();
     groupValue = widget.startGroupValue;
   }
-
-  // final GlobalKey _buttonExpenseKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {

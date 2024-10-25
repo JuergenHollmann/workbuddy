@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/main.dart';
+import 'package:workbuddy/contacts/contact_screen.dart';
 
 class ButtonCustomer extends StatelessWidget {
   const ButtonCustomer({super.key});
@@ -16,7 +16,7 @@ class ButtonCustomer extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const MainApp(),
+              builder: (context) => const ContactScreen(),
             ),
           );
         },
