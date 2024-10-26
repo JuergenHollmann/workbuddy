@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 class WbButtonUniversal extends StatelessWidget {
-  const WbButtonUniversal( {
+  const WbButtonUniversal({
     super.key,
     required this.wbColor,
     required this.icon,
     required this.wbButtonUniversalText,
     required this.onButtonTap,
+    required this.width,
   });
 
   final Color wbColor;
   final IconData icon;
   final String wbButtonUniversalText;
+  final double width;
 
   final void Function() onButtonTap;
 
@@ -19,7 +21,7 @@ class WbButtonUniversal extends StatelessWidget {
   Widget build(BuildContext context) {
     // Button erstellen:
     return Container(
-      width: 380,
+      width: width,
       height: 80,
       decoration: ShapeDecoration(
         shadows: const [
@@ -58,7 +60,7 @@ builder: (context) => const SelectionPage(), // NavigateToPageName(), //Selectio
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 24),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Icon(
                     icon,
                     color: Colors.white,
@@ -77,7 +79,7 @@ builder: (context) => const SelectionPage(), // NavigateToPageName(), //Selectio
                   child: Center(
                     /* dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist ) */
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 56),
+                      padding: const EdgeInsets.only(right: 80),
                       child: Text(
                         // ignore: unnecessary_string_interpolations
                         "$wbButtonUniversalText",

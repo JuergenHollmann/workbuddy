@@ -58,13 +58,15 @@ class AccountingMenu extends StatelessWidget {
                     //     wbButtonUniShadowText: "Ausgabe buchen"),
 
                     child: WbButtonUniversal(
-                        wbColor: wbColorButtonDarkRed,
-                        wbButtonUniversalText: "Ausgabe buchen",
-                        icon: Icons
-                            .payments_outlined, // credit_card, // add_shopping_cart,
-                        onButtonTap:
-                            /* das geht hier nur, weil es eine (leere) Funktion ist. */
-                            () {}),
+                      wbColor: wbColorButtonDarkRed,
+                      wbButtonUniversalText: "Ausgabe buchen",
+                      icon: Icons
+                          .payments_outlined, // credit_card, // add_shopping_cart,
+                      onButtonTap:
+                          /* das geht hier nur, weil es eine (leere) Funktion ist. */
+                          () {},
+                      width: 398,
+                    ),
                   ),
 
                   wbSizedBoxHeight16,
@@ -87,8 +89,9 @@ class AccountingMenu extends StatelessWidget {
                       wbButtonUniversalText: "Einnahme buchen",
                       icon: Icons
                           .add_card_outlined, // credit_score_outlined, //payments_outlined,
-                      onButtonTap:
-                          () {}, /* das geht hier nur, weil es eine (leere) Funktion ist. */
+                      onButtonTap: () {},
+                      /* das geht hier nur, weil es eine (leere) Funktion ist. */
+                      width: 398,
                     ),
                   ),
 
@@ -120,6 +123,7 @@ class AccountingMenu extends StatelessWidget {
                       wbButtonUniversalText: "Alle Ausgaben",
                       icon: Icons.receipt_long_outlined,
                       onButtonTap: () {},
+                      width: 398,
                     ),
                   ),
 
@@ -144,6 +148,7 @@ class AccountingMenu extends StatelessWidget {
                       wbButtonUniversalText: "Alle Einnahmen",
                       icon: Icons.receipt_long_outlined,
                       onButtonTap: () {},
+                      width: 398,
                     ),
                   ),
 
@@ -168,6 +173,7 @@ class AccountingMenu extends StatelessWidget {
                       wbButtonUniversalText: "Ausgaben finden",
                       icon: Icons.manage_search_outlined,
                       onButtonTap: () {},
+                      width: 398,
                     ),
                   ),
 
@@ -191,7 +197,7 @@ class AccountingMenu extends StatelessWidget {
                       wbColor: wbColorOrangeDarker,
                       wbButtonUniversalText: "Einnahmen finden",
                       icon: Icons.query_stats, //receipt_long_outlined,
-                      onButtonTap: () {},
+                      onButtonTap: () {}, width: 398,
                     ),
                   ),
 

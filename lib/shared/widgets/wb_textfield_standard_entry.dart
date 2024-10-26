@@ -5,11 +5,12 @@ class WbTextfieldStandardEntry extends StatelessWidget {
   const WbTextfieldStandardEntry({
     super.key,
     required this.headlineText,
-    required this.hintText,
+      required this.hintText, required this.wbTextFieldWidth,
   });
 
   final String headlineText;
-  final String hintText;
+   final String hintText;
+   final double wbTextFieldWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class WbTextfieldStandardEntry extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.center,
+          width: wbTextFieldWidth,  // double wbTextFieldWidth = 24;
           height: 40,
           padding: const EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(

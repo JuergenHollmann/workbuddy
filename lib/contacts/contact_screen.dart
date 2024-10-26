@@ -169,12 +169,14 @@ class ContactScreen extends StatelessWidget {
                     const WbTextfieldStandardEntry(
                       headlineText: 'Vorname',
                       hintText: 'Bitte den Vornamen eintragen',
+                      wbTextFieldWidth: 398,
                     ),
                     // ------------------------------------------------------- Nachname ---
                     wbSizedBoxHeight16,
                     const WbTextfieldStandardEntry(
                       headlineText: 'Nachname',
                       hintText: 'Bitte den Nachnamen eintragen',
+                      wbTextFieldWidth: 398,
                     ),
                     // ------------------------------------------------------- Geburtstag ---
                     wbSizedBoxHeight16,
@@ -184,6 +186,7 @@ class ContactScreen extends StatelessWidget {
                           child: WbTextfieldStandardEntry(
                             headlineText: 'Geburtstag',
                             hintText: 'Geburtstag',
+                            wbTextFieldWidth: 165,
                           ),
                         ),
                         wbSizedBoxWidth16,
@@ -191,7 +194,8 @@ class ContactScreen extends StatelessWidget {
                         Expanded(
                           child: WbTextfieldStandardEntry(
                             headlineText: 'Alter',
-                            hintText: '? ? ? ? ?',
+                            hintText: '? ?',
+                            wbTextFieldWidth: 55,
                           ),
                         ),
                         // Expanded(
@@ -209,18 +213,28 @@ class ContactScreen extends StatelessWidget {
                     const WbTextfieldStandardEntry(
                       headlineText: 'Straße + Hausnummer',
                       hintText: 'Bitte Straße mit Hausnummer eintragen',
+                      wbTextFieldWidth: 398,
+                    ),
+                    // ------------------------------------------------------- Zusatzinformation ---
+                    wbSizedBoxHeight16,
+                    const WbTextfieldStandardEntry(
+                      headlineText: 'Zusatzinformation zur Adresse',
+                      hintText: 'z.B.: c/o-Adresse? - Hinterhaus? - EG/OG?',
+                      wbTextFieldWidth: 398,
                     ),
                     // ------------------------------------------------------- PLZ ---
                     wbSizedBoxHeight16,
                     const WbTextfieldStandardEntry(
                       headlineText: 'PLZ',
                       hintText: 'PLZ',
+                      wbTextFieldWidth: 102,
                     ),
                     // ------------------------------------------------------- Ort ---
                     wbSizedBoxHeight16,
                     const WbTextfieldStandardEntry(
                       headlineText: 'Ort',
                       hintText: 'Bitte den Wohnort eintragen',
+                      wbTextFieldWidth: 300,
                     ),
                     // ------------------------------------------------------- Button Kontakt speichern---
                     wbSizedBoxHeight16,
@@ -228,21 +242,28 @@ class ContactScreen extends StatelessWidget {
                     wbSizedBoxHeight8,
 
                     GestureDetector(
-                      onTap: () {
-                        log("Auf - AccountingMenu - Eine Ausgabe buchen - angeklickt");
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SelectionPage(),
-                          ),
-                        );
-                      },
-                      child: WbButtonUniversal(
+                        onTap: () {
+                          log("Auf - AccountingMenu - Eine Ausgabe buchen - angeklickt");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SelectionPage(),
+                            ),
+                          );
+                        },
+                        child: WbButtonUniversal(
                           wbColor: wbColorButtonGreen,
                           icon: Icons.save_rounded,
                           wbButtonUniversalText: "Kontakt speichern",
-                          onButtonTap: () {}),
-                    ),
+                          onButtonTap: () {},
+                          width: 398,
+                        )
+                        // child: WbButtonUniversal(
+                        //     wbColor: wbColorButtonGreen,
+                        //     icon: Icons.save_rounded,
+                        //     wbButtonUniversalText: "Kontakt speichern",
+                        //     onButtonTap: () {}),
+                        ),
                     wbSizedBoxHeight16,
                     const Divider(thickness: 3, color: wbLogoBlue),
                     wbSizedBoxHeight16,
