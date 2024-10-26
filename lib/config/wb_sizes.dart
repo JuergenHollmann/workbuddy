@@ -5,6 +5,9 @@ const double normalTextSize = 24;
 const double smallTextSize = 16;
 const double normalDistance = 24;
 
-const wbNormSpaceBetweenTextFields = SizedBox(height: 16);
-const wbNormSpaceBetweenExpanded = SizedBox(width: 16);
-const normalVerticalSpacing = SizedBox(height: normalDistance);
+const wbSizedBoxHeight8 = SizedBox(height: 8);
+const wbSizedBoxHeight16 = SizedBox(height: 16);
+
+const wbSizedBoxWidth8 = SizedBox(width: 8);
+const wbSizedBoxWidth16 = SizedBox(width: 16);
+

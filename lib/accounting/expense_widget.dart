@@ -25,7 +25,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
           hintText: "Welches Geachäft oder Lieferant?",
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         // ------ Was wurde eingekauft? ------
         const WBDropdownMenu(
@@ -33,7 +33,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
           hintText: "Welches Produkt?",
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         const Row(
           children: [
@@ -44,7 +44,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
                 hintText: "Anzahl",
               ),
             ),
-            wbNormSpaceBetweenExpanded,
+            wbSizedBoxWidth16,
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -58,7 +58,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
                 ],
               ),
             ),
-            wbNormSpaceBetweenExpanded,
+            wbSizedBoxWidth16,
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -75,7 +75,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
           ],
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         Row(
           children: [
@@ -119,7 +119,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
               ),
             ),
 
-            wbNormSpaceBetweenExpanded,
+            wbSizedBoxWidth16,
 
             // ------ Endpreis € ------
             const Expanded(
@@ -131,7 +131,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
           ],
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         // ------ Warengruppe ------
         const WBDropdownMenu(
@@ -139,7 +139,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
           hintText: "Bitte die Warengruppe zuordnen",
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         // ------ Wer hat eingekauft? ------
         const WBDropdownMenu(
@@ -147,7 +147,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
           hintText: "Bitte Einkäufer*in zuordnen",
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         // ------ Notizen ------
         const WBTextfieldNotice(

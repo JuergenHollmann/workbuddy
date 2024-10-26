@@ -40,7 +40,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           hintText: "Welchem Kunden?",
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         // ------ Was wurde verkauft? ------
         const WBDropdownMenu(
@@ -48,7 +48,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           hintText: "Welches Produkt oder Dienstleistung?",
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         const Row(
           children: [
@@ -59,7 +59,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
                 hintText: "Anzahl",
               ),
             ),
-            wbNormSpaceBetweenExpanded,
+            wbSizedBoxWidth16,
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -73,7 +73,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
                 ],
               ),
             ),
-            wbNormSpaceBetweenExpanded,
+            wbSizedBoxWidth16,
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -90,7 +90,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           ],
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         Row(
           children: [
@@ -134,7 +134,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
               ),
             ),
 
-            wbNormSpaceBetweenExpanded,
+            wbSizedBoxWidth16,
 
             // ------ Endpreis € ------
             const Expanded(
@@ -146,7 +146,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           ],
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         // ------ Warengruppe ------
         const WBDropdownMenu(
@@ -154,7 +154,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           hintText: "Bitte die Warengruppe zuordnen",
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         // ------ Wer hat verkauft? ------
         const WBDropdownMenu(
@@ -162,7 +162,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           hintText: "Bitte Verkäufer*in zuordnen",
         ),
 
-        wbNormSpaceBetweenTextFields,
+        wbSizedBoxHeight16,
 
         // ------ Notizen ------
         const WBTextfieldNotice(

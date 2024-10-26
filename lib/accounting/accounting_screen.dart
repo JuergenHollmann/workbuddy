@@ -3,6 +3,7 @@ import 'package:workbuddy/accounting/income_widget.dart';
 import 'package:workbuddy/accounting/expense_widget.dart';
 import 'package:workbuddy/accounting/radio_button_accounting.dart';
 import 'package:workbuddy/config/wb_colors.dart';
+import 'package:workbuddy/config/wb_sizes.dart';
 
 //   TextEditingController _anzahlController = TextEditingController();
 //   TextEditingController _einheitController = TextEditingController();
@@ -83,7 +84,7 @@ class _AccountingScreenState extends State<AccountingScreen> {
               else
                 const ExpenseWidget(),
               // const RadioButtonAccounting(),
-              const SizedBox(height: 8),
+             wbSizedBoxHeight8,
               // -- Divider ---------------------------------------------
               const Divider(thickness: 3, height: 32, color: wbLogoBlue),
             ],

@@ -1,5 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:workbuddy/class/selection_screen.dart';
+import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
+import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/shared/widgets/wb_textfield_standard_entry.dart';
 
 class ContactScreen extends StatelessWidget {
   const ContactScreen({super.key});
@@ -19,27 +25,234 @@ class ContactScreen extends StatelessWidget {
         ),
         backgroundColor: wbBackgroundBlue, // Hintergrundfarbe
         foregroundColor: Colors.black, // Icon-/Button-/Chevron-Farbe
-        //toolbarHeight: 60,
       ),
-      body: Center(
-        child: Column(
-          children: [
-            const Divider(thickness: 3, color: wbLogoBlue),
-            const SizedBox(
-              height: 0,
-            ),
-            Container(
-              height: 160,
-              width: 160,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage("assets/workbuddy_glow_logo.png"),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              const Divider(thickness: 3, color: wbLogoBlue),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          height: 160,
+                          width: 160,
+                          // Quadrat mit blauem Hintergrund und Schatten
+                          decoration: ShapeDecoration(
+                            shadows: const [
+                              BoxShadow(
+                                color: Colors.black,
+                                blurRadius: 8,
+                                offset: Offset(4, 4),
+                                spreadRadius: 0,
+                              )
+                            ],
+                            color: wbButtonBlue,
+                            shape: RoundedRectangleBorder(
+                              side: const BorderSide(
+                                width: 2,
+                                color: Colors.white,
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                16,
+                              ),
+                            ),
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                "assets/dummy_person_portrait.png",
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        const Text(
+                          "Name des Kunden",
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(width: 40), // Zwischenabstand bei Expanded
+
+                    Column(
+                      children: [
+                        Container(
+                          decoration: const BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black,
+                                blurRadius: 8,
+                                offset: Offset(3, 3),
+                                spreadRadius: 0,
+                              ),
+                            ],
+                            shape: BoxShape.circle,
+                            color: Colors.white,
+                            // -----------------------------
+                            // Außenlinie mit Farbverlauf:
+                            // gradient: LinearGradient(
+                            //   colors: [
+                            //     Colors.red,
+                            //     Colors.yellow,
+                            //   ],
+                            //   begin: Alignment.topLeft,
+                            //   end: Alignment.bottomRight,
+                            // ),
+                            // -----------------------------
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.all(2.5), // stroke
+                            child: CircleAvatar(
+                              backgroundColor: wbButtonBlue,
+                              backgroundImage:
+                                  // AssetImage("assets/dummy_person_portrait.png",),
+                                  // AssetImage("assets/dummy_no_logo.png",),
+                                  // AssetImage("assets/workbuddy_logo.png",),
+                                  AssetImage(
+                                "assets/workbuddy_logo_neon_green_512x512.png",
+                              ),
+                              // ------------------------------------------
+                              // Bild aus dem Internet:
+                              // NetworkImage('https://picsum.photos/200'),
+                              // ------------------------------------------
+                              radius: 80,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        const Text(
+                          "Name der Firma",
+                        ), // wenn Privatperson, dann DummyImage + Text "Privatperson"
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ),
-            const Divider(thickness: 3, color: wbLogoBlue),
-          ],
+              const Divider(thickness: 3, color: wbLogoBlue),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                child: Column(
+                  //mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //wbSizedBoxHeight16,
+                    // ------------------------------------------------------- Anrede ---
+                    const DropdownMenu(
+                      width: 200,
+                      label: Text(
+                        "Anrede",
+                      ),
+                      menuHeight: 600, // ausklappbare Maximalhöhe
+                      hintText: "auswählen", // funzt nicht?
+                      // helperText: "Bitte auswählen",
+                      inputDecorationTheme: InputDecorationTheme(
+                        fillColor: Colors.green, // funzt nicht?
+                      ),
+                      textStyle: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      dropdownMenuEntries: <DropdownMenuEntry<int>>[
+                        DropdownMenuEntry(value: 1, label: "Herr"),
+                        DropdownMenuEntry(value: 2, label: "Frau"),
+                        DropdownMenuEntry(value: 3, label: "Divers"),
+                        DropdownMenuEntry(value: 4, label: "Herr Dr."),
+                        DropdownMenuEntry(value: 5, label: "Frau Dr."),
+                        DropdownMenuEntry(value: 6, label: "Dr."),
+                      ],
+                    ),
+                    // ------------------------------------------------------- Vorname ---
+                    wbSizedBoxHeight16,
+                    const WbTextfieldStandardEntry(
+                      headlineText: 'Vorname',
+                      hintText: 'Bitte den Vornamen eintragen',
+                    ),
+                    // ------------------------------------------------------- Nachname ---
+                    wbSizedBoxHeight16,
+                    const WbTextfieldStandardEntry(
+                      headlineText: 'Nachname',
+                      hintText: 'Bitte den Nachnamen eintragen',
+                    ),
+                    // ------------------------------------------------------- Geburtstag ---
+                    wbSizedBoxHeight16,
+                    const Row(
+                      children: [
+                        Expanded(
+                          child: WbTextfieldStandardEntry(
+                            headlineText: 'Geburtstag',
+                            hintText: 'Geburtstag',
+                          ),
+                        ),
+                        wbSizedBoxWidth16,
+                        // ------------------------------------------------------- Alter ---
+                        Expanded(
+                          child: WbTextfieldStandardEntry(
+                            headlineText: 'Alter',
+                            hintText: '? ? ? ? ?',
+                          ),
+                        ),
+                        // Expanded(
+                        //   child: Text(
+                        //     "Jahre",
+                        //   ),
+                        // ),
+                      ],
+                    ),
+                    // ------------------------------------------------------- Straße + Nummer ---
+                    wbSizedBoxHeight16,
+                    const Divider(thickness: 3, color: wbLogoBlue),
+                    wbSizedBoxHeight8,
+
+                    const WbTextfieldStandardEntry(
+                      headlineText: 'Straße + Hausnummer',
+                      hintText: 'Bitte Straße mit Hausnummer eintragen',
+                    ),
+                    // ------------------------------------------------------- PLZ ---
+                    wbSizedBoxHeight16,
+                    const WbTextfieldStandardEntry(
+                      headlineText: 'PLZ',
+                      hintText: 'PLZ',
+                    ),
+                    // ------------------------------------------------------- Ort ---
+                    wbSizedBoxHeight16,
+                    const WbTextfieldStandardEntry(
+                      headlineText: 'Ort',
+                      hintText: 'Bitte den Wohnort eintragen',
+                    ),
+                    // ------------------------------------------------------- Button Kontakt speichern---
+                    wbSizedBoxHeight16,
+                    const Divider(thickness: 3, color: wbLogoBlue),
+                    wbSizedBoxHeight8,
+
+                    GestureDetector(
+                      onTap: () {
+                        log("Auf - AccountingMenu - Eine Ausgabe buchen - angeklickt");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SelectionPage(),
+                          ),
+                        );
+                      },
+                      child: WbButtonUniversal(
+                          wbColor: wbColorButtonGreen,
+                          icon: Icons.save_rounded,
+                          wbButtonUniversalText: "Kontakt speichern",
+                          onButtonTap: () {}),
+                    ),
+                    wbSizedBoxHeight16,
+                    const Divider(thickness: 3, color: wbLogoBlue),
+                    wbSizedBoxHeight16,
+
+                    // ------------------------------------------------------- ENDE ---
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

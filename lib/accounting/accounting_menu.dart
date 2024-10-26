@@ -11,7 +11,6 @@ class AccountingMenu extends StatelessWidget {
   const AccountingMenu({super.key});
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 250, 242, 242),
       appBar: AppBar(
@@ -68,7 +67,7 @@ class AccountingMenu extends StatelessWidget {
                             () {}),
                   ),
 
-                  wbNormSpaceBetweenTextFields,
+                  wbSizedBoxHeight16,
 
                   // ---------- Eine Einnahme buchen ----------
                   GestureDetector(
@@ -94,7 +93,7 @@ class AccountingMenu extends StatelessWidget {
                   ),
 
                   // ---------- Übersicht aller Ausgaben ----------
-                  wbNormSpaceBetweenTextFields,
+                  wbSizedBoxHeight16,
                   const Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
                   GestureDetector(
@@ -125,7 +124,7 @@ class AccountingMenu extends StatelessWidget {
                   ),
 
                   // ---------- Übersicht aller Einnahmen ----------
-                  wbNormSpaceBetweenTextFields,
+                  wbSizedBoxHeight16,
                   //const Divider(thickness: 3, height: 32, color: wbLogoBlue),
                   GestureDetector(
                     onTap: () {
@@ -149,7 +148,7 @@ class AccountingMenu extends StatelessWidget {
                   ),
 
                   // ---------- Ausgaben-Beleg finden ----------
-                  wbNormSpaceBetweenTextFields,
+                  wbSizedBoxHeight16,
                   const Divider(thickness: 3, height: 32, color: wbLogoBlue),
                   GestureDetector(
                     onTap: () {
@@ -173,7 +172,7 @@ class AccountingMenu extends StatelessWidget {
                   ),
 
                   // ---------- Einnahme-Beleg finden ----------
-                  wbNormSpaceBetweenTextFields,
+                  wbSizedBoxHeight16,
                   // const Divider(thickness: 3, height: 32, color: wbLogoBlue),
                   GestureDetector(
                     onTap: () {
@@ -196,7 +195,7 @@ class AccountingMenu extends StatelessWidget {
                     ),
                   ),
 
-                  wbNormSpaceBetweenTextFields,
+                  wbSizedBoxHeight16,
                   const Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
                   const Column(
