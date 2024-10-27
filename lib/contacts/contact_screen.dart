@@ -6,6 +6,7 @@ import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/contacts/contact_radiobutton_1.dart';
+import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_small_text_center.dart';
 import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
 import 'package:workbuddy/shared/widgets/wb_textfield_standard_entry.dart';
@@ -269,33 +270,192 @@ class ContactScreen extends StatelessWidget {
                     wbSizedBoxHeight8,
 
                     // ----------------------------------------------------- Telefon 1 ---
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Telefon 1 - Mobil',
-                      hintText: 'Bitte bevorzugt die Mobilnummer eintragen',
-                      wbTextFieldWidth: 398,
+                    GestureDetector(
+                      onTap: () {
+                        log("Einen Anruf starten");
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: "Einen Anruf starten",
+                            contentText:
+                                "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller anrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-282",
+                          ),
+                        );
+
+                        // Versuche, die Anruf-Funktion auf dem Smartphone zu programmieren - todo
+                        // onTap: () async {
+                        //   log("Anruf starten");
+                        //Uri.parse("+491789697193"); // funzt das?
+                        //launchUrl("tel:+491789697193");
+                        //UrlLauncher.launch('tel:+${p.phone.toString()}');
+                        //final call = Uri.parse('tel:+91 9830268966');
+                        // if (await canLaunchUrl(call)) {
+                        //   launchUrl(call);
+                        // } else {
+                        //   throw 'Could not launch $call';
+                        // }
+                      },
+                      child: const Row(
+                        children: [
+                          WbTextfieldStandardEntry(
+                            headlineText: 'Telefon 1 - Mobil',
+                            hintText: 'Bitte die Mobilnummer eintragen',
+                            wbTextFieldWidth: 316,
+                          ),
+                          wbSizedBoxWidth16,
+                          SizedBox(
+                            width: 64,
+                            height: 64,
+                            child: Image(
+                                image: AssetImage(
+                                    "assets/iconbuttons/icon_button_telefon_blau.png")),
+                          )
+                        ],
+                      ),
                     ),
+
                     wbSizedBoxHeight16,
 
-                    // ----------------------------------------------------- Telefon 1 ---
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Telefon 1',
-                      hintText: 'XXXXX',
-                      wbTextFieldWidth: 398,
+                    // ----------------------------------------------------- WhatsApp ---
+                    GestureDetector(
+                      onTap: () {
+                        log("Eine WhatsApp-Nachricht versenden");
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: "Eine WhatsApp-Nachricht starten",
+                            contentText:
+                                "Willst Du jetzt eine WhatsApp-Nachrticht an die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller versenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-330",
+                          ),
+                        );
+                      },
+                      child: const Row(
+                        children: [
+                          WbTextfieldStandardEntry(
+                            headlineText: 'WhatsApp',
+                            hintText: 'Bitte die WhatsApp-Nr. eintragen',
+                            wbTextFieldWidth: 316,
+                          ),
+                          wbSizedBoxWidth16,
+                          SizedBox(
+                            width: 64,
+                            height: 64,
+                            child: Image(
+                                image: AssetImage(
+                                    "assets/iconbuttons/icon_button_whatsapp.png")),
+                          )
+                        ],
+                      ),
                     ),
 
-                    // ----------------------------------------------------- Telefon 1 ---
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Telefon 1',
-                      hintText: 'XXXXX',
-                      wbTextFieldWidth: 398,
+                    wbSizedBoxHeight16,
+
+                    // ----------------------------------------------------- Telefon 2 ---
+                    GestureDetector(
+                      onTap: () {
+                        log("Einen Anruf starten");
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: "Einen Anruf starten",
+                            contentText:
+                                "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller anrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-365",
+                          ),
+                        );
+                      },
+                      child: const Row(
+                        children: [
+                          WbTextfieldStandardEntry(
+                            headlineText: 'Telefon 2',
+                            hintText: 'Bitte ggf. 2. Nummer eintragen',
+                            wbTextFieldWidth: 316,
+                          ),
+                          wbSizedBoxWidth16,
+                          SizedBox(
+                            width: 64,
+                            height: 64,
+                            child: Image(
+                                image: AssetImage(
+                                    "assets/iconbuttons/icon_button_telefon_blau.png")),
+                          )
+                        ],
+                      ),
                     ),
 
-                    // ----------------------------------------------------- Telefon 1 ---
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Telefon 1',
-                      hintText: 'XXXXX',
-                      wbTextFieldWidth: 398,
+                    wbSizedBoxHeight16,
+
+                    // ----------------------------------------------------- E-Mail 1 ---
+                    GestureDetector(
+                      onTap: () {
+                        log("E-Mail 1 versenden");
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: "Eine E-Mail versenden",
+                            contentText:
+                                "Willst Du jetzt eine E-Mail an\nKlausMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-400",
+                          ),
+                        );
+                      },
+                      child: const Row(
+                        children: [
+                          WbTextfieldStandardEntry(
+                            headlineText: 'E-Mail 1',
+                            hintText: 'Bitte die E-Mail eintragen',
+                            wbTextFieldWidth: 316,
+                          ),
+                          wbSizedBoxWidth16,
+                          SizedBox(
+                            width: 64,
+                            height: 64,
+                            child: Image(
+                                image: AssetImage(
+                                    "assets/iconbuttons/icon_button_email.png")),
+                          )
+                        ],
+                      ),
                     ),
+
+                    wbSizedBoxHeight16,
+
+                    // ----------------------------------------------------- E-Mail 2 ---
+                    GestureDetector(
+                      onTap: () {
+                        log("E-Mail 2 versenden");
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: "Eine E-Mail versenden",
+                            contentText:
+                                "Willst Du jetzt eine E-Mail an\nPaulaMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-435",
+                          ),
+                        );
+                      },
+                      child: const Row(
+                        children: [
+                          WbTextfieldStandardEntry(
+                            headlineText: 'E-Mail 2',
+                            hintText: 'Bitte ggf. die 2. E-Mail eintragen',
+                            wbTextFieldWidth: 316,
+                          ),
+                          wbSizedBoxWidth16,
+                          SizedBox(
+                            width: 64,
+                            height: 64,
+                            child: Image(
+                                image: AssetImage(
+                                    "assets/iconbuttons/icon_button_email.png")),
+                          )
+                        ],
+                      ),
+                    ),
+
+                    //wbSizedBoxHeight8,
 
                     // ----------------------------------------------------- Button Kontakt speichern---
                     wbSizedBoxHeight16,

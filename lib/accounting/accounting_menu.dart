@@ -207,7 +207,7 @@ class AccountingMenu extends StatelessWidget {
                     ),
                   ),
 
-                  wbSizedBoxHeight16,
+                  wbSizedBoxHeight8,
                   const Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
                   const Column(

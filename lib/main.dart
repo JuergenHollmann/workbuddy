@@ -241,6 +241,7 @@ class WBRedButton extends StatelessWidget {
             ),
           );
         },
+
         child: const Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -299,6 +300,9 @@ class WBRedButton extends StatelessWidget {
             ),
           ],
         ),
+
+
+
       ),
     );
   }

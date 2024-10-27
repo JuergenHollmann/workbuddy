@@ -12,15 +12,30 @@ class WbDialogAlertUpdateComingSoon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
+    return
+// --------------------------------------------------------------------------
+/* MUSTER - das muß zum Aufruf ab "showDialog" zum Widget hinzugefügt werden:
+// --------------------------------------------------------------------------
+                    GestureDetector(
+                      onTap: () {
+                        log("Einen Anruf starten");
+// --------------------------------------------------------------------------
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+// --------------------------------------------------------------------------
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: "Einen Anruf starten",
+                            contentText:
+                                "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller anrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-282"),);*/
+// --------------------------------------------------------------------------
+        AlertDialog(
       title: Text(
-        // ignore: unnecessary_string_interpolations
-        "$headlineText", // "Update-Hinweis 112",
+        headlineText,
         style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
       ),
       content: Text(
-        // ignore: unnecessary_string_interpolations
-        "$contentText",
+        contentText,
         // 'Diese Funktion kommt bald in einem kostenlosen Update!',
         style: const TextStyle(fontSize: 20),
       ),

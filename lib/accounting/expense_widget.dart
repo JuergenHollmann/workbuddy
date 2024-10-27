@@ -1,10 +1,14 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_dropdownmenu.dart';
 import 'package:workbuddy/config/wb_textfield_quantity.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_textfield_currency.dart';
 import 'package:workbuddy/config/wb_textfield_notice.dart';
+import 'package:workbuddy/contacts/contact_screen.dart';
 import 'package:workbuddy/main.dart';
 import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
 
@@ -18,10 +22,10 @@ class ExpenseWidget extends StatefulWidget {
 class _ExpenseWidgetState extends State<ExpenseWidget> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         // ------ Wo wurde eingekauft? ------
-        WBDropdownMenu(
+        const WBDropdownMenu(
           headlineText: "Wo wurde eingekauft?",
           hintText: "Welches Geachäft oder Lieferant?",
         ),
@@ -29,14 +33,14 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
         wbSizedBoxHeight16,
 
         // ------ Was wurde eingekauft? ------
-        WBDropdownMenu(
+        const WBDropdownMenu(
           headlineText: "Was wurde eingekauft?",
           hintText: "Welches Produkt?",
         ),
 
         wbSizedBoxHeight16,
 
-        Row(
+        const Row(
           children: [
             Expanded(
               // ------ Anzahl ------
@@ -78,7 +82,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
 
         wbSizedBoxHeight16,
 
-        Row(
+        const Row(
           children: [
             // ------ MwSt berechnet: ------
             Expanded(
@@ -104,7 +108,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
         wbSizedBoxHeight16,
 
         // ------ Warengruppe ------
-        WBDropdownMenu(
+        const WBDropdownMenu(
           headlineText: "Warengruppe",
           hintText: "Bitte die Warengruppe zuordnen",
         ),
@@ -112,7 +116,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
         wbSizedBoxHeight16,
 
         // ------ Wer hat eingekauft? ------
-        WBDropdownMenu(
+        const WBDropdownMenu(
           headlineText: "Wer hat eingekauft?",
           hintText: "Bitte Einkäufer*in zuordnen",
         ),
@@ -120,16 +124,34 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
         wbSizedBoxHeight16,
 
         // ------ Notizen ------
-        WBTextfieldNotice(
+        const WBTextfieldNotice(
           headlineText: "Notizen zum Einkauf",
           hintText: "- Notizen zum Einkauf HIER eingeben -",
         ),
 
-        Divider(thickness: 3, height: 32, color: wbLogoBlue),
+        const Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
         // Button aus Vorlage verwenden:
         // solange die Pflichtfelder nicht ausgefüllt sind, soll der Button rot sein und beim Anklicken einen Alert ausgeben, sonst Button grün und Daten speichern + Dialog-Bestätigung.
-        WBRedButton(), // WBGreenIncomeButton(),
+        //WBRedButton(), // WBGreenIncomeButton(),
+        GestureDetector(
+          onTap: () {
+            log("Auf - ExpenseWidget - Ausgabe SPEICHERN - angeklickt");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ContactScreen(),
+              ),
+            );
+          },
+          child: WbButtonUniversal(
+            wbColor: wbColorButtonDarkRed,
+            icon: Icons.payments_outlined,
+            wbButtonUniversalText: "Ausgabe SPEICHERN",
+            onButtonTap: () {},
+            width: 398,
+          ),
+        ),
       ],
     );
   }

@@ -122,88 +122,89 @@ class ContactMenu extends StatelessWidget {
 
                     child: WbButtonUniversal(
                       wbColor: wbColorAppBarBlue,
-                      wbButtonUniversalText: "Einen Kontakt \nSUCHEN",
+                      wbButtonUniversalText:
+                          "ALLE Kontakte zeigen\nmit SUCH-Funktion",
                       icon: Icons.person_search_outlined,
                       onButtonTap: () {},
                       width: 398,
                     ),
                   ),
 
-                  // ---------- Übersicht ----------
-                  wbSizedBoxHeight16,
-                  //const Divider(thickness: 3, height: 32, color: wbLogoBlue),
-                  GestureDetector(
-                    onTap: () {
-                      log("Update-Hinweis - AM141");
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            const WbDialogAlertUpdateComingSoon(
-                          headlineText: 'Update-Hinweis - AM141',
-                          contentText:
-                              'Diese Funktion kommt bald in einem kostenlosen Update!',
-                        ),
-                      );
-                    },
-                    child: WbButtonUniversal(
-                      wbColor: wbColorAppBarBlue,
-                      wbButtonUniversalText: "- reserviert -",
-                      icon: Icons.receipt_long_outlined,
-                      onButtonTap: () {},
-                      width: 398,
-                    ),
-                  ),
+                  // // ---------- reserviert ----------
+                  // wbSizedBoxHeight16,
+                  // //const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     log("Update-Hinweis - AM141");
+                  //     showDialog(
+                  //       context: context,
+                  //       builder: (context) =>
+                  //           const WbDialogAlertUpdateComingSoon(
+                  //         headlineText: 'Update-Hinweis - AM141',
+                  //         contentText:
+                  //             'Diese Funktion kommt bald in einem kostenlosen Update!',
+                  //       ),
+                  //     );
+                  //   },
+                  //   child: WbButtonUniversal(
+                  //     wbColor: wbColorAppBarBlue,
+                  //     wbButtonUniversalText: "- reserviert -",
+                  //     icon: Icons.receipt_long_outlined,
+                  //     onButtonTap: () {},
+                  //     width: 398,
+                  //   ),
+                  // ),
 
-                  // ---------- Ausgaben-Beleg finden ----------
-                  wbSizedBoxHeight16,
-                  const Divider(thickness: 3, height: 32, color: wbLogoBlue),
-                  GestureDetector(
-                    onTap: () {
-                      log("Update-Hinweis - AM164");
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            const WbDialogAlertUpdateComingSoon(
-                          headlineText: 'Update-Hinweis - AM164',
-                          contentText:
-                              'Diese Funktion kommt bald in einem kostenlosen Update!',
-                        ),
-                      );
-                    },
-                    child: WbButtonUniversal(
-                      wbColor: wbColorOrangeDarker,
-                      wbButtonUniversalText: "- reserviert -",
-                      icon: Icons.manage_search_outlined,
-                      onButtonTap: () {},
-                      width: 398,
-                    ),
-                  ),
-
-                  // ---------- Einnahme-Beleg finden ----------
-                  wbSizedBoxHeight16,
+                  // // ---------- Ausgaben-Beleg finden ----------
+                  // wbSizedBoxHeight8,
                   // const Divider(thickness: 3, height: 32, color: wbLogoBlue),
-                  GestureDetector(
-                    onTap: () {
-                      log("Update-Hinweis - AM188");
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            const WbDialogAlertUpdateComingSoon(
-                          headlineText: 'Update-Hinweis - AM188',
-                          contentText:
-                              'Diese Funktion kommt bald in einem kostenlosen Update!',
-                        ),
-                      );
-                    },
-                    child: WbButtonUniversal(
-                      wbColor: wbColorOrangeDarker,
-                      wbButtonUniversalText: "- reserviert -",
-                      icon: Icons.query_stats, //receipt_long_outlined,
-                      onButtonTap: () {}, width: 398,
-                    ),
-                  ),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     log("Update-Hinweis - AM164");
+                  //     showDialog(
+                  //       context: context,
+                  //       builder: (context) =>
+                  //           const WbDialogAlertUpdateComingSoon(
+                  //         headlineText: 'Update-Hinweis - AM164',
+                  //         contentText:
+                  //             'Diese Funktion kommt bald in einem kostenlosen Update!',
+                  //       ),
+                  //     );
+                  //   },
+                  //   child: WbButtonUniversal(
+                  //     wbColor: wbColorOrangeDarker,
+                  //     wbButtonUniversalText: "- reserviert -",
+                  //     icon: Icons.manage_search_outlined,
+                  //     onButtonTap: () {},
+                  //     width: 398,
+                  //   ),
+                  // ),
 
-                  wbSizedBoxHeight16,
+                  // // ---------- Einnahme-Beleg finden ----------
+                  // wbSizedBoxHeight16,
+                  // // const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     log("Update-Hinweis - AM188");
+                  //     showDialog(
+                  //       context: context,
+                  //       builder: (context) =>
+                  //           const WbDialogAlertUpdateComingSoon(
+                  //         headlineText: 'Update-Hinweis - AM188',
+                  //         contentText:
+                  //             'Diese Funktion kommt bald in einem kostenlosen Update!',
+                  //       ),
+                  //     );
+                  //   },
+                  //   child: WbButtonUniversal(
+                  //     wbColor: wbColorOrangeDarker,
+                  //     wbButtonUniversalText: "- reserviert -",
+                  //     icon: Icons.query_stats, //receipt_long_outlined,
+                  //     onButtonTap: () {}, width: 398,
+                  //   ),
+                  // ),
+                  /* ----------------- ENDE der ListView ---------------- */
+                  wbSizedBoxHeight8,
                   const Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
                   const Column(
