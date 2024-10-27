@@ -5,6 +5,7 @@ import 'package:workbuddy/class/selection_screen.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
 import 'package:workbuddy/shared/widgets/wb_textfield_standard_entry.dart';
 
 class ContactScreen extends StatelessWidget {
@@ -182,27 +183,37 @@ class ContactScreen extends StatelessWidget {
                     wbSizedBoxHeight16,
                     const Row(
                       children: [
-                        Expanded(
-                          child: WbTextfieldStandardEntry(
-                            headlineText: 'Geburtstag',
-                            hintText: 'Geburtstag',
-                            wbTextFieldWidth: 165,
-                          ),
+                        WbTextfieldStandardEntry(
+                          headlineText: 'Geburtstag',
+                          hintText: 'Geburtstag',
+                          wbTextFieldWidth: 165,
                         ),
+
                         wbSizedBoxWidth16,
                         // ------------------------------------------------------- Alter ---
-                        Expanded(
-                          child: WbTextfieldStandardEntry(
-                            headlineText: 'Alter',
-                            hintText: '? ?',
-                            wbTextFieldWidth: 55,
-                          ),
+                        WbTextFixedNotWritable(
+                          headlineText: "Alter:",
+                          hintText: "*****",
+                          wbTextFieldWidth: 55,
                         ),
-                        // Expanded(
-                        //   child: Text(
-                        //     "Jahre",
-                        //   ),
+
+                        //                       Text(
+                        // "************* €",
+                        // textAlign: TextAlign.right,
+                        // style: TextStyle(
+                        //   fontSize: 24,
                         // ),
+                        // WbTextfieldStandardEntry(
+                        //   headlineText: 'Alter',
+                        //   hintText: '? ?',
+                        //   wbTextFieldWidth: 55,
+                        // ),
+                        wbSizedBoxHeight16,
+                        // wbSizedBoxHeight16,
+                        // wbSizedBoxHeight16,
+                        Text(
+                          "... wird berechnet",
+                        ),
                       ],
                     ),
                     // ------------------------------------------------------- Straße + Nummer ---
@@ -224,18 +235,23 @@ class ContactScreen extends StatelessWidget {
                     ),
                     // ------------------------------------------------------- PLZ ---
                     wbSizedBoxHeight16,
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'PLZ',
-                      hintText: 'PLZ',
-                      wbTextFieldWidth: 102,
+                    const Row(
+                      children: [
+                        WbTextfieldStandardEntry(
+                          headlineText: 'PLZ',
+                          hintText: 'PLZ',
+                          wbTextFieldWidth: 102,
+                        ),
+                        // ------------------------------------------------------- Ort ---
+                        wbSizedBoxWidth16,
+                        WbTextfieldStandardEntry(
+                          headlineText: 'Ort',
+                          hintText: 'Bitte den Wohnort eintragen',
+                          wbTextFieldWidth: 280,
+                        ),
+                      ],
                     ),
-                    // ------------------------------------------------------- Ort ---
-                    wbSizedBoxHeight16,
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Ort',
-                      hintText: 'Bitte den Wohnort eintragen',
-                      wbTextFieldWidth: 300,
-                    ),
+
                     // ------------------------------------------------------- Button Kontakt speichern---
                     wbSizedBoxHeight16,
                     const Divider(thickness: 3, color: wbLogoBlue),

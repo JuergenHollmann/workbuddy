@@ -6,6 +6,7 @@ import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_textfield_currency.dart';
 import 'package:workbuddy/config/wb_textfield_notice.dart';
 import 'package:workbuddy/main.dart';
+import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
 
 class ExpenseWidget extends StatefulWidget {
   const ExpenseWidget({super.key});
@@ -17,10 +18,10 @@ class ExpenseWidget extends StatefulWidget {
 class _ExpenseWidgetState extends State<ExpenseWidget> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         // ------ Wo wurde eingekauft? ------
-        const WBDropdownMenu(
+        WBDropdownMenu(
           headlineText: "Wo wurde eingekauft?",
           hintText: "Welches Geachäft oder Lieferant?",
         ),
@@ -28,14 +29,14 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
         wbSizedBoxHeight16,
 
         // ------ Was wurde eingekauft? ------
-        const WBDropdownMenu(
+        WBDropdownMenu(
           headlineText: "Was wurde eingekauft?",
           hintText: "Welches Produkt?",
         ),
 
         wbSizedBoxHeight16,
 
-        const Row(
+        Row(
           children: [
             Expanded(
               // ------ Anzahl ------
@@ -81,48 +82,17 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
           children: [
             // ------ MwSt berechnet: ------
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      "MwSt. berechnet:",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    height: 40,
-                    //margin: const EdgeInsets.only(top: 8),
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-
-                    child: const Text(
-                      "************* €",
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                        fontSize: 24,
-                      ),
-                    ),
-                  ),
-                ],
+              child: WbTextFixedNotWritable(
+                headlineText: "MwSt. berechnet:",
+                hintText: "********** €",
+                wbTextFieldWidth: 200,
               ),
             ),
 
             wbSizedBoxWidth16,
 
             // ------ Endpreis € ------
-            const Expanded(
+            Expanded(
               child: WBTextFieldCurrency(
                 headlineText: "Endpreis in €",
                 hintText: "Endpreis in € eintragen!",
@@ -134,7 +104,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
         wbSizedBoxHeight16,
 
         // ------ Warengruppe ------
-        const WBDropdownMenu(
+        WBDropdownMenu(
           headlineText: "Warengruppe",
           hintText: "Bitte die Warengruppe zuordnen",
         ),
@@ -142,7 +112,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
         wbSizedBoxHeight16,
 
         // ------ Wer hat eingekauft? ------
-        const WBDropdownMenu(
+        WBDropdownMenu(
           headlineText: "Wer hat eingekauft?",
           hintText: "Bitte Einkäufer*in zuordnen",
         ),
@@ -150,16 +120,16 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
         wbSizedBoxHeight16,
 
         // ------ Notizen ------
-        const WBTextfieldNotice(
+        WBTextfieldNotice(
           headlineText: "Notizen zum Einkauf",
           hintText: "- Notizen zum Einkauf HIER eingeben -",
         ),
 
-        const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+        Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
         // Button aus Vorlage verwenden:
         // solange die Pflichtfelder nicht ausgefüllt sind, soll der Button rot sein und beim Anklicken einen Alert ausgeben, sonst Button grün und Daten speichern + Dialog-Bestätigung.
-        const WBRedButton(), // WBGreenIncomeButton(),
+        WBRedButton(), // WBGreenIncomeButton(),
       ],
     );
   }

@@ -1,16 +1,16 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:workbuddy/accounting/accounting_screen.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/contacts/contact_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text.dart';
 
-class AccountingMenu extends StatelessWidget {
-  const AccountingMenu({super.key});
+class ContactMenu extends StatelessWidget {
+  const ContactMenu({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,24 +37,22 @@ class AccountingMenu extends StatelessWidget {
             ),
 
             // ------------------------------------------------------- Buchhaltung-Menü ---
-            const WbDividerWithText(wbDividerText: "Buchhaltung"),
+            const WbDividerWithText(wbDividerText: "Kontakte"),
             // ------------------------------------------------------- Listview mit AuswahlButtons ---
 
             Expanded(
               child: ListView(
                 padding: const EdgeInsets.all(8),
                 children: [
-                  // ------------------------------------------------------- Ausgabe buchen ---
+                  // ------------------------------------------------------- Kontakt neu anlegen ---
 
                   GestureDetector(
                     onTap: () {
-                      log("Auf - AccountingMenu - Eine Ausgabe buchen - angeklickt");
+                      log("Auf - ContactMenu - Einen Kontakt neu anlegen - angeklickt");
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const AccountingScreen(
-                            startGroupValue: "Ausgabe",
-                          ),
+                          builder: (context) => const ContactScreen(),
                         ),
                       );
                     },
@@ -65,10 +63,9 @@ class AccountingMenu extends StatelessWidget {
                     //     wbButtonUniShadowText: "Ausgabe buchen"),
 
                     child: WbButtonUniversal(
-                      wbColor: wbColorButtonDarkRed,
-                      wbButtonUniversalText: "Ausgabe buchen",
-                      icon: Icons
-                          .payments_outlined, // credit_card, // add_shopping_cart,
+                      wbColor: wbColorButtonGreen,
+                      wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
+                      icon: Icons.person_add_alt_1_outlined,
                       onButtonTap:
                           /* das geht hier nur, weil es eine (leere) Funktion ist. */
                           () {},
@@ -76,44 +73,44 @@ class AccountingMenu extends StatelessWidget {
                     ),
                   ),
 
-                  wbSizedBoxHeight16,
+                  wbSizedBoxHeight8,
 
-                  // ---------- Eine Einnahme buchen ----------
-                  GestureDetector(
-                    onTap: () {
-                      log("Auf - AccountingMenu - Eine Einnahme buchen - angeklickt");
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const AccountingScreen(
-                            startGroupValue: "Einnahme",
-                          ),
-                        ),
-                      );
-                    },
-                    child: WbButtonUniversal(
-                      wbColor: wbColorButtonGreen,
-                      wbButtonUniversalText: "Einnahme buchen",
-                      icon: Icons
-                          .add_card_outlined, // credit_score_outlined, //payments_outlined,
-                      onButtonTap: () {},
-                      /* das geht hier nur, weil es eine (leere) Funktion ist. */
-                      width: 398,
-                    ),
-                  ),
+                  // // ---------- Eine Einnahme buchen ----------
+                  // GestureDetector(
+                  //   onTap: () {
+                  //     log("Auf - ContactMenu - Eine Einnahme buchen - angeklickt");
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) => const AccountingScreen(
+                  //           startGroupValue: "Einnahme",
+                  //         ),
+                  //       ),
+                  //     );
+                  //   },
+                  //   child: WbButtonUniversal(
+                  //     wbColor: wbColorButtonGreen,
+                  //     wbButtonUniversalText: "Einnahme buchen",
+                  //     icon: Icons
+                  //         .add_card_outlined, // credit_score_outlined, //payments_outlined,
+                  //     onButtonTap: () {},
+                  //     /* das geht hier nur, weil es eine (leere) Funktion ist. */
+                  //     width: 398,
+                  //   ),
+                  // ),
 
-                  // ---------- Übersicht aller Ausgaben ----------
-                  wbSizedBoxHeight16,
+                  // ---------- Einen Kontakt suchen ----------
+                  // wbSizedBoxHeight16,
                   const Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
                   GestureDetector(
                     onTap: () {
-                      log("Auf - AccountingMenu - Übersicht aller Ausgaben - Update-Hinweis - AM116 - angeklickt");
+                      log("Auf - ContactMenu - Einen Kontakt suchen - Update-Hinweis - CM108 - angeklickt");
                       showDialog(
                         context: context,
                         builder: (context) =>
                             const WbDialogAlertUpdateComingSoon(
-                          headlineText: 'Update-Hinweis - AM116',
+                          headlineText: 'Update-Hinweis - CM108',
                           contentText:
                               'Diese Funktion kommt bald in einem kostenlosen Update!',
                         ),
@@ -127,14 +124,14 @@ class AccountingMenu extends StatelessWidget {
 
                     child: WbButtonUniversal(
                       wbColor: wbColorAppBarBlue,
-                      wbButtonUniversalText: "Alle Ausgaben",
-                      icon: Icons.receipt_long_outlined,
+                      wbButtonUniversalText: "Einen Kontakt \nSUCHEN",
+                      icon: Icons.person_search_outlined,
                       onButtonTap: () {},
                       width: 398,
                     ),
                   ),
 
-                  // ---------- Übersicht aller Einnahmen ----------
+                  // ---------- Übersicht ----------
                   wbSizedBoxHeight16,
                   //const Divider(thickness: 3, height: 32, color: wbLogoBlue),
                   GestureDetector(
@@ -152,7 +149,7 @@ class AccountingMenu extends StatelessWidget {
                     },
                     child: WbButtonUniversal(
                       wbColor: wbColorAppBarBlue,
-                      wbButtonUniversalText: "Alle Einnahmen",
+                      wbButtonUniversalText: "- reserviert -",
                       icon: Icons.receipt_long_outlined,
                       onButtonTap: () {},
                       width: 398,
@@ -177,7 +174,7 @@ class AccountingMenu extends StatelessWidget {
                     },
                     child: WbButtonUniversal(
                       wbColor: wbColorOrangeDarker,
-                      wbButtonUniversalText: "Ausgaben finden",
+                      wbButtonUniversalText: "- reserviert -",
                       icon: Icons.manage_search_outlined,
                       onButtonTap: () {},
                       width: 398,
@@ -202,7 +199,7 @@ class AccountingMenu extends StatelessWidget {
                     },
                     child: WbButtonUniversal(
                       wbColor: wbColorOrangeDarker,
-                      wbButtonUniversalText: "Einnahmen finden",
+                      wbButtonUniversalText: "- reserviert -",
                       icon: Icons.query_stats, //receipt_long_outlined,
                       onButtonTap: () {}, width: 398,
                     ),
