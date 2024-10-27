@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/main.dart';
+import 'package:workbuddy/companies/company_screen.dart';
 
 class ButtonCompanies extends StatelessWidget {
   const ButtonCompanies({super.key});
@@ -16,7 +16,7 @@ class ButtonCompanies extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const MainApp(),
+              builder: (context) => const CompanyScreen(),
             ),
           );
         },

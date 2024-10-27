@@ -230,8 +230,6 @@ class WBRedButton extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-// wechsle die Farbe des Buttons beim Anklicken:
-// String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator
 
           log("Wechsle zur Seite 2 = SelectionPage");
           Navigator.push(

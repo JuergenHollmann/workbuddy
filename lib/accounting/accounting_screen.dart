@@ -5,11 +5,6 @@ import 'package:workbuddy/accounting/radio_button_accounting.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 
-//   TextEditingController _anzahlController = TextEditingController();
-//   TextEditingController _einheitController = TextEditingController();
-//   TextEditingController _mwstController = TextEditingController();
-//   TextEditingController _preisController = TextEditingController();
-
 class AccountingScreen extends StatefulWidget {
   const AccountingScreen({
     super.key,
@@ -48,7 +43,6 @@ class _AccountingScreenState extends State<AccountingScreen> {
         ),
         backgroundColor: wbBackgroundBlue, // Hintergrundfarbe
         foregroundColor: Colors.black, // Icon-/Button-/Chevron-Farbe
-        //toolbarHeight: 60,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -56,10 +50,7 @@ class _AccountingScreenState extends State<AccountingScreen> {
           child: Column(
             children: [
               const Image(
-                //width: 120,
-                //image: AssetImage("assets/workbuddy_logo.png"),
                 image: AssetImage("assets/workbuddy_glow_schriftzug.png"),
-                //width: 200,
               ),
 
               const Divider(thickness: 3, height: 32, color: wbLogoBlue),

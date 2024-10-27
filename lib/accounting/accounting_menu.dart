@@ -43,8 +43,7 @@ class AccountingMenu extends StatelessWidget {
               child: ListView(
                 padding: const EdgeInsets.all(8),
                 children: [
-                  // ------------------------------------------------------- Ausgabe buchen ---
-
+                  //*-------------------------------------------------- Ausgabe buchen ---*/
                   GestureDetector(
                     onTap: () {
                       log("Auf - AccountingMenu - Eine Ausgabe buchen - angeklickt");
@@ -77,7 +76,7 @@ class AccountingMenu extends StatelessWidget {
 
                   wbSizedBoxHeight16,
 
-                  // ---------- Eine Einnahme buchen ----------
+                  //*-------------------------------------------------- Einnahme buchen ---*/
                   GestureDetector(
                     onTap: () {
                       log("Auf - AccountingMenu - Eine Einnahme buchen - angeklickt");
@@ -102,7 +101,7 @@ class AccountingMenu extends StatelessWidget {
                   ),
 
                   // ---------- Übersicht aller Ausgaben ----------
-                  wbSizedBoxHeight16,
+                  wbSizedBoxHeight8,
                   const Divider(thickness: 3, height: 32, color: wbLogoBlue),
 
                   GestureDetector(
@@ -159,7 +158,7 @@ class AccountingMenu extends StatelessWidget {
                   ),
 
                   // ---------- Ausgaben-Beleg finden ----------
-                  wbSizedBoxHeight16,
+                  wbSizedBoxHeight8,
                   const Divider(thickness: 3, height: 32, color: wbLogoBlue),
                   GestureDetector(
                     onTap: () {

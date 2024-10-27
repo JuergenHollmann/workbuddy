@@ -27,7 +27,7 @@ class WbButtonUniversal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // -------------------------------------------------- Button ---
+    /*-------------------------------------------------- Button ---*/
     return Container(
       width: width,
       height: 80,
@@ -52,7 +52,7 @@ class WbButtonUniversal extends StatelessWidget {
         ),
       ),
 
-      // -------------------------------------------------- Gesture ---
+      /*-------------------------------------------------- Gesture ---*/
       child: GestureDetector(
         onTap: onButtonTap,
         child: Column(
@@ -65,7 +65,7 @@ class WbButtonUniversal extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
 
-                  // -------------------------------------------------- Icon ---
+                  // -------------------------------------------------- Icon ---*/
                   child: Icon(
                     icon,
                     color: Colors.white,

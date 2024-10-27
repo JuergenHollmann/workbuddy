@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:workbuddy/accounting/accounting_menu.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_dropdownmenu.dart';
 import 'package:workbuddy/config/wb_textfield_quantity.dart';
@@ -8,8 +9,6 @@ import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_textfield_currency.dart';
 import 'package:workbuddy/config/wb_textfield_notice.dart';
-import 'package:workbuddy/contacts/contact_screen.dart';
-import 'package:workbuddy/main.dart';
 import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
 
 class ExpenseWidget extends StatefulWidget {
@@ -27,7 +26,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
         // ------ Wo wurde eingekauft? ------
         const WBDropdownMenu(
           headlineText: "Wo wurde eingekauft?",
-          hintText: "Welches Geachäft oder Lieferant?",
+          hintText: "Welches Geschäft oder Lieferant?",
         ),
 
         wbSizedBoxHeight16,
@@ -140,7 +139,7 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const ContactScreen(),
+                builder: (context) => const AccountingMenu(),
               ),
             );
           },

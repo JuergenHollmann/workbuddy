@@ -115,7 +115,7 @@ class ContactMenu extends StatelessWidget {
                       );
                     },
 
-                    /* Dieser Button ist OHNE Icon (nur Text und Farbe) */
+                    // /* Dieser Button ist OHNE Icon (nur Text und Farbe) */
                     // child: const WbButtonUniShadow(
                     //     wbColor: wbColorButtonDarkRed,
                     //     wbButtonUniShadowText: "Alle Ausgaben zeigen"),
