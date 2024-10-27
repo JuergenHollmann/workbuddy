@@ -7,7 +7,7 @@ import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
-import 'package:workbuddy/shared/widgets/wb_divider_with_text.dart';
+import 'package:workbuddy/shared/widgets/wb_divider_with_big_text_center.dart';
 
 class AccountingMenu extends StatelessWidget {
   const AccountingMenu({super.key});
@@ -37,7 +37,7 @@ class AccountingMenu extends StatelessWidget {
             ),
 
             // ------------------------------------------------------- Buchhaltung-Menü ---
-            const WbDividerWithText(wbDividerText: "Buchhaltung"),
+            const WbDividerWithBigTextCenter(wbDividerText: "Buchhaltung"),
             // ------------------------------------------------------- Listview mit AuswahlButtons ---
 
             Expanded(

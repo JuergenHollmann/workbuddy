@@ -7,7 +7,7 @@ import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/contacts/contact_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
-import 'package:workbuddy/shared/widgets/wb_divider_with_text.dart';
+import 'package:workbuddy/shared/widgets/wb_divider_with_big_text_center.dart';
 
 class ContactMenu extends StatelessWidget {
   const ContactMenu({super.key});
@@ -36,15 +36,15 @@ class ContactMenu extends StatelessWidget {
               image: AssetImage("assets/workbuddy_glow_schriftzug.png"),
             ),
 
-            // ------------------------------------------------------- Buchhaltung-Menü ---
-            const WbDividerWithText(wbDividerText: "Kontakte"),
-            // ------------------------------------------------------- Listview mit AuswahlButtons ---
+            // --------------------------------------- Buchhaltung-Menü ---
+            const WbDividerWithBigTextCenter(wbDividerText: "Kontakte"),
+            // --------------------------------------- Listview mit AuswahlButtons ---
 
             Expanded(
               child: ListView(
                 padding: const EdgeInsets.all(8),
                 children: [
-                  // ------------------------------------------------------- Kontakt neu anlegen ---
+                  // --------------------------------------- Kontakt neu anlegen ---
 
                   GestureDetector(
                     onTap: () {

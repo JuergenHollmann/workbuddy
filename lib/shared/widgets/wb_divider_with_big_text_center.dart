@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 
-class WbDividerWithText extends StatelessWidget {
-  const WbDividerWithText({
+class WbDividerWithBigTextCenter extends StatelessWidget {
+  const WbDividerWithBigTextCenter({
     super.key, required this.wbDividerText,
   });
 
