@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 //import 'package:workbuddy/class/selection_screen.dart';
 import 'package:workbuddy/class/welcome_text.dart';
-import 'package:workbuddy/main.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
 //import 'package:workbuddy/main.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class P01LoginScreen extends StatelessWidget {
+  const P01LoginScreen({super.key});
 
   //get pool => "assets/sound05xylophon.wav";
   @override
@@ -80,7 +79,7 @@ const WBGreenButton(),
             //       // player.play(alarmAudioPath);
             //     },
             //     icon: const Icon(Icons.login, size: 34, fill: 1, weight: 80),
-            //     label: const Text("  Login"),
+            //     label: const Text("  P01LoginScreen"),
             //     style: ElevatedButton.styleFrom(
             //       foregroundColor: Colors.black, // Textfarbe
             //       backgroundColor: Colors.blue, // Buttonfarbe

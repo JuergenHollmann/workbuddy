@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
-import 'package:workbuddy/features/authentication/screens/login.dart';
+import 'package:workbuddy/features/authentication/screens/p01_login_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
         body: SafeArea(
           child: Column(
             children: [
-              Login(),
+              P01LoginScreen(),
             ],
           ),
         ),
