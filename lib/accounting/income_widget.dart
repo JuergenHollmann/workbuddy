@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:workbuddy/accounting/accounting_menu.dart';
-import 'package:workbuddy/config/wb_button_green.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_dropdownmenu.dart';
 import 'package:workbuddy/config/wb_textfield_notice.dart';
