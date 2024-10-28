@@ -40,3 +40,7 @@ Der User soll seine Buchhaltungsdaten (und später auch andere) per E-Mail an se
 Die App soll später mehrsprachig sein und gleich von Anfang an darauf vorbereitet werden.
 Durch die Entwicklung in Flutter ist die App auf allen Betriebssystemen und im Web verfügbar.
 Durch Pflichtfelder stellt die App sicher, dass wichtige Angaben nicht vergessen werden können. Pflichtfelder sind mit einem * gekennzeichnet.
+
+Workbuddy Screenshots:
+
+![alt text](<WorkBuddy Screenshots/Klein (1).png>) ![alt text](<WorkBuddy Screenshots/Klein (2).png>) ![alt text](<WorkBuddy Screenshots/Klein (3).png>) ![alt text](<WorkBuddy Screenshots/Klein (4).png>) ![alt text](<WorkBuddy Screenshots/Klein (5).png>) ![alt text](<WorkBuddy Screenshots/Klein (6).png>) ![alt text](<WorkBuddy Screenshots/Klein (7).png>) ![alt text](<WorkBuddy Screenshots/Klein (8).png>) ![alt text](<WorkBuddy Screenshots/Klein (9).png>) ![alt text](<WorkBuddy Screenshots/Klein (10).png>) ![alt text](<WorkBuddy Screenshots/Klein (11).png>) ![alt text](<WorkBuddy Screenshots/Klein (12).png>) ![alt text](<WorkBuddy Screenshots/Klein (13).png>) ![alt text](<WorkBuddy Screenshots/Klein (14).png>) ![alt text](<WorkBuddy Screenshots/Klein (15).png>) ![alt text](<WorkBuddy Screenshots/Klein (16).png>) [alt text](README.md)
