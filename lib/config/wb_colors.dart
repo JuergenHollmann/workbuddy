@@ -10,12 +10,15 @@ const Color wbColorAppBarBlue =
 const Color wbLogoBlue = Color.fromARGB(255, 4, 18, 114); // sehr dunkles blau
 
 // ----------------------------- Parbpalette grün ---
-const Color wbColorLightYellowGreen = Color.fromARGB(255, 250, 242, 242); // sehr helles Gelbgrün
+const Color wbColorLightYellowGreen =
+    Color.fromARGB(255, 250, 242, 242); // sehr helles Gelbgrün
 const Color wbColorButtonGreen = Color.fromARGB(255, 0, 130, 0); // sattes grün
 
 // ----------------------------- Parbpalette rot ---
 const Color wbColorButtonDarkRed = Color.fromRGBO(190, 13, 0, 1); // dunkles rot
 
 // ----------------------------- Parbpalette orange ---
-const Color wbDrawerLightOrange = Color.fromARGB(255, 255, 170, 0); // helles Orange
-const Color wbColorOrangeDarker = Color.fromARGB(255, 227, 139, 7); // dunkleres Orange
+const Color wbColorDrawerOrangeLight =
+    Color.fromARGB(255, 255, 170, 0); // helles Orange
+const Color wbColorOrangeDarker =
+    Color.fromARGB(255, 227, 139, 7); // dunkleres Orange

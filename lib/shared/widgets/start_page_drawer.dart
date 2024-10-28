@@ -13,7 +13,7 @@ class StartPageDrawer extends StatelessWidget {
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: wbDrawerLightOrange,
+              color: wbColorDrawerOrangeLight,
             ),
             child: Text('WorkBuddy'),
           ),
@@ -38,7 +38,7 @@ class StartPageDrawer extends StatelessWidget {
 }
 
           //     drawer: Drawer(
-          //   backgroundColor: wbDrawerLightOrange,
+          //   backgroundColor: wbColorDrawerOrangeLight,
           //   // hier den Drawer mit SafeArea
           //   child: ListView(
           //     children: const [

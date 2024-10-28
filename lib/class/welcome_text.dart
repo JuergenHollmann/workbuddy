@@ -32,7 +32,7 @@ class WelcomeText extends StatelessWidget {
                     children: [
                       const DrawerHeader(
                         decoration: BoxDecoration(
-                          color: wbDrawerLightOrange,
+                          color: wbColorDrawerOrangeLight,
                         ),
                         child: Text('WorkBuddy'),
                       ),

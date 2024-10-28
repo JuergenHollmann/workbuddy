@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-//import 'package:workbuddy/class/selection_screen.dart';
 import 'package:workbuddy/class/welcome_text.dart';
+import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
-//import 'package:workbuddy/main.dart';
 
 class P01LoginScreen extends StatelessWidget {
   const P01LoginScreen({super.key});
 
-  //get pool => "assets/sound05xylophon.wav";
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -16,7 +14,6 @@ class P01LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             const WelcomeText(),
             Container(height: 8),
             const Text(
@@ -25,9 +22,10 @@ class P01LoginScreen extends StatelessWidget {
             ),
             const TextField(
                 style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                    color: Color.fromARGB(255, 255, 0, 0)),
+                  fontSize: 24,
+                  fontWeight: FontWeight.w900,
+                  color: wbColorButtonDarkRed,
+                ),
                 textAlign: TextAlign.center),
             Container(height: 32),
             const Text(
@@ -35,15 +33,16 @@ class P01LoginScreen extends StatelessWidget {
               textScaler: TextScaler.linear(1.5),
             ),
             const TextField(
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                    color: Color.fromRGBO(30, 130, 0, 1)), // grün
-                textAlign: TextAlign.center,),
-const SizedBox(height: 30),
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w900,
+                color: wbColorButtonGreen,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 30),
 
-const WBGreenButton(),
-
+            const WBGreenButton(),
 
             // Container(height: 60),
             // ElevatedButton.icon(
@@ -88,19 +87,9 @@ const WBGreenButton(),
             //       textStyle: const TextStyle(
             //           fontSize: 30, fontWeight: FontWeight.w900),
             //     )),
-
-
-
-
-
-
-
-
-
           ],
         ),
       ),
-      
     );
   }
 }
