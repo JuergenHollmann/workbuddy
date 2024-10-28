@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 // ----------------------------- Parbpalette blau ---
-const Color wbBackgroundBlue =
+const Color wbColorBackgroundBlue =
     Color.fromARGB(255, 200, 210, 255); // helles hellblau
-const Color wbButtonShadowGrey = Color.fromARGB(255, 150, 160, 200); // graublau
+const Color wbColorButtonShadowGrey =
+    Color.fromARGB(255, 150, 160, 200); // graublau
 const Color wbColorButtonBlue = Color.fromARGB(255, 32, 150, 243);
 const Color wbColorAppBarBlue =
     Color.fromARGB(255, 19, 83, 152); // dunkles blau

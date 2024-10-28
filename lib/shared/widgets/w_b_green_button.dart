@@ -33,7 +33,7 @@ class WBGreenButton extends StatelessWidget {
         ),
         // shadows: const [
         //   BoxShadow(
-        //     color: wbButtonShadowGrey,
+        //     color: wbColorButtonShadowGrey,
         //     blurRadius: 5,
         //     offset: Offset(0, 12),
         //     spreadRadius: 0,

@@ -18,7 +18,7 @@ class CompanyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: wbBackgroundBlue,
+      backgroundColor: wbColorBackgroundBlue,
       appBar: AppBar(
         title: const Text(
           'Firma bearbeiten',
@@ -28,7 +28,7 @@ class CompanyScreen extends StatelessWidget {
             color: Colors.black, // Schriftfarbe
           ),
         ),
-        backgroundColor: wbBackgroundBlue, // Hintergrundfarbe
+        backgroundColor: wbColorBackgroundBlue, // Hintergrundfarbe
         foregroundColor: Colors.black, // Icon-/Button-/Chevron-Farbe
       ),
       body: SingleChildScrollView(

@@ -8,7 +8,7 @@ final ThemeData wbLightTheme = ThemeData(
     headlineMedium: TextStyle(fontSize: bigTextSize),
     bodySmall: TextStyle(fontSize: smallTextSize),
   ),
-  scaffoldBackgroundColor: wbBackgroundBlue,
+  scaffoldBackgroundColor: wbColorBackgroundBlue,
 );
 
 /* zur Auswahl für die Texte in ThemeData:

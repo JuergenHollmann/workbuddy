@@ -32,7 +32,7 @@ class WBRedButton extends StatelessWidget {
         ),
         // shadows: const [
         //   BoxShadow(
-        //     color: wbButtonShadowGrey,
+        //     color: wbColorButtonShadowGrey,
         //     blurRadius: 5,
         //     offset: Offset(0, 12),
         //     spreadRadius: 0,
@@ -41,7 +41,6 @@ class WBRedButton extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-
           log("Wechsle zur Seite 2 = SelectionPage");
           Navigator.push(
             context,
@@ -50,7 +49,6 @@ class WBRedButton extends StatelessWidget {
             ),
           );
         },
-
         child: const Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -109,9 +107,6 @@ class WBRedButton extends StatelessWidget {
             ),
           ],
         ),
-
-
-
       ),
     );
   }

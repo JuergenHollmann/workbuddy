@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: wbBackgroundBlue,
+        backgroundColor: wbColorBackgroundBlue,
         body: SafeArea(
           child: Column(
             children: [

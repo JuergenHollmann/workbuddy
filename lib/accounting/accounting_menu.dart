@@ -23,7 +23,7 @@ class AccountingMenu extends StatelessWidget {
             color: Colors.black, // Schriftfarbe
           ),
         ),
-        backgroundColor: wbBackgroundBlue, // Hintergrundfarbe
+        backgroundColor: wbColorBackgroundBlue, // Hintergrundfarbe
         foregroundColor: Colors.black, // Icon-/Button-/Chevron-Farbe
       ),
       //    body: SingleChildScrollView(

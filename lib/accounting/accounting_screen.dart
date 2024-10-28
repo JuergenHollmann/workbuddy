@@ -41,7 +41,7 @@ class _AccountingScreenState extends State<AccountingScreen> {
             color: Colors.black, // Schriftfarbe
           ),
         ),
-        backgroundColor: wbBackgroundBlue, // Hintergrundfarbe
+        backgroundColor: wbColorBackgroundBlue, // Hintergrundfarbe
         foregroundColor: Colors.black, // Icon-/Button-/Chevron-Farbe
       ),
       body: SingleChildScrollView(
