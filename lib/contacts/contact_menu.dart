@@ -99,7 +99,8 @@ class ContactMenu extends StatelessWidget {
 
                   // ---------- Einen Kontakt suchen ----------
                   // wbSizedBoxHeight16,
-                  const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  const Divider(
+                      thickness: 3, height: 32, color: wbColorLogoBlue),
 
                   GestureDetector(
                     onTap: () {
@@ -132,7 +133,7 @@ class ContactMenu extends StatelessWidget {
 
                   // // ---------- reserviert ----------
                   // wbSizedBoxHeight16,
-                  // //const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  // //const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
                   // GestureDetector(
                   //   onTap: () {
                   //     log("Update-Hinweis - AM141");
@@ -157,7 +158,7 @@ class ContactMenu extends StatelessWidget {
 
                   // // ---------- Ausgaben-Beleg finden ----------
                   // wbSizedBoxHeight8,
-                  // const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  // const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
                   // GestureDetector(
                   //   onTap: () {
                   //     log("Update-Hinweis - AM164");
@@ -182,7 +183,7 @@ class ContactMenu extends StatelessWidget {
 
                   // // ---------- Einnahme-Beleg finden ----------
                   // wbSizedBoxHeight16,
-                  // // const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  // // const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
                   // GestureDetector(
                   //   onTap: () {
                   //     log("Update-Hinweis - AM188");
@@ -205,7 +206,8 @@ class ContactMenu extends StatelessWidget {
                   // ),
                   /* ----------------- ENDE der ListView ---------------- */
                   wbSizedBoxHeight8,
-                  const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  const Divider(
+                      thickness: 3, height: 32, color: wbColorLogoBlue),
 
                   const Column(
                     children: [
@@ -216,7 +218,7 @@ class ContactMenu extends StatelessWidget {
               ),
             ),
             /* ----------------- ENDE der ListView ---------------- */
-            const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+            const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
           ],
         ),
       ),

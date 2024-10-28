@@ -35,7 +35,7 @@ class CompanyScreen extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              const Divider(thickness: 3, color: wbLogoBlue),
+              const Divider(thickness: 3, color: wbColorLogoBlue),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
                 child: Row(
@@ -148,18 +148,18 @@ class CompanyScreen extends StatelessWidget {
                 ),
               ),
               /* ----------------------------------------------------- Divider ---*/
-              const Divider(thickness: 3, color: wbLogoBlue),
+              const Divider(thickness: 3, color: wbColorLogoBlue),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // const Divider(thickness: 3, color: wbLogoBlue),
+                    // const Divider(thickness: 3, color: wbColorLogoBlue),
                     /* ----------------------------------------------------- Lieferant/Kunde ---*/
                     const CompanyRadioButton1(),
 
                     /* ----------------------------------------------------- Divider ---*/
-                    const Divider(thickness: 3, color: wbLogoBlue),
+                    const Divider(thickness: 3, color: wbColorLogoBlue),
 
                     /* ----------------------------------------------------- Firmenbezeichnung ---*/
                     wbSizedBoxHeight8,
@@ -504,7 +504,7 @@ class CompanyScreen extends StatelessWidget {
 
                     // ----------------------------------------------------- Button Kontakt speichern---
                     wbSizedBoxHeight16,
-                    const Divider(thickness: 3, color: wbLogoBlue),
+                    const Divider(thickness: 3, color: wbColorLogoBlue),
                     wbSizedBoxHeight8,
 
                     GestureDetector(
@@ -526,7 +526,7 @@ class CompanyScreen extends StatelessWidget {
                       ),
                     ),
                     wbSizedBoxHeight16,
-                    const Divider(thickness: 3, color: wbLogoBlue),
+                    const Divider(thickness: 3, color: wbColorLogoBlue),
                     wbSizedBoxHeight16,
 
                     // ----------------------------------------------------- ENDE ---

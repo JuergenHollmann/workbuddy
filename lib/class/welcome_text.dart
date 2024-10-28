@@ -17,7 +17,7 @@ class WelcomeText extends StatelessWidget {
               icon: const Icon(
                 Icons.menu,
                 size: 44,
-                color: wbLogoBlue,
+                color: wbColorLogoBlue,
               ),
               onPressed: () {
                 log("Der Menü-Button (auf welcome_text) wurde angeklickt");

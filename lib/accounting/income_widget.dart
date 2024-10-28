@@ -173,7 +173,7 @@ class _IncomeWidgetState extends State<IncomeWidget> {
           hintText: "- Notizen zum Verkauf HIER eingeben -",
         ),
 
-        const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+        const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
 
         // Button aus Vorlage verwenden:
         // solange die Pflichtfelder nicht ausgefüllt sind, soll der Button rot sein und beim Anklicken einen Alert ausgeben, sonst Button grün und Daten speichern + Dialog-Bestätigung.

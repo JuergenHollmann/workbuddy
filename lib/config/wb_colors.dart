@@ -7,7 +7,8 @@ const Color wbButtonShadowGrey = Color.fromARGB(255, 150, 160, 200); // graublau
 const Color wbButtonBlue = Color.fromARGB(255, 32, 150, 243);
 const Color wbColorAppBarBlue =
     Color.fromARGB(255, 19, 83, 152); // dunkles blau
-const Color wbLogoBlue = Color.fromARGB(255, 4, 18, 114); // sehr dunkles blau
+const Color wbColorLogoBlue =
+    Color.fromARGB(255, 4, 18, 114); // sehr dunkles blau
 
 // ----------------------------- Parbpalette grün ---
 const Color wbColorLightYellowGreen =

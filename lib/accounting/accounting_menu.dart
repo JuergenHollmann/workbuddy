@@ -102,7 +102,8 @@ class AccountingMenu extends StatelessWidget {
 
                   // ---------- Übersicht aller Ausgaben ----------
                   wbSizedBoxHeight8,
-                  const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  const Divider(
+                      thickness: 3, height: 32, color: wbColorLogoBlue),
 
                   GestureDetector(
                     onTap: () {
@@ -134,7 +135,7 @@ class AccountingMenu extends StatelessWidget {
 
                   // ---------- Übersicht aller Einnahmen ----------
                   wbSizedBoxHeight16,
-                  //const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  //const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
                   GestureDetector(
                     onTap: () {
                       log("Update-Hinweis - AM141");
@@ -159,7 +160,8 @@ class AccountingMenu extends StatelessWidget {
 
                   // ---------- Ausgaben-Beleg finden ----------
                   wbSizedBoxHeight8,
-                  const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  const Divider(
+                      thickness: 3, height: 32, color: wbColorLogoBlue),
                   GestureDetector(
                     onTap: () {
                       log("Update-Hinweis - AM164");
@@ -184,7 +186,7 @@ class AccountingMenu extends StatelessWidget {
 
                   // ---------- Einnahme-Beleg finden ----------
                   wbSizedBoxHeight16,
-                  // const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  // const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
                   GestureDetector(
                     onTap: () {
                       log("Update-Hinweis - AM188");
@@ -207,7 +209,8 @@ class AccountingMenu extends StatelessWidget {
                   ),
 
                   wbSizedBoxHeight8,
-                  const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+                  const Divider(
+                      thickness: 3, height: 32, color: wbColorLogoBlue),
 
                   const Column(
                     children: [
@@ -218,7 +221,7 @@ class AccountingMenu extends StatelessWidget {
               ),
             ),
             /* ----------------- ENDE der ListView ---------------- */
-            const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+            const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
           ],
         ),
       ),

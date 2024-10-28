@@ -34,7 +34,7 @@ class ContactScreen extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              const Divider(thickness: 3, color: wbLogoBlue),
+              const Divider(thickness: 3, color: wbColorLogoBlue),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
                 child: Row(
@@ -135,14 +135,14 @@ class ContactScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const Divider(thickness: 3, color: wbLogoBlue),
+              const Divider(thickness: 3, color: wbColorLogoBlue),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                 child: Column(
                   //mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // const Divider(thickness: 3, color: wbLogoBlue),
+                    // const Divider(thickness: 3, color: wbColorLogoBlue),
                     // ----------------------------------------------------- Interessent/Kunde ---
                     const ContactRadioButton1(),
 
@@ -459,7 +459,7 @@ class ContactScreen extends StatelessWidget {
 
                     // ----------------------------------------------------- Button Kontakt speichern---
                     wbSizedBoxHeight16,
-                    const Divider(thickness: 3, color: wbLogoBlue),
+                    const Divider(thickness: 3, color: wbColorLogoBlue),
                     wbSizedBoxHeight8,
 
                     GestureDetector(
@@ -481,7 +481,7 @@ class ContactScreen extends StatelessWidget {
                       ),
                     ),
                     wbSizedBoxHeight16,
-                    const Divider(thickness: 3, color: wbLogoBlue),
+                    const Divider(thickness: 3, color: wbColorLogoBlue),
                     wbSizedBoxHeight16,
 
                     // ----------------------------------------------------- ENDE ---

@@ -53,7 +53,7 @@ class _AccountingScreenState extends State<AccountingScreen> {
                 image: AssetImage("assets/workbuddy_glow_schriftzug.png"),
               ),
 
-              const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+              const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
 
               Row(
                 children: [
@@ -69,15 +69,15 @@ class _AccountingScreenState extends State<AccountingScreen> {
               ),
 
               // -- Divider ---------------------------------------------
-              const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+              const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
               if (groupValue == "Einnahme")
                 const IncomeWidget()
               else
                 const ExpenseWidget(),
               // const RadioButtonAccounting(),
-             wbSizedBoxHeight8,
+              wbSizedBoxHeight8,
               // -- Divider ---------------------------------------------
-              const Divider(thickness: 3, height: 32, color: wbLogoBlue),
+              const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
             ],
           ),
         ),
