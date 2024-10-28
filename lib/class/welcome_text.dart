@@ -1,7 +1,5 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/config/wb_colors.dart';
 
 class WelcomeText extends StatelessWidget {
   const WelcomeText({super.key});
@@ -10,57 +8,66 @@ class WelcomeText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Column(
+        const Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            IconButton(
-              icon: const Icon(
-                Icons.menu,
-                size: 44,
-                color: wbColorLogoBlue,
-              ),
-              onPressed: () {
-                log("Der Menü-Button (auf welcome_text) wurde angeklickt");
-                // const StartPageDrawer(child: Padding(padding: EdgeInsets.zero));
+            // /*--------------------------------- Button für Drawer ---*/
+            // IconButton(
+            //   icon: const Icon(
+            //     Icons.menu,
+            //     size: 44,
+            //     color: wbColorLogoBlue,
+            //   ),
+            //   onPressed: () {
+            //     log("Der Menü-Button (auf welcome_text) wurde angeklickt");
 
-                Scaffold.of(context).openDrawer();
-                // --- Drawer -----------------------------------------------------
-                Drawer(
-                  child: ListView(
-                    // WICHTIG: Alle Paddings von der ListView entfernen!
-                    padding: EdgeInsets.zero,
-                    children: [
-                      const DrawerHeader(
-                        decoration: BoxDecoration(
-                          color: wbColorDrawerOrangeLight,
-                        ),
-                        child: Text('WorkBuddy'),
-                      ),
-                      ListTile(
-                        title: const Text('Über uns'),
-                        onTap: () {
-                          // Update the state of the app.
-                          // ...
-                          Navigator.pop(context);
-                        },
-                      ),
-                      ListTile(
-                        title: const Text('Item 2'),
-                        onTap: () {
-                          // Update the state of the app.
-                          // ...
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
+            //     // Scaffold.of(context).openDrawer();
+
+            //     // const StartPageDrawer(child: Padding(padding: EdgeInsets.zero));
+
+            //     /*--------------------------------- Drawer ---*/
+
+            //     //  StartPageDrawer(
+            //     //   child: () {},
+            //     // );
+
+            //     Drawer(
+            //       child: ListView(
+            //         // WICHTIG: Alle Paddings von der ListView entfernen!
+            //         padding: EdgeInsets.zero,
+            //         children: [
+            //           const DrawerHeader(
+            //             decoration: BoxDecoration(
+            //               color: wbColorDrawerOrangeLight,
+            //             ),
+            //             child: Text('WorkBuddy'),
+            //           ),
+            //           ListTile(
+            //             title: const Text('Über uns'),
+            //             onTap: () {
+            //               // Update the state of the app.
+            //               // ...
+            //               Navigator.pop(context);
+            //             },
+            //           ),
+            //           ListTile(
+            //             title: const Text('Item 2'),
+            //             onTap: () {
+            //               // Update the state of the app.
+            //               // ...
+            //               Navigator.pop(context);
+            //             },
+            //           ),
+            //         ],
+            //       ),
+            //     );
+            //     Scaffold.of(context).openDrawer();
+            //   },
+            // ),
           ],
         ),
 
-        // Image "workbuddy_glow_logo" einbinden:
+        /*--------------------------------- Logo ---*/
         const Padding(
           padding: EdgeInsets.fromLTRB(120, 0, 120, 20),
           child: Image(

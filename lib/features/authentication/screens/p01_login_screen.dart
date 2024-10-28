@@ -14,19 +14,23 @@ class P01LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            /*--------------------------------- WelcomeText ---*/
             const WelcomeText(),
+            /*--------------------------------- Benutzername ---*/
             Container(height: 8),
             const Text(
               "Benutzername",
               textScaler: TextScaler.linear(1.5),
             ),
             const TextField(
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w900,
-                  color: wbColorButtonDarkRed,
-                ),
-                textAlign: TextAlign.center),
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w900,
+                color: wbColorButtonDarkRed,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            /*--------------------------------- Passwort ---*/
             Container(height: 32),
             const Text(
               "Passwort",
@@ -40,9 +44,11 @@ class P01LoginScreen extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            /*--------------------------------- Abstand ---*/
             const SizedBox(height: 30),
-
+            /*--------------------------------- Login-Button ---*/
             const WBGreenButton(),
+            /*--------------------------------- ENDE ---*/
 
             // Container(height: 60),
             // ElevatedButton.icon(
