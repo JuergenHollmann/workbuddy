@@ -71,7 +71,7 @@ class CompanyScreen extends StatelessWidget {
                           child: const Padding(
                             padding: EdgeInsets.all(2.5), // stroke
                             child: CircleAvatar(
-                              backgroundColor: wbButtonBlue,
+                              backgroundColor: wbColorButtonBlue,
                               backgroundImage:
                                   // AssetImage(
                                   //   "assets/company_logos/obi.png",
@@ -120,7 +120,7 @@ class CompanyScreen extends StatelessWidget {
                                 spreadRadius: 0,
                               )
                             ],
-                            color: wbButtonBlue,
+                            color: wbColorButtonBlue,
                             shape: RoundedRectangleBorder(
                               side: const BorderSide(
                                 width: 2,

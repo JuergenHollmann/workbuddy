@@ -55,7 +55,7 @@ class ContactScreen extends StatelessWidget {
                                 spreadRadius: 0,
                               )
                             ],
-                            color: wbButtonBlue,
+                            color: wbColorButtonBlue,
                             shape: RoundedRectangleBorder(
                               side: const BorderSide(
                                 width: 2,
@@ -110,7 +110,7 @@ class ContactScreen extends StatelessWidget {
                           child: const Padding(
                             padding: EdgeInsets.all(2.5), // stroke
                             child: CircleAvatar(
-                              backgroundColor: wbButtonBlue,
+                              backgroundColor: wbColorButtonBlue,
                               backgroundImage:
                                   // AssetImage("assets/dummy_person_portrait.png",),
                                   // AssetImage("assets/dummy_no_logo.png",),
