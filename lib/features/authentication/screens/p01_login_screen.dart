@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
@@ -14,12 +16,15 @@ class P01LoginScreen extends StatefulWidget {
 const String userName = "Jürgen";
 const String userPassword = "üpoiuztrewq";
 bool visibilityPassword = false;
+bool loginButtonIsEnabled = false;
 
 class _P01LoginScreenState extends State<P01LoginScreen> {
   /*--------------------------------- TextEditingController ---*/
   final TextEditingController userNameTEC = TextEditingController();
   final TextEditingController userPasswordTEC = TextEditingController();
-
+  String inputUserName = "";
+  String inputUserPassword = "";
+  /*--------------------------------- Override ---*/
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -64,21 +69,19 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight8,
           /*--------------------------------- Text ---*/
-          const Text(
-            "Bitte melde Dich an:",
-            style: TextStyle(
+          Text(
+            "Bitte melde Dich an: $inputUserName",
+            style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w900,
                 color: Color.fromARGB(255, 255, 0, 0)),
             textAlign: TextAlign.center,
           ),
-
-          // const WelcomeText(),
-
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight16,
           /*--------------------------------- Benutzername - Feld ---*/
           TextFormField(
+            controller: userNameTEC,
             style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.w900,
@@ -124,6 +127,24 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               ),
             ),
 
+            onChanged: (String newValue) {
+              log("Eingabe: $newValue");
+              inputUserName = newValue;
+              setState(() => inputUserName = newValue);
+
+              if (newValue == userName) {
+                log("Der Benutzername $userName ist korrekt!");
+                // WBGreenButton(onTap: () {}); // funzt nicht
+                setState(() {
+                  loginButtonIsEnabled = true; // funzt nicht
+                  WBGreenButton(onTap: () {}); // funzt nicht
+                });
+              } else {
+                log("Die Eingabe ist NICHT korrekt!");
+                //const WBGreenButton(onTap: null); // funzt nicht
+              }
+            },
+
             /*--- validator ---*/
             // validator: (userNameTEC) {
             //   // Der Benutzername wurde nicht ausgefüllt:
@@ -134,43 +155,9 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             //   // Alles ist in Ordnung, keine Probleme
             //   return null;
             // },
-
-            // onChanged: (password) {
-            //   if (password.length >= 5) {
-            //     emailController.text = "admin@gmail.com";
-            //   }
-            // },
           ),
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight32,
-          /*--------------------------------- Benutzername - TextFormField---*/
-          //           TextFormField(
-          //             controller: userNameTEC,
-          //             obscureText: passwordVisible,
-          //             decoration: InputDecoration(border: const OutlineInputBorder(),
-
-          //             suffixIcon: IconButton(
-          //               icon: Icon(
-          //                 passwordVisible
-          //                 ? Icons.visibility_outlined
-          //                 : Icons.visibility_off_outlined,
-          //                 color: wbColorAppBarBlue
-          //                 ),
-
-          //               onPressed: setState(() {
-          //                 passwordVisible = !passwordVisible;
-          //               });
-          // },
-          //             ),
-          //             ),
-
-          //             // style: const TextStyle(
-          //             //   fontSize: 24,
-          //             //   fontWeight: FontWeight.w900,
-          //             //   color: Colors.red,
-          //             // ),
-          //             // textAlign: TextAlign.center,
-          //           ),
           /*--------------------------------- Passwort - Feld ---*/
           TextFormField(
             style: const TextStyle(
@@ -181,7 +168,6 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             textAlign: TextAlign.left,
             textInputAction: TextInputAction.next,
             obscureText: visibilityPassword,
-
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
@@ -194,8 +180,6 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 fontWeight: FontWeight.bold,
                 backgroundColor: Colors.white,
               ),
-
-              //floatingLabelBehavior: FloatingLabelBehavior.always,
 
               /*--- prefixIcon ---*/
               prefixIcon: const Padding(
@@ -239,33 +223,41 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             ),
 
             /*--- validator ---*/
-            // validator: (userPassword) {
-            //   // Password wurde garnicht ausgefüllt
-            //   if (userPassword == null) {
-            //     return "Bitte Passwort angeben";
-            //   } else if (userPassword.length < 8) {
-            //     // Passwort muss größer als 8 Zeichen sein
-            //     return "Bitte 8 Zeichen angeben";
-            //   }
-            //   // Alles ist in Ordnung, keine Probleme
-            //   return null;
-            // },
-
-            // onChanged: (password) {
-            //   if (password.length >= 5) {
-            //     emailController.text = "admin@gmail.com";
-            //   }
-            // },
+            validator: (userPassword) {
+              // Password wurde nicht ausgefüllt:
+              if (userPassword == null) {
+                // return "Bitte Passwort angeben";
+                log("Password wurde nicht ausgefüllt");
+              } else if (userPassword == "üpoiuztrewq") {
+                // return "Passwort ist korrekt";
+                log("Password ist korrekt");
+              }
+              // Passwort und Benutzername sind beide korrekt:
+              return null;
+            },
           ),
           /*--------------------------------- Abstand ---*/
-          wbSizedBoxHeight32,
+          wbSizedBoxHeight8,
           /*--------------------------------- Text ---*/
-          const Text("Passwort vergessen?"),
+          const Text(
+            "Passwort vergessen?",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w900,
+              color: wbColorButtonDarkRed,
+            ),
+            textAlign: TextAlign.right,
+          ),
+          /*--------------------------------- Divider ---*/
+          const Divider(thickness: 4, color: Colors.blue),
           /*--------------------------------- Abstand ---*/
-          wbSizedBoxHeight32,
-          wbSizedBoxHeight32, wbSizedBoxHeight32, wbSizedBoxHeight32,
+          wbSizedBoxHeight8,
           /*--------------------------------- Login-Button ---*/
-          const WBGreenButton(),
+          WBGreenButton(onTap: () {}),
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight16,
+          /*--------------------------------- Divider ---*/
+          const Divider(thickness: 4, color: Colors.blue),
           /*--------------------------------- ENDE ---*/
           // Container(height: 60),
           // ElevatedButton.icon(

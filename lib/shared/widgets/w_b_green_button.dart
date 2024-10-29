@@ -4,7 +4,7 @@ import 'package:workbuddy/class/selection_screen.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 
 class WBGreenButton extends StatelessWidget {
-  const WBGreenButton({super.key});
+  const WBGreenButton({super.key, required onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -31,14 +31,6 @@ class WBGreenButton extends StatelessWidget {
             16,
           ),
         ),
-        // shadows: const [
-        //   BoxShadow(
-        //     color: wbColorButtonShadowGrey,
-        //     blurRadius: 5,
-        //     offset: Offset(0, 12),
-        //     spreadRadius: 0,
-        //   )
-        // ],
       ),
       child: GestureDetector(
         onTap: () {
