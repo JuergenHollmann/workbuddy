@@ -84,14 +84,14 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       /*--------------------------------- P01LoginScreen ---*/
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          wbSizedBoxHeight8,
-          const P01LoginScreen(),
-          _widgetOptions[_selectedIndex],
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            wbSizedBoxHeight8,
+            const P01LoginScreen(),
+            _widgetOptions[_selectedIndex],
+          ],
+        ),
       ),
       /*--------------------------------- Drawer Aufruf ---*/
       drawer: Drawer(
