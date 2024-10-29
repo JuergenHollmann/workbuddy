@@ -249,7 +249,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             textAlign: TextAlign.right,
           ),
           /*--------------------------------- Divider ---*/
-          const Divider(thickness: 4, color: Colors.blue),
+          const Divider(thickness: 4, color: wbColorButtonGreen),
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight8,
           /*--------------------------------- Login-Button ---*/
@@ -257,7 +257,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight16,
           /*--------------------------------- Divider ---*/
-          const Divider(thickness: 4, color: Colors.blue),
+          const Divider(thickness: 4, color: wbColorButtonGreen),
           /*--------------------------------- ENDE ---*/
           // Container(height: 60),
           // ElevatedButton.icon(
