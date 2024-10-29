@@ -7,6 +7,8 @@ const double normalDistance = 24;
 
 const wbSizedBoxHeight8 = SizedBox(height: 8);
 const wbSizedBoxHeight16 = SizedBox(height: 16);
+const wbSizedBoxHeight24 = SizedBox(height: 24);
+const wbSizedBoxHeight32 = SizedBox(height: 32);
 
 const wbSizedBoxWidth8 = SizedBox(width: 8);
 const wbSizedBoxWidth16 = SizedBox(width: 16);
