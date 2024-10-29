@@ -36,15 +36,15 @@ class _MyHomePageState extends State<MyHomePage> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Index 0: Sprache',
+      "", //'Index 0: Sprache',
       style: optionStyle,
     ),
     Text(
-      'Index 1: Design',
+      "", //'Index 1: Design',
       style: optionStyle,
     ),
     Text(
-      'Index 2: Erinnerungen',
+      "", //'Index 2: Erinnerungen',
       style: optionStyle,
     ),
   ];
@@ -85,8 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       /*--------------------------------- P01LoginScreen ---*/
       body: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          wbSizedBoxHeight16,
           wbSizedBoxHeight8,
           const P01LoginScreen(),
           _widgetOptions[_selectedIndex],
@@ -103,11 +104,9 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: //
-                  Image(
+              child: Image(
                 image: AssetImage("assets/workbuddy_glow_schriftzug.png"),
               ),
-              // WelcomeText(),
             ),
             ListTile(
               title: const Text(

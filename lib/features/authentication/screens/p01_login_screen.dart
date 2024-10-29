@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:workbuddy/class/welcome_text.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
@@ -23,150 +22,207 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            /*--------------------------------- WelcomeText ---*/
-            const WelcomeText(),
-            wbSizedBoxHeight32,
-            /*--------------------------------- Benutzername - Überschrift ---*/
-            // Container(height: 8),
-            // const Text(
-            //   "Benutzername",
-            //   textScaler: TextScaler.linear(1.5),
-            // ),
-
-            /*--------------------------------- Benutzername - Feld ---*/
-            TextFormField(
-              style: const TextStyle(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        children: [
+          /*--------------------------------- Image Logo ---*/
+          const SizedBox(
+            height: 120,
+            width: 120,
+            child: Image(
+              image: AssetImage("assets/workbuddy_logo_neon_green_512x512.png"),
+            ),
+          ),
+          /*--------------------------------- Divider ---*/
+          const Divider(thickness: 4, color: Colors.blue),
+          /*--------------------------------- Text ---*/
+          const Text(
+            "Herzlich willkommen bei",
+            style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w900,
-                color: wbColorButtonGreen,
-              ),
-              textAlign: TextAlign.center,
-              textInputAction: TextInputAction.next,
-              //obscureText: visibilityPassword,
+                color: Color.fromARGB(255, 0, 80, 220)),
+            textAlign: TextAlign.center,
+          ),
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight8,
+          /*--------------------------------- Image ---*/
+          const Image(
+              image: AssetImage("assets/workbuddy_glow_schriftzug.png")),
+          /*--------------------------------- Text ---*/
+          const Text(
+            "\"save time and money!\"",
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w900,
+                color: Color.fromARGB(255, 0, 80, 220)),
+            textAlign: TextAlign.center,
+          ),
+          /*--------------------------------- Divider ---*/
+          const Divider(thickness: 4, color: Colors.blue),
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight8,
+          /*--------------------------------- Text ---*/
+          const Text(
+            "Bitte melde Dich an:",
+            style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w900,
+                color: Color.fromARGB(255, 255, 0, 0)),
+            textAlign: TextAlign.center,
+          ),
 
-              decoration: const InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                contentPadding: EdgeInsets.all(16),
-                labelStyle:
-                    TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                labelText: 'Benutzername',
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                prefixIcon: Icon(
+          // const WelcomeText(),
+
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight16,
+          /*--------------------------------- Benutzername - Feld ---*/
+          TextFormField(
+            style: const TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w900,
+              color: wbColorButtonGreen,
+            ),
+
+            textAlign: TextAlign.left,
+            textInputAction: TextInputAction.next,
+
+            decoration: const InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              contentPadding: EdgeInsets.all(16),
+
+              /*--- labelStyle ---*/
+              labelText: 'Benutzername',
+              labelStyle: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                backgroundColor: Colors.white,
+              ),
+
+              /*--- prefixIcon ---*/
+              prefixIcon: Padding(
+                padding: EdgeInsets.all(16),
+                child: Icon(
                   size: 40,
                   Icons.person,
                 ),
-
-                // prefixIconConstraints: 16, todo
-
-                hintText: "Bitte Benutzernamen eingeben",
-                hintStyle: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.black38,
-                ),
-
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
-                ),
               ),
 
-              // validator: (userNameTEC) {
-              //   // Der Benutzername wurde nicht ausgefüllt:
-              //   if (userNameTEC == null) {
-              //     return "Bitte den Benutzernamen angeben!";
+              /*--- hintText ---*/
+              hintText: "Bitte Benutzername eingeben",
+              hintStyle: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w900,
+                color: Colors.black38,
+              ),
 
-              //   }
-              //   // Alles ist in Ordnung, keine Probleme
-              //   return null;
-              // },
-
-              // onChanged: (password) {
-              //   if (password.length >= 5) {
-              //     emailController.text = "admin@gmail.com";
-              //   }
-              // },
+              /*--- border ---*/
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(16)),
+              ),
             ),
 
-            wbSizedBoxHeight32,
-            /*--------------------------------- Benutzername - TextFormField---*/
-            //           TextFormField(
-            //             controller: userNameTEC,
-            //             obscureText: passwordVisible,
-            //             decoration: InputDecoration(border: const OutlineInputBorder(),
+            /*--- validator ---*/
+            // validator: (userNameTEC) {
+            //   // Der Benutzername wurde nicht ausgefüllt:
+            //   if (userNameTEC == null) {
+            //     return "Bitte den Benutzernamen angeben!";
 
-            //             suffixIcon: IconButton(
-            //               icon: Icon(
-            //                 passwordVisible
-            //                 ? Icons.visibility_outlined
-            //                 : Icons.visibility_off_outlined,
-            //                 color: wbColorAppBarBlue
-            //                 ),
-
-            //               onPressed: setState(() {
-            //                 passwordVisible = !passwordVisible;
-            //               });
+            //   }
+            //   // Alles ist in Ordnung, keine Probleme
+            //   return null;
             // },
-            //             ),
-            //             ),
 
-            //             // style: const TextStyle(
-            //             //   fontSize: 24,
-            //             //   fontWeight: FontWeight.w900,
-            //             //   color: Colors.red,
-            //             // ),
-            //             // textAlign: TextAlign.center,
-            //           ),
+            // onChanged: (password) {
+            //   if (password.length >= 5) {
+            //     emailController.text = "admin@gmail.com";
+            //   }
+            // },
+          ),
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight32,
+          /*--------------------------------- Benutzername - TextFormField---*/
+          //           TextFormField(
+          //             controller: userNameTEC,
+          //             obscureText: passwordVisible,
+          //             decoration: InputDecoration(border: const OutlineInputBorder(),
 
-            /*--------------------------------- Passwort - Überschrift ---*/
-            // Container(height: 32),
-            // const Text(
-            //   "Passwort",
-            //   textScaler: TextScaler.linear(1.5),
-            // ),
+          //             suffixIcon: IconButton(
+          //               icon: Icon(
+          //                 passwordVisible
+          //                 ? Icons.visibility_outlined
+          //                 : Icons.visibility_off_outlined,
+          //                 color: wbColorAppBarBlue
+          //                 ),
 
-            /*--------------------------------- Passwort - Feld ---*/
-            TextFormField(
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w900,
-                color: wbColorButtonGreen,
+          //               onPressed: setState(() {
+          //                 passwordVisible = !passwordVisible;
+          //               });
+          // },
+          //             ),
+          //             ),
+
+          //             // style: const TextStyle(
+          //             //   fontSize: 24,
+          //             //   fontWeight: FontWeight.w900,
+          //             //   color: Colors.red,
+          //             // ),
+          //             // textAlign: TextAlign.center,
+          //           ),
+          /*--------------------------------- Passwort - Feld ---*/
+          TextFormField(
+            style: const TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w900,
+              color: wbColorButtonDarkRed,
+            ),
+            textAlign: TextAlign.left,
+            textInputAction: TextInputAction.next,
+            obscureText: visibilityPassword,
+
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              contentPadding: const EdgeInsets.all(16),
+
+              /*--- labelStyle ---*/
+              labelText: 'Passwort',
+              labelStyle: const TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                backgroundColor: Colors.white,
               ),
-              textAlign: TextAlign.center,
-              textInputAction: TextInputAction.next,
-              obscureText: visibilityPassword,
 
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white,
-                contentPadding: const EdgeInsets.all(16),
-                labelStyle:
-                    const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                labelText: 'Passwort',
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                prefixIcon: const Icon(
+              //floatingLabelBehavior: FloatingLabelBehavior.always,
+
+              /*--- prefixIcon ---*/
+              prefixIcon: const Padding(
+                padding: EdgeInsets.all(16),
+                child: Icon(
                   size: 40,
-                  Icons.lock_outlined,
+                  Icons.lock,
                 ),
-                //prefixIconConstraints: todo
-                hintText: "Bitte das Passwort eingeben",
-                hintStyle: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.black38,
-                ),
-                suffixIcon: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      visibilityPassword = !visibilityPassword;
-                    });
-                  },
+              ),
+
+              /*--- hintText ---*/
+              hintText: "Bitte Passwort eingeben",
+              hintStyle: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w900,
+                color: Colors.black38,
+              ),
+
+              /*--- suffixIcon ---*/
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    visibilityPassword = !visibilityPassword;
+                  });
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
                   child: Icon(
                     size: 40,
                     visibilityPassword
@@ -174,82 +230,87 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                         : Icons.visibility_off_outlined,
                   ),
                 ),
-
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
-                ),
               ),
 
-              // validator: (userPassword) {
-              //   // Password wurde garnicht ausgefüllt
-              //   if (userPassword == null) {
-              //     return "Bitte Passwort angeben";
-              //   } else if (userPassword.length < 8) {
-              //     // Passwort muss größer als 8 Zeichen sein
-              //     return "Bitte 8 Zeichen angeben";
-              //   }
-              //   // Alles ist in Ordnung, keine Probleme
-              //   return null;
-              // },
-
-              // onChanged: (password) {
-              //   if (password.length >= 5) {
-              //     emailController.text = "admin@gmail.com";
-              //   }
-              // },
+              /*--- border ---*/
+              border: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(16)),
+              ),
             ),
-            /*--------------------------------- Abstand ---*/
-            wbSizedBoxHeight16,
-            wbSizedBoxHeight16, //todo
-            /*--------------------------------- Login-Button ---*/
-            const WBGreenButton(),
-            /*--------------------------------- ENDE ---*/
 
-            // Container(height: 60),
-            // ElevatedButton.icon(
-            //     onPressed: () {
-            //       Navigator.push(
-            //         context,
-            //         MaterialPageRoute(
-            //             builder: (context) => const SelectionPage()),
-            //       );
+            /*--- validator ---*/
+            // validator: (userPassword) {
+            //   // Password wurde garnicht ausgefüllt
+            //   if (userPassword == null) {
+            //     return "Bitte Passwort angeben";
+            //   } else if (userPassword.length < 8) {
+            //     // Passwort muss größer als 8 Zeichen sein
+            //     return "Bitte 8 Zeichen angeben";
+            //   }
+            //   // Alles ist in Ordnung, keine Probleme
+            //   return null;
+            // },
 
-            //       // Code: soll einen Ton abspielen und ins Auswahlmenü wechseln // todo
+            // onChanged: (password) {
+            //   if (password.length >= 5) {
+            //     emailController.text = "admin@gmail.com";
+            //   }
+            // },
+          ),
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight32,
+          /*--------------------------------- Text ---*/
+          const Text("Passwort vergessen?"),
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight32,
+          wbSizedBoxHeight32, wbSizedBoxHeight32, wbSizedBoxHeight32,
+          /*--------------------------------- Login-Button ---*/
+          const WBGreenButton(),
+          /*--------------------------------- ENDE ---*/
+          // Container(height: 60),
+          // ElevatedButton.icon(
+          //     onPressed: () {
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //             builder: (context) => const SelectionPage()),
+          //       );
 
-            //       // Scaffold.of(context).openDrawer();  // startet den Drawer
+          //       // Code: soll einen Ton abspielen und ins Auswahlmenü wechseln // todo
 
-            //       // final player = Audio.load("asset/sound05xylophon.wav");
-            //       // player.play();
-            //       /* NoSuchMethodError (NoSuchMethodError: The method 'play' was called on null.
-            //          Receiver: null
-            //          Tried calling: play("asset/sound05xylophon.wav")) */
+          //       // Scaffold.of(context).openDrawer();  // startet den Drawer
 
-            //       // int soundId = await rootBundle
-            //       //     .load("assets/sound05xylophon.wav")
-            //       //     .then((ByteData soundData) {
-            //       //   /* NoSuchMethodError (NoSuchMethodError: Class 'String' has no instance method 'load'.
-            //       //      Receiver: "assets/sound05xylophon.wav"
-            //       //      Tried calling: load(_UnmodifiableByteDataView)) */
-            //       //   return pool.load(soundData);
-            //       // });
-            //       // await pool.play(soundId);
+          //       // final player = Audio.load("asset/sound05xylophon.wav");
+          //       // player.play();
+          //       /* NoSuchMethodError (NoSuchMethodError: The method 'play' was called on null.
+          //          Receiver: null
+          //          Tried calling: play("asset/sound05xylophon.wav")) */
 
-            //       // AudioCache player = AudioCache();
-            //       // const alarmAudioPath = "sound05xylophon.wav";
-            //       // player.play(alarmAudioPath);
-            //     },
-            //     icon: const Icon(Icons.login, size: 34, fill: 1, weight: 80),
-            //     label: const Text("  P01LoginScreen"),
-            //     style: ElevatedButton.styleFrom(
-            //       foregroundColor: Colors.black, // Textfarbe
-            //       backgroundColor: Colors.blue, // Buttonfarbe
-            //       shadowColor: Colors.black,
-            //       iconColor: Colors.white,
-            //       textStyle: const TextStyle(
-            //           fontSize: 30, fontWeight: FontWeight.w900),
-            //     )),
-          ],
-        ),
+          //       // int soundId = await rootBundle
+          //       //     .load("assets/sound05xylophon.wav")
+          //       //     .then((ByteData soundData) {
+          //       //   /* NoSuchMethodError (NoSuchMethodError: Class 'String' has no instance method 'load'.
+          //       //      Receiver: "assets/sound05xylophon.wav"
+          //       //      Tried calling: load(_UnmodifiableByteDataView)) */
+          //       //   return pool.load(soundData);
+          //       // });
+          //       // await pool.play(soundId);
+
+          //       // AudioCache player = AudioCache();
+          //       // const alarmAudioPath = "sound05xylophon.wav";
+          //       // player.play(alarmAudioPath);
+          //     },
+          //     icon: const Icon(Icons.login, size: 34, fill: 1, weight: 80),
+          //     label: const Text("  P01LoginScreen"),
+          //     style: ElevatedButton.styleFrom(
+          //       foregroundColor: Colors.black, // Textfarbe
+          //       backgroundColor: Colors.blue, // Buttonfarbe
+          //       shadowColor: Colors.black,
+          //       iconColor: Colors.white,
+          //       textStyle: const TextStyle(
+          //           fontSize: 30, fontWeight: FontWeight.w900),
+          //     )),
+        ],
       ),
     );
   }
