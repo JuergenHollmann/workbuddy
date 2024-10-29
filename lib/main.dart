@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
+import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/authentication/screens/p01_login_screen.dart';
 
 void main() => runApp(const MainApp());
@@ -28,6 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  /*--------------------------------- Drawer Vorbereitung ---*/
   int _selectedIndex = 0;
 
   static const TextStyle optionStyle =
@@ -53,15 +55,26 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  /*--------------------------------- ENDE Drawer Vorbereitung ---*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: wbColorBackgroundBlue,
+      /*--------------------------------- AppBar ---*/
       appBar: AppBar(
-        title: Text(widget.title),
+        backgroundColor: wbColorAppBarBlue,
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w900,
+            color: Colors.white, // Schriftfarbe
+          ),
+        ),
         leading: Builder(
           builder: (context) {
             return IconButton(
+              color: Colors.white,
               icon: const Icon(Icons.menu),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
@@ -70,12 +83,16 @@ class _MyHomePageState extends State<MyHomePage> {
           },
         ),
       ),
+      /*--------------------------------- P01LoginScreen ---*/
       body: Column(
         children: [
+          wbSizedBoxHeight16,
+          wbSizedBoxHeight8,
           const P01LoginScreen(),
           _widgetOptions[_selectedIndex],
         ],
       ),
+      /*--------------------------------- Drawer Aufruf ---*/
       drawer: Drawer(
         // Eine ListView in den Drawer implementieren:
         child: ListView(
@@ -132,46 +149,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
-
-
-
-// import 'package:flutter/material.dart';
-// import 'package:workbuddy/config/wb_colors.dart';
-// import 'package:workbuddy/features/authentication/screens/p01_login_screen.dart';
-// import 'package:workbuddy/shared/widgets/start_page_drawer.dart';
-
-
-
-// class MainApp extends StatelessWidget {
-//   const MainApp({super.key});
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //     debugShowCheckedModeBanner: false,
-  //     home: Scaffold(
-  //       backgroundColor: wbColorBackgroundBlue,
-  //       appBar: AppBar(title: const Text("WorkBuddy"),
-  //       //drawer: StartPageDrawer(child: child)),
-  //       body: const SafeArea(
-  //         child: Column(
-  //           children: [
-  //             P01LoginScreen(),
-  //           ],
-  //         ),
-  //       ), // SafeArea
-
-  //     ),
-  //   );
-  // }
-// }
-// /*--------------------------------- Audio ---*/
-// class Audio {
-//   static load(String s) {}
-// }
-
-// class AudioCache {
-//   void play(String alarmAudioPath) {}
-// }

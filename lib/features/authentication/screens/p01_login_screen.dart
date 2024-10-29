@@ -3,9 +3,14 @@ import 'package:workbuddy/class/welcome_text.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
 
-class P01LoginScreen extends StatelessWidget {
+class P01LoginScreen extends StatefulWidget {
   const P01LoginScreen({super.key});
 
+  @override
+  State<P01LoginScreen> createState() => _P01LoginScreenState();
+}
+
+class _P01LoginScreenState extends State<P01LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -22,14 +27,16 @@ class P01LoginScreen extends StatelessWidget {
               "Benutzername",
               textScaler: TextScaler.linear(1.5),
             ),
-            const TextField(
-              style: TextStyle(
+
+            TextFormField(
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w900,
-                color: wbColorButtonDarkRed,
+                color: Colors.red,
               ),
               textAlign: TextAlign.center,
             ),
+
             /*--------------------------------- Passwort ---*/
             Container(height: 32),
             const Text(

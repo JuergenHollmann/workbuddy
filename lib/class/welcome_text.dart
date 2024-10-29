@@ -78,7 +78,7 @@ class WelcomeText extends StatelessWidget {
           thickness: 4,
           color: Colors.blue,
         ),
-
+        
         const Text(
           "Herzlich willkommen bei",
           style: TextStyle(
@@ -87,6 +87,7 @@ class WelcomeText extends StatelessWidget {
               color: Color.fromARGB(255, 0, 80, 220)),
           textAlign: TextAlign.center,
         ),
+        
         Container(height: 8),
         // Image "workbuddy_glow_schriftzug" einbinden:
         const Image(image: AssetImage("assets/workbuddy_glow_schriftzug.png")),
