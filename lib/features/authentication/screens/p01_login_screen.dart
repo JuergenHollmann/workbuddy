@@ -1,10 +1,11 @@
 import 'dart:developer';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/features/authentication/screens/p00_registration_screen.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
-import 'package:audioplayers/audioplayers.dart';
 
 class P01LoginScreen extends StatefulWidget {
   const P01LoginScreen({super.key});
@@ -16,15 +17,32 @@ class P01LoginScreen extends StatefulWidget {
 /*--------------------------------- User + Passwort ---*/
 const String userName = "Jürgen";
 const String userPassword = "pass";
-bool visibilityPassword = false;
+// bool visibilityPassword = false;
 bool loginButtonIsEnabled = false;
 
 class _P01LoginScreenState extends State<P01LoginScreen> {
+  // Brauchen wir, damit wir alle TextFormFields validieren können
+  // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   late AudioPlayer player = AudioPlayer();
+
   final TextEditingController userNameTEC = TextEditingController();
   final TextEditingController userPasswordTEC = TextEditingController();
+
+  bool visibilityPassword = false;
   String inputUserName = ""; // nur für die "onChanged-Funktion"
   String inputPassword = ""; // nur für die "onChanged-Funktion"
+
+  /*--------------------------------- isValidEmail ---*/
+  String? isValidEmail(String? value) {
+    // E-Mail soll aus Zeichen bestehen, also nicht leer sein.
+    if (value == null) return "Die E-Mail muss angegeben werden! ";
+    // E-Mail soll mindestens 5 Zeichen lang sein (a@b.d)
+    if (value.length < 5) return "Die E-Mail benötigt mindestens 5 Zeichen!";
+    // E-Mail soll ein "@" enthalten.
+    if (!value.contains("@")) return "Die E-Mail muss ein @ enthalten!";
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -137,7 +155,17 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               if (newInputUsername == userName) {
                 log("Der Benutzername $userName ist KORREKT!");
                 // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
-                player.play(AssetSource("sound/sound06pling.wav"));
+                player.play(AssetSource("sound/sound05xylophon.wav"));
+                // player.play(AssetSource("sound/sound06pling.wav"));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: const Text("Benutzername ist KORREKT"),
+                    action: SnackBarAction(
+                      label: "OK",
+                      onPressed: () {},
+                    ),
+                  ),
+                );
 
                 // WBGreenButton(onTap: () {}); // funzt nicht
                 setState(() {
@@ -165,6 +193,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           wbSizedBoxHeight32,
           /*--------------------------------- Passwort - Feld ---*/
           TextFormField(
+            //validator: isValidEmail(),
             style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.w900,
@@ -278,61 +307,31 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Divider ---*/
           const Divider(thickness: 4, color: wbColorButtonGreen),
           /*--------------------------------- Text ---*/
-          const Text(
-            "Registrierung",
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w900,
-              color: wbColorButtonGreen,
+          GestureDetector(
+            onTap: () {
+              log("Auf - P00RegistrationScreen gehen - angeklickt");
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const P00RegistrationScreen(
+                      //startGroupValue: "Ausgabe",
+                      ),
+                ),
+              );
+            },
+            child: const Text(
+              "Registrierung",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w900,
+                color: wbColorButtonGreen,
+              ),
+              textAlign: TextAlign.right,
             ),
-            textAlign: TextAlign.right,
           ),
           /*--------------------------------- Divider ---*/
           const Divider(thickness: 4, color: wbColorButtonGreen),
           /*--------------------------------- ENDE ---*/
-          // Container(height: 60),
-          // ElevatedButton.icon(
-          //     onPressed: () {
-          //       Navigator.push(
-          //         context,
-          //         MaterialPageRoute(
-          //             builder: (context) => const SelectionPage()),
-          //       );
-
-          //       // Code: soll einen Ton abspielen und ins Auswahlmenü wechseln // todo
-
-          //       // Scaffold.of(context).openDrawer();  // startet den Drawer
-
-          //       // final player = Audio.load("asset/sound05xylophon.wav");
-          //       // player.play();
-          //       /* NoSuchMethodError (NoSuchMethodError: The method 'play' was called on null.
-          //          Receiver: null
-          //          Tried calling: play("asset/sound05xylophon.wav")) */
-
-          //       // int soundId = await rootBundle
-          //       //     .load("assets/sound05xylophon.wav")
-          //       //     .then((ByteData soundData) {
-          //       //   /* NoSuchMethodError (NoSuchMethodError: Class 'String' has no instance method 'load'.
-          //       //      Receiver: "assets/sound05xylophon.wav"
-          //       //      Tried calling: load(_UnmodifiableByteDataView)) */
-          //       //   return pool.load(soundData);
-          //       // });
-          //       // await pool.play(soundId);
-
-          //       // AudioCache player = AudioCache();
-          //       // const alarmAudioPath = "sound05xylophon.wav";
-          //       // player.play(alarmAudioPath);
-          //     },
-          //     icon: const Icon(Icons.login, size: 34, fill: 1, weight: 80),
-          //     label: const Text("  P01LoginScreen"),
-          //     style: ElevatedButton.styleFrom(
-          //       foregroundColor: Colors.black, // Textfarbe
-          //       backgroundColor: Colors.blue, // Buttonfarbe
-          //       shadowColor: Colors.black,
-          //       iconColor: Colors.white,
-          //       textStyle: const TextStyle(
-          //           fontSize: 30, fontWeight: FontWeight.w900),
-          //     )),
         ],
       ),
     );
