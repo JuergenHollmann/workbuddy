@@ -30,11 +30,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   /*--------------------------------- Drawer Vorbereitung ---*/
-  int _selectedIndex = 0;
+  int _selectedDrawerIndex = 0;
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static const List<Widget> _widgetDrawerOptions = <Widget>[
     Text(
       "", //'Index 0: Sprache',
       style: optionStyle,
@@ -47,15 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
       "", //'Index 2: Erinnerungen',
       style: optionStyle,
     ),
+    Text(
+      "", //'Index 3: Sound',
+      style: optionStyle,
+    ),
   ];
 
-  void _onItemTapped(int index) {
+  void _onDrawerItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      _selectedDrawerIndex = index;
     });
   }
 
-  /*--------------------------------- ENDE Drawer Vorbereitung ---*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             wbSizedBoxHeight8,
             const P01LoginScreen(),
-            _widgetOptions[_selectedIndex],
+            _widgetDrawerOptions[_selectedDrawerIndex],
           ],
         ),
       ),
@@ -108,6 +111,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 image: AssetImage("assets/workbuddy_glow_schriftzug.png"),
               ),
             ),
+
+            /*--- ListTile 0 ---*/
             ListTile(
               title: const Text(
                 'Sprache',
@@ -117,30 +122,45 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: wbColorAppBarBlue,
                 ),
               ),
-              selected: _selectedIndex == 0,
+              selected: _selectedDrawerIndex == 0,
               onTap: () {
                 // Zuerst den State der App aktualisieren ...
-                _onItemTapped(0);
+                _onDrawerItemTapped(0);
                 // ... dann den Drawer schließen:
                 Navigator.pop(context);
               },
             ),
+
+            /*--- ListTile 1 ---*/
             ListTile(
               title: const Text('Designauswahl'),
-              selected: _selectedIndex == 1,
+              selected: _selectedDrawerIndex == 1,
               onTap: () {
-                _onItemTapped(1);
+                _onDrawerItemTapped(1);
                 Navigator.pop(context);
               },
             ),
+
+            /*--- ListTile 2 ---*/
             ListTile(
               title: const Text('Erinnerungen'),
-              selected: _selectedIndex == 2,
+              selected: _selectedDrawerIndex == 2,
               onTap: () {
-                _onItemTapped(2);
+                _onDrawerItemTapped(2);
                 Navigator.pop(context);
               },
             ),
+
+            /*--- ListTile 3 ---*/
+            ListTile(
+              title: const Text('Sound an/aus'),
+              selected: _selectedDrawerIndex == 3,
+              onTap: () {
+                _onDrawerItemTapped(3);
+                Navigator.pop(context);
+              },
+            ),
+
             //const WelcomeText(),
           ],
         ),
