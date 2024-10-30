@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class P01LoginScreen extends StatefulWidget {
   const P01LoginScreen({super.key});
@@ -14,17 +15,17 @@ class P01LoginScreen extends StatefulWidget {
 
 /*--------------------------------- User + Passwort ---*/
 const String userName = "Jürgen";
-const String userPassword = "üpoiuztrewq";
+const String userPassword = "pass";
 bool visibilityPassword = false;
 bool loginButtonIsEnabled = false;
 
 class _P01LoginScreenState extends State<P01LoginScreen> {
-  /*--------------------------------- TextEditingController ---*/
+  late AudioPlayer player = AudioPlayer();
   final TextEditingController userNameTEC = TextEditingController();
   final TextEditingController userPasswordTEC = TextEditingController();
-  String inputUserName = "";
-  String inputUserPassword = "";
-  /*--------------------------------- Override ---*/
+  String inputUserName = ""; // nur für die "onChanged-Funktion"
+  String inputPassword = ""; // nur für die "onChanged-Funktion"
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -127,20 +128,24 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               ),
             ),
 
-            onChanged: (String newValue) {
-              log("Eingabe: $newValue");
-              inputUserName = newValue;
-              setState(() => inputUserName = newValue);
+            /*--- onChanged ---*/
+            onChanged: (String newInputUsername) {
+              log("Eingabe: $newInputUsername");
+              inputUserName = newInputUsername;
+              setState(() => inputUserName = newInputUsername);
 
-              if (newValue == userName) {
-                log("Der Benutzername $userName ist korrekt!");
+              if (newInputUsername == userName) {
+                log("Der Benutzername $userName ist KORREKT!");
+                // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
+                player.play(AssetSource("sound/sound06pling.wav"));
+
                 // WBGreenButton(onTap: () {}); // funzt nicht
                 setState(() {
                   loginButtonIsEnabled = true; // funzt nicht
                   WBGreenButton(onTap: () {}); // funzt nicht
                 });
               } else {
-                log("Die Eingabe ist NICHT korrekt!");
+                log("Die Eingabe für den Benutzername ist NICHT korrekt!");
                 //const WBGreenButton(onTap: null); // funzt nicht
               }
             },
@@ -222,6 +227,20 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               ),
             ),
 
+            /*--- onChanged ---*/
+            onChanged: (String newInputPassword) {
+              log("Eingabe: $newInputPassword");
+              inputPassword = newInputPassword;
+              setState(() => inputPassword = newInputPassword);
+              if (newInputPassword == userPassword) {
+                log("Das Passwort $userPassword ist KORREKT!");
+                // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
+                player.play(AssetSource("sound/sound06pling.wav"));
+              } else {
+                log("Die Eingabe für das Passwort ist NICHT korrekt!");
+              }
+            },
+
             /*--- validator ---*/
             validator: (userPassword) {
               // Password wurde nicht ausgefüllt:
@@ -256,6 +275,18 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           WBGreenButton(onTap: () {}),
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight16,
+          /*--------------------------------- Divider ---*/
+          const Divider(thickness: 4, color: wbColorButtonGreen),
+          /*--------------------------------- Text ---*/
+          const Text(
+            "Registrierung",
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w900,
+              color: wbColorButtonGreen,
+            ),
+            textAlign: TextAlign.right,
+          ),
           /*--------------------------------- Divider ---*/
           const Divider(thickness: 4, color: wbColorButtonGreen),
           /*--------------------------------- ENDE ---*/

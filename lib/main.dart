@@ -8,7 +8,7 @@ void main() => runApp(const MainApp());
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
-  static const appTitle = 'WorkBuddy - "save time and money"';
+  static const appTitle = 'WorkBuddy • save time and money!';
 
   @override
   Widget build(BuildContext context) {

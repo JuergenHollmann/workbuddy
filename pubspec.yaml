@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  audioplayers: ^6.1.0
 
 cupertino_icons: ^1.0.6
 audiofileplayer: ^2.1.1
@@ -27,3 +28,4 @@ flutter:
    - assets/
    - assets/iconbuttons/
    - assets/company_logos/
+   - assets/sound/
