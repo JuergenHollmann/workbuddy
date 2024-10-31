@@ -81,11 +81,11 @@ class WbButtonUniversal extends StatelessWidget {
                   ),
                 ),
                 Expanded(
+                  // -------------------------------------------------- Padding Center Text ---
                   // child: Center(
                   // /* dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist ) */
                   // child: Padding(
                   //   padding: const EdgeInsets.only(right: 80),
-
                   // -------------------------------------------------- Text ---
                   child: Text(
                     wbButtonUniversalText,

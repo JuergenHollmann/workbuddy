@@ -6,7 +6,7 @@ import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/authentication/screens/p01_login_screen.dart';
-import 'package:workbuddy/features/authentication/validator.dart';
+import 'package:workbuddy/shared/widgets/validator.dart';
 
 class P00RegistrationScreen extends StatefulWidget {
   const P00RegistrationScreen({super.key});
@@ -152,6 +152,91 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                         } else {
                           log("Die Eingabe für den Benutzername ist NICHT korrekt!");
                           //const WBGreenButton(onTap: null); // funzt nicht
+                        }
+                      },
+                    ),
+                    /*--------------------------------- Abstand ---*/
+                    wbSizedBoxHeight32,
+                    /*--------------------------------- Telefon + WhatsApp ---*/
+                    TextFormField(
+                      //validator: isValidEmail(),
+                      style: const TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.w900,
+                        color: wbColorButtonDarkRed,
+                      ),
+                      textAlign: TextAlign.left,
+                      textInputAction: TextInputAction.next,
+                      obscureText: visibilityPassword,
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Colors.white,
+                        contentPadding: const EdgeInsets.all(16),
+                        errorStyle: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.red,
+                          backgroundColor: Colors.yellow,
+                        ),
+
+                        /*--- labelStyle ---*/
+                        labelText: 'Mobil • WhatsApp *',
+                        labelStyle: const TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          backgroundColor: Colors.white,
+                        ),
+
+                        /*--- prefixIcon ---*/
+                        prefixIcon: const Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Icon(
+                            size: 40,
+                            Icons.smartphone_outlined,
+                          ),
+                        ),
+
+                        /*--- hintText ---*/
+                        hintText: "* = freiwillige Angabe",
+                        hintStyle: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.black38,
+                        ),
+
+                        /*--- suffixIcon ---*/
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              // Hilfetext anzeigen:
+                            });
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.all(16.0),
+                            child: Icon(
+                              size: 40,
+                              Icons.help_outline,
+                            ),
+                          ),
+                        ),
+
+                        /*--- border ---*/
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(16)),
+                        ),
+                      ),
+
+                      /*--- onChanged ---*/
+                      onChanged: (String newInputPassword) {
+                        log("Eingabe: $newInputPassword");
+                        inputPassword = newInputPassword;
+                        setState(() => inputPassword = newInputPassword);
+                        if (newInputPassword == userPassword) {
+                          log("Das Passwort $userPassword ist KORREKT!");
+                          // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
+                          player.play(AssetSource("sound/sound06pling.wav"));
+                        } else {
+                          log("Die Eingabe für das Passwort ist NICHT korrekt!");
                         }
                       },
                     ),
@@ -382,91 +467,6 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                     ),
                     /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight32,
-                    /*--------------------------------- Telefon + WhatsApp ---*/
-                    TextFormField(
-                      //validator: isValidEmail(),
-                      style: const TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.w900,
-                        color: wbColorButtonDarkRed,
-                      ),
-                      textAlign: TextAlign.left,
-                      textInputAction: TextInputAction.next,
-                      obscureText: visibilityPassword,
-                      decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        contentPadding: const EdgeInsets.all(16),
-                        errorStyle: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.red,
-                          backgroundColor: Colors.yellow,
-                        ),
-
-                        /*--- labelStyle ---*/
-                        labelText: 'Mobil • WhatsApp *',
-                        labelStyle: const TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          backgroundColor: Colors.white,
-                        ),
-
-                        /*--- prefixIcon ---*/
-                        prefixIcon: const Padding(
-                          padding: EdgeInsets.all(16),
-                          child: Icon(
-                            size: 40,
-                            Icons.smartphone_outlined,
-                          ),
-                        ),
-
-                        /*--- hintText ---*/
-                        hintText: "* = freiwillige Angabe",
-                        hintStyle: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.black38,
-                        ),
-
-                        /*--- suffixIcon ---*/
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              // Hilfetext anzeigen:
-                            });
-                          },
-                          child: const Padding(
-                            padding: EdgeInsets.all(16.0),
-                            child: Icon(
-                              size: 40,
-                              Icons.help_outline,
-                            ),
-                          ),
-                        ),
-
-                        /*--- border ---*/
-                        border: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(16)),
-                        ),
-                      ),
-
-                      /*--- onChanged ---*/
-                      onChanged: (String newInputPassword) {
-                        log("Eingabe: $newInputPassword");
-                        inputPassword = newInputPassword;
-                        setState(() => inputPassword = newInputPassword);
-                        if (newInputPassword == userPassword) {
-                          log("Das Passwort $userPassword ist KORREKT!");
-                          // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
-                          player.play(AssetSource("sound/sound06pling.wav"));
-                        } else {
-                          log("Die Eingabe für das Passwort ist NICHT korrekt!");
-                        }
-                      },
-                    ),
-                    /*--------------------------------- Abstand ---*/
-                    wbSizedBoxHeight8,
                     /*--------------------------------- Divider ---*/
                     const Divider(thickness: 4, color: wbColorButtonBlue),
                     /*--------------------------------- Abstand ---*/
@@ -525,7 +525,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                                   .showSnackBar(const SnackBar(
                                 backgroundColor: wbColorButtonDarkRed,
                                 content: Text(
-                                  "Bitte noch die angezeigten Fehler korrigieren ...",
+                                  "Bitte noch die angezeigten Fehler korrigieren ... 😉",
                                   style: TextStyle(
                                     fontSize: 28,
                                     fontWeight: FontWeight.bold,

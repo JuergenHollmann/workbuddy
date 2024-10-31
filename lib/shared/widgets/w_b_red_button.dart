@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/class/selection_screen.dart';
+import 'package:workbuddy/screens/selection_screen.dart';
 
 class WBRedButton extends StatelessWidget {
   const WBRedButton({super.key});
