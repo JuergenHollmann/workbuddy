@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:workbuddy/accounting/income_widget.dart';
-import 'package:workbuddy/accounting/expense_widget.dart';
-import 'package:workbuddy/accounting/radio_button_accounting.dart';
+import 'package:workbuddy/wb_accounting/income_widget.dart';
+import 'package:workbuddy/wb_accounting/expense_widget.dart';
+import 'package:workbuddy/wb_accounting/radio_button_accounting.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 

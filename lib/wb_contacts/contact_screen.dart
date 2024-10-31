@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
-import 'package:workbuddy/contacts/contact_radiobutton_1.dart';
+import 'package:workbuddy/wb_contacts/contact_radiobutton_1.dart';
 import 'package:workbuddy/screens/selection_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_small_text_center.dart';

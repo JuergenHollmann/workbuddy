@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/accounting/accounting_menu.dart';
+import 'package:workbuddy/wb_accounting/accounting_menu.dart';
 
 class ButtonAccounting extends StatelessWidget {
   const ButtonAccounting({super.key});
