@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:workbuddy/class/navigation_bar_green_neon.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/shared/widgets/button_accounting.dart';
 import 'package:workbuddy/shared/widgets/button_communication.dart';
 import 'package:workbuddy/shared/widgets/button_companies.dart';
 import 'package:workbuddy/shared/widgets/button_customer.dart';
+import 'package:workbuddy/shared/widgets/navigation_bar_green_neon.dart';
 
 class SelectionPage extends StatelessWidget {
   const SelectionPage({super.key});

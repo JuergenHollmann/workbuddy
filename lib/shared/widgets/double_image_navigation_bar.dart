@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workbuddy/class/navigation_bar_green_neon.dart';
+import 'package:workbuddy/shared/widgets/navigation_bar_green_neon.dart';
 
 class DoubleImageNavigationBar extends StatelessWidget {
   final String image1Path;
