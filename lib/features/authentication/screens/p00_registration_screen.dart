@@ -27,6 +27,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
 
   late AudioPlayer player = AudioPlayer();
 
+/*--------------------------------- Controller ---*/
   final TextEditingController userNameTEC = TextEditingController();
   final TextEditingController userPasswordTEC = TextEditingController();
 

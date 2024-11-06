@@ -24,8 +24,14 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
   // Brauchen wir, damit wir alle TextFormFields validieren können
   // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+//  String userName = "Jürgen";
+//  String userPassword = "pass";
+// // bool visibilityPassword = false;
+// bool loginButtonIsEnabled = false;
+
   late AudioPlayer player = AudioPlayer();
 
+  /*--------------------------------- Controller ---*/
   final TextEditingController userNameTEC = TextEditingController();
   final TextEditingController userPasswordTEC = TextEditingController();
 

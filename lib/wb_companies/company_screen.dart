@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/wb_companies/company_radiobutton_1.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
@@ -11,6 +10,7 @@ import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart
 import 'package:workbuddy/shared/widgets/wb_divider_with_small_text_center.dart';
 import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
 import 'package:workbuddy/shared/widgets/wb_textfield_standard_entry.dart';
+import 'package:workbuddy/wb_companies/company_radiobutton_1.dart';
 
 class CompanyScreen extends StatelessWidget {
   const CompanyScreen({super.key});
@@ -103,7 +103,7 @@ class CompanyScreen extends StatelessWidget {
                     ),
 
                     /* -------------------------------------- Abstand --- */
-                    const SizedBox(width: 40), // Zwischenabstand bei Expanded
+                    const SizedBox(width: 30), // Zwischenabstand bei Expanded
                     /* -------------------------------------- Ansprechpartner --- */
                     Column(
                       children: [
@@ -177,7 +177,7 @@ class CompanyScreen extends StatelessWidget {
                       wbTextFieldWidth: 398,
                     ),
 
-                    /* -------------------------------------- Notizen zu Warengruppen --- */
+                    /*-------------------------------------- Notizen zu Warengruppen ---*/
                     wbSizedBoxHeight16,
                     const WBTextfieldNotice(
                         headlineText: "Notizen zu Warengruppen",
@@ -186,12 +186,17 @@ class CompanyScreen extends StatelessWidget {
 
                     // ----------------------------------------------------- Divider mit Text ---
                     wbSizedBoxHeight16,
+                   
+                    // fixme: Expanded beheben - der Fehler ist seither nicht mehr gemeldet worden.
+                    // 😉 Das war hier:
+                    // const SizedBox(width: 30), // Zwischenabstand bei Expanded (war vorher 40)
+
                     const WbDividerWithSmallTextCenter(
                       wbDividerText: "Adresse",
                     ),
                     wbSizedBoxHeight8,
 
-                    /* ----------------------------------------------------- Straße + Nummer ---*/
+                    /*----------------------------------------------------- Straße + Nummer ---*/
                     const WbTextfieldStandardEntry(
                       headlineText: 'Straße + Hausnummer',
                       hintText: 'Bitte Straße mit Hausnummer eintragen',
