@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   audioplayers: ^6.1.0
+  flutter_exit_app: ^1.1.4
 
 cupertino_icons: ^1.0.6
 audiofileplayer: ^2.1.1

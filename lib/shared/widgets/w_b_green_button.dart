@@ -1,7 +1,6 @@
-import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
-import 'package:workbuddy/screens/selection_screen.dart';
 
 class WBGreenButton extends StatelessWidget {
   const WBGreenButton({super.key, required onTap});
@@ -34,13 +33,51 @@ class WBGreenButton extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-          log("Wechsle zur Seite 2 = SelectionPage");
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const SelectionPage(),
-            ),
-          );
+
+             /*--------------------------------------- Button enablen todo ---*/
+//              _isButtonEnabled? null : "";
+
+//              ElevatedButton(
+//   onPressed: _isDisable? null : callBackFunction,
+//   child: Text("submit"),
+//   style: ButtonStyle(),
+// );
+// when you want to disable button, call
+
+// setState(() {
+//   _isDisable = true;
+// });
+// when you want to enable button, call
+
+// setState(() {
+//   _isDisable = false;
+// });
+
+
+
+          //   /*--------------------------------------- Login ---*/
+          //         /* Überprüfe Benutzer und Passwort */
+          //   String checkUserName = "Jürgen";
+          //   String checkUserPassword = "Pass";
+          //   bool result = false;
+          //   if (checkUserName == "Jürgen" && checkUserPassword == "Pass") {
+          //     result = true;
+          //   } else {
+          //     result = false;
+          //   }
+          //   return result;
+          // }
+
+// User.checkLogin;
+
+          // //   /*--------------------------------------- *** ---*/
+          // log("Wechsle zur Seite 2 = SelectionPage");
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => const SelectionPage(),
+          //   ),
+          // );
         },
         child: const Column(
           mainAxisSize: MainAxisSize.min,

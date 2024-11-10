@@ -2,9 +2,12 @@ import 'dart:developer';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
+import 'package:workbuddy/config/wb_dialog_2_buttons.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/authentication/screens/p00_registration_screen.dart';
+import 'package:workbuddy/screens/selection_screen.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
 
 class P01LoginScreen extends StatefulWidget {
@@ -16,7 +19,7 @@ class P01LoginScreen extends StatefulWidget {
 
 /*--------------------------------- User + Passwort ---*/
 const String userName = "Jürgen";
-const String userPassword = "pass";
+const String userPassword = "Pass";
 // bool visibilityPassword = false;
 bool loginButtonIsEnabled = false;
 
@@ -29,6 +32,8 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
 // // bool visibilityPassword = false;
 // bool loginButtonIsEnabled = false;
 
+  /*--------------------------------- AudioPlayer ---*/
+  // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
   late AudioPlayer player = AudioPlayer();
 
   /*--------------------------------- Controller ---*/
@@ -39,16 +44,19 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
   String inputUserName = ""; // nur für die "onChanged-Funktion"
   String inputPassword = ""; // nur für die "onChanged-Funktion"
 
-  /*--------------------------------- isValidEmail ---*/
-  String? isValidEmail(String? value) {
-    // E-Mail soll aus Zeichen bestehen, also nicht leer sein.
-    if (value == null) return "Die E-Mail muss angegeben werden! ";
-    // E-Mail soll mindestens 5 Zeichen lang sein (a@b.d)
-    if (value.length < 5) return "Die E-Mail benötigt mindestens 5 Zeichen!";
-    // E-Mail soll ein "@" enthalten.
-    if (!value.contains("@")) return "Die E-Mail muss ein @ enthalten!";
-    return null;
-  }
+  /*--------------------------------- Login Button automatisch anklicken ---*/
+  void _automaticButtonClick() {}
+
+  // /*--------------------------------- isValidEmail ---*/
+  // String? isValidEmail(String? value) {
+  //   // E-Mail soll aus Zeichen bestehen, also nicht leer sein.
+  //   if (value == null) return "Die E-Mail muss angegeben werden! ";
+  //   // E-Mail soll mindestens 5 Zeichen lang sein (a@b.d)
+  //   if (value.length < 5) return "Die E-Mail benötigt mindestens 5 Zeichen!";
+  //   // E-Mail soll ein "@" enthalten.
+  //   if (!value.contains("@")) return "Die E-Mail muss ein @ enthalten!";
+  //   return null;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +129,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               fillColor: Colors.white,
               contentPadding: EdgeInsets.all(16),
 
-              /*--- labelStyle ---*/
+              /*--------------------------------- labelStyle ---*/
               labelText: 'Benutzername',
               labelStyle: TextStyle(
                 fontSize: 28,
@@ -129,7 +137,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 backgroundColor: Colors.white,
               ),
 
-              /*--- prefixIcon ---*/
+              /*--------------------------------- prefixIcon ---*/
               prefixIcon: Padding(
                 padding: EdgeInsets.all(16),
                 child: Icon(
@@ -138,7 +146,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 ),
               ),
 
-              /*--- hintText ---*/
+              /*--------------------------------- hintText ---*/
               hintText: "Bitte Benutzername eingeben",
               hintStyle: TextStyle(
                 fontSize: 18,
@@ -146,34 +154,40 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 color: Colors.black38,
               ),
 
-              /*--- border ---*/
+              /*--------------------------------- border ---*/
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
               ),
             ),
 
-            /*--- onChanged ---*/
-            onChanged: (String newInputUsername) {
-              log("Eingabe: $newInputUsername");
-              inputUserName = newInputUsername;
-              setState(() => inputUserName = newInputUsername);
+            /*--------------------------------- onChanged ---*/
+            onChanged: (String userNameTEC) {
+              log("Eingabe: $userNameTEC");
+              inputUserName = userNameTEC;
+              setState(() => inputUserName = userNameTEC);
 
-              if (newInputUsername == userName) {
-                log("Der Benutzername $userName ist KORREKT!");
-                // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
-                player.play(AssetSource("sound/sound05xylophon.wav"));
-                // player.play(AssetSource("sound/sound06pling.wav"));
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: const Text("Benutzername ist KORREKT"),
-                    action: SnackBarAction(
-                      label: "OK",
-                      onPressed: () {},
+              if (userNameTEC == userName) {
+                /*--------------------------------- log ---*/
+                log("Der Benutzername \"$userName\" ist KORREKT 😉");
+
+                /*--------------------------------- Audio ---*/
+                /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
+                player.play(AssetSource("sound/sound06pling.wav"));
+
+                /*--------------------------------- Snackbar ---*/
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  backgroundColor: wbColorButtonGreen,
+                  duration: Duration(milliseconds: 400),
+                  content: Text(
+                    "Hinweis:\nDer Benutzername \"$userName\" ist KORREKT 😉",
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
-                );
-
-                // WBGreenButton(onTap: () {}); // funzt nicht
+                ));
+                /*--------------------------------- *** ---*/
                 setState(() {
                   loginButtonIsEnabled = true; // funzt nicht
                   WBGreenButton(onTap: () {}); // funzt nicht
@@ -184,7 +198,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               }
             },
 
-            /*--- validator ---*/
+            /*--------------------------------- validator ---*/
             // validator: (userNameTEC) {
             //   // Der Benutzername wurde nicht ausgefüllt:
             //   if (userNameTEC == null) {
@@ -213,7 +227,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               fillColor: Colors.white,
               contentPadding: const EdgeInsets.all(16),
 
-              /*--- labelStyle ---*/
+              /*--------------------------------- labelStyle ---*/
               labelText: 'Passwort',
               labelStyle: const TextStyle(
                 fontSize: 28,
@@ -221,7 +235,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 backgroundColor: Colors.white,
               ),
 
-              /*--- prefixIcon ---*/
+              /*--------------------------------- prefixIcon ---*/
               prefixIcon: const Padding(
                 padding: EdgeInsets.all(16),
                 child: Icon(
@@ -230,7 +244,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 ),
               ),
 
-              /*--- hintText ---*/
+              /*--------------------------------- hintText ---*/
               hintText: "Bitte Passwort eingeben",
               hintStyle: const TextStyle(
                 fontSize: 18,
@@ -238,7 +252,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 color: Colors.black38,
               ),
 
-              /*--- suffixIcon ---*/
+              /*--------------------------------- suffixIcon ---*/
               suffixIcon: GestureDetector(
                 onTap: () {
                   setState(() {
@@ -256,33 +270,66 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 ),
               ),
 
-              /*--- border ---*/
+              /*--------------------------------- border ---*/
               border: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(16)),
               ),
             ),
 
-            /*--- onChanged ---*/
-            onChanged: (String newInputPassword) {
-              log("Eingabe: $newInputPassword");
-              inputPassword = newInputPassword;
-              setState(() => inputPassword = newInputPassword);
-              if (newInputPassword == userPassword) {
-                log("Das Passwort $userPassword ist KORREKT!");
-                // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
+            /*--------------------------------- onChanged ---*/
+            onChanged: (String userPasswordTEC) {
+              log("Eingabe: $userPasswordTEC");
+              inputPassword = userPasswordTEC;
+              setState(() => inputPassword = userPasswordTEC);
+
+              if (userPasswordTEC == userPassword &&
+                  inputUserName == userName) {
+                log("Das Passwort \"$userPassword\" ist KORREKT!");
+
+                /*--------------------------------- Audio ---*/
+                /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
                 player.play(AssetSource("sound/sound06pling.wav"));
+
+                /*--------------------------------- Snackbar ---*/
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  backgroundColor: wbColorButtonGreen,
+                  duration: Duration(milliseconds: 500),
+                  content: Text(
+                    "Hinweis:\nDas Passwort \"$userPassword\" ist KORREKT 😉",
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ));
+                /*--------------------------------- *** ---*/
+                _automaticButtonClick;
+                // /*--------------------------------- checkUserAndPassword ---*/
+                // } else if (userName == "Jürgen" && userPassword == "Pass") {
+                //   // userPasswordTEC
+                log("Nach Prüfung 307 wechsle zur SelectionPage ");
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SelectionPage(),
+                  ),
+                );
               } else {
                 log("Die Eingabe für das Passwort ist NICHT korrekt!");
               }
             },
 
-            /*--- validator ---*/
+            /*--------------------------------- validator ---*/
             validator: (userPassword) {
               // Password wurde nicht ausgefüllt:
               if (userPassword == null) {
                 // return "Bitte Passwort angeben";
                 log("Password wurde nicht ausgefüllt");
-              } else if (userPassword == "üpoiuztrewq") {
+              } else if (userPassword == "Pass") {
+                // } else if (userPassword == userPasswordTEC) {
+
                 // return "Passwort ist korrekt";
                 log("Password ist korrekt");
               }
@@ -307,7 +354,46 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight8,
           /*--------------------------------- Login-Button ---*/
-          WBGreenButton(onTap: () {}),
+          GestureDetector(
+            child: WBGreenButton(
+              onTap: () {
+                // HIER drin bringt der Aufruf NICHTS!
+              },
+            ),
+            onTap: () {
+              // --> hier ist der Aufruf vom GestureDetector <--
+              /*--------------------------------- checkUserAndPassword ---*/
+              log("Überprüfe Benutzer UND Passwort (364 - checkUserAndPassword)");
+              if (userName == "Jürgen" && userPassword == "Pass") {
+                log("Nach Prüfung - 366 - wechsle zur SelectionPage");
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SelectionPage(),
+                  ),
+                );
+              } else {
+                /*--------------------------------- Snackbar ---*/
+                log("Das Passwort oder der Benutzername sind nicht korrekt ... 😉");
+                player.play(AssetSource("sound/sound03enterprise.wav"));
+                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  backgroundColor: wbColorButtonDarkRed,
+                  content: Text(
+                    "Hinweis:\nDas Passwort oder der Benutzername sind NICHT korrekt ... 😉",
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ));
+                /*--------------------------------- *** ---*/
+                //result = false;
+              }
+              //return result;
+            },
+          ),
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight16,
           /*--------------------------------- Divider ---*/
@@ -326,7 +412,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               );
             },
             child: const Text(
-              "Registrierung",
+              "Neuer Benutzer? Hier registrieren ...",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w900,
@@ -335,8 +421,31 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               textAlign: TextAlign.right,
             ),
           ),
+
           /*--------------------------------- Divider ---*/
           const Divider(thickness: 4, color: wbColorButtonGreen),
+          /*--------------------------------- WbButtonUniversal ---*/
+          WbButtonUniversal(
+            wbColor: wbColorButtonDarkRed,
+            icon: Icons.report_outlined,
+            wbButtonUniversalText: "WorkBuddy beenden",
+            onButtonTap: () {
+              /*--------------------------------- AlertDialog ---*/
+              // Abfrage ob die App geschlossen werden soll:
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) => const WBDialog2Buttons(
+                        headLineText:
+                            "Möchtest Du jetzt wirklich diese tolle WorkBuddy-App beenden?",
+                        descriptionText:
+                            "Bevor Du diese tolle WorkBuddy-App beendest, denke bitte daran:\n\n Bei aller Aufregung sollten wir aber nicht vergessen, dass Al Bundy im Jahr 1966 vier Touchdowns in einem Spiel gemacht hat und damit den den Polk High School Panthers zur Stadtmeisterschaft verholfen hat!\n\nAußerdem sollte man auf gesunde Ernährung achten, deshalb empfehle ich täglich ein gutes Käsebrot (für Vegetarier und Veganer natürlich auch gerne mit veganer Butter).\n\nWenn du keinen Käse magst, dann kannst du natürlich auch ein Wurstbrot essen, aber dann ist das logischerweise wiederum nicht vegan (aber es gibt ja auch vegane Wurst) und in diesem Falle kannst du eben auch die Wurst weglassen, wenn Du eine vegane Butter auf dem Brot hast. \n\nWarum schreibe ich das alles hier hin?\n\nGanz einfach:\nWeil ich zeigen wollte, dass diese Textzeilen SCROLLBAR sind.",
+                      ));
+              /*--------------------------------- AlertDialog ---*/
+            },
+            width: 398,
+          ),
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight32,
           /*--------------------------------- ENDE ---*/
         ],
       ),

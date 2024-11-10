@@ -1,3 +1,33 @@
+"Neuer Benutzer? Hier registrieren ...",
+/* ----------------------------------------------------------------------------------
+Aufgaben:        5.2.5 - Projekt
+	       Asynchrones DatabaseRepository
+
+√ Falls du noch kein DatabaseRepository hast, ist jetzt die Gelegenheit, eines anzulegen und grundlegend in deine App einzubinden.
+√ Lege also ein DatabaseRepository an. Dabei kannst du dich an der Batch-App orientieren, oder einem der anderen Projekte, die in Classroom verlinkt sind und ein Repository verwendet haben.
+
+Dein DatabaseRepository sollte dann auch in einer MockDatabase implementiert sein.
+Lege eine MockDatabase an und sorge dafür, dass sie Daten deiner App zurück gibt.
+
+---> Wie sehen DatabaseRepository und MockDatabase jetzt aus? Kopiere deinen Code.
+
+Die Mock-Implementierung deines abstrakten DatabaseRepository besteht bisher aus synchronen Methoden. Datenbank-Zugriffe sind allerdings asynchron, da die Kommunikation zwischen App und Datenbank nicht instantan ist.
+
+Ändere alle Methoden deines DatabaseRepository und deine Implementierung MockDatabase so ab, dass sie asynchron sind. Verwende zur Simulation einer gewissen Wartedauer bis zum Erhalt einer Antwort einen Delay von 1-3 Sekunden.
+
+Hinweis: In Screens, die schon das DatabaseRepository als Datenquelle verwenden, wird es dadurch zu Fehlern kommen, die wir in der nächsten Aufgabe beheben.
+
+---> Wie sehen DatabaseRepository und MockDatabase jetzt aus? Kopiere deinen Code.
+
+Da die Methoden deines DatabaseRepository nun Futures statt konkrete Werte zurückliefern, musst du in deinen Screens entsprechend darauf reagieren.
+
+Verwende an den entsprechenden Stellen FutureBuilder und reagiere damit auf die verschiedenen Zustände der Futures (Ladend, Daten, Error).
+
+Mache Commit und Push, wenn du fertig bist.
+
+---> Wie sehen deine Screens jetzt beispielhaft aus? Kopiere den Code von zwei Screens.
+
+*/
 //----------------------------------------------------------------------------------
 // war vorher im pubspec.yaml:
 // flutter_native_splash:
@@ -97,3 +127,15 @@
       //   ),
 //----------------------------------------------------------------------------------
 
+  // // Code-Aufgabe erstellen (createProblem)
+
+  // // Code-Aufgabe löschen (deleteProblem)
+
+  // // Alle Code-Aufgaben holen
+  // Future<List<Exercise>> getAllProblems();
+
+  // // Code-Aufgabe holen (getNextProblem)
+  // Future<Exercise> getNextProblem();
+
+  // // Prüfung einer Lösung (checkSolution)
+  // Future<bool> checkSolution(Exercise exercise, String? userSolution);
