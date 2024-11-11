@@ -2,13 +2,14 @@ import 'dart:developer';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/config/wb_button_universal.dart';
+import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_dialog_2_buttons.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/authentication/screens/p00_registration_screen.dart';
 import 'package:workbuddy/screens/selection_screen.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
+import 'package:workbuddy/shared/widgets/wb_divider_with_small_text_center.dart';
 
 class P01LoginScreen extends StatefulWidget {
   const P01LoginScreen({super.key});
@@ -424,12 +425,19 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
 
           /*--------------------------------- Divider ---*/
           const Divider(thickness: 4, color: wbColorButtonGreen),
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight8,
           /*--------------------------------- WbButtonUniversal ---*/
-          WbButtonUniversal(
+
+          WbButtonUniversal2(
             wbColor: wbColorButtonDarkRed,
-            icon: Icons.report_outlined,
-            wbButtonUniversalText: "WorkBuddy beenden",
-            onButtonTap: () {
+            wbIcon: Icons.report_outlined,
+            wbIconSize40: 40,
+            wbText: "WorkBuddy beenden",
+            wbFontSize20: 24,
+            wbWidth155: 398,
+            wbHeight60: 60,
+            wbOnTap: () {
               /*--------------------------------- AlertDialog ---*/
               // Abfrage ob die App geschlossen werden soll:
               showDialog(
@@ -442,10 +450,13 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                       ));
               /*--------------------------------- AlertDialog ---*/
             },
-            width: 398,
           ),
           /*--------------------------------- Abstand ---*/
-          wbSizedBoxHeight32,
+          wbSizedBoxHeight16,
+          /*--------------------------------- WbDividerWithSmallTextCenter ---*/
+          const WbDividerWithSmallTextCenter(
+            wbDividerText: "WorkBuddy Version 0.001",
+          ),
           /*--------------------------------- ENDE ---*/
         ],
       ),
