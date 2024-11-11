@@ -4,7 +4,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
-import 'package:workbuddy/config/wb_dialog_2_buttons.dart';
+import 'package:workbuddy/config/wb_dialog_2buttons.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/authentication/screens/p00_registration_screen.dart';
 import 'package:workbuddy/screens/selection_screen.dart';
@@ -428,13 +428,12 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight8,
           /*--------------------------------- WbButtonUniversal ---*/
-
           WbButtonUniversal2(
             wbColor: wbColorButtonDarkRed,
             wbIcon: Icons.report_outlined,
             wbIconSize40: 40,
             wbText: "WorkBuddy beenden",
-            wbFontSize20: 24,
+            wbFontSize24: 24,
             wbWidth155: 398,
             wbHeight60: 60,
             wbOnTap: () {

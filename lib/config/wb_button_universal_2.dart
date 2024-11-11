@@ -15,7 +15,7 @@ class WbButtonUniversal2 extends StatelessWidget {
     required this.wbIcon,
     required this.wbIconSize40,
     required this.wbText,
-    required this.wbFontSize20,
+    required this.wbFontSize24,
     required this.wbWidth155,
     required this.wbHeight60,
     required this.wbOnTap,
@@ -25,7 +25,7 @@ class WbButtonUniversal2 extends StatelessWidget {
   final IconData wbIcon;
   final double wbIconSize40;
   final String wbText;
-  final double wbFontSize20;
+  final double wbFontSize24;
   final double wbWidth155;
   final double wbHeight60;
   final void Function() wbOnTap;
@@ -35,7 +35,7 @@ class WbButtonUniversal2 extends StatelessWidget {
     /*-------------------------------------------------- Button ---*/
     return Container(
       width: wbWidth155,
-      height: 60,
+      height: wbHeight60,
       decoration: ShapeDecoration(
         shadows: const [
           BoxShadow(
@@ -104,7 +104,7 @@ class WbButtonUniversal2 extends StatelessWidget {
                           spreadRadius: 0,
                         )
                       ],
-                      fontSize: wbFontSize20,
+                      fontSize: wbFontSize24,
                       fontWeight: FontWeight.w900,
                       letterSpacing: 2, // Zwischenraum der Buchtstaben
                     ),

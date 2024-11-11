@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_exit_app/flutter_exit_app.dart';
-import 'package:workbuddy/config/wb_button_universal.dart';
+import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 
@@ -90,14 +90,18 @@ class WBDialog2Buttons extends StatelessWidget {
       ),
       /*--------------------------------- actions ---*/
       actions: [
+        /*--------------------------------- Abstand ---*/
+        wbSizedBoxHeight24,
         /*--------------------------------- Button 1 ---*/
-        wbSizedBoxHeight16,
-        WbButtonUniversal(
+        WbButtonUniversal2(
           wbColor: wbColorButtonGreen,
-          icon: Icons.report_outlined, // dangerous_outlined
-          //iconSize: 40,
-          wbButtonUniversalText: "Nein",
-          onButtonTap: () {
+          wbIcon: Icons.report_outlined,
+          wbIconSize40: 40,
+          wbText: "Nein",
+          wbFontSize24: 24,
+          wbWidth155: 162,
+          wbHeight60: 60,
+          wbOnTap: () {
             Navigator.pop(context);
             /*--------------------------------- Snackbar ---*/
             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
@@ -115,18 +119,19 @@ class WBDialog2Buttons extends StatelessWidget {
             /*--------------------------------- *** ---*/
             log("192 - lib/config/wb_navigation_bar.dart");
           },
-          width: 155,
-          //height: 60,
         ),
         /*--------------------------------- *** ---*/
         wbSizedBoxHeight24,
         /*--------------------------------- Button 2 ---*/
-        WbButtonUniversal(
+        WbButtonUniversal2(
           wbColor: wbColorButtonDarkRed,
-          icon: Icons.dangerous_outlined, // report_outlined
-          //iconSize: 40,
-          wbButtonUniversalText: "Ja - Beenden",
-          onButtonTap: () {
+          wbIcon: Icons.dangerous_outlined,
+          wbIconSize40: 40,
+          wbText: "Ja - Beenden",
+          wbFontSize24: 24,
+          wbWidth155: 284,
+          wbHeight60: 60,
+          wbOnTap: () {
             Navigator.pop(context);
             /*--------------------------------- Snackbar ---*/
             //     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
@@ -155,8 +160,6 @@ class WBDialog2Buttons extends StatelessWidget {
             /*--------------------------------- *** ---*/
             FlutterExitApp.exitApp(iosForceExit: true);
           },
-          width: 260,
-          //height: 60,
         ),
         /*--------------------------------- *** ---*/
       ],

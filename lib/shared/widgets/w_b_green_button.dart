@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 
@@ -9,7 +8,7 @@ class WBGreenButton extends StatelessWidget {
   Widget build(BuildContext context) {
     // Button erstellen:
     return Container(
-      width: 380,
+      width: 398,
       height: 60,
       decoration: ShapeDecoration(
         shadows: const [
@@ -33,8 +32,7 @@ class WBGreenButton extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-
-             /*--------------------------------------- Button enablen todo ---*/
+          /*--------------------------------------- Button enablen todo ---*/
 //              _isButtonEnabled? null : "";
 
 //              ElevatedButton(
@@ -52,8 +50,6 @@ class WBGreenButton extends StatelessWidget {
 // setState(() {
 //   _isDisable = false;
 // });
-
-
 
           //   /*--------------------------------------- Login ---*/
           //         /* Überprüfe Benutzer und Passwort */
