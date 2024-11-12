@@ -9,8 +9,8 @@ import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 import 'package:workbuddy/wb_contacts/contact_screen.dart';
 
-class ContactMenu extends StatelessWidget {
-  const ContactMenu({super.key});
+class CommunicationMenu extends StatelessWidget {
+  const CommunicationMenu({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,10 +36,10 @@ class ContactMenu extends StatelessWidget {
               image: AssetImage("assets/workbuddy_glow_schriftzug.png"),
             ),
 
-            // --------------------------------------- Kontakte-Menü ---
+            // --------------------------------------- Kommunikation-Menü ---
             const WbDividerWithTextInCenter(
               wbColor: wbColorLogoBlue,
-              wbText: "Kontakte",
+              wbText: "Kommunikation",
               wbTextColor: wbColorLogoBlue,
               wbFontSize12: 28,
               wbHeight3: 3,
@@ -52,7 +52,7 @@ class ContactMenu extends StatelessWidget {
                   // --------------------------------------- Kontakt neu anlegen ---
                   GestureDetector(
                     onTap: () {
-                      log("Auf - ContactMenu - Einen Kontakt neu anlegen - angeklickt");
+                      log("Auf - CommunicationMenu - Einen Kontakt neu anlegen - angeklickt");
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -82,7 +82,7 @@ class ContactMenu extends StatelessWidget {
                   // // ---------- Eine Einnahme buchen ----------
                   // GestureDetector(
                   //   onTap: () {
-                  //     log("Auf - ContactMenu - Eine Einnahme buchen - angeklickt");
+                  //     log("Auf - CommunicationMenu - Eine Einnahme buchen - angeklickt");
                   //     Navigator.push(
                   //       context,
                   //       MaterialPageRoute(
@@ -110,7 +110,7 @@ class ContactMenu extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                      log("Auf - ContactMenu - Einen Kontakt suchen - Update-Hinweis - CM108 - angeklickt");
+                      log("Auf - CommunicationMenu - Einen Kontakt suchen - Update-Hinweis - CM108 - angeklickt");
                       showDialog(
                         context: context,
                         builder: (context) =>

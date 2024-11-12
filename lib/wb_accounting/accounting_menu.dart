@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
+import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
-import 'package:workbuddy/shared/widgets/wb_divider_with_big_text_center.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 import 'package:workbuddy/wb_accounting/accounting_screen.dart';
 
@@ -219,16 +219,37 @@ class AccountingMenu extends StatelessWidget {
                   const Divider(
                       thickness: 3, height: 32, color: wbColorLogoBlue),
 
-                  const Column(
-                    children: [
-                      Text("WorkBuddy - save time and money - Version 0.001"),
-                    ],
+                  WbButtonUniversal2(
+                    wbColor: const Color.fromARGB(255, 255, 102, 219),
+                    wbIcon: Icons.forward_to_inbox_outlined,
+                    wbIconSize40: 40,
+                    wbText:
+                        "Möchtest Du\nMEHR Funktionen?\nSchreibe einfach eine\nE-Mail an den Entwickler.",
+                    wbFontSize24: 18,
+                    wbWidth155: 398,
+                    wbHeight60: 130,
+                    wbOnTap: () {},
                   ),
+
+                  const SizedBox(height: 8),
+
+                  // const Column(
+                  //   children: [
+                  //     Text("WorkBuddy - save time and money - Version 0.001"),
+                  //   ],
+                  // ),
                 ],
               ),
             ),
-            /* ----------------- ENDE der ListView ---------------- */
-            const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
+            /*--------------------------------- MiniFooter ---*/
+            const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
+            const Column(
+              children: [
+                Text("WorkBuddy • save time and money • Version 0.001"),
+              ],
+            ),
+            const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
+            /*--------------------------------- MiniFooter ENDE ---*/
           ],
         ),
       ),

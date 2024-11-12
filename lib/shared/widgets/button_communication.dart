@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/main.dart';
+import 'package:workbuddy/wb_communication.dart/communication_menu.dart';
 
 class ButtonCommunication extends StatelessWidget {
   const ButtonCommunication({super.key});
@@ -15,7 +15,7 @@ class ButtonCommunication extends StatelessWidget {
           log("Wechsle zur Seite Kommunikation 1");
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const MainApp()),
+            MaterialPageRoute(builder: (context) => const CommunicationMenu()),
           );
         },
         child: const Image(

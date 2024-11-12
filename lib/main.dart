@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workbuddy/screens/home_screen.dart';
 
+/*--------------------------------- *** ---*/
 void main() => runApp(const MainApp());
 
 class MainApp extends StatelessWidget {
@@ -15,4 +16,5 @@ class MainApp extends StatelessWidget {
       home: WbHomePage(title: appTitle),
     );
   }
-}
+}    
+/*--------------------------------- *** ---*/
