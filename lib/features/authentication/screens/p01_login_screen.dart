@@ -6,10 +6,14 @@ import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_dialog_2buttons.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/features/authentication/logic/user_service.dart';
+import 'package:workbuddy/features/authentication/schema/server_user_response.dart';
+import 'package:workbuddy/features/authentication/schema/user.dart';
 import 'package:workbuddy/features/authentication/screens/p00_registration_screen.dart';
+import 'package:workbuddy/features/authentication/screens/user_screen.dart';
 import 'package:workbuddy/screens/selection_screen.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
-import 'package:workbuddy/shared/widgets/wb_divider_with_small_text_center.dart';
+import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 
 class P01LoginScreen extends StatefulWidget {
   const P01LoginScreen({super.key});
@@ -25,17 +29,90 @@ const String userPassword = "Pass";
 bool loginButtonIsEnabled = false;
 
 class _P01LoginScreenState extends State<P01LoginScreen> {
-  // Brauchen wir, damit wir alle TextFormFields validieren können
-  // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-//  String userName = "Jürgen";
-//  String userPassword = "pass";
-// // bool visibilityPassword = false;
-// bool loginButtonIsEnabled = false;
-
   /*--------------------------------- AudioPlayer ---*/
   // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
   late AudioPlayer player = AudioPlayer();
+
+  /*--------------------------------- GlobalKey ---*/
+  // Brauchen wir, damit wir alle TextFormFields validieren können
+  // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  /*--------------------------------- userService ---*/
+  /* Das MockUserRepository ist im UserService definiert.
+     Hier wird die login-Methode aufgerufen, um eine Antwort von unserem MockUserRepository zu erhalten. */
+  final userService = UserService();
+
+  /*--------------------------------- successMessage ---*/
+  /* Wenn das Login erfolgreich war, speichern wir die Nachricht in dieser Variable und zeigen sie auf dem Screen an. */
+  String? successMessage;
+
+  /*--------------------------------- errorMessage ---*/
+  /* Wenn das Login fehlgeschlagen ist, speichern wir die Nachricht in dieser Variable und zeigen sie auf dem Screen an. */
+  String? errorMessage;
+
+  /*--------------------------------- Loading State ---*/
+  bool isLoading = false;
+
+  /*--------------------------------- handleLogin ---*/
+  void handleLogin(BuildContext context) async {
+    /* Hier setzen wir den State zurück. Falls der Nutzer vorher eine falsche Eingabe getätigt hat und z.B. die Fehlermeldung noch angezeigt wird, setzen wir den State zurück und zeigen das Lade-Symbol an. */
+    setState(() {
+      errorMessage = null;
+      successMessage = null;
+      isLoading = true;
+    });
+
+    /*--------------------------------- Server-Abfrage simmulieren ---*/
+    /* Simulieren der Server-Abfrage.
+    Hier erhält man ein "ServerUserResponse", das die folgenden Daten enthält:
+    --> siehe mock_user_repository.dart
+
+        • User?         --> Wenn die Abfrage erfolgreich war, wird ein User mitgegeben
+        • success       --> Gibt an, ob die Abfrage erfolgreich war
+        • errorMessage? --> Wenn die Abfrage nicht erfolgreich war, kann eine Fehlermeldung mitgegeben werden.
+
+    Wo wird die E-Mail und das Passwort übergeben?
+    Die Controller für die Textfelder sind im UserService definiert:
+        --> E-Mail- und Passwort-TextField.
+        --> Dort werden die TextEditingController vom UserService übergeben.
+        --> Somit können wir aus der "login"-Methode direkt den Text abrufen. */
+
+    ServerUserResponse response = await userService.login();
+
+    /*--------------------------------- erfolgreiche Abfrage ---*/
+    // Wenn die Abfrage erfolgreich war:
+    if (response.success) {
+      /* Überprüfen ob der User ein Admin ist:
+         • Wenn Ja:   "Willkommen Admin" anzeigen
+         • Wenn Nein: "Willkommen User" anzeigen */
+      setState(() => successMessage =
+          "Willkommen ${response.user!.isAdmin ? "Admin" : "User"}");
+
+      // Wir zeigen die Erfolgsmeldung 1 Sekunde an und navigieren auf unseren User-Screen:
+      await Future.delayed(const Duration(seconds: 1));
+
+      /* Navigation zum User-Screen:
+        Hinweis: Auch hier verwenden wir eine separate Funktion, da diese Funktion mit async markiert ist und Flutter es nicht mag, den BuildContext innerhalb einer async-Funktion zu nutzen.
+      Information: Schaue dir die Funktion "navigateToUserScreen" an, die benötigt nämlich den context. */
+      navigateToUserScreen(response.user!);
+    } else {
+      // Wenn die Abfrage nicht erfolgreich war, wird die Fehlermeldung vom Server in unsere lokale Variable gesetzt, um sie auf dem Screen anzuzeigen:
+      setState(() => errorMessage = response.errorMessage);
+    }
+    setState(() => isLoading = false);
+  }
+
+  // Navigieren zum User-Screen und den eingeloggten User übergeben:
+  void navigateToUserScreen(User user) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => UserScreen(user: user)));
+  }
+
+  /*--------------------------------- *** ---*/
+  //  String userName = "Jürgen";
+  //  String userPassword = "pass";
+  // // bool visibilityPassword = false;
+  // bool loginButtonIsEnabled = false;
 
   /*--------------------------------- Controller ---*/
   final TextEditingController userNameTEC = TextEditingController();
@@ -46,7 +123,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
   String inputPassword = ""; // nur für die "onChanged-Funktion"
 
   /*--------------------------------- Login Button automatisch anklicken ---*/
-  void _automaticButtonClick() {}
+  void automaticButtonClick() {}
 
   // /*--------------------------------- isValidEmail ---*/
   // String? isValidEmail(String? value) {
@@ -305,7 +382,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                   ),
                 ));
                 /*--------------------------------- *** ---*/
-                _automaticButtonClick;
+                automaticButtonClick;
                 // /*--------------------------------- checkUserAndPassword ---*/
                 // } else if (userName == "Jürgen" && userPassword == "Pass") {
                 //   // userPasswordTEC
@@ -452,10 +529,14 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           ),
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight16,
-          /*--------------------------------- WbDividerWithSmallTextCenter ---*/
-          const WbDividerWithSmallTextCenter(
-            wbDividerText: "WorkBuddy Version 0.001",
-          ),
+          /*--------------------------------- WbDividerWithTextInCenter ---*/
+          const WbDividerWithTextInCenter(
+            wbColor: wbColorButtonDarkRed,
+            wbText: "WorkBuddy • Version 0.001",
+            wbTextColor: wbColorButtonDarkRed,
+            wbFontSize12: 12,
+            wbHeight3: 3,
+          )
           /*--------------------------------- ENDE ---*/
         ],
       ),

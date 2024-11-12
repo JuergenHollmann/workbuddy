@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
-import 'package:workbuddy/wb_contacts/contact_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
-import 'package:workbuddy/shared/widgets/wb_divider_with_big_text_center.dart';
+import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
+import 'package:workbuddy/wb_contacts/contact_screen.dart';
 
 class ContactMenu extends StatelessWidget {
   const ContactMenu({super.key});
@@ -35,9 +35,14 @@ class ContactMenu extends StatelessWidget {
               image: AssetImage("assets/workbuddy_glow_schriftzug.png"),
             ),
 
-            // --------------------------------------- Buchhaltung-Menü ---
-            const WbDividerWithBigTextCenter(wbDividerText: "Kontakte"),
-
+            // --------------------------------------- Kontakte-Menü ---
+            const WbDividerWithTextInCenter(
+              wbColor: wbColorLogoBlue,
+              wbText: "Kontakte",
+              wbTextColor: wbColorLogoBlue,
+              wbFontSize12: 28,
+              wbHeight3: 3,
+            ),
             // --------------------------------------- Listview mit AuswahlButtons ---
             Expanded(
               child: ListView(
@@ -209,16 +214,30 @@ class ContactMenu extends StatelessWidget {
                   const Divider(
                       thickness: 3, height: 32, color: wbColorLogoBlue),
 
-                  const Column(
-                    children: [
-                      Text("WorkBuddy - save time and money - Version 0.001"),
-                    ],
-                  ),
+                  // const WbDividerWithTextInCenter(
+                  //   wbColor: wbColorLogoBlue,
+                  //   wbText: "WorkBuddy - save time and money - Version 0.001",
+                  //   wbTextColor: wbColorButtonBlue,
+                  //   wbFontSize12: 12,
+                  //   wbHeight3: 3,
+                  // ),
+
+                  // const Column(
+                  //   children: [
+                  //     Text("WorkBuddy - save time and money - Version 0.001"),
+                  //   ],
+                  // ),
                 ],
               ),
             ),
             /* ----------------- ENDE der ListView ---------------- */
-            const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
+            const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
+            const Column(
+              children: [
+                Text("WorkBuddy • save time and money • Version 0.001"),
+              ],
+            ),
+            const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
           ],
         ),
       ),

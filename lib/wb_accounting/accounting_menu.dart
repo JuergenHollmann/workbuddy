@@ -1,12 +1,13 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/wb_accounting/accounting_screen.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_big_text_center.dart';
+import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
+import 'package:workbuddy/wb_accounting/accounting_screen.dart';
 
 class AccountingMenu extends StatelessWidget {
   const AccountingMenu({super.key});
@@ -36,7 +37,13 @@ class AccountingMenu extends StatelessWidget {
             ),
 
             // ------------------------------------------------------- Buchhaltung-Menü ---
-            const WbDividerWithBigTextCenter(wbDividerText: "Buchhaltung"),
+            const WbDividerWithTextInCenter(
+              wbColor: wbColorLogoBlue,
+              wbText: "Buchhaltung",
+              wbTextColor: wbColorLogoBlue,
+              wbFontSize12: 28,
+              wbHeight3: 3,
+            ),
             // ------------------------------------------------------- Listview mit AuswahlButtons ---
 
             Expanded(
