@@ -30,25 +30,31 @@ class SelectionPage extends StatelessWidget {
       ),
       /*--------------------------------- Logo ---*/
       body: const Center(
-        child: Column(
-          children: [
-            Image(
-                image: AssetImage(
-              "assets/workbuddy_patch_and_slogan.png",
-            )),
-            /*--------------------------------- Buttons ---*/
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [ButtonAccounting(), ButtonCommunication()],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [ButtonCustomer(), ButtonCompanies()],
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Image(
+                  image: AssetImage(
+                "assets/workbuddy_patch_and_slogan.png",
+              )),
+              /*--------------------------------- Buttons ---*/
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [ButtonAccounting(), ButtonCommunication()],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [ButtonCustomer(), ButtonCompanies()],
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
-        /*--------------------------------- NavigationBar ---*/
+      /*--------------------------------- NavigationBar ---*/
       bottomNavigationBar: const NavigationBarGreenNeon(),
     );
   }

@@ -124,6 +124,8 @@ class WbButtonsUniWithImageButton extends StatelessWidget {
         GestureDetector(
           onTap: wbOnTapImageButton,
           child: Container(
+            clipBehavior: Clip.antiAlias, //funzt nicht?
+            constraints: const BoxConstraints(maxWidth: 90),
             // wenn "width" ausgeschaltet ist ergibt sich die Größe automatisch aus "height".
             //width: wbHeightAssetImage90,
             height: wbHeightAssetImage90,
@@ -148,10 +150,14 @@ class WbButtonsUniWithImageButton extends StatelessWidget {
               ),
             ),
             /*--------------------------------- Image im Container ---*/
-            child: Image(
-              width: 90,
-              height: wbHeightAssetImage90,
-              image: wbImageAssetImage,
+            child: Padding(
+              padding: const EdgeInsets.all(1),
+              child: Image(
+                fit: BoxFit.contain,
+                //width: 90,
+                height: wbHeightAssetImage90,
+                image: wbImageAssetImage,
+              ),
             ),
           ),
         ),

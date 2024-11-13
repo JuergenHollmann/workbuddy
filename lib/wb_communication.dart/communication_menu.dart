@@ -6,7 +6,6 @@ import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/shared/widgets/wb_buttons_uni_with_image_button.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
-import 'package:workbuddy/wb_contacts/contact_screen.dart';
 
 class CommunicationMenu extends StatelessWidget {
   const CommunicationMenu({super.key});
@@ -47,46 +46,66 @@ class CommunicationMenu extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 children: [
                   /*--------------------------------- WbButtonUniversal2 - Telefonanruf ---*/
-                  WbButtonUniversal2(
+
+                  WbButtonsUniWithImageButton(
                     wbColor: wbColorButtonDarkRed,
                     wbIcon: Icons.phone_forwarded,
                     wbIconSize40: 40,
-                    wbText: "Einen Telefonanruf starten",
+                    wbText: "Kontakt anrufen",
                     wbFontSize24: 24,
-                    wbWidth155: 398,
-                    wbHeight60: 90,
-                    wbOnTap: () {
-                      log("0059_communication_menu");
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ContactScreen(),
-                        ),
-                      );
+                    wbWidth276: 276,
+                    wbHeight90: 90,
+                    wbHeightAssetImage90: 90,
+                    wbImageAssetImage: const AssetImage(
+                      "assets/iconbuttons/icon_button_kontakte.png",
+                    ),
+                    wbImageButtonRadius12: 12,
+                    wbOnTapTextButton: () {
+                      log("0065_communication_menu"); // nur das Smartphone starten:
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const ContactScreen(),
+                      //   ),
+                      // );
+                    },
+                    wbOnTapImageButton: () {
+                      log("0074_communication_menu"); // erst Kontakt auswählen, dann anrufen:
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const ContactScreen(),
+                      //   ),
+                      // );
                     },
                   ),
+                  /*--------------------------------- *** ---*/
+                  // WbButtonUniversal2(
+                  //   wbColor: wbColorButtonDarkRed,
+                  //   wbIcon: Icons.phone_forwarded,
+                  //   wbIconSize40: 40,
+                  //   wbText: "Einen Telefonanruf starten",
+                  //   wbFontSize24: 24,
+                  //   wbWidth155: 398,
+                  //   wbHeight60: 90,
+                  //   wbOnTap: () {
+                  //     log("0059_communication_menu");
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) => const ContactScreen(),
+                  //       ),
+                  //     );
+                  //   },
+                  // ),
                   /*--------------------------------- *** ---*/
                   wbSizedBoxHeight8,
                   /*--------------------------------- *** ---*/
                   const Divider(
                       thickness: 3, height: 32, color: wbColorLogoBlue),
                   /*--------------------------------- WhatsApp ---*/
-
-                  // WbButtonUniversal2( // nur zum Testen!
-                  //   wbColor: wbColorAppBarBlue,
-                  //   wbIcon: Icons.phonelink_ring_outlined,
-                  //   wbIconSize40: 40,
-                  //   wbText: "WhatsApp versenden",
-                  //   wbFontSize24: 24,
-                  //   wbWidth155: 276,
-                  //   wbHeight60: 90,
-                  //   wbOnTap: () {
-                  //     log("0084_communication_menu");
-                  //   },
-                  // ),
-
                   WbButtonsUniWithImageButton(
-                    wbColor: wbColorButtonBlue,
+                    wbColor: wbColorButtonGreen,
                     wbIcon: Icons.phonelink_ring_outlined,
                     wbIconSize40: 40,
                     wbText: "WhatsApp senden",
@@ -117,30 +136,70 @@ class CommunicationMenu extends StatelessWidget {
                       // );
                     },
                   ),
-
+                  /*--------------------------------- *** ---*/
                   wbSizedBoxHeight8,
                   /*--------------------------------- *** ---*/
                   const Divider(
                       thickness: 3, height: 32, color: wbColorLogoBlue),
                   /*--------------------------------- E-Mail senden ---*/
-                  WbButtonUniversal2(
+
+                  WbButtonsUniWithImageButton(
                     wbColor: wbColorButtonBlue,
                     wbIcon: Icons.forward_to_inbox_outlined,
                     wbIconSize40: 40,
-                    wbText: "Eine E-Mail versenden",
+                    wbText: "E-Mail versenden",
                     wbFontSize24: 24,
-                    wbWidth155: 398,
-                    wbHeight60: 90,
-                    wbOnTap: () {
-                      log("communication_menu.dart - 0110");
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ContactScreen(),
-                        ),
-                      );
+                    wbWidth276: 276,
+                    wbHeight90: 90,
+                    wbHeightAssetImage90: 90,
+                    wbImageAssetImage: const AssetImage(
+                      "assets/iconbuttons/icon_button_email.png",
+                    ),
+                    wbImageButtonRadius12: 12,
+                    wbOnTapTextButton: () {
+                      log("0161_communication_menu");
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const ContactScreen(),
+                      //   ),
+                      // );
+                    },
+                    wbOnTapImageButton: () {
+                      log("0170_communication_menu");
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const ContactScreen(),
+                      //   ),
+                      // );
                     },
                   ),
+                  /*--------------------------------- *** ---*/
+                  wbSizedBoxHeight8,
+                  /*--------------------------------- *** ---*/
+                  // const Divider(
+                  //     thickness: 3, height: 32, color: wbColorLogoBlue),
+
+                  // WbButtonUniversal2(
+                  //   wbColor: wbColorButtonBlue,
+                  //   wbIcon: Icons.forward_to_inbox_outlined,
+                  //   wbIconSize40: 40,
+                  //   wbText: "Eine E-Mail versenden",
+                  //   wbFontSize24: 24,
+                  //   wbWidth155: 398,
+                  //   wbHeight60: 90,
+                  //   wbOnTap: () {
+                  //     log("communication_menu.dart - 0110");
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) => const ContactScreen(),
+                  //       ),
+                  //     );
+                  //   },
+                  // ),
+
                   /*--------------------------------- *** ---*/
                   wbSizedBoxHeight8,
                   /*--------------------------------- *** ---*/
