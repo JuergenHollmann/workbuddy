@@ -4,15 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/screens/email_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_buttons_uni_with_image_button.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 
 class CommunicationMenu extends StatelessWidget {
   const CommunicationMenu({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 250, 242, 242),
+      /*--------------------------------- *** ---*/
       appBar: AppBar(
         title: const Text(
           'Was möchtest Du tun?',
@@ -25,6 +28,7 @@ class CommunicationMenu extends StatelessWidget {
         backgroundColor: wbColorBackgroundBlue, // Hintergrundfarbe
         foregroundColor: Colors.black, // Icon-/Button-/Chevron-Farbe
       ),
+      /*--------------------------------- *** ---*/
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -108,7 +112,7 @@ class CommunicationMenu extends StatelessWidget {
                     wbColor: wbColorButtonGreen,
                     wbIcon: Icons.phonelink_ring_outlined,
                     wbIconSize40: 40,
-                    wbText: "WhatsApp senden",
+                    wbText: "WhatsApp versenden",
                     wbFontSize24: 24,
                     wbWidth276: 276,
                     wbHeight90: 90,
@@ -158,21 +162,21 @@ class CommunicationMenu extends StatelessWidget {
                     wbImageButtonRadius12: 12,
                     wbOnTapTextButton: () {
                       log("0161_communication_menu");
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => const ContactScreen(),
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const EMailScreen(),
+                        ),
+                      );
                     },
                     wbOnTapImageButton: () {
                       log("0170_communication_menu");
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => const ContactScreen(),
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const EMailScreen(),
+                        ),
+                      );
                     },
                   ),
                   /*--------------------------------- *** ---*/
