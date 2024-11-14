@@ -1,4 +1,6 @@
 // user.dart
+import 'package:workbuddy/user_model.dart';
+
 class User {
   String userName;
   String userPassword;
@@ -75,6 +77,8 @@ class User {
   void deleteUser(String userName, String userPassword) {
     // code
   }
+
+  static void add(UserModel userModel) {}
 
   /*--------------------------------------- *** ---*/
 }
