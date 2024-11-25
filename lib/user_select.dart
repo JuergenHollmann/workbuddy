@@ -26,26 +26,38 @@ class _UserSelectState extends State<UserSelect> {
     // durch alle Elemente in der Liste iterieren:
     for (var element in usersData) {
       users.add(UserModel.fromJson(element));
-      int searchFieldCounter = users.length;
-      log("0028_custom Counter: $searchFieldCounter");
+      // nur zur Kontrolle: zeigt bei JEDEM Durchgang die Anzahl aus "users.length" an:
+      // int searchFieldCounter = users.length;
+      // log("0028_custom Counter: $searchFieldCounter");
+
+      // String searchFieldItems = "$firstName $lastName $email";
+      // log("0056 $searchFieldItems");
     }
     /*--------------------------------- *** ---*/
-    // die Anzahl der User in der Liste zeigen:
-    int searchFieldCounter2 = users.length;
-    log("0037_custom Counter: $searchFieldCounter2"); // funzt
+    // die Gesamt-Anzahl der User in der Liste zeigen (NACH Iterierung NUR EINE Zahl zeigen):
+    int searchFieldCounter = users.length;
+    log("0037_custom Counter: $searchFieldCounter");
     /*--------------------------------- *** ---*/
-  }
-
-  final TextEditingController searchFieldCounter2 = TextEditingController();
-  TextEditingController showSearchFieldCounter() {
-    log("0043_custom Counter: $searchFieldCounter2");
-    return searchFieldCounter2;
+    // die gefundene Anzahl der User in der Liste zeigen:
+    int? searchFieldFoundCounter = usersData.length;
+    log("0245 - user_select - Counter: $searchFieldFoundCounter");
+    /*--------------------------------- *** ---*/
   }
 
   final TextEditingController searchFieldController = TextEditingController();
   void clearSearchField() {
     searchFieldController.clear();
   }
+  /*--------------------------------- searchFieldItems generieren ---*/
+  /* Welche Felder sollen in die Suche miteinbezogen  werden (Daten aus "user_data")?
+  1) Vorname = firstName 
+  2) Nachname = lastName
+  3) E-Mail-Adresse = email */
+
+  // void searchFieldItems(String searchFieldItems) {
+  //   String searchFieldItems = "$firstName $lastName $email";
+  //   log("0056 $searchFieldItems");
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -119,13 +131,18 @@ class _UserSelectState extends State<UserSelect> {
     // );
 
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
       child: SearchField<UserModel>(
+        // maxLength: 10, // maximale Anzahl der Ziffern für die Suche
+        // dynamicHeight: true,
+        // maxSuggestionBoxHeight: 200,
         controller: searchFieldController,
         maxSuggestionsInViewPort: 5,
-        itemHeight: 120,
+        itemHeight: 110,
         /*--------------------------------- SearchInputDecoration - Suchfeld ---*/
         searchInputDecoration: SearchInputDecoration(
+          cursorHeight: 30,
+          cursorWidth: 3,
           filled: true,
           fillColor: wbColorBackgroundBlue,
           focusedBorder: const OutlineInputBorder(
@@ -137,9 +154,21 @@ class _UserSelectState extends State<UserSelect> {
               topRight: Radius.circular(16),
             ),
           ),
-          prefixIcon: const Icon(Icons.mail_outline),
+          prefixIcon: const Padding(
+            padding: EdgeInsets.all(8),
+            child: Icon(
+              Icons.search_outlined,
+              size: 48,
+            ),
+          ),
           suffixIcon: GestureDetector(
-            child: const Icon(Icons.close_outlined),
+            child: const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Icon(
+                Icons.cancel_rounded,
+                size: 40,
+              ),
+            ),
             onTap: () {
               log("0144_custom");
               setState(() {
@@ -177,7 +206,7 @@ class _UserSelectState extends State<UserSelect> {
           //   begin: Alignment.topCenter,
           //   end: Alignment.topRight,
           // ),
-          shape: BoxShape.rectangle, // markiert die gefundene E.Mail.Adresse
+          shape: BoxShape.rectangle,
           border: Border.all(
             color: Colors.black,
             style: BorderStyle.solid,
@@ -186,14 +215,15 @@ class _UserSelectState extends State<UserSelect> {
         ),
         marginColor: Colors.black, //Colors.grey.shade300,
         /*--------------------------------- *** ---*/
+        // das hier gibt eine Fehlermeldung!
         // initialValue: SearchFieldListItem<UserModel>(
-        //   users[2].name,
+        //   users[2].firstName,
         //   child: Container(
         //     color: Colors.red,
         //     width: 100,
         //     alignment: Alignment.center,
         //     child: Text(
-        //       users[2].name,
+        //       users[2].firstName,
         //       style: const TextStyle(color: Colors.white),
         //     ),
         //   ),
@@ -202,6 +232,7 @@ class _UserSelectState extends State<UserSelect> {
         suggestions: users
             .map(
               (userModel) => SearchFieldListItem<UserModel>(
+                // todo: Wie kann ich hier nach mehreren Kriterien suchen oder filtern?
                 // diese Daten werden in das "SearchFieldListItem" beim Anklicken übergeben:
                 userModel.email,
                 /*--------------------------------- *** ---*/
@@ -225,7 +256,9 @@ class UserTile extends StatelessWidget {
   Widget build(BuildContext context) {
     /*--------------------------------- ListTile ---*/
     return ListTile(
+      visualDensity: const VisualDensity(horizontal: -4, vertical: 4),
       isThreeLine: true,
+      autofocus: true,
       dense: false,
       selectedColor: Colors.redAccent,
       tileColor: wbColorBackgroundBlue, // Hintergrundfarbe
@@ -233,20 +266,20 @@ class UserTile extends StatelessWidget {
       // minTileHeight: 10,
       // minLeadingWidth: 50,
       leading: CircleAvatar(
-        radius: 36,
+        radius: 48,
         backgroundImage: NetworkImage(user.avatar),
       ),
       /*--------------------------------- Name ---*/
       title: Text(
         "${user.firstName} ${user.lastName}",
         style: const TextStyle(
-          fontSize: 22,
+          fontSize: 18,
           fontWeight: FontWeight.w900,
         ),
       ),
       /*--------------------------------- Status 1 + 2 + Kategorie + Alter + Job ---*/
       subtitle: Text(
-        "${user.status2}-${user.status1} • [${user.age}]\n💼 ${user.role}", // \n${user.email}",
+        "${user.status2}-${user.status1} (${user.age})\n💼 ${user.role}", // \n${user.email}",
         style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
@@ -260,7 +293,6 @@ class UserTile extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-
       /*--------------------------------- ListTile - ENDE ---*/
     );
   }

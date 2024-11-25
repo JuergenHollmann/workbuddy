@@ -1,11 +1,11 @@
-// user.dart
-import 'package:workbuddy/user_model.dart';
-
 class User {
   String userName;
   String userPassword;
 
-  User({required this.userName, required this.userPassword});
+  User({
+    required this.userName,
+    required this.userPassword,
+  });
 
   @override
   String toString() {
@@ -18,14 +18,15 @@ class User {
     String checkUserName = "Jürgen";
     String checkUserPassword = "Pass";
     bool result = false;
-    if (checkUserName == inputUserName && checkUserPassword == inputUserPassword) {
+    if (checkUserName == inputUserName &&
+        checkUserPassword == inputUserPassword) {
       result = true;
     } else {
       result = false;
     }
     return result;
   }
-  
+
   // /*--------------------------------------- checkUserName ---*/
   /* Überprüfen ob der Benutzername korrekt ist */
   bool checkUserName(String inputUserName) {
@@ -53,32 +54,39 @@ class User {
     return result;
   }
 
-  // /*--------------------------------------- getUser ---*/
+  /*--------------------------------------- getUser ---*/
   /* Einen User aufrufen */
   void getUser(String userName) {
     // print("Benutzername: $userName Passwort: $userPassword");
   }
 
-  // /*--------------------------------------- createUser ---*/
+  /*--------------------------------------- createUser ---*/
   /* Einen User neu hinzufügen */
   void createUser(String userName, String userPassword) {
     // User newUser = User (userName: userName, userPassword: userPassword);
     // newUser.toString();
   }
 
-  // /*--------------------------------------- updateUser ---*/
+  /*--------------------------------------- updateUser ---*/
   /* Die Daten eines Users ändern */
   void updateUser(String userName, String userPassword) {
     // code
   }
 
-  // /*--------------------------------------- deleteUser ---*/
+  /*--------------------------------------- deleteUser ---*/
   /* Einen User löschen */
   void deleteUser(String userName, String userPassword) {
     // code
   }
 
-  static void add(UserModel userModel) {}
-
+  // /*--------------------------------------- addUser ---*/
+  // /* Einen User hinzufügen */
+  // static void createUser(UserModel userModel) {}
+  // // code
+  /*--------------------------------------- getAllUsers ---*/
+  /* Alle vorhandenen User zurückgeben */
+  void getAllUsers(String userName) {
+    // code
+  }
   /*--------------------------------------- *** ---*/
 }

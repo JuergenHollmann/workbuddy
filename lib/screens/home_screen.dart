@@ -11,10 +11,11 @@ class WbHomePage extends StatefulWidget {
   @override
   State<WbHomePage> createState() => _WbHomePageState();
 }
+
 class _WbHomePageState extends State<WbHomePage> {
   /*--------------------------------- Drawer Vorbereitung ---*/
   int _selectedDrawerIndex = 0;
-
+  /*--------------------------------- *** ---*/
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetDrawerOptions = <Widget>[

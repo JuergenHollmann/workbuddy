@@ -1,10 +1,13 @@
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
+import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/config/wb_text_form_field.dart';
 import 'package:workbuddy/user_data.dart';
 import 'package:workbuddy/user_select.dart';
 
 /*--------------------------------- *** ---*/
-class EMailScreen extends StatefulWidget {
+class EMailScreen extends StatefulWidget{
   const EMailScreen({super.key});
 /*--------------------------------- *** ---*/
   @override
@@ -20,8 +23,13 @@ class _EMailScreenState extends State<EMailScreen> {
   }
 
   /*--------------------------------- *** ---*/
-  // die Anzahl der User in der Liste zeigen:
+  // die Gesamt-Anzahl aller User in der Liste zeigen:
   int searchFieldCounter043 = usersData.length;
+
+  /*--------------------------------- *** ---*/
+  // die gefundene Anzahl aller User in der Liste zeigen:
+  int searchFieldFoundCounter043 = usersData.length; //usersData.length;
+
   /*--------------------------------- Scaffold ---*/
   @override
   Widget build(BuildContext context) {
@@ -61,21 +69,62 @@ class _EMailScreenState extends State<EMailScreen> {
                   ),
                   /*--------------------------------- *** ---*/
                   const UserSelect(),
-                  const SizedBox(height: 20),
-                  /*--------------------------------- *** ---*/
-                  // const SizedBox(height: 50),
-                  /*--------------------------------- *** ---*/
+                  /*--------------------------------- Abstand ---*/
+                  wbSizedBoxHeight16,
+                  /*--------------------------------- E-Mail Betreff ---*/
+                  const WbTextFormField(
+                    labelText: "Betreff",
+                    labelFontSize20: 20,
+                    hintText: "Betreff der E-Mail eintragen",
+                    hintTextFontSize20: 20,
+                    prefixIcon: Icons.psychology_alt_outlined,
+                    prefixIconSize48: 48, //28,
+                    textFormFieldFontWeight: FontWeight.bold,
+                    textFormFieldFontColor: wbColorAppBarBlue,
+                    fillColor: wbColorBackgroundBlue,
+                  ),
+                  /*--------------------------------- Abstand ---*/
+                  wbSizedBoxHeight16,
+                  /*--------------------------------- E-Mail Text-Nachricht ---*/
+                  const WbTextFormField(
+                    labelText: "E-Mail Text-Nachricht",
+                    labelFontSize20: 20,
+                    hintText: "Nachricht der E-Mail verfassen",
+                    hintTextFontSize20: 20,
+                    prefixIcon: Icons.email_outlined,
+                    prefixIconSize48: 48,
+                    textFormFieldFontWeight: FontWeight.bold,
+                    textFormFieldFontColor: Colors.black,
+                    fillColor: Colors.white,
+                  ),
                 ],
               ),
             ),
+            /*--------------------------------- *** ---*/
+            //const WbTextFormField(),
+            /*--------------------------------- *** ---*/
+            // deaktivieren:
+            // const WBTextfieldNotice(
+            //   headlineText: "E-Mail-Nachricht:",
+            //   hintText: "- HIER - den Text der E-Mail eingeben:",
+            // ),
+
             /*--------------------------------- MiniFooter ---*/
             const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
-            const Column(
+            Column(
               children: [
+                Text(
+                  "Gefunden: $searchFieldFoundCounter043",
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
                 // dieser Text wird am Anfang angezeigt:
-                Text("WorkBuddy • save time and money • Version 0.001"),
+                const Text("WorkBuddy • save time and money • Version 0.001"),
                 // nach dem Anklicken des Users werden Name und Status angezeigt:
-                // Code todo ...
+                // Text("Auswahl aus $searchFieldCounter043 E-Mail-Adressen:"),
               ],
             ),
             const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
