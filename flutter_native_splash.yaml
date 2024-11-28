@@ -1,10 +1,13 @@
 flutter_native_splash:
- color: "#FFFFFF"
- image: assets/splash/workbuddy_splashscreen_transparent.png
- android_12:
-   image: assets/splash/workbuddy_splashscreen_transparent.png
-   color: "#FFFFFF"
-   icon_background_color: "#FFFFFF"      
+  color: "#FFFFFF"
+  image: assets/splash/workbuddy_glow_logo.png
+  android_12:
+    # background_image: assets/splash/workbuddy_glow_logo.png
+    android_gravity: fill
+    fullscreen: true
+    image: assets/splash/workbuddy_glow_logo.png
+    color: "#FFFFFF"
+    icon_background_color: "#FFFFFF"      
 # -------------------------------------------------------------------------------
 # Text ins deutsche übersetzt:
 # -------------------------------------------------------------------------------

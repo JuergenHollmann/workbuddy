@@ -13,15 +13,37 @@ dependencies:
   flutter_exit_app: ^1.1.4
   dropdown_search: ^6.0.1
   searchfield: ^1.1.7
+  flutter_native_splash: ^2.4.3
 
 cupertino_icons: ^1.0.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
   flutter_launcher_icons: ^0.14.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/workbuddy_icon_neon_green.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/icon/workbuddy_icon_neon_green.png"
+    background_color: "#FFFFFF"
+    theme_color: "#FFFFFF"
+  windows:
+    generate: true
+    image_path: "assets/icon/workbuddy_icon_neon_green.png"
+    icon_size: 256 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/icon/workbuddy_icon_neon_green.png"
+    remove_alpha_ios: true
+
   flutter_native_splash: ^2.4.1
+  
   url_launcher: ^6.3.1
 
 flutter:

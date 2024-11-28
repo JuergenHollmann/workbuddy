@@ -532,7 +532,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- WbDividerWithTextInCenter ---*/
           const WbDividerWithTextInCenter(
             wbColor: wbColorButtonDarkRed,
-            wbText: "WorkBuddy • Version 0.001",
+            wbText: "WorkBuddy • Version 0.002",
             wbTextColor: wbColorButtonDarkRed,
             wbFontSize12: 12,
             wbHeight3: 3,

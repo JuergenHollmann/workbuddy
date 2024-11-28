@@ -26,8 +26,20 @@ Verwende an den entsprechenden Stellen FutureBuilder und reagiere damit auf die 
 Mache Commit und Push, wenn du fertig bist.
 
 ---> Wie sehen deine Screens jetzt beispielhaft aus? Kopiere den Code von zwei Screens.
+/*----------------------------------------------------------------------------------*/
+/* App Icons generieren
+/*----------------------------------------------------------------------------------*/
+Dart Package: flutter_launcher_icons unter https://pub.dev/packages/flutter_launcher_icons laden.
+Befehl 1: "flutter pub get"
+Befehl 2: "dart run flutter_launcher_icons"
+Befehl 3: "flutter pub run flutter_launcher_icons:main" im Terminal ausführen */
 
-*/
+
+
+
+
+/*----------------------------------------------------------------------------------*/
+
 //----------------------------------------------------------------------------------
 // war vorher im pubspec.yaml:
 // flutter_native_splash:
