@@ -16,3 +16,18 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+
+  /*--------------------------------- TODO's ---
+  √ WbHomePage: WbInfoContainer als Footer programmieren
+  - WbHomePage: Drawer fertig programmieren
+  - P01LoginScreen: 0513 - andere Schriftgrößen: iOS = 24 | Pixel8 = 27
+  - P01LoginScreen: Info-Leiste auf dem Startbildschirm unten einbauen
+  - P01LoginScreen: Login mit SQFlite-DB verbinden
+  - P01LoginScreen: Passwort gleich von Anfang an ausblenden (mit State?)
+
+  
+  
+  
+  
+  --------------------------------- *** ---*/
+

@@ -33,66 +33,61 @@ class WbButtonUniversal2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /*-------------------------------------------------- Button ---*/
-    return Container(
-      width: wbWidth155,
-      height: wbHeight60,
-      decoration: ShapeDecoration(
-        shadows: const [
-          BoxShadow(
-            color: Colors.black,
-            blurRadius: 8,
-            offset: Offset(4, 4),
-            spreadRadius: 0,
-          )
-        ],
-        color: wbColor,
-        shape: RoundedRectangleBorder(
-          side: const BorderSide(
-            width: 2,
-            color: Colors.white,
-          ),
-          borderRadius: BorderRadius.circular(
-            16,
+    return Padding(
+      padding: const EdgeInsets.only(right: 10),
+      child: Container(
+        width: wbWidth155,
+        height: wbHeight60,
+        decoration: ShapeDecoration(
+          shadows: const [
+            BoxShadow(
+              color: Colors.black,
+              blurRadius: 8,
+              offset: Offset(4, 4),
+              spreadRadius: 0,
+            )
+          ],
+          color: wbColor,
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(
+              width: 2,
+              color: Colors.white,
+            ),
+            borderRadius: BorderRadius.circular(
+              16,
+            ),
           ),
         ),
-      ),
-
-      /*-------------------------------------------------- Gesture ---*/
-      child: GestureDetector(
-        onTap: wbOnTap,
-        child: Column(
-          //mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-
-                  // -------------------------------------------------- Icon ---*/
-                  child: Icon(
-                    wbIcon,
-                    color: Colors.white,
-                    size: wbIconSize40,
-                    shadows: const [
-                      BoxShadow(
-                        color: Colors.black,
-                        blurRadius: 8,
-                        offset: Offset(4, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
+      
+        /*-------------------------------------------------- Gesture ---*/
+        child: GestureDetector(
+          onTap: wbOnTap,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+      
+                    // -------------------------------------------------- Icon ---*/
+                    child: Icon(
+                      wbIcon,
+                      color: Colors.white,
+                      size: wbIconSize40,
+                      shadows: const [
+                        BoxShadow(
+                          color: Colors.black,
+                          blurRadius: 8,
+                          offset: Offset(4, 4),
+                          spreadRadius: 0,
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                Expanded(
-                  // -------------------------------------------------- Padding Center Text ---
-                  // child: Center(
-                  // /* dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist ) */
-                  // child: Padding(
-                  //   padding: const EdgeInsets.only(right: 80),
-                  // -------------------------------------------------- Text ---
-                  child: Text(
+                  Text(maxLines: null,
                     wbText,
                     style: TextStyle(
                       color: Colors.white,
@@ -109,12 +104,10 @@ class WbButtonUniversal2 extends StatelessWidget {
                       letterSpacing: 2, // Zwischenraum der Buchtstaben
                     ),
                   ),
-                  // ), // Padding
-                  // ), // Center
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -13,7 +13,6 @@ import 'package:workbuddy/features/authentication/screens/p00_registration_scree
 import 'package:workbuddy/features/authentication/screens/user_screen.dart';
 import 'package:workbuddy/screens/selection_screen.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
-import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 
 class P01LoginScreen extends StatefulWidget {
   const P01LoginScreen({super.key});
@@ -140,7 +139,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
+      child: ListView(
         children: [
           /*--------------------------------- Image Logo ---*/
           const SizedBox(
@@ -490,7 +489,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               );
             },
             child: const Text(
-              "Neuer Benutzer? Hier registrieren ...",
+              "Neuer Benutzer? Hier registrieren 👉",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w900,
@@ -510,8 +509,8 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             wbIcon: Icons.report_outlined,
             wbIconSize40: 40,
             wbText: "WorkBuddy beenden",
-            wbFontSize24: 21, // 0513 - wenn iOS, dann 24
-            wbWidth155: 398,
+            wbFontSize24: 21, // 0513 - ANDERE Schriftgrößen: iOS = 24 | Pixel8 = 27 | SamsungA05 = 21
+            wbWidth155: 155, // hat hier keine Auswirkung (warum ?)
             wbHeight60: 60,
             wbOnTap: () {
               /*--------------------------------- AlertDialog ---*/
@@ -529,14 +528,14 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           ),
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight16,
-          /*--------------------------------- WbDividerWithTextInCenter ---*/
-          const WbDividerWithTextInCenter(
-            wbColor: wbColorButtonDarkRed,
-            wbText: "WorkBuddy • Version 0.002",
-            wbTextColor: wbColorButtonDarkRed,
-            wbFontSize12: 12,
-            wbHeight3: 3,
-          )
+          // /*--------------------------------- WbDividerWithTextInCenter ---*/
+          // const WbDividerWithTextInCenter(
+          //   wbColor: wbColorButtonDarkRed,
+          //   wbText: "WorkBuddy • Version 0.002",
+          //   wbTextColor: wbColorButtonDarkRed,
+          //   wbFontSize12: 12,
+          //   wbHeight3: 3,
+          // )
           /*--------------------------------- ENDE ---*/
         ],
       ),

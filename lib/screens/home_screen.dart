@@ -1,7 +1,10 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/authentication/screens/p01_login_screen.dart';
+import 'package:workbuddy/shared/widgets/wb_info_container.dart';
 
 class WbHomePage extends StatefulWidget {
   const WbHomePage({super.key, required this.title});
@@ -41,12 +44,13 @@ class _WbHomePageState extends State<WbHomePage> {
     setState(() {
       _selectedDrawerIndex = index;
     });
+    log("0047 - home_screen $_widgetDrawerOptions[$_selectedDrawerIndex]");
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:  const Color(0xFFFFFFFF),//wbColorBackgroundBlue,
+      backgroundColor: wbColorBackgroundBlue,
       /*--------------------------------- AppBar ---*/
       appBar: AppBar(
         backgroundColor: wbColorAppBarBlue,
@@ -71,12 +75,17 @@ class _WbHomePageState extends State<WbHomePage> {
         ),
       ),
       /*--------------------------------- P01LoginScreen ---*/
-      body: SingleChildScrollView(
+      body: Center(
         child: Column(
           children: [
             wbSizedBoxHeight8,
-            const P01LoginScreen(),
-            _widgetDrawerOptions[_selectedDrawerIndex],
+            Expanded(child: const P01LoginScreen()),
+            // _widgetDrawerOptions[_selectedDrawerIndex],
+            /*--------------------------------- WbInfoContainer ---*/
+            WbInfoContainer(
+              infoText: 'WorkBuddy • Free-BASIC-Version 0.002',
+            ),
+            /*--------------------------------- WbInfoContainer ENDE ---*/
           ],
         ),
       ),
@@ -144,8 +153,6 @@ class _WbHomePageState extends State<WbHomePage> {
                 Navigator.pop(context);
               },
             ),
-
-            //const WelcomeText(),
           ],
         ),
       ),
