@@ -1,3 +1,30 @@
+/*----------------------------------------------------------------------------------*/
+- Der SplashScreen wurde installiert mit "flutter_native_splash".
+/*----------------------------------------------------------------------------------*/
+/* App-Icon generieren und installieren mit"flutter_launcher_icons":
+/*----------------------------------------------------------------------------------*/
+
+assets/splash/workbuddy_splashscreen_transparent.png
+
+Dart Package: flutter_launcher_icons unter https://pub.dev/packages/flutter_launcher_icons laden.
+Befehl 1: "flutter pub get"
+Befehl 2: "dart run flutter_launcher_icons"
+Befehl 3: "flutter pub run flutter_launcher_icons:main" im Terminal ausführen */
+Um eine vorhandene Konfigurationsdatei zu überschreiben, verwenden Sie das -oFlag:
+Step 1: "dart run flutter_launcher_icons:generate -o" 
+--> ACHTUNG: dabei werden die Einträge mit "path = 'assets/icon/icon.png'" überschrieben !!!
+Step 2: "flutter pub run flutter_launcher_icons"
+Step 3: "flutter pub get
+          dart run flutter_launcher_icons -f pubspec.yaml"
+Wenn Sie Ihrer Konfigurationsdatei einen anderen Namen als "flutter_launcher_icons.yaml" oder "pubspec.yaml" geben, müssen Sie beim Ausführen des Pakets den Namen der Datei angeben: "flutter pub get
+          dart run flutter_launcher_icons -f pubspec.yaml"
+
+
+
+
+
+
+
 "Neuer Benutzer? Hier registrieren ...",
 /* ----------------------------------------------------------------------------------
 Aufgaben:        5.2.5 - Projekt
@@ -26,13 +53,6 @@ Verwende an den entsprechenden Stellen FutureBuilder und reagiere damit auf die 
 Mache Commit und Push, wenn du fertig bist.
 
 ---> Wie sehen deine Screens jetzt beispielhaft aus? Kopiere den Code von zwei Screens.
-/*----------------------------------------------------------------------------------*/
-/* App Icons generieren
-/*----------------------------------------------------------------------------------*/
-Dart Package: flutter_launcher_icons unter https://pub.dev/packages/flutter_launcher_icons laden.
-Befehl 1: "flutter pub get"
-Befehl 2: "dart run flutter_launcher_icons"
-Befehl 3: "flutter pub run flutter_launcher_icons:main" im Terminal ausführen */
 
 
 

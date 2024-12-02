@@ -510,7 +510,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             wbIcon: Icons.report_outlined,
             wbIconSize40: 40,
             wbText: "WorkBuddy beenden",
-            wbFontSize24: 24,
+            wbFontSize24: 21, // 0513 - wenn iOS, dann 24
             wbWidth155: 398,
             wbHeight60: 60,
             wbOnTap: () {

@@ -128,7 +128,7 @@ class WBDialog2Buttons extends StatelessWidget {
           wbIcon: Icons.dangerous_outlined,
           wbIconSize40: 40,
           wbText: "Ja • Beenden",
-          wbFontSize24: 24,
+          wbFontSize24: 21,
           wbWidth155: 284,
           wbHeight60: 60,
           wbOnTap: () {

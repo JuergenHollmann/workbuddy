@@ -46,14 +46,14 @@ class _WbHomePageState extends State<WbHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: wbColorBackgroundBlue,
+      backgroundColor:  const Color(0xFFFFFFFF),//wbColorBackgroundBlue,
       /*--------------------------------- AppBar ---*/
       appBar: AppBar(
         backgroundColor: wbColorAppBarBlue,
         title: Text(
           widget.title,
           style: const TextStyle(
-            fontSize: 20,
+            fontSize: 16,
             fontWeight: FontWeight.w900,
             color: Colors.white, // Schriftfarbe
           ),

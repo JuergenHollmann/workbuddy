@@ -19,7 +19,7 @@ class ContactMenu extends StatelessWidget {
         title: const Text(
           'Was möchtest Du tun?',
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 24,
             fontWeight: FontWeight.w900,
             color: Colors.black, // Schriftfarbe
           ),
@@ -221,7 +221,7 @@ class ContactMenu extends StatelessWidget {
                     wbIconSize40: 40,
                     wbText:
                         "Möchtest Du\nMEHR Funktionen?\nSchreibe einfach eine\nE-Mail an den Entwickler.",
-                    wbFontSize24: 18,
+                    wbFontSize24: 15,
                     wbWidth155: 398,
                     wbHeight60: 130,
                     wbOnTap: () {},

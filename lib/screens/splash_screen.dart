@@ -1,6 +1,7 @@
 // funzt noch nicht
 
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/main.dart';
 
@@ -9,9 +10,9 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // damit der SplashScreen etwas länger zu sehen ist soll ein Timer das steuern // todo
+    // damit der SplashScreen etwas länger zu sehen ist soll ein Timer das steuern:
     Timer(
-        const Duration(seconds: 5),
+        const Duration(seconds: 1),
         () => Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (BuildContext context) => const MainApp())));
 
@@ -19,15 +20,16 @@ class SplashScreen extends StatelessWidget {
         "assets/splash/workbuddy_splashscreen_transparent.png");
     var image = Image(
       image: assetsImage,
-      width: 1200,
+      width: 320,
     );
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text("WorkBuddy"),
-          backgroundColor: Colors.black,
+          backgroundColor: const Color.fromARGB(255, 255, 0, 0), //const Color(0x00000000),
         ),
         body: Container(
+          height: 320,
           decoration: const BoxDecoration(color: Colors.black),
           child: Center(
             child: image,

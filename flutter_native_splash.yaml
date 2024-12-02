@@ -1,27 +1,29 @@
 flutter_native_splash:
-  color: "#FFFFFF"
+  color: "#000000" # Fensterhintergrund | rot = "#ff3b30" | blau = "#007aff"
   image: assets/splash/workbuddy_glow_logo.png
   android_12:
-    # background_image: assets/splash/workbuddy_glow_logo.png
-    android_gravity: fill
-    fullscreen: true
+    #background_image: assets/splash/workbuddy_glow_logo.png
+    icon_background_color: "#000000" # Hintergrund rundes Icon
+    # android_gravity: fill
+    fullscreen: false
     image: assets/splash/workbuddy_glow_logo.png
-    color: "#FFFFFF"
-    icon_background_color: "#FFFFFF"      
 # -------------------------------------------------------------------------------
-# Text ins deutsche übersetzt:
+# Auswahl an splash-screen-logos: 
+# - workbuddy_glow_logo.png 
+# - assets/splash/splash_with_black_background.png 
+# - assets/splash/workbuddy_splashscreen_transparent.png
 # -------------------------------------------------------------------------------
-# flutter_native_splash:
+# ---> https://pub.dev/packages/flutter_native_splash:
 # Dieses Paket generiert nativen Code, um Flutters standardmäßigen weißen nativen Begrüßungsbildschirm mit Hintergrundfarbe und Begrüßungsbild anzupassen.
 
 # Passen Sie die folgenden Parameter an und führen Sie den folgenden Befehl im Terminal aus:
 # ---> dart run flutter_native_splash:create <---
 
 # Um Flutters standardmäßigen weißen Begrüßungsbildschirm wiederherzustellen, führen Sie den folgenden Befehl im Terminal aus:
-# dart run flutter_native_splash:remove
+# ---> dart run flutter_native_splash:remove <---
 
 # WICHTIGER HINWEIS:
-# Diese Parameter wirken sich nicht auf die Konfiguration von Android 12 und höher aus, die Begrüßungsbildschirme anders handhaben als frühere Android-Versionen. Android 12 und höher muss ​speziell im Abschnitt android_12 unten konfiguriert werden.
+# Diese Parameter wirken sich nicht auf die Konfiguration von Android 12 und höher aus, die Begrüßungsbildschirme anders handhaben als frühere Android-Versionen. Android 12 und höher muss speziell im Abschnitt android_12 unten konfiguriert werden.
 
 #color oder #background_image ist der einzige erforderliche Parameter.
 # Verwenden Sie color, um den Hintergrund Ihres Begrüßungsbildschirms auf eine Volltonfarbe einzustellen. Verwenden Sie background_image, um den Hintergrund Ihres Begrüßungsbildschirms auf ein PNG-Bild einzustellen. Dies ist nützlich für Farbverläufe. Das Bild wird auf die Größe der App gestreckt.
@@ -52,7 +54,8 @@ flutter_native_splash:
 #image_dark: asset/splash-invert.png
 #branding_dark: asset/dart_dark.png
 
-# Ab Android 12 wird der Begrüßungsbildschirm anders gehandhabt als in früheren Versionen. # Bitte besuchen Sie https://developer.android.com/guide/topics/ui/splash-screen
+# Ab Android 12 wird der Begrüßungsbildschirm anders gehandhabt als in früheren Versionen.
+# Bitte besuchen Sie https://developer.android.com/guide/topics/ui/splash-screen
 
 # Im Folgenden finden Sie spezifische Parameter für Android 12+.
 

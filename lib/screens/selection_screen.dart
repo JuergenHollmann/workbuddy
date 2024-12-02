@@ -18,7 +18,7 @@ class SelectionPage extends StatelessWidget {
         title: const Text(
           'Was möchtest Du tun?',
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 24,
             fontWeight: FontWeight.w900,
             color: Colors.white,
           ), // Schriftfarbe
