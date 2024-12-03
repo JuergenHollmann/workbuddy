@@ -29,235 +29,154 @@ class ContactMenu extends StatelessWidget {
       ),
       //    body: SingleChildScrollView(
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            const Image(
-              image: AssetImage("assets/workbuddy_glow_schriftzug.png"),
-            ),
-
-            // --------------------------------------- Kontakte-Menü ---
-            const WbDividerWithTextInCenter(
-              wbColor: wbColorLogoBlue,
-              wbText: "Kontakte",
-              wbTextColor: wbColorLogoBlue,
-              wbFontSize12: 28,
-              wbHeight3: 3,
-            ),
-            // --------------------------------------- Listview mit AuswahlButtons ---
-            Expanded(
-              child: ListView(
-                padding: const EdgeInsets.all(8),
-                children: [
-                  // --------------------------------------- Kontakt neu anlegen ---
-                  GestureDetector(
-                    onTap: () {
-                      log("Auf - ContactMenu - Einen Kontakt neu anlegen - angeklickt");
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ContactScreen(),
-                        ),
-                      );
-                    },
-
-                    /* Dieser Button ist OHNE Icon (nur Text und Farbe) */
-                    // child: const WbButtonUniShadow(
-                    //     wbColor: wbColorButtonDarkRed,
-                    //     wbButtonUniShadowText: "Ausgabe buchen"),
-
-                    child: WbButtonUniversal(
-                      wbColor: wbColorButtonGreen,
-                      wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
-                      icon: Icons.person_add_alt_1_outlined,
-                      onButtonTap:
-                          /* das geht hier nur, weil es eine (leere) Funktion ist. */
-                          () {},
-                      width: 398,
-                    ),
-                  ),
-
-                  wbSizedBoxHeight8,
-
-                  // // ---------- Eine Einnahme buchen ----------
-                  // GestureDetector(
-                  //   onTap: () {
-                  //     log("Auf - ContactMenu - Eine Einnahme buchen - angeklickt");
-                  //     Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //         builder: (context) => const AccountingScreen(
-                  //           startGroupValue: "Einnahme",
-                  //         ),
-                  //       ),
-                  //     );
-                  //   },
-                  //   child: WbButtonUniversal(
-                  //     wbColor: wbColorButtonGreen,
-                  //     wbButtonUniversalText: "Einnahme buchen",
-                  //     icon: Icons
-                  //         .add_card_outlined, // credit_score_outlined, //payments_outlined,
-                  //     onButtonTap: () {},
-                  //     /* das geht hier nur, weil es eine (leere) Funktion ist. */
-                  //     width: 398,
-                  //   ),
-                  // ),
-
-                  // ---------- Einen Kontakt suchen ----------
-                  // wbSizedBoxHeight16,
-                  const Divider(
-                      thickness: 3, height: 32, color: wbColorLogoBlue),
-
-                  GestureDetector(
-                    onTap: () {
-                      log("Auf - ContactMenu - Einen Kontakt suchen - Update-Hinweis - CM108 - angeklickt");
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            const WbDialogAlertUpdateComingSoon(
-                          headlineText: 'Update-Hinweis - CM108',
-                          contentText:
-                              'Diese Funktion kommt bald in einem kostenlosen Update!',
-                        ),
-                      );
-                    },
-
-                    // /* Dieser Button ist OHNE Icon (nur Text und Farbe) */
-                    // child: const WbButtonUniShadow(
-                    //     wbColor: wbColorButtonDarkRed,
-                    //     wbButtonUniShadowText: "Alle Ausgaben zeigen"),
-
-                    child: WbButtonUniversal(
-                      wbColor: wbColorAppBarBlue,
-                      wbButtonUniversalText:
-                          "ALLE Kontakte zeigen\nmit SUCH-Funktion",
-                      icon: Icons.person_search_outlined,
-                      onButtonTap: () {},
-                      width: 398,
-                    ),
-                  ),
-
-                  // // ---------- reserviert ----------
-                  // wbSizedBoxHeight16,
-                  // //const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
-                  // GestureDetector(
-                  //   onTap: () {
-                  //     log("Update-Hinweis - AM141");
-                  //     showDialog(
-                  //       context: context,
-                  //       builder: (context) =>
-                  //           const WbDialogAlertUpdateComingSoon(
-                  //         headlineText: 'Update-Hinweis - AM141',
-                  //         contentText:
-                  //             'Diese Funktion kommt bald in einem kostenlosen Update!',
-                  //       ),
-                  //     );
-                  //   },
-                  //   child: WbButtonUniversal(
-                  //     wbColor: wbColorAppBarBlue,
-                  //     wbButtonUniversalText: "- reserviert -",
-                  //     icon: Icons.receipt_long_outlined,
-                  //     onButtonTap: () {},
-                  //     width: 398,
-                  //   ),
-                  // ),
-
-                  // // ---------- Ausgaben-Beleg finden ----------
-                  // wbSizedBoxHeight8,
-                  // const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
-                  // GestureDetector(
-                  //   onTap: () {
-                  //     log("Update-Hinweis - AM164");
-                  //     showDialog(
-                  //       context: context,
-                  //       builder: (context) =>
-                  //           const WbDialogAlertUpdateComingSoon(
-                  //         headlineText: 'Update-Hinweis - AM164',
-                  //         contentText:
-                  //             'Diese Funktion kommt bald in einem kostenlosen Update!',
-                  //       ),
-                  //     );
-                  //   },
-                  //   child: WbButtonUniversal(
-                  //     wbColor: wbColorOrangeDarker,
-                  //     wbButtonUniversalText: "- reserviert -",
-                  //     icon: Icons.manage_search_outlined,
-                  //     onButtonTap: () {},
-                  //     width: 398,
-                  //   ),
-                  // ),
-
-                  // // ---------- Einnahme-Beleg finden ----------
-                  // wbSizedBoxHeight16,
-                  // // const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
-                  // GestureDetector(
-                  //   onTap: () {
-                  //     log("Update-Hinweis - AM188");
-                  //     showDialog(
-                  //       context: context,
-                  //       builder: (context) =>
-                  //           const WbDialogAlertUpdateComingSoon(
-                  //         headlineText: 'Update-Hinweis - AM188',
-                  //         contentText:
-                  //             'Diese Funktion kommt bald in einem kostenlosen Update!',
-                  //       ),
-                  //     );
-                  //   },
-                  //   child: WbButtonUniversal(
-                  //     wbColor: wbColorOrangeDarker,
-                  //     wbButtonUniversalText: "- reserviert -",
-                  //     icon: Icons.query_stats, //receipt_long_outlined,
-                  //     onButtonTap: () {}, width: 398,
-                  //   ),
-                  // ),
-/*--------------------------------- ENDE der ListView ---*/
-                  wbSizedBoxHeight8,
-                  const Divider(
-                      thickness: 3, height: 32, color: wbColorLogoBlue),
-
-                  WbButtonUniversal2(
-                    wbColor: const Color.fromARGB(255, 255, 102, 219),
-                    wbIcon: Icons.forward_to_inbox_outlined,
-                    wbIconSize40: 40,
-                    wbText:
-                        "Möchtest Du\nMEHR Funktionen?\nSchreibe einfach eine\nE-Mail an den Entwickler.",
-                    wbFontSize24: 15,
-                    wbWidth155: 398,
-                    wbHeight60: 130,
-                    wbOnTap: () {},
-                  ),
-
-                  const SizedBox(height: 8),
-
-                  // const WbDividerWithTextInCenter(
-                  //   wbColor: wbColorLogoBlue,
-                  //   wbText: "WorkBuddy - save time and money - Version 0.001",
-                  //   wbTextColor: wbColorButtonBlue,
-                  //   wbFontSize12: 12,
-                  //   wbHeight3: 3,
-                  // ),
-
-                  // const Column(
-                  //   children: [
-                  //     Text("WorkBuddy - save time and money - Version 0.001"),
-                  //   ],
-                  // ),
-                ],
+        padding: const EdgeInsets.all(16),
+        child: Center(
+          child: Column(
+            children: [
+              const Image(
+                image: AssetImage("assets/workbuddy_glow_schriftzug.png"),
               ),
-            ),
-            /*--------------------------------- MiniFooter ---*/
-            const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
-            const Column(
-              children: [
-                Text("WorkBuddy • save time and money • Version 0.001"),
-              ],
-            ),
-            const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
-            /*--------------------------------- MiniFooter ENDE ---*/
-          ],
+              // --------------------------------------- Kontakte-Menü ---
+              const WbDividerWithTextInCenter(
+                wbColor: wbColorLogoBlue,
+                wbText: "Kontakte",
+                wbTextColor: wbColorLogoBlue,
+                wbFontSize12: 28,
+                wbHeight3: 3,
+              ),
+              // --------------------------------------- Listview mit AuswahlButtons ---
+              Expanded(
+                child: ListView(
+                  padding: const EdgeInsets.all(8),
+                  children: [
+                    /*--------------------------------- Kontakt NEU anlegen ---*/
+                    GestureDetector(
+
+                      // onTap: () {
+                      //   log("0055 - contact_menu - Einen Kontakt NEU anlegen - Update-Hinweis - CM0055 - angeklickt");
+                      //   showDialog(
+                      //     context: context,
+                      //     builder: (context) =>
+                      //         const WbDialogAlertUpdateComingSoon(
+                      //       headlineText: 'Update-Hinweis',
+                      //       contentText:
+                      //           'Diese Funktion kommt bald in einem kostenlosen Update!\n\nSupport: CM0055',
+                      //     ),
+                      //   );
+
+                      onTap: () {
+
+                        log("0056 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ContactScreen(),
+
+                                                        // builder: (context) => const CommunicationMenu(),
+
+                          ),
+                        );
+                      },
+
+                      child: WbButtonUniversal(
+                        wbColor: wbColorButtonGreen,
+                        icon: Icons.person_add_alt_1_outlined,
+                        wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
+                        onButtonTap: () {},
+                        width: 200,
+                      ),
+
+                      // child: WbButtonUniversal2(
+                      //   wbColor: wbColorButtonGreen,
+                      //   wbIcon: Icons.person_add_alt_1_outlined,
+                      //   wbIconSize40: 40,
+                      //   wbText: "Einen Kontakt \nNEU anlegen",
+                      //   wbFontSize24: 24,
+                      //   wbWidth155: 400, // hat keine Auswirkung?
+                      //   wbHeight60: 80,
+                      //   wbOnTap: () {},
+                      // ),
+
+                      // child: WbButtonUniversal(
+                      //   wbColor: wbColorButtonGreen,
+                      //   wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
+                      //   icon: Icons.person_add_alt_1_outlined,
+                      //   onButtonTap: () {
+                      //     // log("0069 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
+                      //     // Navigator.push(
+                      //     //   context,
+                      //     //   MaterialPageRoute(
+                      //     //     builder: (context) => const ContactScreen(),
+                      //     //   ),
+                      //     // );
+                      //   },
+                      //   width: 398,
+                      // ),
+                    ),
+                    /*--------------------------------- *** ---*/
+                    wbSizedBoxHeight8,
+                    /*--------------------------------- *** ---*/
+
+                    const Divider(
+                        thickness: 3, height: 32, color: wbColorLogoBlue),
+                    GestureDetector(
+                      onTap: () {
+                        log("0085 - contact_menu - Einen Kontakt suchen - Update-Hinweis - CM108 - angeklickt");
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: 'Update-Hinweis - CM108',
+                            contentText:
+                                'Diese Funktion kommt bald in einem kostenlosen Update!',
+                          ),
+                        );
+                      },
+                      child: WbButtonUniversal(
+                        wbColor: wbColorAppBarBlue,
+                        wbButtonUniversalText:
+                            "ALLE Kontakte zeigen\nmit SUCH-Funktion",
+                        icon: Icons.person_search_outlined,
+                        onButtonTap: () {},
+                        width: 398,
+                      ),
+                    ),
+                    wbSizedBoxHeight8,
+                    const Divider(
+                        thickness: 3, height: 32, color: wbColorLogoBlue),
+                    GestureDetector(
+                      onTap: () {
+                        log("0109 - contact_menu - Mehr Info? - Update-Hinweis - CM109 - angeklickt");
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: 'Update-Hinweis - CM0109',
+                            contentText:
+                                'Diese Funktion kommt bald in einem kostenlosen Update!',
+                          ),
+                        );
+                      },
+                      child: WbButtonUniversal2(
+                        wbColor: const Color.fromARGB(255, 255, 102, 219),
+                        wbIcon: Icons.forward_to_inbox_outlined,
+                        wbIconSize40: 40,
+                        wbText:
+                            "Möchtest Du\nMEHR Funktionen?\nSchreibe einfach eine\nE-Mail an den Entwickler.",
+                        wbFontSize24: 15,
+                        wbWidth155: 300, // hat keine Auswirkung
+                        wbHeight60: 110,
+                        wbOnTap: () {},
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-      //   ),
     );
   }
 }

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
@@ -7,7 +6,7 @@ import 'package:workbuddy/user_data.dart';
 import 'package:workbuddy/user_select.dart';
 
 /*--------------------------------- *** ---*/
-class EMailScreen extends StatefulWidget{
+class EMailScreen extends StatefulWidget {
   const EMailScreen({super.key});
 /*--------------------------------- *** ---*/
   @override
@@ -76,11 +75,11 @@ class _EMailScreenState extends State<EMailScreen> {
                     labelText: "Betreff",
                     labelFontSize20: 20,
                     hintText: "Betreff der E-Mail eintragen",
-                    hintTextFontSize20: 20,
+                    inputTextFontSize22: 20,
                     prefixIcon: Icons.psychology_alt_outlined,
-                    prefixIconSize48: 48, //28,
-                    textFormFieldFontWeight: FontWeight.bold,
-                    textFormFieldFontColor: wbColorAppBarBlue,
+                    prefixIconSize28: 48, //28,
+                    inputFontWeightW900: FontWeight.bold,
+                    inputFontColor: wbColorAppBarBlue,
                     fillColor: wbColorBackgroundBlue,
                   ),
                   /*--------------------------------- Abstand ---*/
@@ -90,11 +89,11 @@ class _EMailScreenState extends State<EMailScreen> {
                     labelText: "E-Mail Text-Nachricht",
                     labelFontSize20: 20,
                     hintText: "Nachricht der E-Mail verfassen",
-                    hintTextFontSize20: 20,
+                    inputTextFontSize22: 20,
                     prefixIcon: Icons.email_outlined,
-                    prefixIconSize48: 48,
-                    textFormFieldFontWeight: FontWeight.bold,
-                    textFormFieldFontColor: Colors.black,
+                    prefixIconSize28: 48,
+                    inputFontWeightW900: FontWeight.bold,
+                    inputFontColor: Colors.black,
                     fillColor: Colors.white,
                   ),
                 ],

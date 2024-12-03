@@ -38,7 +38,7 @@ class WBTextfieldNotice extends StatelessWidget {
           child: TextFormField(
             maxLines: 4,
             textAlign: TextAlign.left,
-            textAlignVertical: TextAlignVertical.top,
+            textAlignVertical: TextAlignVertical.bottom,
             style: const TextStyle(
               fontSize: 18,
             ),

@@ -117,7 +117,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
   final TextEditingController userNameTEC = TextEditingController();
   final TextEditingController userPasswordTEC = TextEditingController();
 
-  bool visibilityPassword = false;
+  bool visibilityPassword = true;
   String inputUserName = ""; // nur für die "onChanged-Funktion"
   String inputPassword = ""; // nur für die "onChanged-Funktion"
 

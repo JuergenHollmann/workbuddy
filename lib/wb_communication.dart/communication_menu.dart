@@ -226,14 +226,20 @@ class CommunicationMenu extends StatelessWidget {
                 ],
               ),
             ),
+            /*--------------------------------- *** ---*/
+
+
+
+
+
             /*--------------------------------- MiniFooter ---*/
-            const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
-            const Column(
-              children: [
-                Text("WorkBuddy • save time and money • Version 0.001"),
-              ],
-            ),
-            const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
+            // const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
+            // const Column(
+            //   children: [
+            //     Text("WorkBuddy • save time and money • Version 0.001"),
+            //   ],
+            // ),
+            // const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
             /*--------------------------------- MiniFooter ENDE ---*/
           ],
         ),

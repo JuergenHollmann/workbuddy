@@ -4,12 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
-import 'package:workbuddy/config/wb_textfield_notice.dart';
+import 'package:workbuddy/config/wb_text_form_field.dart';
+import 'package:workbuddy/config/wb_text_form_field_text_only.dart';
 import 'package:workbuddy/screens/selection_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
-import 'package:workbuddy/shared/widgets/wb_divider_with_small_text_center.dart';
-import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
-import 'package:workbuddy/shared/widgets/wb_textfield_standard_entry.dart';
+import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 import 'package:workbuddy/wb_companies/company_radiobutton_1.dart';
 
 class CompanyScreen extends StatelessWidget {
@@ -40,8 +39,9 @@ class CompanyScreen extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    /* -------------------------------------- Firmenlogo --- */
+                    /*--------------------------------- Firmenlogo ---*/
                     Column(
                       children: [
                         Container(
@@ -56,7 +56,7 @@ class CompanyScreen extends StatelessWidget {
                             ],
                             shape: BoxShape.circle,
                             color: Colors.white,
-                            // -----------------------------
+                            /*--------------------------------- *** ---*/
                             // Außenlinie mit Farbverlauf:
                             // gradient: LinearGradient(
                             //   colors: [
@@ -66,7 +66,7 @@ class CompanyScreen extends StatelessWidget {
                             //   begin: Alignment.topLeft,
                             //   end: Alignment.bottomRight,
                             // ),
-                            // -----------------------------
+                            /*--------------------------------- *** ---*/
                           ),
                           child: const Padding(
                             padding: EdgeInsets.all(2.5), // stroke
@@ -86,12 +86,11 @@ class CompanyScreen extends StatelessWidget {
                                   AssetImage(
                                 "assets/company_logos/enpower_expert_logo_4_x_4.png",
                               ),
-
-                              // ------------------------------------------
+                              /*--------------------------------- *** ---*/
                               // Bild aus dem Internet:
                               // NetworkImage('https://picsum.photos/200'),
-                              // ------------------------------------------
-                              radius: 80,
+                              /*--------------------------------- *** ---*/
+                              radius: 72,
                             ),
                           ),
                         ),
@@ -101,15 +100,14 @@ class CompanyScreen extends StatelessWidget {
                         ), // wenn Privatperson, dann DummyImage + Text "Privatperson"
                       ],
                     ),
-
-                    /* -------------------------------------- Abstand --- */
-                    const SizedBox(width: 30), // Zwischenabstand bei Expanded
-                    /* -------------------------------------- Ansprechpartner --- */
+                    /*--------------------------------- Abstand --- */
+                    const SizedBox(width: 22), // Zwischenabstand bei Expanded
+                    /*--------------------------------- Ansprechpartner --- */
                     Column(
                       children: [
                         Container(
-                          height: 160,
-                          width: 160,
+                          height: 144,
+                          width: 144,
                           // Quadrat mit blauem Hintergrund und Schatten
                           decoration: ShapeDecoration(
                             shadows: const [
@@ -143,11 +141,11 @@ class CompanyScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    /* -------------------------------------- xxx --- */
+                    /*--------------------------------- *** ---*/
                   ],
                 ),
               ),
-              /* ----------------------------------------------------- Divider ---*/
+              /*--------------------------------- Divider ---*/
               const Divider(thickness: 3, color: wbColorLogoBlue),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
@@ -155,91 +153,212 @@ class CompanyScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // const Divider(thickness: 3, color: wbColorLogoBlue),
-                    /* ----------------------------------------------------- Lieferant/Kunde ---*/
+                    /*--------------------------------- Lieferant/Kunde ---*/
                     const CompanyRadioButton1(),
-
-                    /* ----------------------------------------------------- Divider ---*/
+                    /*--------------------------------- Divider ---*/
                     const Divider(thickness: 3, color: wbColorLogoBlue),
-
-                    /* ----------------------------------------------------- Firmenbezeichnung ---*/
-                    wbSizedBoxHeight8,
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Firmenbezeichnung',
-                      hintText: 'Bitte die Firmenbezeichnung eintragen',
-                      wbTextFieldWidth: 398,
-                    ),
-
-                    /* ----------------------------------------------------- Branchenzuordnung ---*/
-                    wbSizedBoxHeight16,
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Branchenzuordnung',
-                      hintText: 'Welcher Branche zugeordnet?',
-                      wbTextFieldWidth: 398,
-                    ),
-
-                    /*-------------------------------------- Notizen zu Warengruppen ---*/
-                    wbSizedBoxHeight16,
-                    const WBTextfieldNotice(
-                        headlineText: "Notizen zu Warengruppen",
-                        hintText:
-                            "Welche Waren sind für die Suchfunktion in der App relevant?\n\nBeispiele: Schrauben, Werkzeug, etc."),
-
-                    // ----------------------------------------------------- Divider mit Text ---
-                    wbSizedBoxHeight16,
-                   
-                    // fixme: Expanded beheben - der Fehler ist seither nicht mehr gemeldet worden.
-                    // 😉 Das war hier:
-                    // const SizedBox(width: 30), // Zwischenabstand bei Expanded (war vorher 40)
-
-                    const WbDividerWithSmallTextCenter(
-                      wbDividerText: "Adresse",
-                    ),
+                    /*--------------------------------- Firmenbezeichnung ---*/
                     wbSizedBoxHeight8,
 
-                    /*----------------------------------------------------- Straße + Nummer ---*/
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Straße + Hausnummer',
-                      hintText: 'Bitte Straße mit Hausnummer eintragen',
-                      wbTextFieldWidth: 398,
+                    WbTextFormField(
+                      labelText: "Firmenbezeichnung",
+                      labelFontSize20: 20,
+                      hintText: "Wie heißt die Firma?",
+                      hintTextFontSize16: 16,
+                      inputTextFontSize22: 22,
+                      prefixIcon: Icons.source_outlined,
+                      prefixIconSize28: 28,
+                      inputFontWeightW900: FontWeight.w900,
+                      inputFontColor: wbColorLogoBlue,
+                      fillColor: wbColorLightYellowGreen,
+                      // textInputTypeOnKeyboard: TextInputType.multiline,
+                      // suffixIcon: Icons.help_outline_outlined,
+                      // suffixIconSize48: 28,
                     ),
-
-                    // ----------------------------------------------------- Zusatzinformation ---
+                    /*--------------------------------- Branchenzuordnung ---*/
                     wbSizedBoxHeight16,
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Zusatzinformation zur Adresse',
-                      hintText: 'z.B.: c/o-Adresse? - Hinterhaus? - EG/OG?',
-                      wbTextFieldWidth: 398,
+                    WbTextFormField(
+                      labelText: "Branchenzuordnung",
+                      labelFontSize20: 20,
+                      hintText: "Welcher Branche zugeordnet?",
+                      hintTextFontSize16: 16,
+                      inputTextFontSize22: 22,
+                      prefixIcon: Icons.comment_bank_outlined,
+                      prefixIconSize28: 24,
+                      inputFontWeightW900: FontWeight.w900,
+                      inputFontColor: wbColorLogoBlue,
+                      fillColor: wbColorLightYellowGreen,
+                      // suffixIcon: Icons.menu_outlined,
+                      // suffixIconSize48: 28,
+                      // textInputTypeOnKeyboard: TextInputType.multiline,
+                    ),
+                    /*--------------------------------- Notizen zu Warengruppen ---*/
+                    wbSizedBoxHeight16,
+                    WbTextFormField(
+                      labelText: "Notizen zu Warengruppen",
+                      labelFontSize20: 20,
+                      hintText:
+                          "Welche Waren sind für die Suchfunktion in der App relevant? Beispiele: Schrauben, Werkzeug, etc.?",
+                      hintTextFontSize16: 12,
+                      inputTextFontSize22: 14,
+                      prefixIcon: Icons.shopping_basket_outlined,
+                      prefixIconSize28: 24,
+                      inputFontWeightW900: FontWeight.w900,
+                      inputFontColor: wbColorLogoBlue,
+                      fillColor: wbColorLightYellowGreen,
+                      // suffixIcon: Icons.menu_outlined,
+                      // suffixIconSize48: 28,
+                      textInputTypeOnKeyboard: TextInputType.multiline,
+                    ),
+                    /*--------------------------------- WbDividerWithTextInCenter ---*/
+                    wbSizedBoxHeight8,
+                    WbDividerWithTextInCenter(
+                      wbColor: wbColorLogoBlue,
+                      wbText: 'Adressdaten der Firma',
+                      wbTextColor: wbColorLogoBlue,
+                      wbFontSize12: 18,
+                      wbHeight3: 3,
+                    ),
+                    wbSizedBoxHeight16,
+                    /*--------------------------------- Straße + Nummer ---*/
+                    WbTextFormField(
+                      labelText: "Straße und Hausnummer",
+                      labelFontSize20: 20,
+                      hintText: "Bitte Straße + Hausnr. eintragen",
+                      hintTextFontSize16: 15,
+                      inputTextFontSize22: 22,
+                      prefixIcon: Icons.location_on_outlined,
+                      prefixIconSize28: 24,
+                      inputFontWeightW900: FontWeight.w900,
+                      inputFontColor: wbColorLogoBlue,
+                      fillColor: wbColorLightYellowGreen,
+                      // suffixIcon: Icons.menu_outlined,
+                      // suffixIconSize48: 28,
+                      // textInputTypeOnKeyboard: TextInputType.multiline,
+                      // autofillHints: [],
                     ),
 
-                    // ----------------------------------------------------- PLZ ---
+                    // const WbTextfieldStandardEntry(
+                    //   headlineText: 'Straße + Hausnummer',
+                    //   hintText: 'Bitte Straße mit Hausnummer eintragen',
+                    //   wbTextFieldWidth: 398,
+                    // ),
+                    /*--------------------------------- Zusatzinformation ---*/
+                    wbSizedBoxHeight16,
+                    WbTextFormField(
+                      labelText: "Zusatzinfo zur Adresse",
+                      labelFontSize20: 20,
+                      hintText: "c/o-Adresse? | Hinterhaus? | EG?",
+                      hintTextFontSize16: 12,
+                      inputTextFontSize22: 14,
+                      prefixIcon: Icons.location_on_outlined,
+                      prefixIconSize28: 24,
+                      inputFontWeightW900: FontWeight.w900,
+                      inputFontColor: wbColorLogoBlue,
+                      fillColor: wbColorLightYellowGreen,
+                      // suffixIcon: Icons.menu_outlined,
+                      // suffixIconSize48: 28,
+                      // textInputTypeOnKeyboard: TextInputType.multiline,
+                    ),
+                    /*--------------------------------- PLZ ---*/
                     wbSizedBoxHeight16,
                     const Row(
                       children: [
-                        WbTextfieldStandardEntry(
-                          headlineText: 'PLZ',
-                          hintText: 'PLZ',
-                          wbTextFieldWidth: 102,
+                        SizedBox(
+                          width: 108,
+                          child: WbTextFormFieldTEXTOnly(
+                            labelText: "PLZ",
+                            labelFontSize20: 20,
+                            hintText: "PLZ",
+                            inputTextFontSize22: 22,
+                            inputFontWeightW900: FontWeight.w900,
+                            inputFontColor: wbColorLogoBlue,
+                            fillColor: wbColorLightYellowGreen,
+                          ),
+
+                          // WbTextFormField(
+                          //   labelText: "PLZ",
+                          //   labelFontSize20: 20,
+                          //   hintText: "PLZ",
+                          //   hintTextFontSize16: 15,
+                          //   inputTextFontSize22: 22,
+                          //   // prefixIcon: Icons.comment_bank_outlined,
+                          //   // prefixIconSize28: 24,
+                          //   inputFontWeightW900: FontWeight.w900,
+                          //   inputFontColor: wbColorLogoBlue,
+                          //   fillColor: wbColorLightYellowGreen,
+                          //   // suffixIcon: Icons.menu_outlined,
+                          //   // suffixIconSize48: 28,
+                          //   // textInputTypeOnKeyboard: TextInputType.multiline,
+                          // ),
                         ),
 
-                        // ----------------------------------------------------- Ort ---
-                        wbSizedBoxWidth16,
-                        WbTextfieldStandardEntry(
-                          headlineText: 'Ort',
-                          hintText: 'Bitte Firmensitz eintragen',
-                          wbTextFieldWidth: 280,
+                        // WbTextfieldStandardEntry(
+                        //   headlineText: 'PLZ',
+                        //   hintText: 'PLZ',
+                        //   wbTextFieldWidth: 102,
+                        // ),
+
+                        /*--------------------------------- Firmensitz | Ort ---*/
+                        wbSizedBoxWidth8,
+                        Expanded(
+                          child: WbTextFormFieldTEXTOnly(
+                            labelText: "Firmensitz | Ort",
+                            labelFontSize20: 20,
+                            hintText: "Firmensitz",
+                            inputTextFontSize22: 22,
+                            inputFontWeightW900: FontWeight.w900,
+                            inputFontColor: wbColorLogoBlue,
+                            fillColor: wbColorLightYellowGreen,
+                          ),
                         ),
+
+                        // WbTextfieldStandardEntry(
+                        //   headlineText: 'Ort',
+                        //   hintText: 'Bitte Firmensitz eintragen',
+                        //   wbTextFieldWidth: 280,
+                        // ),
                       ],
                     ),
-
-                    // ----------------------------------------------------- Divider mit Text ---
-                    wbSizedBoxHeight16,
-                    const WbDividerWithSmallTextCenter(
-                      wbDividerText: "Ansprechpartner",
+                    /*--------------------------------- WbDividerWithTextInCenter ---*/
+                    wbSizedBoxHeight8,
+                    WbDividerWithTextInCenter(
+                      wbColor: wbColorLogoBlue,
+                      wbText: 'Ansprechpartner',
+                      wbTextColor: wbColorLogoBlue,
+                      wbFontSize12: 18,
+                      wbHeight3: 3,
                     ),
-
+                    // wbSizedBoxHeight16,
+                    // const WbDividerWithSmallTextCenter(
+                    //   wbDividerText: "Ansprechpartner",
+                    // ),
                     // ----------------------------------------------------- Anrede ---
+
+                    // CustomDropdownButton2(
+                    //   hint: "Anrede",
+                    //   value: "value",
+                    //   dropdownItems: [],
+                    //   onChanged: (item) {
+                    //     log("0353 - company_screen - $item");
+                    //     // setState(() {
+                    //     // widget.onChange(value);
+                    //     // });
+                    //   },
+                    // ),
+
+                    // WbTextFormFieldTEXTOnly(
+                    //   labelText: "Anrede",
+                    //   labelFontSize20: 20,
+                    //   hintText: "Anrede",
+                    //   inputTextFontSize22: 22,
+                    //   inputFontWeightW900: FontWeight.w900,
+                    //   inputFontColor: wbColorLogoBlue,
+                    //   fillColor: wbColorLightYellowGreen,
+                    // ),
+
                     const DropdownMenu(
-                      width: 200,
+                      width: 150,
                       label: Text(
                         "Anrede",
                       ),
@@ -262,251 +381,437 @@ class CompanyScreen extends StatelessWidget {
                         DropdownMenuEntry(value: 6, label: "Dr."),
                       ],
                     ),
-
-                    // ----------------------------------------------------- Vorname ---
+                    /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight16,
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Vorname',
-                      hintText: 'Bitte den Vornamen eintragen',
-                      wbTextFieldWidth: 398,
+                    /*--------------------------------- Vorname ---*/
+                    WbTextFormField(
+                      labelText: "Vorname",
+                      labelFontSize20: 20,
+                      hintText: "Bitte den Vornamen eintragen",
+                      hintTextFontSize16: 15,
+                      inputTextFontSize22: 22,
+                      prefixIcon: Icons.person,
+                      prefixIconSize28: 24,
+                      inputFontWeightW900: FontWeight.w900,
+                      inputFontColor: wbColorLogoBlue,
+                      fillColor: wbColorLightYellowGreen,
                     ),
-
-                    // ----------------------------------------------------- Nachname ---
+                    /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight16,
-                    const WbTextfieldStandardEntry(
-                      headlineText: 'Nachname',
-                      hintText: 'Bitte den Nachnamen eintragen',
-                      wbTextFieldWidth: 398,
+                    /*--------------------------------- Nachname ---*/
+                    WbTextFormField(
+                      labelText: "Nachname",
+                      labelFontSize20: 20,
+                      hintText: "Bitte den Nachnamen eintragen",
+                      hintTextFontSize16: 15,
+                      inputTextFontSize22: 22,
+                      prefixIcon: Icons.person,
+                      prefixIconSize28: 24,
+                      inputFontWeightW900: FontWeight.w900,
+                      inputFontColor: wbColorLogoBlue,
+                      fillColor: wbColorLightYellowGreen,
                     ),
-
-                    // ----------------------------------------------------- Geburtstag ---
+                    /*--------------------------------- Geburtstag ---*/
                     wbSizedBoxHeight16,
                     const Row(
                       children: [
-                        WbTextfieldStandardEntry(
-                          headlineText: 'Geburtstag',
-                          hintText: 'Geburtstag',
-                          wbTextFieldWidth: 165,
+                        SizedBox(
+                          width: 185,
+                          child: WbTextFormField(
+                            labelText: "Geburtstag",
+                            labelFontSize20: 20,
+                            hintText: "Geburtstag",
+                            hintTextFontSize16: 15,
+                            inputTextFontSize22: 22,
+                            prefixIcon: Icons.card_giftcard_outlined,
+                            prefixIconSize28: 24,
+                            inputFontWeightW900: FontWeight.w900,
+                            inputFontColor: wbColorLogoBlue,
+                            fillColor: wbColorLightYellowGreen,
+                          ),
                         ),
-
-                        wbSizedBoxWidth16,
-
-                        // ----------------------------------------------------- Alter ---
-                        WbTextFixedNotWritable(
-                          headlineText: "Alter:",
-                          hintText: "*****",
-                          wbTextFieldWidth: 55,
-                        ),
-
-                        wbSizedBoxHeight16,
-
-                        Text(
-                          "... wird berechnet",
+                        /*--------------------------------- Alter (berechnet) ---*/
+                        wbSizedBoxWidth8,
+                        Expanded(
+                          child: WbTextFormField(
+                            labelText: "Alter",
+                            labelFontSize20: 20,
+                            hintText: "Alter",
+                            hintTextFontSize16: 15,
+                            inputTextFontSize22: 22,
+                            prefixIcon: Icons.calendar_today_outlined,
+                            prefixIconSize28: 24,
+                            inputFontWeightW900: FontWeight.w900,
+                            inputFontColor: wbColorLogoBlue,
+                            fillColor: wbColorLightYellowGreen,
+                          ),
                         ),
                       ],
                     ),
-
-                    /*----------------------------------------------------- Notizen ---*/
+                    /*--------------------------------- Notizen zum Ansprechpartner ---*/
                     wbSizedBoxHeight16,
-                    const WBTextfieldNotice(
-                        headlineText: "Notizen zum Ansprechpartner:",
-                        hintText: "Beispiele: Hobbys, Lieblingswein, usw."),
-
-                    // ----------------------------------------------------- Divider mit Text ---
-                    wbSizedBoxHeight16,
-                    const WbDividerWithSmallTextCenter(
-                      wbDividerText: "Kommunikation",
+                    WbTextFormField(
+                      labelText: "Notizen zum Ansprechpartner",
+                      labelFontSize20: 20,
+                      hintText:
+                          "Beispiele: Hobbys, Lieblingswein, Verein, etc.",
+                      hintTextFontSize16: 12,
+                      inputTextFontSize22: 14,
+                      prefixIcon: Icons.shopping_basket_outlined,
+                      prefixIconSize28: 24,
+                      inputFontWeightW900: FontWeight.w900,
+                      inputFontColor: wbColorLogoBlue,
+                      fillColor: wbColorLightYellowGreen,
+                      // suffixIcon: Icons.menu_outlined,
+                      // suffixIconSize48: 28,
+                      textInputTypeOnKeyboard: TextInputType.multiline,
                     ),
+                    /*--------------------------------- WbDividerWithTextInCenter ---*/
                     wbSizedBoxHeight8,
-
-                    // ----------------------------------------------------- Telefon 1 ---
-                    GestureDetector(
-                      onTap: () {
-                        log("Einen Anruf starten");
-                        showDialog(
-                          context: context,
-                          builder: (context) =>
-                              const WbDialogAlertUpdateComingSoon(
-                            headlineText: "Einen Anruf starten",
-                            contentText:
-                                "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller\nin der Firma XXXXXXXXXXXX GmbH & Co. KG\nanrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-282",
-                          ),
-                        );
-
-                        // Versuche, die Anruf-Funktion auf dem Smartphone zu programmieren - todo
-                        // onTap: () async {
-                        //   log("Anruf starten");
-                        //Uri.parse("+491789697193"); // funzt das?
-                        //launchUrl("tel:+491789697193");
-                        //UrlLauncher.launch('tel:+${p.phone.toString()}');
-                        //final call = Uri.parse('tel:+91 9830268966');
-                        // if (await canLaunchUrl(call)) {
-                        //   launchUrl(call);
-                        // } else {
-                        //   throw 'Could not launch $call';
-                        // }
-                      },
-                      child: const Row(
-                        children: [
-                          WbTextfieldStandardEntry(
-                            headlineText: 'Telefon 1 - Mobil',
-                            hintText: 'Bitte die Mobilnummer eintragen',
-                            wbTextFieldWidth: 316,
-                          ),
-                          wbSizedBoxWidth16,
-                          SizedBox(
-                            width: 64,
-                            height: 64,
-                            child: Image(
-                                image: AssetImage(
-                                    "assets/iconbuttons/icon_button_telefon_blau.png")),
-                          )
-                        ],
-                      ),
+                    WbDividerWithTextInCenter(
+                      wbColor: wbColorLogoBlue,
+                      wbText: 'Kommunikation',
+                      wbTextColor: wbColorLogoBlue,
+                      wbFontSize12: 18,
+                      wbHeight3: 3,
                     ),
-
                     wbSizedBoxHeight16,
+                    // const WBTextfieldNotice(
+                    //     headlineText: "Notizen zum Ansprechpartner:",
+                    //     hintText: "Beispiele: Hobbys, Lieblingswein, usw."),
+                    /*--------------------------------- Telefon 1 ---*/
+                    Row(
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            width: 185,
+                            child: WbTextFormField(
+                              labelText: "Telefon 1 - Mobil",
+                              labelFontSize20: 20,
+                              hintText: "Bitte die Mobilnummer eintragen",
+                              hintTextFontSize16: 13,
+                              inputTextFontSize22: 22,
+                              prefixIcon: Icons.phone_android_outlined,
+                              prefixIconSize28: 24,
+                              inputFontWeightW900: FontWeight.w900,
+                              inputFontColor: wbColorLogoBlue,
+                              fillColor: wbColorLightYellowGreen,
+                              textInputTypeOnKeyboard: TextInputType.phone,
+                            ),
+                          ),
+                        ),
+                        /*--------------------------------- Telefon Icon ---*/
+                        wbSizedBoxWidth8,
+                        SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: GestureDetector(
+                            //   /*--------------------------------- Telefon-Anruf starten ---*/
+                            //   // benötigt package = recherchieren"
+                            //   onTap: () async {
+                            //   log("00513 - company_screen - Anruf starten");
+                            //   Uri.parse("+491789697193"); // funzt das?
+                            //   launchUrl("tel:+491789697193");
+                            //   UrlLauncher.launch('tel:+${p.phone.toString()}');
+                            //   final call = Uri.parse('tel:+491789697193');
+                            //   if (await canLaunchUrl(call)) {
+                            //     launchUrl(call);
+                            //   } else {
+                            //     throw 'Could not launch $call';
+                            //   }
+                            // },
+                            // /*--------------------------------- Telefon-Anruf erledigt ---*/
 
-                    // ----------------------------------------------------- WhatsApp ---
-                    GestureDetector(
-                      onTap: () {
-                        log("Eine WhatsApp-Nachricht versenden");
-                        showDialog(
-                          context: context,
-                          builder: (context) =>
-                              const WbDialogAlertUpdateComingSoon(
-                            headlineText: "Eine WhatsApp-Nachricht starten",
-                            contentText:
-                                "Willst Du jetzt eine WhatsApp-Nachrticht an die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller versenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-330",
-                          ),
-                        );
-                      },
-                      child: const Row(
-                        children: [
-                          WbTextfieldStandardEntry(
-                            headlineText: 'WhatsApp',
-                            hintText: 'Bitte die WhatsApp-Nr. eintragen',
-                            wbTextFieldWidth: 316,
-                          ),
-                          wbSizedBoxWidth16,
-                          SizedBox(
-                            width: 64,
-                            height: 64,
+                            /*--------------------------------- Icon onTap ---*/
+                            onTap: () {
+                              log("0510 - company_screen - Einen Anruf starten");
+                              showDialog(
+                                context: context,
+                                builder: (context) =>
+                                    const WbDialogAlertUpdateComingSoon(
+                                  headlineText: "Einen Anruf starten",
+                                  contentText:
+                                      "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller\nin der Firma XXXXXXXXXXXX GmbH & Co. KG\nanrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0510",
+                                ),
+                              );
+                            },
+                            /*--------------------------------- Icon onTap ENDE---*/
+
                             child: Image(
-                                image: AssetImage(
-                                    "assets/iconbuttons/icon_button_whatsapp.png")),
-                          )
-                        ],
-                      ),
+                              image: AssetImage(
+                                  "assets/iconbuttons/icon_button_telefon_blau.png"),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-
+                    /*--------------------------------- WhatsApp ---*/
                     wbSizedBoxHeight16,
+                    Row(
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            width: 185,
+                            child: WbTextFormField(
+                              labelText: "WhatsApp",
+                              labelFontSize20: 20,
+                              hintText: "Bitte die WhatsApp-Nr. eintragen",
+                              hintTextFontSize16: 13,
+                              inputTextFontSize22: 22,
+                              prefixIcon: Icons.phone_android_outlined,
+                              prefixIconSize28: 24,
+                              inputFontWeightW900: FontWeight.w900,
+                              inputFontColor: wbColorLogoBlue,
+                              fillColor: wbColorLightYellowGreen,
+                              textInputTypeOnKeyboard: TextInputType.phone,
+                            ),
+                          ),
+                        ),
+                        /*--------------------------------- WhatsApp Icon ---*/
+                        wbSizedBoxWidth8,
+                        SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: GestureDetector(
+                            //   /*--------------------------------- WhatsApp-Nachricht starten ---*/
+                            //   // benötigt package = recherchieren"
+                            //   onTap: () async {
+                            //   log("00513 - company_screen - Anruf starten");
+                            //   Uri.parse("+491789697193"); // funzt das?
+                            //   launchUrl("tel:+491789697193");
+                            //   UrlLauncher.launch('tel:+${p.phone.toString()}');
+                            //   final call = Uri.parse('tel:+491789697193');
+                            //   if (await canLaunchUrl(call)) {
+                            //     launchUrl(call);
+                            //   } else {
+                            //     throw 'Could not launch $call';
+                            //   }
+                            // },
+                            // /*--------------------------------- WhatsApp erledigt ---*/
 
-                    // ----------------------------------------------------- Telefon 2 ---
-                    GestureDetector(
-                      onTap: () {
-                        log("Einen Anruf starten");
-                        showDialog(
-                          context: context,
-                          builder: (context) =>
-                              const WbDialogAlertUpdateComingSoon(
-                            headlineText: "Einen Anruf starten",
-                            contentText:
-                                "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller anrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-365",
-                          ),
-                        );
-                      },
-                      child: const Row(
-                        children: [
-                          WbTextfieldStandardEntry(
-                            headlineText: 'Telefon 2',
-                            hintText: 'Bitte ggf. 2. Nummer eintragen',
-                            wbTextFieldWidth: 316,
-                          ),
-                          wbSizedBoxWidth16,
-                          SizedBox(
-                            width: 64,
-                            height: 64,
+                            /*--------------------------------- Icon onTap ---*/
+                            onTap: () {
+                              log("0594 - company_screen - Eine WhatsApp senden");
+                              showDialog(
+                                context: context,
+                                builder: (context) =>
+                                    const WbDialogAlertUpdateComingSoon(
+                                  headlineText: "Eine WhatsApp versenden",
+                                  contentText:
+                                      "Willst Du jetzt an die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller\nin der Firma XXXXXXXXXXXX GmbH & Co. KG\neine WhatsApp senden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0594",
+                                ),
+                              );
+                            },
+                            /*--------------------------------- Icon onTap ENDE---*/
                             child: Image(
-                                image: AssetImage(
-                                    "assets/iconbuttons/icon_button_telefon_blau.png")),
-                          )
-                        ],
-                      ),
+                              image: AssetImage(
+                                "assets/iconbuttons/icon_button_whatsapp.png",
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-
                     wbSizedBoxHeight16,
+                    /*--------------------------------- Telefon 2 ---*/
+                    Row(
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            width: 185,
+                            child: WbTextFormField(
+                              labelText: "Telefon 2",
+                              labelFontSize20: 20,
+                              hintText: "Bitte ggf. die 2. Nummer eintragen",
+                              hintTextFontSize16: 13,
+                              inputTextFontSize22: 22,
+                              prefixIcon: Icons.phone_callback,
+                              prefixIconSize28: 24,
+                              inputFontWeightW900: FontWeight.w900,
+                              inputFontColor: wbColorLogoBlue,
+                              fillColor: wbColorLightYellowGreen,
+                              textInputTypeOnKeyboard: TextInputType.phone,
+                            ),
+                          ),
+                        ),
+                        /*--------------------------------- Telefon Icon ---*/
+                        wbSizedBoxWidth8,
+                        SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: GestureDetector(
+                            //   /*--------------------------------- Telefon-Anruf starten ---*/
+                            //   // benötigt package = recherchieren"
+                            //   onTap: () async {
+                            //   log("00513 - company_screen - Anruf starten");
+                            //   Uri.parse("+491789697193"); // funzt das?
+                            //   launchUrl("tel:+491789697193");
+                            //   UrlLauncher.launch('tel:+${p.phone.toString()}');
+                            //   final call = Uri.parse('tel:+491789697193');
+                            //   if (await canLaunchUrl(call)) {
+                            //     launchUrl(call);
+                            //   } else {
+                            //     throw 'Could not launch $call';
+                            //   }
+                            // },
+                            // /*--------------------------------- Telefon-Anruf erledigt ---*/
 
-                    // ----------------------------------------------------- E-Mail 1 ---
-                    GestureDetector(
-                      onTap: () {
-                        log("E-Mail 1 versenden");
-                        showDialog(
-                          context: context,
-                          builder: (context) =>
-                              const WbDialogAlertUpdateComingSoon(
-                            headlineText: "Eine E-Mail versenden",
-                            contentText:
-                                "Willst Du jetzt eine E-Mail an\nKlausMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-400",
-                          ),
-                        );
-                      },
-                      child: const Row(
-                        children: [
-                          WbTextfieldStandardEntry(
-                            headlineText: 'E-Mail 1',
-                            hintText: 'Bitte die E-Mail eintragen',
-                            wbTextFieldWidth: 316,
-                          ),
-                          wbSizedBoxWidth16,
-                          SizedBox(
-                            width: 64,
-                            height: 64,
+                            /*--------------------------------- Icon onTap ---*/
+                            onTap: () {
+                              log("0661 - company_screen - Einen Anruf starten");
+                              showDialog(
+                                context: context,
+                                builder: (context) =>
+                                    const WbDialogAlertUpdateComingSoon(
+                                  headlineText: "Einen Anruf starten",
+                                  contentText:
+                                      "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller\nin der Firma XXXXXXXXXXXX GmbH & Co. KG\nanrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-661",
+                                ),
+                              );
+                            },
+                            /*--------------------------------- Icon onTap ENDE---*/
                             child: Image(
-                                image: AssetImage(
-                                    "assets/iconbuttons/icon_button_email.png")),
-                          )
-                        ],
-                      ),
+                              image: AssetImage(
+                                  "assets/iconbuttons/icon_button_telefon_blau.png"),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-
                     wbSizedBoxHeight16,
+                    /*--------------------------------- E-Mail 1 ---*/
+                    Row(
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            width: 185,
+                            child: WbTextFormField(
+                              labelText: "E-Mail 1",
+                              labelFontSize20: 20,
+                              hintText: "Bitte E-Mail-Adresse eintragen",
+                              hintTextFontSize16: 13,
+                              inputTextFontSize22: 22,
+                              prefixIcon: Icons.mail_outline_outlined,
+                              prefixIconSize28: 24,
+                              inputFontWeightW900: FontWeight.w900,
+                              inputFontColor: wbColorLogoBlue,
+                              fillColor: wbColorLightYellowGreen,
+                              textInputTypeOnKeyboard: TextInputType.emailAddress,
+                            ),
+                          ),
+                        ),
+                        /*--------------------------------- E-Mail 1 Icon ---*/
+                        wbSizedBoxWidth8,
+                        SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: GestureDetector(
+                            //   /*--------------------------------- E-Mail versenden ---*/
+                            //   // benötigt package = recherchieren"
+                            //   onTap: () async {
+                            //   log("00513 - company_screen - Anruf starten");
+                            //   Uri.parse("+491789697193"); // funzt das?
+                            //   launchUrl("tel:+491789697193");
+                            //   UrlLauncher.launch('tel:+${p.phone.toString()}');
+                            //   final call = Uri.parse('tel:+491789697193');
+                            //   if (await canLaunchUrl(call)) {
+                            //     launchUrl(call);
+                            //   } else {
+                            //     throw 'Could not launch $call';
+                            //   }
+                            // },
+                            // /*--------------------------------- E-Mail-Versand erledigt ---*/
 
-                    // ----------------------------------------------------- E-Mail 2 ---
-                    GestureDetector(
-                      onTap: () {
-                        log("E-Mail 2 versenden");
-                        showDialog(
-                          context: context,
-                          builder: (context) =>
-                              const WbDialogAlertUpdateComingSoon(
-                            headlineText: "Eine E-Mail versenden",
-                            contentText:
-                                "Willst Du jetzt eine E-Mail an\nPaulaMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-435",
-                          ),
-                        );
-                      },
-                      child: const Row(
-                        children: [
-                          WbTextfieldStandardEntry(
-                            headlineText: 'E-Mail 2',
-                            hintText: 'Bitte ggf. die 2. E-Mail eintragen',
-                            wbTextFieldWidth: 316,
-                          ),
-                          wbSizedBoxWidth16,
-                          SizedBox(
-                            width: 64,
-                            height: 64,
+                            /*--------------------------------- Icon onTap ---*/
+                            onTap: () {
+                              log("0727 - company_screen - Eine E-Mail versenden");
+                              showDialog(
+                                context: context,
+                                builder: (context) =>
+                                    const WbDialogAlertUpdateComingSoon(
+                                  headlineText: "Eine E-Mail versenden",
+                                  contentText:
+                                      "Willst Du jetzt eine E-Mail an\nKlausMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0727",
+                                ),
+                              );
+                            },
+                            /*--------------------------------- Icon onTap ENDE---*/
                             child: Image(
-                                image: AssetImage(
-                                    "assets/iconbuttons/icon_button_email.png")),
-                          )
-                        ],
-                      ),
+                              image: AssetImage(
+                                "assets/iconbuttons/icon_button_email.png",
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
+                    wbSizedBoxHeight16,
+                    /*--------------------------------- E-Mail 2 ---*/
+                    Row(
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            width: 185,
+                            child: WbTextFormField(
+                              labelText: "E-Mail 2",
+                              labelFontSize20: 20,
+                              hintText: "Bitte ggf. die 2. E-Mail eintragen",
+                              hintTextFontSize16: 13,
+                              inputTextFontSize22: 22,
+                              prefixIcon: Icons.mail_outline_outlined,
+                              prefixIconSize28: 24,
+                              inputFontWeightW900: FontWeight.w900,
+                              inputFontColor: wbColorLogoBlue,
+                              fillColor: wbColorLightYellowGreen,
+                              textInputTypeOnKeyboard: TextInputType.emailAddress,
+                            ),
+                          ),
+                        ),
+                        /*--------------------------------- E-Mail 2 Icon ---*/
+                        wbSizedBoxWidth8,
+                        SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: GestureDetector(
+                            //   /*--------------------------------- E-Mail versenden ---*/
+                            //   // benötigt package = recherchieren"
+                            //   onTap: () async {
+                            //   log("00513 - company_screen - Anruf starten");
+                            //   Uri.parse("+491789697193"); // funzt das?
+                            //   launchUrl("tel:+491789697193");
+                            //   UrlLauncher.launch('tel:+${p.phone.toString()}');
+                            //   final call = Uri.parse('tel:+491789697193');
+                            //   if (await canLaunchUrl(call)) {
+                            //     launchUrl(call);
+                            //   } else {
+                            //     throw 'Could not launch $call';
+                            //   }
+                            // },
+                            // /*--------------------------------- E-Mail-Versand erledigt ---*/
 
-                    //wbSizedBoxHeight8,
-
+                            /*--------------------------------- Icon onTap ---*/
+                            onTap: () {
+                              log("0794 - company_screen - Eine E-Mail versenden");
+                              showDialog(
+                                context: context,
+                                builder: (context) =>
+                                    const WbDialogAlertUpdateComingSoon(
+                                  headlineText: "Eine E-Mail versenden",
+                                  contentText:
+                                      "Willst Du jetzt eine E-Mail an\nKlausMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0794",
+                                ),
+                              );
+                            },
+                            /*--------------------------------- Icon onTap ENDE---*/
+                            child: Image(
+                              image: AssetImage(
+                                "assets/iconbuttons/icon_button_email.png",
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                     // ----------------------------------------------------- Button Kontakt speichern---
                     wbSizedBoxHeight16,
                     const Divider(thickness: 3, color: wbColorLogoBlue),
@@ -533,8 +838,7 @@ class CompanyScreen extends StatelessWidget {
                     wbSizedBoxHeight16,
                     const Divider(thickness: 3, color: wbColorLogoBlue),
                     wbSizedBoxHeight16,
-
-                    // ----------------------------------------------------- ENDE ---
+                    /*--------------------------------- ENDE---*/
                   ],
                 ),
               ),

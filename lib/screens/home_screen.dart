@@ -51,6 +51,7 @@ class _WbHomePageState extends State<WbHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: wbColorBackgroundBlue,
+
       /*--------------------------------- AppBar ---*/
       appBar: AppBar(
         backgroundColor: wbColorAppBarBlue,
@@ -74,6 +75,7 @@ class _WbHomePageState extends State<WbHomePage> {
           },
         ),
       ),
+
       /*--------------------------------- P01LoginScreen ---*/
       body: Center(
         child: Column(
