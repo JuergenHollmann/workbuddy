@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -121,8 +120,10 @@ class WbTextFormField extends StatelessWidget {
       // autofillHints: autofillHints, // wie funzt das?
 
       /*--- onChanged ---*/
-      onChanged: (String inputInWbTextFormField) {
-        log("0123 - WbTextFormField - Eingabe: $inputInWbTextFormField");
+      controller: controller,
+      onChanged: onChanged,
+      // onChanged: (String inputInWbTextFormField) {
+         //log("0123 - WbTextFormField - Eingabe:");
         // inputPassword = inputInWbTextFormField;
         // setState(() => inputPassword = inputInWbTextFormField);
         // if (inputInWbTextFormField == userPassword) {
@@ -132,7 +133,7 @@ class WbTextFormField extends StatelessWidget {
         // } else {
         //   log("Die Eingabe für das Passwort ist NICHT korrekt!");
         // }
-      },
+      // },
     );
   }
 }

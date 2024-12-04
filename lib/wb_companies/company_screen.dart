@@ -18,11 +18,13 @@ class CompanyScreen extends StatefulWidget {
   @override
   State<CompanyScreen> createState() => _CompanyScreenState();
 }
+
 /*--------------------------------- Controller ---*/
-final TextEditingController inputInWbTextFormFieldTEC = TextEditingController();
+final TextEditingController inputInWbTextFormField = TextEditingController();
 
 /*--------------------------------- onChanged-Funktion ---*/
-String inputInWbTextFormField = ""; // nur für die "onChanged-Funktion"
+String inputInWbTextFormFieldOnChanged =
+    "Name der Firma"; // nur für die "onChanged-Funktion"
 
 class _CompanyScreenState extends State<CompanyScreen> {
   @override
@@ -105,9 +107,27 @@ class _CompanyScreenState extends State<CompanyScreen> {
                             ),
                           ),
                         ),
+                        // das ist nur der Abstand Zwischen Logo und der Firmenbezeichnung:
                         const SizedBox(height: 20),
-                       Text(
-                          "Name der Firma: $inputInWbTextFormField",
+                        SizedBox(
+                          width: 160,
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              height: 1.2,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            // textWidthBasis: TextWidthBasis.parent,
+                            // softWrap: false,
+                            // textHeightBehavior: TextHeightBehavior(
+                            //   leadingDistribution:
+                            //       TextLeadingDistribution.proportional,
+                            // ),
+                            // overflow: TextOverflow.clip,
+                            // maxLines: null,
+                            inputInWbTextFormFieldOnChanged,
+                          ),
                         ), // wenn Privatperson, dann DummyImage + Text "Privatperson"
                       ],
                     ),
@@ -185,11 +205,22 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       // textInputTypeOnKeyboard: TextInputType.multiline,
                       // suffixIcon: Icons.help_outline_outlined,
                       // suffixIconSize48: 28,
+                      //textInputAction: textInputAction,
                       /*--------------------------------- onChanged ---*/
-                      onChanged: (String inputInWbTextFormFieldTEC) {
-                        log("0189 - company_screen - Eingabe: $inputInWbTextFormFieldTEC");
-                        inputInWbTextFormField = inputInWbTextFormFieldTEC;
-                        setState(() => inputInWbTextFormField = inputInWbTextFormFieldTEC);
+                      controller: inputInWbTextFormField,
+                      onChanged: (String inputInWbTextFormField) {
+                        log("0189 - company_screen - Eingabe: $inputInWbTextFormField");
+
+                        inputInWbTextFormFieldOnChanged =
+                            inputInWbTextFormField;
+
+                        setState(() => inputInWbTextFormFieldOnChanged =
+                            inputInWbTextFormField);
+
+                        // onChanged: (String inputInWbTextFormFieldTEC) {
+                        //   log("0189 - company_screen - Eingabe: $inputInWbTextFormFieldTEC");
+                        //   inputInWbTextFormField = inputInWbTextFormFieldTEC;
+                        //   setState(() => inputInWbTextFormField = inputInWbTextFormFieldTEC);
 
                         // if (inputInWbTextFormFieldTEC == userName) {
                         //   /*--------------------------------- log ---*/
@@ -198,7 +229,6 @@ class _CompanyScreenState extends State<CompanyScreen> {
                         //   /*--------------------------------- Audio ---*/
                         //   /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
                         //   // player.play(AssetSource("sound/sound06pling.wav"));
-
 
                         //   /*--------------------------------- *** ---*/
                         //   setState(() {
@@ -210,11 +240,6 @@ class _CompanyScreenState extends State<CompanyScreen> {
                         //   //const WBGreenButton(onTap: null); // funzt nicht
                         // }
                       },
-
-
-
-
-
                     ),
                     /*--------------------------------- Branchenzuordnung ---*/
                     wbSizedBoxHeight16,

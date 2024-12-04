@@ -116,15 +116,15 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
   /*--------------------------------- Controller ---*/
   final TextEditingController userNameTEC = TextEditingController();
   final TextEditingController userPasswordTEC = TextEditingController();
-  
+
   /*--------------------------------- onChanged-Funktion ---*/
   bool visibilityPassword = true;
   String inputUserName = ""; // nur für die "onChanged-Funktion"
   String inputPassword = ""; // nur für die "onChanged-Funktion"
-  
+
   /*--------------------------------- Login Button automatisch anklicken ---*/
   void automaticButtonClick() {}
-  
+
   // /*--------------------------------- isValidEmail ---*/
   // String? isValidEmail(String? value) {
   //   // E-Mail soll aus Zeichen bestehen, also nicht leer sein.
@@ -192,7 +192,6 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           wbSizedBoxHeight16,
           /*--------------------------------- Benutzername - Feld ---*/
           TextFormField(
-            controller: userNameTEC,
             style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.w900,
@@ -239,14 +238,16 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             ),
 
             /*--------------------------------- onChanged ---*/
+            controller: userNameTEC,
             onChanged: (String userNameTEC) {
-              log("Eingabe: $userNameTEC");
+              log("0243 - p01_login_screen - Eingabe: $userNameTEC");
+
               inputUserName = userNameTEC;
               setState(() => inputUserName = userNameTEC);
 
               if (userNameTEC == userName) {
                 /*--------------------------------- log ---*/
-                log("Der Benutzername \"$userName\" ist KORREKT 😉");
+                log("0249 - p01_login_screen - Der Benutzername \"$userName\" ist KORREKT 😉");
 
                 /*--------------------------------- Audio ---*/
                 /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
@@ -267,11 +268,11 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 ));
                 /*--------------------------------- *** ---*/
                 setState(() {
-                  loginButtonIsEnabled = true; // funzt nicht
-                  WBGreenButton(onTap: () {}); // funzt nicht
+                  // loginButtonIsEnabled = true; // funzt nicht
+                  // WBGreenButton(onTap: () {}); // funzt nicht
                 });
               } else {
-                log("Die Eingabe für den Benutzername ist NICHT korrekt!");
+                log("0274 - p01_login_screen - Die Eingabe für den Benutzername ist NICHT korrekt!");
                 //const WBGreenButton(onTap: null); // funzt nicht
               }
             },
@@ -510,7 +511,8 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             wbIcon: Icons.report_outlined,
             wbIconSize40: 40,
             wbText: "WorkBuddy beenden",
-            wbFontSize24: 21, // 0513 - ANDERE Schriftgrößen: iOS = 24 | Pixel8 = 27 | SamsungA05 = 21
+            wbFontSize24:
+                21, // 0513 - ANDERE Schriftgrößen: iOS = 24 | Pixel8 = 27 | SamsungA05 = 21
             wbWidth155: 155, // hat hier keine Auswirkung (warum ?)
             wbHeight60: 60,
             wbOnTap: () {
