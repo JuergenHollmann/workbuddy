@@ -116,14 +116,15 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
   /*--------------------------------- Controller ---*/
   final TextEditingController userNameTEC = TextEditingController();
   final TextEditingController userPasswordTEC = TextEditingController();
-
+  
+  /*--------------------------------- nChanged-Funktion ---*/
   bool visibilityPassword = true;
   String inputUserName = ""; // nur für die "onChanged-Funktion"
   String inputPassword = ""; // nur für die "onChanged-Funktion"
-
+  
   /*--------------------------------- Login Button automatisch anklicken ---*/
   void automaticButtonClick() {}
-
+  
   // /*--------------------------------- isValidEmail ---*/
   // String? isValidEmail(String? value) {
   //   // E-Mail soll aus Zeichen bestehen, also nicht leer sein.

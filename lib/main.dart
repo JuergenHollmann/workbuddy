@@ -19,11 +19,12 @@ class MainApp extends StatelessWidget {
 }
   /*--------------------------------- TODO's ---
   √ WbHomePage: WbInfoContainer als Footer programmieren √
+  √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
+  √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
   - App-Icon neu erstellen
   - Splash-Screen neu erstellen
-  - Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode)
+  - Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 todo
   - CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern
-  √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
   - CompanyScreen: DropDown Lieferant / Kunde / etc.
   - CompanyScreen: Name der Firma unter dem Logo automatisch eintragen
   - CompanyScreen: Name des Kunden unter dem Bild automatisch eintragen

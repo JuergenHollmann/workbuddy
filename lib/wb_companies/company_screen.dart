@@ -9,11 +9,17 @@ import 'package:workbuddy/config/wb_text_form_field_text_only.dart';
 import 'package:workbuddy/screens/selection_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
+import 'package:workbuddy/shared/widgets/wb_info_container.dart';
 import 'package:workbuddy/wb_companies/company_radiobutton_1.dart';
 
-class CompanyScreen extends StatelessWidget {
+class CompanyScreen extends StatefulWidget {
   const CompanyScreen({super.key});
 
+  @override
+  State<CompanyScreen> createState() => _CompanyScreenState();
+}
+
+class _CompanyScreenState extends State<CompanyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -835,7 +841,7 @@ class CompanyScreen extends StatelessWidget {
                               hintText: "Bitte Webseite der Firma eintragen",
                               hintTextFontSize16: 13,
                               inputTextFontSize22: 22,
-                              prefixIcon: Icons.mail_outline_outlined,
+                              prefixIcon: Icons.language_outlined,
                               prefixIconSize28: 24,
                               inputFontWeightW900: FontWeight.w900,
                               inputFontColor: wbColorLogoBlue,
@@ -880,10 +886,11 @@ class CompanyScreen extends StatelessWidget {
                                 ),
                               );
                             },
-                            /*--------------------------------- Icon onTap ENDE ---*/
+                            /*--------------------------------- Icon ---*/
                             child: Image(
                               image: AssetImage(
-                                "assets/iconbuttons/icon_button_email.png",
+                                //"assets/iconbuttons/icon_button_quadrat_blau_leer.png",
+                                "assets/iconbuttons/icon_button_quadrat_blau_leer.png",
                               ),
                             ),
                           ),
@@ -921,6 +928,10 @@ class CompanyScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              /*--------------------------------- WbInfoContainer ---*/
+              // Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 todo
+              WbInfoContainer(infoText: 'WorkBuddy • Free-BASIC-Version 0.002'),
+              /*--------------------------------- WbInfoContainer ENDE ---*/
             ],
           ),
         ),
