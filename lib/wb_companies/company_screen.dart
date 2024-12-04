@@ -20,11 +20,17 @@ class CompanyScreen extends StatefulWidget {
 }
 
 /*--------------------------------- Controller ---*/
-final TextEditingController inputInWbTextFormField = TextEditingController();
+final TextEditingController inputCompanyNameTEC = TextEditingController();
+final TextEditingController iinputCompanyVNContactPersonTEC =
+    TextEditingController();
+final TextEditingController iinputCompanyNNContactPersonTEC =
+    TextEditingController();
 
 /*--------------------------------- onChanged-Funktion ---*/
-String inputInWbTextFormFieldOnChanged =
-    "Name der Firma"; // nur für die "onChanged-Funktion"
+String inputCompanyName = "Firmenlogo"; // nur für die "onChanged-Funktion"
+String inputCompanyVNContactPerson =
+    "Ansprechpartner"; // nur für die "onChanged-Funktion"
+String inputCompanyNNContactPerson = ""; // nur für die "onChanged-Funktion"
 
 class _CompanyScreenState extends State<CompanyScreen> {
   @override
@@ -81,34 +87,34 @@ class _CompanyScreenState extends State<CompanyScreen> {
                             // ),
                             /*--------------------------------- *** ---*/
                           ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(2.5), // stroke
-                            child: CircleAvatar(
-                              backgroundColor: wbColorButtonBlue,
-                              backgroundImage:
-                                  // AssetImage(
-                                  //   "assets/company_logos/obi.png",
-                                  // ),
+                          child: CircleAvatar(
+                            backgroundColor: wbColorButtonBlue,
+                            backgroundImage:
+                                // AssetImage(
+                                //   "assets/company_logos/obi.png",
+                                // ),
 
-                                  // AssetImage("assets/dummy_person_portrait.png",),
-                                  // AssetImage("assets/dummy_no_logo.png",),
-                                  // AssetImage("assets/workbuddy_logo.png",),
-                                  //   AssetImage(
-                                  // "assets/workbuddy_logo_neon_green_512x512.png",
-                                  //   ),
-                                  AssetImage(
-                                "assets/company_logos/enpower_expert_logo_4_x_4.png",
-                              ),
-                              /*--------------------------------- *** ---*/
-                              // Bild aus dem Internet:
-                              // NetworkImage('https://picsum.photos/200'),
-                              /*--------------------------------- *** ---*/
-                              radius: 72,
+                                // AssetImage("assets/dummy_person_portrait.png",),
+                                // AssetImage("assets/dummy_no_logo.png",),
+                                // AssetImage("assets/workbuddy_logo.png",),
+                                //   AssetImage(
+                                // "assets/workbuddy_logo_neon_green_512x512.png",
+                                //   ),
+                                AssetImage(
+                              "assets/company_logos/enpower_expert_logo_4_x_4.png",
                             ),
+                            /*--------------------------------- *** ---*/
+                            // Bild aus dem Internet:
+                            // NetworkImage('https://picsum.photos/200'),
+                            /*--------------------------------- *** ---*/
+                            radius: 72,
                           ),
                         ),
-                        // das ist nur der Abstand Zwischen Logo und der Firmenbezeichnung:
+                        /*--------------------------------- *** ---*/
+                        // das ist nur der Abstand zwischen dem Logo
+                        //und der Firmenbezeichnung:
                         const SizedBox(height: 20),
+                        /*--------------------------------- Name der Firma unter dem Logo ---*/
                         SizedBox(
                           width: 160,
                           child: Text(
@@ -118,17 +124,9 @@ class _CompanyScreenState extends State<CompanyScreen> {
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
-                            // textWidthBasis: TextWidthBasis.parent,
-                            // softWrap: false,
-                            // textHeightBehavior: TextHeightBehavior(
-                            //   leadingDistribution:
-                            //       TextLeadingDistribution.proportional,
-                            // ),
-                            // overflow: TextOverflow.clip,
-                            // maxLines: null,
-                            inputInWbTextFormFieldOnChanged,
+                            inputCompanyName,
                           ),
-                        ), // wenn Privatperson, dann DummyImage + Text "Privatperson"
+                        ),
                       ],
                     ),
                     /*--------------------------------- Abstand --- */
@@ -167,12 +165,21 @@ class _CompanyScreenState extends State<CompanyScreen> {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        const Text(
-                          "Ansprechpartner",
+                        /*--------------------------------- Vor- und Nachname des Ansprechpertners unter dem Bild ---*/
+                        SizedBox(
+                          width: 160,
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              height: 1.2,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            ("$inputCompanyVNContactPerson $inputCompanyNNContactPerson"),
+                          ),
                         ),
                       ],
                     ),
-                    /*--------------------------------- *** ---*/
                   ],
                 ),
               ),
@@ -185,12 +192,12 @@ class _CompanyScreenState extends State<CompanyScreen> {
                   children: [
                     // const Divider(thickness: 3, color: wbColorLogoBlue),
                     /*--------------------------------- Lieferant/Kunde ---*/
-                    const CompanyRadioButton1(),
+                    const CompanyRadioButton1(), // 0193 todo
                     /*--------------------------------- Divider ---*/
                     const Divider(thickness: 3, color: wbColorLogoBlue),
-                    /*--------------------------------- Firmenbezeichnung ---*/
+                    /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight8,
-
+                    /*--------------------------------- Firmenbezeichnung ---*/
                     WbTextFormField(
                       labelText: "Firmenbezeichnung",
                       labelFontSize20: 20,
@@ -207,22 +214,20 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       // suffixIconSize48: 28,
                       //textInputAction: textInputAction,
                       /*--------------------------------- onChanged ---*/
-                      controller: inputInWbTextFormField,
-                      onChanged: (String inputInWbTextFormField) {
-                        log("0189 - company_screen - Eingabe: $inputInWbTextFormField");
+                      controller: inputCompanyNameTEC,
+                      onChanged: (String inputCompanyNameTEC) {
+                        log("0189 - company_screen - Eingabe: $inputCompanyNameTEC");
 
-                        inputInWbTextFormFieldOnChanged =
-                            inputInWbTextFormField;
+                        inputCompanyName = inputCompanyNameTEC;
 
-                        setState(() => inputInWbTextFormFieldOnChanged =
-                            inputInWbTextFormField);
+                        setState(() => inputCompanyName = inputCompanyNameTEC);
 
-                        // onChanged: (String inputInWbTextFormFieldTEC) {
-                        //   log("0189 - company_screen - Eingabe: $inputInWbTextFormFieldTEC");
-                        //   inputInWbTextFormField = inputInWbTextFormFieldTEC;
-                        //   setState(() => inputInWbTextFormField = inputInWbTextFormFieldTEC);
+                        // onChanged: (String inputCompanyNameTECTEC) {
+                        //   log("0189 - company_screen - Eingabe: $inputCompanyNameTECTEC");
+                        //   inputCompanyNameTEC = inputCompanyNameTECTEC;
+                        //   setState(() => inputCompanyNameTEC = inputCompanyNameTECTEC);
 
-                        // if (inputInWbTextFormFieldTEC == userName) {
+                        // if (inputCompanyNameTECTEC == userName) {
                         //   /*--------------------------------- log ---*/
                         //   log("Der Benutzername \"$userName\" ist KORREKT 😉");
 
@@ -466,6 +471,18 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       inputFontWeightW900: FontWeight.w900,
                       inputFontColor: wbColorLogoBlue,
                       fillColor: wbColorLightYellowGreen,
+
+                      /*--------------------------------- onChanged ---*/
+                      controller: iinputCompanyVNContactPersonTEC,
+                      onChanged: (String iinputCompanyVNContactPersonTEC) {
+                        log("0478 - company_screen - Eingabe: $iinputCompanyVNContactPersonTEC");
+
+                        inputCompanyVNContactPerson =
+                            iinputCompanyVNContactPersonTEC;
+
+                        setState(() => inputCompanyVNContactPerson =
+                            iinputCompanyVNContactPersonTEC);
+                      },
                     ),
                     /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight16,
@@ -481,6 +498,17 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       inputFontWeightW900: FontWeight.w900,
                       inputFontColor: wbColorLogoBlue,
                       fillColor: wbColorLightYellowGreen,
+                      /*--------------------------------- onChanged ---*/
+                      controller: iinputCompanyNNContactPersonTEC,
+                      onChanged: (String iinputCompanyNNContactPersonTEC) {
+                        log("0504 - company_screen - Eingabe: $iinputCompanyNNContactPersonTEC");
+
+                        inputCompanyNNContactPerson =
+                            iinputCompanyNNContactPersonTEC;
+
+                        setState(() => inputCompanyNNContactPerson =
+                            iinputCompanyNNContactPersonTEC);
+                      },
                     ),
                     /*--------------------------------- Geburtstag ---*/
                     wbSizedBoxHeight16,
@@ -990,7 +1018,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
               ),
               /*--------------------------------- WbInfoContainer ---*/
               // Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 todo
-              WbInfoContainer(infoText: 'WorkBuddy • Free-BASIC-Version 0.002'),
+              WbInfoContainer(infoText: "$inputCompanyName • $inputCompanyVNContactPerson $inputCompanyNNContactPerson"),
               /*--------------------------------- WbInfoContainer ENDE ---*/
             ],
           ),
@@ -999,3 +1027,4 @@ class _CompanyScreenState extends State<CompanyScreen> {
     );
   }
 }
+// \nWorkBuddy • Free-BASIC-Version 0.002

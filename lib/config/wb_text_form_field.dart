@@ -52,7 +52,7 @@ class WbTextFormField extends StatelessWidget {
       textAlignVertical: TextAlignVertical.center,
       maxLines: null,
       //validator: Validator.isValidEmail,
-      style: TextStyle(
+      style: TextStyle(height: 1.1,
         fontSize: inputTextFontSize22,
         fontWeight: inputFontWeightW900,
         color: inputFontColor,

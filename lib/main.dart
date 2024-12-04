@@ -25,7 +25,7 @@ class MainApp extends StatelessWidget {
   - Splash-Screen neu erstellen
   - Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 todo
   - CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern
-  - CompanyScreen: DropDown Lieferant / Kunde / etc.
+  - CompanyScreen: DropDown Lieferant / Kunde / etc. anstatt "CompanyRadioButton1" - 0193 todo
   - CompanyScreen: Name der Firma unter dem Logo automatisch eintragen
   - CompanyScreen: Name des Kunden unter dem Bild automatisch eintragen
   - ContactScreen: lässt sich nicht mehr starten!
@@ -39,5 +39,7 @@ class MainApp extends StatelessWidget {
   - autofillHints: autofillHints, // wie funzt das?
   *---------------------------------- Was habe ich dazugelernt? ---* 
   - Nutzung von KeyboardType: Phone, Text, Datetime, ...
+  - Text-Validierung mit "TextEditingController"
+  - Text an andere Felder übergeben mit "TextEditingController" und der Funktion "onChange"
   *--------------------------------- *** ---*/
 
