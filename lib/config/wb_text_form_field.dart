@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -17,6 +19,8 @@ class WbTextFormField extends StatelessWidget {
     this.textInputTypeOnKeyboard,
     this.textInputAction, // default: Enter | TextInputAction.done
     this.controller,
+    this.onChanged,
+    // required Null Function(String userNameTEC) onChanged,
     // this.suffixIcon,
     // this.suffixIconSize48,
     // this.autofillHints,
@@ -35,6 +39,7 @@ class WbTextFormField extends StatelessWidget {
   final TextInputType? textInputTypeOnKeyboard;
   final TextEditingController? controller;
   final TextInputAction? textInputAction;
+  final Function(String inputInWbTextFormField)? onChanged;
   // final IconData? suffixIcon;
   // final double? suffixIconSize48;
   // final List<String>? autofillHints;
@@ -42,7 +47,6 @@ class WbTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-
       // expands: true,
       maxLengthEnforcement: MaxLengthEnforcement.truncateAfterCompositionEnds,
       keyboardType: textInputTypeOnKeyboard,
@@ -59,13 +63,12 @@ class WbTextFormField extends StatelessWidget {
       //obscureText: visibilityPassword, //Passwort sichtbar?
       /*--------------------------------- InputDecoration ---*/
       decoration: InputDecoration(
-        
         floatingLabelAlignment: FloatingLabelAlignment.start,
         filled: true,
         fillColor: fillColor, //wbColorBackgroundBlue
         //contentPadding: const EdgeInsets.fromLTRB(48, 16, 16, 16),
         contentPadding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
-        
+
         /*--- errorStyle ---*/
         errorStyle: const TextStyle(
           fontSize: 18,
@@ -118,18 +121,18 @@ class WbTextFormField extends StatelessWidget {
       // autofillHints: autofillHints, // wie funzt das?
 
       /*--- onChanged ---*/
-      // onChanged: (String newInputPassword) {
-      //   log("Eingabe: $newInputPassword");
-      //   inputPassword = newInputPassword;
-      //   setState(() => inputPassword = newInputPassword);
-      //   if (newInputPassword == userPassword) {
-      //     log("Das Passwort $userPassword ist KORREKT!");
-      //     // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
-      //     player.play(AssetSource("sound/sound06pling.wav"));
-      //   } else {
-      //     log("Die Eingabe für das Passwort ist NICHT korrekt!");
-      //   }
-      // },
+      onChanged: (String inputInWbTextFormField) {
+        log("0123 - WbTextFormField - Eingabe: $inputInWbTextFormField");
+        // inputPassword = inputInWbTextFormField;
+        // setState(() => inputPassword = inputInWbTextFormField);
+        // if (inputInWbTextFormField == userPassword) {
+        //   log("Das Passwort $userPassword ist KORREKT!");
+        //   // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
+        //   // player.play(AssetSource("sound/sound06pling.wav"));
+        // } else {
+        //   log("Die Eingabe für das Passwort ist NICHT korrekt!");
+        // }
+      },
     );
   }
 }

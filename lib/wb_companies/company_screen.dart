@@ -18,6 +18,11 @@ class CompanyScreen extends StatefulWidget {
   @override
   State<CompanyScreen> createState() => _CompanyScreenState();
 }
+/*--------------------------------- Controller ---*/
+final TextEditingController inputInWbTextFormFieldTEC = TextEditingController();
+
+/*--------------------------------- onChanged-Funktion ---*/
+String inputInWbTextFormField = ""; // nur für die "onChanged-Funktion"
 
 class _CompanyScreenState extends State<CompanyScreen> {
   @override
@@ -101,8 +106,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
                           ),
                         ),
                         const SizedBox(height: 20),
-                        const Text(
-                          "Name der Firma",
+                       Text(
+                          "Name der Firma: $inputInWbTextFormField",
                         ), // wenn Privatperson, dann DummyImage + Text "Privatperson"
                       ],
                     ),
@@ -180,6 +185,36 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       // textInputTypeOnKeyboard: TextInputType.multiline,
                       // suffixIcon: Icons.help_outline_outlined,
                       // suffixIconSize48: 28,
+                      /*--------------------------------- onChanged ---*/
+                      onChanged: (String inputInWbTextFormFieldTEC) {
+                        log("0189 - company_screen - Eingabe: $inputInWbTextFormFieldTEC");
+                        inputInWbTextFormField = inputInWbTextFormFieldTEC;
+                        setState(() => inputInWbTextFormField = inputInWbTextFormFieldTEC);
+
+                        // if (inputInWbTextFormFieldTEC == userName) {
+                        //   /*--------------------------------- log ---*/
+                        //   log("Der Benutzername \"$userName\" ist KORREKT 😉");
+
+                        //   /*--------------------------------- Audio ---*/
+                        //   /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
+                        //   // player.play(AssetSource("sound/sound06pling.wav"));
+
+
+                        //   /*--------------------------------- *** ---*/
+                        //   setState(() {
+                        //     // loginButtonIsEnabled = true; // funzt nicht
+                        //     // WBGreenButton(onTap: () {}); // funzt nicht
+                        //   });
+                        // } else {
+                        //   log("Die Eingabe für den Benutzername ist NICHT korrekt!");
+                        //   //const WBGreenButton(onTap: null); // funzt nicht
+                        // }
+                      },
+
+
+
+
+
                     ),
                     /*--------------------------------- Branchenzuordnung ---*/
                     wbSizedBoxHeight16,
