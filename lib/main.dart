@@ -17,10 +17,11 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-
   /*--------------------------------- TODO's ---
   √ WbHomePage: WbInfoContainer als Footer programmieren √
-  - Icons sollen beim Aussuchen sichtbar sein (Einstellungen)
+  - App-Icon neu erstellen
+  - Splash-Screen neu erstellen
+  - Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode)
   - CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
   - CompanyScreen: DropDown Lieferant / Kunde / etc.
@@ -33,11 +34,9 @@ class MainApp extends StatelessWidget {
   - P01LoginScreen: Info-Leiste auf dem Startbildschirm unten einbauen
   - P01LoginScreen: Login mit SQFlite-DB verbinden
   - P01LoginScreen: Passwort gleich von Anfang an ausblenden (mit State?)
-  - CompanyScreen: Telefonanruf starten - 00513 - company_screen - Anruf starten
+  - CompanyScreen: Telefonanruf starten - 0513 - company_screen - Anruf starten
   - autofillHints: autofillHints, // wie funzt das?
-
   *---------------------------------- Was habe ich dazugelernt? ---* 
   - Nutzung von KeyboardType: Phone, Text, Datetime, ...
-  
   *--------------------------------- *** ---*/
 

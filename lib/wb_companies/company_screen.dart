@@ -234,7 +234,7 @@ class CompanyScreen extends StatelessWidget {
                       fillColor: wbColorLightYellowGreen,
                       // suffixIcon: Icons.menu_outlined,
                       // suffixIconSize48: 28,
-                      // textInputTypeOnKeyboard: TextInputType.multiline,
+                      textInputTypeOnKeyboard: TextInputType.streetAddress,
                       // autofillHints: [],
                     ),
 
@@ -274,6 +274,11 @@ class CompanyScreen extends StatelessWidget {
                             inputFontWeightW900: FontWeight.w900,
                             inputFontColor: wbColorLogoBlue,
                             fillColor: wbColorLightYellowGreen,
+                            textInputTypeOnKeyboard:
+                                TextInputType.numberWithOptions(
+                              decimal: false,
+                              signed: true,
+                            ),
                           ),
 
                           // WbTextFormField(
@@ -428,6 +433,7 @@ class CompanyScreen extends StatelessWidget {
                             inputFontWeightW900: FontWeight.w900,
                             inputFontColor: wbColorLogoBlue,
                             fillColor: wbColorLightYellowGreen,
+                            textInputTypeOnKeyboard: TextInputType.number,
                           ),
                         ),
                         /*--------------------------------- Alter (berechnet) ---*/
@@ -444,6 +450,7 @@ class CompanyScreen extends StatelessWidget {
                             inputFontWeightW900: FontWeight.w900,
                             inputFontColor: wbColorLogoBlue,
                             fillColor: wbColorLightYellowGreen,
+                            textInputTypeOnKeyboard: TextInputType.number,
                           ),
                         ),
                       ],
@@ -696,7 +703,8 @@ class CompanyScreen extends StatelessWidget {
                               inputFontWeightW900: FontWeight.w900,
                               inputFontColor: wbColorLogoBlue,
                               fillColor: wbColorLightYellowGreen,
-                              textInputTypeOnKeyboard: TextInputType.emailAddress,
+                              textInputTypeOnKeyboard:
+                                  TextInputType.emailAddress,
                             ),
                           ),
                         ),
@@ -763,7 +771,8 @@ class CompanyScreen extends StatelessWidget {
                               inputFontWeightW900: FontWeight.w900,
                               inputFontColor: wbColorLogoBlue,
                               fillColor: wbColorLightYellowGreen,
-                              textInputTypeOnKeyboard: TextInputType.emailAddress,
+                              textInputTypeOnKeyboard:
+                                  TextInputType.emailAddress,
                             ),
                           ),
                         ),
@@ -802,7 +811,7 @@ class CompanyScreen extends StatelessWidget {
                                 ),
                               );
                             },
-                            /*--------------------------------- Icon onTap ENDE---*/
+                            /*--------------------------------- Icon onTap ENDE ---*/
                             child: Image(
                               image: AssetImage(
                                 "assets/iconbuttons/icon_button_email.png",
@@ -812,11 +821,80 @@ class CompanyScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    // ----------------------------------------------------- Button Kontakt speichern---
+                    /*--------------------------------- *** ---*/
+                    wbSizedBoxHeight16,
+                    /*--------------------------------- Webseite ---*/
+                    Row(
+                      children: [
+                        Expanded(
+                          child: SizedBox(
+                            width: 185,
+                            child: WbTextFormField(
+                              labelText: "Webseite der Firma",
+                              labelFontSize20: 20,
+                              hintText: "Bitte Webseite der Firma eintragen",
+                              hintTextFontSize16: 13,
+                              inputTextFontSize22: 22,
+                              prefixIcon: Icons.mail_outline_outlined,
+                              prefixIconSize28: 24,
+                              inputFontWeightW900: FontWeight.w900,
+                              inputFontColor: wbColorLogoBlue,
+                              fillColor: wbColorLightYellowGreen,
+                              textInputTypeOnKeyboard:
+                                  TextInputType.emailAddress,
+                            ),
+                          ),
+                        ),
+                        /*--------------------------------- Webseite Icon ---*/
+                        wbSizedBoxWidth8,
+                        SizedBox(
+                          width: 48,
+                          height: 48,
+                          child: GestureDetector(
+                            //   /*--------------------------------- Webseite verlinken ---*/
+                            //   // benötigt package = recherchieren"
+                            //   onTap: () async {
+                            //   log("00513 - company_screen - Anruf starten");
+                            //   Uri.parse("+491789697193"); // funzt das?
+                            //   launchUrl("tel:+491789697193");
+                            //   UrlLauncher.launch('tel:+${p.phone.toString()}');
+                            //   final call = Uri.parse('tel:+491789697193');
+                            //   if (await canLaunchUrl(call)) {
+                            //     launchUrl(call);
+                            //   } else {
+                            //     throw 'Could not launch $call';
+                            //   }
+                            // },
+                            // /*--------------------------------- Webseite verlinken erledigt ---*/
+
+                            /*--------------------------------- Icon onTap ---*/
+                            onTap: () {
+                              log("0872 - company_screen - Webseite verlinken");
+                              showDialog(
+                                context: context,
+                                builder: (context) =>
+                                    const WbDialogAlertUpdateComingSoon(
+                                  headlineText: "Eine E-Mail versenden",
+                                  contentText:
+                                      "Willst Du jetzt eine E-Mail an\nKlausMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0872",
+                                ),
+                              );
+                            },
+                            /*--------------------------------- Icon onTap ENDE ---*/
+                            child: Image(
+                              image: AssetImage(
+                                "assets/iconbuttons/icon_button_email.png",
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    /*--------------------------------- *** ---*/
                     wbSizedBoxHeight16,
                     const Divider(thickness: 3, color: wbColorLogoBlue),
                     wbSizedBoxHeight8,
-
+                    /*--------------------------------- Button Firma speichern ---*/
                     GestureDetector(
                       onTap: () {
                         log("Auf - CompanyScreen - Firma speichern - angeklickt");
@@ -835,10 +913,11 @@ class CompanyScreen extends StatelessWidget {
                         width: 398,
                       ),
                     ),
+                    /*--------------------------------- *** ---*/
                     wbSizedBoxHeight16,
                     const Divider(thickness: 3, color: wbColorLogoBlue),
                     wbSizedBoxHeight16,
-                    /*--------------------------------- ENDE---*/
+                    /*--------------------------------- ENDE ---*/
                   ],
                 ),
               ),
