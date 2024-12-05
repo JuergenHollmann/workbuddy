@@ -11,7 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       title: appTitle,
       home: WbHomePage(title: appTitle),
     );
@@ -21,6 +21,7 @@ class MainApp extends StatelessWidget {
   √ WbHomePage: WbInfoContainer als Footer programmieren √
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
+  - "Spacer(flex: 1)" sind das Problem, warum ich nicht mehr die Seite öffnen kann!
   - App-Icon neu erstellen
   - Splash-Screen neu erstellen
   - Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 todo
