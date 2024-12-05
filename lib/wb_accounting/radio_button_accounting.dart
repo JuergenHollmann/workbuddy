@@ -48,7 +48,7 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
         ),
         child: Row(
           children: [
-            Spacer(flex: 1),
+            // Spacer(flex: 1),
             Radio(
                 value: "Einnahme",
                 groupValue: groupValue,
@@ -83,7 +83,7 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
             //   width: 20,
             // ),
             // Restlichen Raum zwischen "Einnahme" und "Ausgabe" einnehmen.
-            Spacer(flex: 4),
+            // Spacer(flex: 4),
             Radio(
                 value: "Ausgabe",
                 groupValue: groupValue,
@@ -119,7 +119,7 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
                 ),
               ),
             ),
-            Spacer(flex: 1),
+            // Spacer(flex: 1),
             // groupValue == "Einnahme"
             //     ? const RadioButtonInOutGreen()
             //     : const RadioButtonInOutRed(),

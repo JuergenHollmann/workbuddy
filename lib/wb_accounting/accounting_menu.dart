@@ -51,34 +51,22 @@ class AccountingMenu extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 children: [
                   //*-------------------------------------------------- Ausgabe buchen ---*/
-                  GestureDetector(
-                    onTap: () {
-                      log("Auf - AccountingMenu - Eine Ausgabe buchen - angeklickt");
+                  WbButtonUniversal(
+                    wbColor: wbColorButtonDarkRed,
+                    wbButtonUniversalText: "Ausgabe buchen",
+                    icon: Icons
+                        .payments_outlined, // credit_card, // add_shopping_cart,
+                    onButtonTap: () {
+                      log("0060 - AccountingMenu - Eine Ausgabe buchen - angeklickt");
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => const AccountingScreen(
-                            startGroupValue: "Ausgabe",
-                          ),
+                              startGroupValue: "Ausgabe"),
                         ),
                       );
                     },
-
-                    /* Dieser Button ist OHNE Icon (nur Text und Farbe) */
-                    // child: const WbButtonUniShadow(
-                    //     wbColor: wbColorButtonDarkRed,
-                    //     wbButtonUniShadowText: "Ausgabe buchen"),
-
-                    child: WbButtonUniversal(
-                      wbColor: wbColorButtonDarkRed,
-                      wbButtonUniversalText: "Ausgabe buchen",
-                      icon: Icons
-                          .payments_outlined, // credit_card, // add_shopping_cart,
-                      onButtonTap:
-                          /* das geht hier nur, weil es eine (leere) Funktion ist. */
-                          () {},
-                      width: 398,
-                    ),
+                    width: 398,
                   ),
 
                   wbSizedBoxHeight16,

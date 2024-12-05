@@ -46,13 +46,26 @@ class ContactMenuX extends StatelessWidget {
               ),
               // --------------------------------------- Listview mit AuswahlButtons ---
               Expanded(
-                  child: ListView(
-                    padding: const EdgeInsets.all(8),
-                    children: [
-                      /*--------------------------------- Kontakt NEU anlegen ---*/
-                      GestureDetector(
-                        onTap: () {
-                          log("0056 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
+                child: ListView(
+                  padding: const EdgeInsets.all(8),
+                  children: [
+                    /*--------------------------------- Kontakt NEU anlegen ---*/
+                    GestureDetector(
+                      onTap: () {
+                        log("0056 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ContactScreen(),
+                          ),
+                        );
+                      },
+                      child: WbButtonUniversal(
+                        wbColor: wbColorButtonGreen,
+                        wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
+                        icon: Icons.person_add_alt_1_outlined,
+                        onButtonTap: () {
+                          log("0069 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -60,64 +73,51 @@ class ContactMenuX extends StatelessWidget {
                             ),
                           );
                         },
-                        child: WbButtonUniversal(
-                          wbColor: wbColorButtonGreen,
-                          wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
-                          icon: Icons.person_add_alt_1_outlined,
-                          onButtonTap: () {
-                            // log("0069 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => const ContactScreen(),
-                            //   ),
-                            // );
-                          },
-                          width: 398,
-                        ),
+                        width: 398,
                       ),
-                      wbSizedBoxHeight8,
-                      const Divider(
-                          thickness: 3, height: 32, color: wbColorLogoBlue),
-                      GestureDetector(
-                        onTap: () {
-                          log("0085 - contact_menu - Einen Kontakt suchen - Update-Hinweis - CM108 - angeklickt");
-                          showDialog(
-                            context: context,
-                            builder: (context) =>
-                                const WbDialogAlertUpdateComingSoon(
-                              headlineText: 'Update-Hinweis - CM108',
-                              contentText:
-                                  'Diese Funktion kommt bald in einem kostenlosen Update!',
-                            ),
-                          );
-                        },
-                        child: WbButtonUniversal(
-                          wbColor: wbColorAppBarBlue,
-                          wbButtonUniversalText:
-                              "ALLE Kontakte zeigen\nmit SUCH-Funktion",
-                          icon: Icons.person_search_outlined,
-                          onButtonTap: () {},
-                          width: 398,
-                        ),
+                    ),
+                    wbSizedBoxHeight8,
+                    const Divider(
+                        thickness: 3, height: 32, color: wbColorLogoBlue),
+                    GestureDetector(
+                      onTap: () {
+                        log("0085 - contact_menu - Einen Kontakt suchen - Update-Hinweis - CM108 - angeklickt");
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: 'Update-Hinweis - CM108',
+                            contentText:
+                                'Diese Funktion kommt bald in einem kostenlosen Update!',
+                          ),
+                        );
+                      },
+                      child: WbButtonUniversal(
+                        wbColor: wbColorAppBarBlue,
+                        wbButtonUniversalText:
+                            "ALLE Kontakte zeigen\nmit SUCH-Funktion",
+                        icon: Icons.person_search_outlined,
+                        onButtonTap: () {},
+                        width: 398,
                       ),
-                      wbSizedBoxHeight8,
-                      const Divider(
-                          thickness: 3, height: 32, color: wbColorLogoBlue),
-                      WbButtonUniversal2(
-                        wbColor: const Color.fromARGB(255, 255, 102, 219),
-                        wbIcon: Icons.forward_to_inbox_outlined,
-                        wbIconSize40: 40,
-                        wbText:
-                            "Möchtest Du\nMEHR Funktionen?\nSchreibe einfach eine\nE-Mail an den Entwickler.",
-                        wbFontSize24: 15,
-                        wbWidth155: 398,
-                        wbHeight60: 130,
-                        wbOnTap: () {},
-                      ),
-                      const SizedBox(height: 8),
-                    ],
-                  ),
+                    ),
+                    wbSizedBoxHeight8,
+                    const Divider(
+                        thickness: 3, height: 32, color: wbColorLogoBlue),
+                    WbButtonUniversal2(
+                      wbColor: const Color.fromARGB(255, 255, 102, 219),
+                      wbIcon: Icons.forward_to_inbox_outlined,
+                      wbIconSize40: 40,
+                      wbText:
+                          "Möchtest Du\nMEHR Funktionen?\nSchreibe einfach eine\nE-Mail an den Entwickler.",
+                      wbFontSize24: 15,
+                      wbWidth155: 398,
+                      wbHeight60: 130,
+                      wbOnTap: () {},
+                    ),
+                    const SizedBox(height: 8),
+                  ],
+                ),
               ),
             ],
           ),

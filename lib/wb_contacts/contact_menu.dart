@@ -7,7 +7,9 @@ import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
+import 'package:workbuddy/wb_companies/company_screen.dart';
 import 'package:workbuddy/wb_contacts/contact_screen.dart';
+import 'package:workbuddy/wb_contacts/contact_screen_x.dart';
 
 class ContactMenu extends StatelessWidget {
   const ContactMenu({super.key});
@@ -51,38 +53,43 @@ class ContactMenu extends StatelessWidget {
                   children: [
                     /*--------------------------------- Kontakt NEU anlegen ---*/
                     GestureDetector(
-
-                      // onTap: () {
-                      //   log("0055 - contact_menu - Einen Kontakt NEU anlegen - Update-Hinweis - CM0055 - angeklickt");
-                      //   showDialog(
-                      //     context: context,
-                      //     builder: (context) =>
-                      //         const WbDialogAlertUpdateComingSoon(
-                      //       headlineText: 'Update-Hinweis',
-                      //       contentText:
-                      //           'Diese Funktion kommt bald in einem kostenlosen Update!\n\nSupport: CM0055',
-                      //     ),
-                      //   );
-
                       onTap: () {
-
-                        log("0056 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ContactScreen(),
-
-                                                        // builder: (context) => const CommunicationMenu(),
-
-                          ),
-                        );
+                        /*--------------------------------- WbDialogAlertUpdateComingSoon ---*/
+                        log("0055 - contact_menu - Einen Kontakt NEU anlegen - Update-Hinweis - CM0055 - angeklickt"); // funzt nicht
+                        // showDialog(
+                        //   context: context,
+                        //   builder: (context) =>
+                        //       const WbDialogAlertUpdateComingSoon(
+                        //     headlineText: 'Update-Hinweis',
+                        //     contentText:
+                        //         'Diese Funktion kommt bald in einem kostenlosen Update!\n\nSupport: CM0055',
+                        //   ),
+                        // );
+                        /*--------------------------------- Navigator.push ---*/
+                        log("0067 - contact_menu - Einen Kontakt NEU anlegen - angeklickt"); // funzt nicht
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => const ContactScreen(),
+                        //   ),
+                        // );
+                        /*--------------------------------- *** ---*/
                       },
-
                       child: WbButtonUniversal(
                         wbColor: wbColorButtonGreen,
                         icon: Icons.person_add_alt_1_outlined,
                         wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
-                        onButtonTap: () {},
+                        onButtonTap: () {
+                          /*--------------------------------- Navigator.push ---*/
+                          log("0090 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CompanyScreen(),
+                            ),
+                          );
+                          /*--------------------------------- *** ---*/
+                        },
                         width: 200,
                       ),
 

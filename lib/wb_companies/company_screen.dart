@@ -38,22 +38,48 @@ class _CompanyScreenState extends State<CompanyScreen> {
     return Scaffold(
       backgroundColor: wbColorBackgroundBlue,
       appBar: AppBar(
-        title: const Text(
-          'Firma bearbeiten',
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.w900,
-            color: Colors.black, // Schriftfarbe
+        toolbarHeight: 100,
+        centerTitle: true,
+        backgroundColor: wbColorLogoBlue, // Hintergrundfarbe
+        foregroundColor: Colors.white, // Icon-/Button-/Chevron-Farbe
+        shadowColor: Colors.black,
+        //elevation: 10,
+        //scrolledUnderElevation: 10,
+        title: RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            text: "Firma bearbeiten\n",
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w900,
+              color: Colors.yellow,
+            ),
+            children: <TextSpan>[
+              // children: [
+              TextSpan(
+                text:
+                    "$inputCompanyName • $inputCompanyVNContactPerson $inputCompanyNNContactPerson",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                ),
+              ),
+            ],
           ),
         ),
-        backgroundColor: wbColorBackgroundBlue, // Hintergrundfarbe
-        foregroundColor: Colors.black, // Icon-/Button-/Chevron-Farbe
+
+        shape: Border.symmetric(
+          horizontal: BorderSide(
+            width: 3,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
-              const Divider(thickness: 3, color: wbColorLogoBlue),
+              //const Divider(thickness: 3, color: wbColorLogoBlue),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
                 child: Row(
@@ -259,10 +285,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       inputFontWeightW900: FontWeight.w900,
                       inputFontColor: wbColorLogoBlue,
                       fillColor: wbColorLightYellowGreen,
-                      // suffixIcon: Icons.menu_outlined,
-                      // suffixIconSize48: 28,
-                      // textInputTypeOnKeyboard: TextInputType.multiline,
                     ),
+
                     /*--------------------------------- Notizen zu Warengruppen ---*/
                     wbSizedBoxHeight16,
                     WbTextFormField(
@@ -277,10 +301,9 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       inputFontWeightW900: FontWeight.w900,
                       inputFontColor: wbColorLogoBlue,
                       fillColor: wbColorLightYellowGreen,
-                      // suffixIcon: Icons.menu_outlined,
-                      // suffixIconSize48: 28,
                       textInputTypeOnKeyboard: TextInputType.multiline,
                     ),
+
                     /*--------------------------------- WbDividerWithTextInCenter ---*/
                     wbSizedBoxHeight8,
                     WbDividerWithTextInCenter(
@@ -291,6 +314,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       wbHeight3: 3,
                     ),
                     wbSizedBoxHeight16,
+
                     /*--------------------------------- Straße + Nummer ---*/
                     WbTextFormField(
                       labelText: "Straße und Hausnummer",
@@ -303,17 +327,9 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       inputFontWeightW900: FontWeight.w900,
                       inputFontColor: wbColorLogoBlue,
                       fillColor: wbColorLightYellowGreen,
-                      // suffixIcon: Icons.menu_outlined,
-                      // suffixIconSize48: 28,
                       textInputTypeOnKeyboard: TextInputType.streetAddress,
-                      // autofillHints: [],
                     ),
 
-                    // const WbTextfieldStandardEntry(
-                    //   headlineText: 'Straße + Hausnummer',
-                    //   hintText: 'Bitte Straße mit Hausnummer eintragen',
-                    //   wbTextFieldWidth: 398,
-                    // ),
                     /*--------------------------------- Zusatzinformation ---*/
                     wbSizedBoxHeight16,
                     WbTextFormField(
@@ -327,10 +343,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       inputFontWeightW900: FontWeight.w900,
                       inputFontColor: wbColorLogoBlue,
                       fillColor: wbColorLightYellowGreen,
-                      // suffixIcon: Icons.menu_outlined,
-                      // suffixIconSize48: 28,
-                      // textInputTypeOnKeyboard: TextInputType.multiline,
                     ),
+
                     /*--------------------------------- PLZ ---*/
                     wbSizedBoxHeight16,
                     const Row(
@@ -351,29 +365,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                               signed: true,
                             ),
                           ),
-
-                          // WbTextFormField(
-                          //   labelText: "PLZ",
-                          //   labelFontSize20: 20,
-                          //   hintText: "PLZ",
-                          //   hintTextFontSize16: 15,
-                          //   inputTextFontSize22: 22,
-                          //   // prefixIcon: Icons.comment_bank_outlined,
-                          //   // prefixIconSize28: 24,
-                          //   inputFontWeightW900: FontWeight.w900,
-                          //   inputFontColor: wbColorLogoBlue,
-                          //   fillColor: wbColorLightYellowGreen,
-                          //   // suffixIcon: Icons.menu_outlined,
-                          //   // suffixIconSize48: 28,
-                          //   // textInputTypeOnKeyboard: TextInputType.multiline,
-                          // ),
                         ),
-
-                        // WbTextfieldStandardEntry(
-                        //   headlineText: 'PLZ',
-                        //   hintText: 'PLZ',
-                        //   wbTextFieldWidth: 102,
-                        // ),
 
                         /*--------------------------------- Firmensitz | Ort ---*/
                         wbSizedBoxWidth8,
@@ -388,14 +380,9 @@ class _CompanyScreenState extends State<CompanyScreen> {
                             fillColor: wbColorLightYellowGreen,
                           ),
                         ),
-
-                        // WbTextfieldStandardEntry(
-                        //   headlineText: 'Ort',
-                        //   hintText: 'Bitte Firmensitz eintragen',
-                        //   wbTextFieldWidth: 280,
-                        // ),
                       ],
                     ),
+
                     /*--------------------------------- WbDividerWithTextInCenter ---*/
                     wbSizedBoxHeight8,
                     WbDividerWithTextInCenter(
@@ -405,10 +392,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       wbFontSize12: 18,
                       wbHeight3: 3,
                     ),
-                    // wbSizedBoxHeight16,
-                    // const WbDividerWithSmallTextCenter(
-                    //   wbDividerText: "Ansprechpartner",
-                    // ),
+
                     // ----------------------------------------------------- Anrede ---
 
                     // CustomDropdownButton2(
@@ -440,7 +424,6 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       ),
                       menuHeight: 600, // ausklappbare Maximalhöhe
                       hintText: "auswählen", // funzt nicht?
-                      // helperText: "Bitte auswählen",
                       inputDecorationTheme: InputDecorationTheme(
                         fillColor: Colors.green, // funzt nicht?
                       ),
@@ -1018,7 +1001,9 @@ class _CompanyScreenState extends State<CompanyScreen> {
               ),
               /*--------------------------------- WbInfoContainer ---*/
               // Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 todo
-              WbInfoContainer(infoText: "$inputCompanyName • $inputCompanyVNContactPerson $inputCompanyNNContactPerson"),
+              WbInfoContainer(
+                  infoText:
+                      "$inputCompanyName • $inputCompanyVNContactPerson $inputCompanyNNContactPerson"),
               /*--------------------------------- WbInfoContainer ENDE ---*/
             ],
           ),
