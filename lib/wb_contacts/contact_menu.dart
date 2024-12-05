@@ -7,9 +7,7 @@ import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
-import 'package:workbuddy/wb_companies/company_screen.dart';
 import 'package:workbuddy/wb_contacts/contact_screen.dart';
-import 'package:workbuddy/wb_contacts/contact_screen_x.dart';
 
 class ContactMenu extends StatelessWidget {
   const ContactMenu({super.key});
@@ -85,7 +83,7 @@ class ContactMenu extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const CompanyScreen(),
+                              builder: (context) => const ContactScreen(),
                             ),
                           );
                           /*--------------------------------- *** ---*/

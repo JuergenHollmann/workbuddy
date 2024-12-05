@@ -28,86 +28,79 @@ class WbButtonUniversal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /*-------------------------------------------------- Button ---*/
-    return Container(
-      width: width,
-      height: 80,
-      decoration: ShapeDecoration(
-        shadows: const [
-          BoxShadow(
-            color: Colors.black,
-            blurRadius: 8,
-            offset: Offset(4, 4),
-            spreadRadius: 0,
-          )
-        ],
-        color: wbColor,
-        shape: RoundedRectangleBorder(
-          side: const BorderSide(
-            width: 2,
-            color: Colors.white,
-          ),
-          borderRadius: BorderRadius.circular(
-            16,
+    return GestureDetector(
+      onTap: onButtonTap,
+      child: Container(
+        width: width,
+        height: 80,
+        decoration: ShapeDecoration(
+          shadows: const [
+            BoxShadow(
+              color: Colors.black,
+              blurRadius: 8,
+              offset: Offset(4, 4),
+              spreadRadius: 0,
+            )
+          ],
+          color: wbColor,
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(
+              width: 2,
+              color: Colors.white,
+            ),
+            borderRadius: BorderRadius.circular(
+              16,
+            ),
           ),
         ),
-      ),
 
-      /*-------------------------------------------------- Gesture ---*/
-      child: GestureDetector(
-        onTap: onButtonTap,
-        child: Column(
-          //mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        /*-------------------------------------------------- Gesture ---*/
+        child: Row(
           children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
 
-                  // -------------------------------------------------- Icon ---*/
-                  child: Icon(
-                    icon,
-                    color: Colors.white,
-                    size: 40,
-                    shadows: const [
-                      BoxShadow(
-                        color: Colors.black,
-                        blurRadius: 8,
-                        offset: Offset(4, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
+              // -------------------------------------------------- Icon ---*/
+              child: Icon(
+                icon,
+                color: Colors.white,
+                size: 40,
+                shadows: const [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 8,
+                    offset: Offset(4, 4),
+                    spreadRadius: 0,
+                  )
+                ],
+              ),
+            ),
+            Expanded(
+              // -------------------------------------------------- Padding Center Text ---
+              // child: Center(
+              // /* dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist ) */
+              // child: Padding(
+              //   padding: const EdgeInsets.only(right: 80),
+              // -------------------------------------------------- Text ---
+              child: Text(
+                wbButtonUniversalText,
+                style: const TextStyle(
+                  color: Colors.white,
+                  shadows: [
+                    BoxShadow(
+                      color: Colors.black,
+                      blurRadius: 8,
+                      offset: Offset(4, 4),
+                      spreadRadius: 0,
+                    )
+                  ],
+                  fontSize: 20,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 2, // Zwischenraum der Buchtstaben
                 ),
-                Expanded(
-                  // -------------------------------------------------- Padding Center Text ---
-                  // child: Center(
-                  // /* dieses Padding richtet den Text mittig aus (weil oben padding 16 + Rand 32 = 48 ist ) */
-                  // child: Padding(
-                  //   padding: const EdgeInsets.only(right: 80),
-                  // -------------------------------------------------- Text ---
-                  child: Text(
-                    wbButtonUniversalText,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      shadows: [
-                        BoxShadow(
-                          color: Colors.black,
-                          blurRadius: 8,
-                          offset: Offset(4, 4),
-                          spreadRadius: 0,
-                        )
-                      ],
-                      fontSize: 20,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 2, // Zwischenraum der Buchtstaben
-                    ),
-                  ),
-                  // ), // Padding
-                  // ), // Center
-                ),
-              ],
+              ),
+              // ), // Padding
+              // ), // Center
             ),
           ],
         ),

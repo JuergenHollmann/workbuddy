@@ -6,8 +6,8 @@ import 'package:workbuddy/shared/widgets/button_companies.dart';
 import 'package:workbuddy/shared/widgets/button_customer.dart';
 import 'package:workbuddy/shared/widgets/navigation_bar_green_neon.dart';
 
-class SelectionPage extends StatelessWidget {
-  const SelectionPage({super.key});
+class MainSelectionScreen extends StatelessWidget {
+  const MainSelectionScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

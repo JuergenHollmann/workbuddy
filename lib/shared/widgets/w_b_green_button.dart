@@ -2,81 +2,40 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 
 class WBGreenButton extends StatelessWidget {
-  const WBGreenButton({super.key, required onTap});
+  const WBGreenButton({super.key, required this.onTap});
+
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     // Button erstellen:
-    return Padding(
-      padding: const EdgeInsets.only(right: 10),
-      child: Container(
-        width: 398,
-        height: 60,
-        decoration: ShapeDecoration(
-          shadows: const [
-            BoxShadow(
-              color: Colors.black,
-              blurRadius: 8,
-              offset: Offset(4, 4),
-              spreadRadius: 0,
-            )
-          ],
-          color: wbColorButtonGreen,
-          shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              width: 2,
-              color: Colors.white,
-            ),
-            borderRadius: BorderRadius.circular(
-              16,
+    return GestureDetector(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.only(right: 10),
+        child: Container(
+          width: 398,
+          height: 60,
+          decoration: ShapeDecoration(
+            shadows: const [
+              BoxShadow(
+                color: Colors.black,
+                blurRadius: 8,
+                offset: Offset(4, 4),
+                spreadRadius: 0,
+              )
+            ],
+            color: wbColorButtonGreen,
+            shape: RoundedRectangleBorder(
+              side: const BorderSide(
+                width: 2,
+                color: Colors.white,
+              ),
+              borderRadius: BorderRadius.circular(
+                16,
+              ),
             ),
           ),
-        ),
-        child: GestureDetector(
-          onTap: () {
-            /*--------------------------------------- Button enablen todo ---*/
-      //              _isButtonEnabled? null : "";
-      
-      //              ElevatedButton(
-      //   onPressed: _isDisable? null : callBackFunction,
-      //   child: Text("submit"),
-      //   style: ButtonStyle(),
-      // );
-      // when you want to disable button, call
-      
-      // setState(() {
-      //   _isDisable = true;
-      // });
-      // when you want to enable button, call
-      
-      // setState(() {
-      //   _isDisable = false;
-      // });
-      
-            //   /*--------------------------------------- Login ---*/
-            //         /* Überprüfe Benutzer und Passwort */
-            //   String checkUserName = "Jürgen";
-            //   String checkUserPassword = "Pass";
-            //   bool result = false;
-            //   if (checkUserName == "Jürgen" && checkUserPassword == "Pass") {
-            //     result = true;
-            //   } else {
-            //     result = false;
-            //   }
-            //   return result;
-            // }
-      
-      // User.checkLogin;
-      
-            // //   /*--------------------------------------- *** ---*/
-            // log("Wechsle zur Seite 2 = SelectionPage");
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => const SelectionPage(),
-            //   ),
-            // );
-          },
           child: const Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -100,7 +59,7 @@ class WBGreenButton extends StatelessWidget {
                       ],
                     ),
                   ),
-      
+
                   // Expanded(flex: 1, child:SizedBox.shrink( //todo (siehe 434/F4)
                   Expanded(
                     //flex: 1,

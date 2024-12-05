@@ -433,18 +433,13 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight8,
           /*--------------------------------- Login-Button ---*/
-          GestureDetector(
-            child: WBGreenButton(
-              onTap: () {
-                // HIER drin bringt der Aufruf NICHTS!
-              },
-            ),
+          WBGreenButton(
             onTap: () {
-              // --> hier ist der Aufruf vom GestureDetector <--
+              // HIER drin bringt der Aufruf JETZT WAS!
               /*--------------------------------- checkUserAndPassword ---*/
-              log("Überprüfe Benutzer UND Passwort (364 - checkUserAndPassword)");
+              log("0440 - P01LoginScreen - überprüfe Benutzer UND Passwort");
               if (userName == "Jürgen" && userPassword == "Pass") {
-                log("Nach Prüfung - 366 - wechsle zur SelectionPage");
+                log("0442 - P01LoginScreen - nach Prüfung wechsle zur SelectionPage");
 
                 Navigator.push(
                   context,

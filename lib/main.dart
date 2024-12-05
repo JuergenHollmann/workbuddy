@@ -21,10 +21,14 @@ class MainApp extends StatelessWidget {
   √ WbHomePage: WbInfoContainer als Footer programmieren √
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
+  - GestureDetector in allen Button-Widgets fixen
   - "Spacer(flex: 1)" sind das Problem, warum ich nicht mehr die Seite öffnen kann!
-  - App-Icon neu erstellen
-  - Splash-Screen neu erstellen
+  - 
+  - App-Icon neu erstellen (Android-Bug?)
+  - Splash-Screen neu erstellen (Android-Bug?)
   - Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 todo
+    - Den "WbInfoContainer" als "Menubar" deklarieren?  - 0927 todo
+
   - CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern
   - CompanyScreen: DropDown Lieferant / Kunde / etc. anstatt "CompanyRadioButton1" - 0193 todo
   - CompanyScreen: Name der Firma unter dem Logo automatisch eintragen
@@ -38,9 +42,13 @@ class MainApp extends StatelessWidget {
   - P01LoginScreen: Passwort gleich von Anfang an ausblenden (mit State?)
   - CompanyScreen: Telefonanruf starten - 0513 - company_screen - Anruf starten
   - autofillHints: autofillHints, // wie funzt das?
+
   *---------------------------------- Was habe ich dazugelernt? ---* 
+  - Da in der App möglichst alles groß und kontrastreich dargestellt werden soll, habe ich viel über Styles und "overflows", etc. gelernt.
   - Nutzung von KeyboardType: Phone, Text, Datetime, ...
-  - Text-Validierung mit "TextEditingController"
-  - Text an andere Felder übergeben mit "TextEditingController" und der Funktion "onChange"
+  - Text-Validierung mit "TextEditingController".
+  - Text an andere Felder übergeben mit "TextEditingController" und der Funktion "onChange".
+  - Den GestureDetector nicht "doppelt" benutzen, sondern die Funktion in den Button-Widget-Vorlagen richtig übergeben und nur einmal nutzen.
+  - Für die Arbeit im Team nicht nur Buttons (ohne Funktion) als Platzhalter anlegen, sondern dann einen Hinweis (showDialog oder "Toast-Message") anzeigen.
   *--------------------------------- *** ---*/
 
