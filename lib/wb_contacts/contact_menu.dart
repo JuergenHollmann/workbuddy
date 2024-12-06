@@ -137,6 +137,7 @@ class ContactMenu extends StatelessWidget {
                             headlineText: 'Update-Hinweis - CM108',
                             contentText:
                                 'Diese Funktion kommt bald in einem kostenlosen Update!',
+                            actionsText: "OK 👍",
                           ),
                         );
                       },
@@ -162,6 +163,7 @@ class ContactMenu extends StatelessWidget {
                             headlineText: 'Update-Hinweis - CM0109',
                             contentText:
                                 'Diese Funktion kommt bald in einem kostenlosen Update!',
+                            actionsText: "OK 👍",
                           ),
                         );
                       },

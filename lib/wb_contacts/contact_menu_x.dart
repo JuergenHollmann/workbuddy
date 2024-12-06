@@ -91,6 +91,7 @@ class ContactMenuX extends StatelessWidget {
                             headlineText: 'Update-Hinweis - CM108',
                             contentText:
                                 'Diese Funktion kommt bald in einem kostenlosen Update!',
+                            actionsText: "OK 👍",
                           ),
                         );
                       },

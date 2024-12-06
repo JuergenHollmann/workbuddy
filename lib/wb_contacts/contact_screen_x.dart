@@ -283,6 +283,7 @@ class ContactScreenX extends StatelessWidget {
                             headlineText: "Einen Anruf starten",
                             contentText:
                                 "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller anrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-282",
+                            actionsText: "OK 👍",
                           ),
                         );
 
@@ -357,6 +358,7 @@ class ContactScreenX extends StatelessWidget {
                             headlineText: "Eine WhatsApp-Nachricht starten",
                             contentText:
                                 "Willst Du jetzt eine WhatsApp-Nachrticht an die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller versenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-330",
+                            actionsText: "OK 👍",
                           ),
                         );
                       },
@@ -392,6 +394,7 @@ class ContactScreenX extends StatelessWidget {
                             headlineText: "Einen Anruf starten",
                             contentText:
                                 "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller anrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-365",
+                            actionsText: "OK 👍",
                           ),
                         );
                       },
@@ -427,6 +430,7 @@ class ContactScreenX extends StatelessWidget {
                             headlineText: "Eine E-Mail versenden",
                             contentText:
                                 "Willst Du jetzt eine E-Mail an\nKlausMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-400",
+                            actionsText: "OK 👍",
                           ),
                         );
                       },
@@ -462,6 +466,7 @@ class ContactScreenX extends StatelessWidget {
                             headlineText: "Eine E-Mail versenden",
                             contentText:
                                 "Willst Du jetzt eine E-Mail an\nPaulaMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-435",
+                            actionsText: "OK 👍",
                           ),
                         );
                       },

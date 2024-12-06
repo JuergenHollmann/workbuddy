@@ -112,6 +112,7 @@ class AccountingMenu extends StatelessWidget {
                           headlineText: 'Update-Hinweis - AM116',
                           contentText:
                               'Diese Funktion kommt bald in einem kostenlosen Update!',
+                          actionsText: "OK 👍",
                         ),
                       );
                     },
@@ -143,6 +144,7 @@ class AccountingMenu extends StatelessWidget {
                           headlineText: 'Update-Hinweis - AM141',
                           contentText:
                               'Diese Funktion kommt bald in einem kostenlosen Update!',
+                          actionsText: "OK 👍",
                         ),
                       );
                     },
@@ -169,6 +171,7 @@ class AccountingMenu extends StatelessWidget {
                           headlineText: 'Update-Hinweis - AM164',
                           contentText:
                               'Diese Funktion kommt bald in einem kostenlosen Update!',
+                          actionsText: "OK 👍",
                         ),
                       );
                     },
@@ -194,6 +197,7 @@ class AccountingMenu extends StatelessWidget {
                           headlineText: 'Update-Hinweis - AM188',
                           contentText:
                               'Diese Funktion kommt bald in einem kostenlosen Update!',
+                          actionsText: "OK 👍",
                         ),
                       );
                     },

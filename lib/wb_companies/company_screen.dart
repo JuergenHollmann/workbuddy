@@ -628,6 +628,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                   headlineText: "Einen Anruf starten",
                                   contentText:
                                       "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller\nin der Firma XXXXXXXXXXXX GmbH & Co. KG\nanrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0510",
+                                  actionsText: "OK 👍",
                                 ),
                               );
                             },
@@ -695,6 +696,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                   headlineText: "Eine WhatsApp versenden",
                                   contentText:
                                       "Willst Du jetzt an die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller\nin der Firma XXXXXXXXXXXX GmbH & Co. KG\neine WhatsApp senden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0594",
+                                  actionsText: "OK 👍",
                                 ),
                               );
                             },
@@ -762,6 +764,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                   headlineText: "Einen Anruf starten",
                                   contentText:
                                       "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller\nin der Firma XXXXXXXXXXXX GmbH & Co. KG\nanrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-661",
+                                  actionsText: "OK 👍",
                                 ),
                               );
                             },
@@ -829,6 +832,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                   headlineText: "Eine E-Mail versenden",
                                   contentText:
                                       "Willst Du jetzt eine E-Mail an\nKlausMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0727",
+                                  actionsText: "OK 👍",
                                 ),
                               );
                             },
@@ -897,6 +901,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                   headlineText: "Eine E-Mail versenden",
                                   contentText:
                                       "Willst Du jetzt eine E-Mail an\nKlausMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0794",
+                                  actionsText: "OK 👍",
                                 ),
                               );
                             },
@@ -966,6 +971,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                   headlineText: "Eine E-Mail versenden",
                                   contentText:
                                       "Willst Du jetzt eine E-Mail an\nKlausMueller@mueller.de\nversenden?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0872",
+                                  actionsText: "OK 👍",
                                 ),
                               );
                             },

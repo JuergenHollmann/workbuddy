@@ -28,6 +28,7 @@ class MainApp extends StatelessWidget {
   - GestureDetector in allen Button-Widgets fixen - Beispiel: WbButtonUniversal2
   √ "Spacer(flex: 1)" sind das Problem, warum ich nicht mehr die Seite öffnen kann! √
   
+  - Checklisten-App in WorkBuddy einbauen - ToDo-Liste (Aufgaben)
   - Im Validator "Die Paßwörter sind NICHT gleich!" funzt so nicht! 0050 - Validator
   - App-Icon neu erstellen (Android-Bug? - in Android nur schwarz)
   - Splash-Screen neu erstellen (Android-Bug? - in Android beschnitten)

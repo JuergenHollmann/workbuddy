@@ -7,6 +7,7 @@ import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/authentication/screens/p01_login_screen.dart';
 import 'package:workbuddy/shared/widgets/validator.dart';
+import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 
 class P00RegistrationScreen extends StatefulWidget {
   const P00RegistrationScreen({super.key});
@@ -111,7 +112,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                         ),
 
                         /*--- hintText ---*/
-                        hintText: "Bitte Benutzername eingeben",
+                        hintText: "Benutzername eingeben",
                         hintStyle: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w900,
@@ -209,7 +210,19 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                         suffixIcon: GestureDetector(
                           onTap: () {
                             setState(() {
-                              // Hilfetext anzeigen:
+                              log("0213 - lib/features/authentication/screens/p00_registration_screen.dart - suffixIcon");
+
+                              showDialog(
+                                context: context,
+                                builder: (context) =>
+                                    WbDialogAlertUpdateComingSoon(
+                                  headlineText:
+                                      "Warum soll ich meine WhatsApp-Nummer  angeben?",
+                                  contentText:
+                                      "Diese Angabe ist freiwillig!\n\nWenn Du deine WhatsApp-Nummer angibst, kann es sein, dass Du direkt vom Entwickler als einer der \"Ersten\" Informationen über Updates erhältst oder zu einem Betatest von neuen Funktionen eingeladen wirst. 🙂\n\nDarüber hinaus kann es auch Bonus-Module für nützliche neue Funktionen geben, die im Normalfall etwas Geld kosten würden.",
+                                    actionsText: "OK 👍",
+                                ),
+                              );
                             });
                           },
                           child: const Padding(
@@ -352,7 +365,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                         ),
 
                         /*--- hintText ---*/
-                        hintText: "Bitte Passwort eingeben",
+                        hintText: "Passwort eingeben",
                         hintStyle: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w900,
