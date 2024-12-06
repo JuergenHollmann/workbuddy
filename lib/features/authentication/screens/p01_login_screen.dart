@@ -11,7 +11,7 @@ import 'package:workbuddy/features/authentication/schema/server_user_response.da
 import 'package:workbuddy/features/authentication/schema/user.dart';
 import 'package:workbuddy/features/authentication/screens/p00_registration_screen.dart';
 import 'package:workbuddy/features/authentication/screens/user_screen.dart';
-import 'package:workbuddy/screens/selection_screen.dart';
+import 'package:workbuddy/screens/main_selection_screen.dart';
 import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
 
 class P01LoginScreen extends StatefulWidget {
@@ -387,12 +387,12 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 // /*--------------------------------- checkUserAndPassword ---*/
                 // } else if (userName == "Jürgen" && userPassword == "Pass") {
                 //   // userPasswordTEC
-                log("Nach Prüfung 307 wechsle zur SelectionPage ");
+                log("Nach Prüfung 307 wechsle zur MainSelectionScreen ");
 
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const SelectionPage(),
+                    builder: (context) => const MainSelectionScreen(),
                   ),
                 );
               } else {
@@ -439,12 +439,12 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               /*--------------------------------- checkUserAndPassword ---*/
               log("0440 - P01LoginScreen - überprüfe Benutzer UND Passwort");
               if (userName == "Jürgen" && userPassword == "Pass") {
-                log("0442 - P01LoginScreen - nach Prüfung wechsle zur SelectionPage");
+                log("0442 - P01LoginScreen - nach Prüfung wechsle zur MainSelectionScreen");
 
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const SelectionPage(),
+                    builder: (context) => const MainSelectionScreen(),
                   ),
                 );
               } else {

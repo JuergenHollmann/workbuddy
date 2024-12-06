@@ -3,8 +3,8 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
-class CustomDropdownButton2 extends StatelessWidget {
-  const CustomDropdownButton2({
+class WbDropDownMenu2 extends StatelessWidget {
+  const WbDropDownMenu2({
     required this.hint,
     required this.value,
     required this.dropdownItems,

@@ -25,7 +25,7 @@ class WbInfoContainer extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Text(
-          infoText, // "WorkBuddy • Free-BASIC-Version 0.002",
+          infoText, // "WorkBuddy • Free-BASIC-Version 0.003",
           textAlign: TextAlign.center,
           maxLines: null,
         ),

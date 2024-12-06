@@ -6,11 +6,11 @@ import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
 import 'package:workbuddy/config/wb_text_form_field_text_only.dart';
-import 'package:workbuddy/screens/selection_screen.dart';
+import 'package:workbuddy/screens/main_selection_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
+import 'package:workbuddy/shared/widgets/wb_drop_down_menu.dart';
 import 'package:workbuddy/shared/widgets/wb_info_container.dart';
-import 'package:workbuddy/wb_companies/company_radiobutton_1.dart';
 
 class CompanyScreen extends StatefulWidget {
   const CompanyScreen({super.key});
@@ -217,12 +217,24 @@ class _CompanyScreenState extends State<CompanyScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // const Divider(thickness: 3, color: wbColorLogoBlue),
-                    /*--------------------------------- Lieferant/Kunde ---*/
-                    const CompanyRadioButton1(), // 0193 todo
+
+                    /*--------------------------------- Kontakt-Status auswählen ---*/
+                    /*--- DropdownMenu - einfache Version ---*/
+wbSizedBoxHeight16,
+                    WbDropDownMenu(),
+                    wbSizedBoxHeight8,
+
+
+                    // WbDropDownMenu2(hint: hint, value: value, dropdownItems: dropdownItems, onChanged: onChanged)
+
+//DropdownButtonFormField(items: <DropdownMenuItem>["Lieferant", "Kunde"], onChanged: value),
+
+                    //const CompanyRadioButton1(), // 0193 todo
+
                     /*--------------------------------- Divider ---*/
                     const Divider(thickness: 3, color: wbColorLogoBlue),
                     /*--------------------------------- Abstand ---*/
-                    wbSizedBoxHeight8,
+                    wbSizedBoxHeight16,
                     /*--------------------------------- Firmenbezeichnung ---*/
                     WbTextFormField(
                       labelText: "Firmenbezeichnung",
@@ -350,7 +362,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     const Row(
                       children: [
                         SizedBox(
-                          width: 108,
+                          width: 114,
                           child: WbTextFormFieldTEXTOnly(
                             labelText: "PLZ",
                             labelFontSize20: 20,
@@ -979,7 +991,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SelectionPage(),
+                            builder: (context) => const MainSelectionScreen(),
                           ),
                         );
                       },
@@ -1012,4 +1024,3 @@ class _CompanyScreenState extends State<CompanyScreen> {
     );
   }
 }
-// \nWorkBuddy • Free-BASIC-Version 0.002

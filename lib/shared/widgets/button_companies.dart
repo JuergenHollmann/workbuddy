@@ -12,7 +12,7 @@ class ButtonCompanies extends StatelessWidget {
       height: 180,
       child: GestureDetector(
         onTap: () {
-          log("Wechsle zur Seite Firmen 1");
+          log("0015 - ButtonCompanies - wechsle zur Seite CompanyScreen");
           Navigator.push(
             context,
             MaterialPageRoute(

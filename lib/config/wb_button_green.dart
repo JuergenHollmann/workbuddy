@@ -1,7 +1,8 @@
 import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
-import 'package:workbuddy/screens/selection_screen.dart';
+import 'package:workbuddy/screens/main_selection_screen.dart';
 
 class WBGreenIncomeButton extends StatelessWidget {
   const WBGreenIncomeButton({super.key});
@@ -34,15 +35,14 @@ class WBGreenIncomeButton extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-          
 // wechsle die Farbe des Buttons beim Anklicken:
 // String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator
 
-          log("Wechsle zur Seite 2 = SelectionPage");
+          log("Wechsle zur Seite 2 = MainSelectionScreen");
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const SelectionPage(),
+              builder: (context) => const MainSelectionScreen(),
             ),
           );
         },

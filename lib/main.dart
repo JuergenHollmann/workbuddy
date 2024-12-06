@@ -24,10 +24,12 @@ class MainApp extends StatelessWidget {
   - GestureDetector in allen Button-Widgets fixen
   - "Spacer(flex: 1)" sind das Problem, warum ich nicht mehr die Seite öffnen kann!
   - 
-  - App-Icon neu erstellen (Android-Bug?)
-  - Splash-Screen neu erstellen (Android-Bug?)
+  - App-Icon neu erstellen (Android-Bug? - in Android nur schwarz)
+  - Splash-Screen neu erstellen (Android-Bug? - in Android beschnitten)
+
   - Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 todo
-    - Den "WbInfoContainer" als "Menubar" deklarieren?  - 0927 todo
+    - Den "WbInfoContainer" als "Menubar" deklarieren?
+    - Im "WbInfoContainer" sollen unten die Änderungen und der Kunde angezeigt werden, wenn keine Änderungen, dann "zuletzt  geändert am" anzeigen.
 
   - CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern
   - CompanyScreen: DropDown Lieferant / Kunde / etc. anstatt "CompanyRadioButton1" - 0193 todo
@@ -42,6 +44,7 @@ class MainApp extends StatelessWidget {
   - P01LoginScreen: Passwort gleich von Anfang an ausblenden (mit State?)
   - CompanyScreen: Telefonanruf starten - 0513 - company_screen - Anruf starten
   - autofillHints: autofillHints, // wie funzt das?
+  - PRODUCT_BUNDLE_IDENTIFIER = com.example.widgetsIntroductionLiveCoding umbenennen
 
   *---------------------------------- Was habe ich dazugelernt? ---* 
   - Da in der App möglichst alles groß und kontrastreich dargestellt werden soll, habe ich viel über Styles und "overflows", etc. gelernt.

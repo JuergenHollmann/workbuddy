@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:workbuddy/config/wb_colors.dart';
 
 class WbTextFormField extends StatelessWidget {
   const WbTextFormField({
@@ -52,7 +52,8 @@ class WbTextFormField extends StatelessWidget {
       textAlignVertical: TextAlignVertical.center,
       maxLines: null,
       //validator: Validator.isValidEmail,
-      style: TextStyle(height: 1.1,
+      style: TextStyle(
+        height: 1.1,
         fontSize: inputTextFontSize22,
         fontWeight: inputFontWeightW900,
         color: inputFontColor,
@@ -79,9 +80,10 @@ class WbTextFormField extends StatelessWidget {
         /*--- labelStyle ---*/
         labelText: labelText,
         labelStyle: TextStyle(
+          color: Colors.blue,
           fontSize: labelFontSize20,
           fontWeight: FontWeight.bold,
-          backgroundColor: Colors.white,
+          backgroundColor: wbColorLightYellowGreen,
         ),
 
         /*--- prefixIcon ---*/
@@ -98,7 +100,7 @@ class WbTextFormField extends StatelessWidget {
         hintStyle: TextStyle(
           fontSize: hintTextFontSize16,
           fontWeight: FontWeight.w900,
-          color: Colors.black38,
+          color: Colors.black45,
         ),
 
         // /*--- SuffixIcon ---*/
@@ -122,18 +124,6 @@ class WbTextFormField extends StatelessWidget {
       /*--- onChanged ---*/
       controller: controller,
       onChanged: onChanged,
-      // onChanged: (String inputInWbTextFormField) {
-         //log("0123 - WbTextFormField - Eingabe:");
-        // inputPassword = inputInWbTextFormField;
-        // setState(() => inputPassword = inputInWbTextFormField);
-        // if (inputInWbTextFormField == userPassword) {
-        //   log("Das Passwort $userPassword ist KORREKT!");
-        //   // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
-        //   // player.play(AssetSource("sound/sound06pling.wav"));
-        // } else {
-        //   log("Die Eingabe für das Passwort ist NICHT korrekt!");
-        // }
-      // },
     );
   }
 }

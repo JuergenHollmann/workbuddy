@@ -3,8 +3,8 @@
 /* Wechsle die Farbe des Buttons beim Anklicken:
 String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator? */
 
-/* anstelle von "SelectionPage" eine Liste mit Verknüpfungen "NavigateToPageName" zu allen Seiten anlegen:
-builder: (context) => const SelectionPage(), // NavigateToPageName(), //SelectionPage(),*/
+/* anstelle von "MainSelectionScreen" eine Liste mit Verknüpfungen "NavigateToPageName" zu allen Seiten anlegen:
+builder: (context) => const MainSelectionScreen(), // NavigateToPageName(), //MainSelectionScreen(),*/
 
 import 'package:flutter/material.dart';
 
@@ -58,7 +58,7 @@ class WbButtonUniversal2 extends StatelessWidget {
             ),
           ),
         ),
-      
+
         /*-------------------------------------------------- Gesture ---*/
         child: GestureDetector(
           onTap: wbOnTap,
@@ -71,7 +71,7 @@ class WbButtonUniversal2 extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-      
+
                     // -------------------------------------------------- Icon ---*/
                     child: Icon(
                       wbIcon,
@@ -87,7 +87,8 @@ class WbButtonUniversal2 extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Text(maxLines: null,
+                  Text(
+                    maxLines: null,
                     wbText,
                     style: TextStyle(
                       color: Colors.white,

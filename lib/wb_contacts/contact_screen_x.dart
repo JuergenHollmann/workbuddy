@@ -5,7 +5,7 @@ import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
-import 'package:workbuddy/screens/selection_screen.dart';
+import 'package:workbuddy/screens/main_selection_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_small_text_center.dart';
 import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
@@ -495,7 +495,7 @@ class ContactScreenX extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SelectionPage(),
+                            builder: (context) => const MainSelectionScreen(),
                           ),
                         );
                       },

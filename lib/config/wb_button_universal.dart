@@ -3,8 +3,8 @@
 /* Wechsle die Farbe des Buttons beim Anklicken:
 String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator? */
 
-/* anstelle von "SelectionPage" eine Liste mit Verknüpfungen "NavigateToPageName" zu allen Seiten anlegen:
-builder: (context) => const SelectionPage(), // NavigateToPageName(), //SelectionPage(),*/
+/* anstelle von "MainSelectionScreen" eine Liste mit Verknüpfungen "NavigateToPageName" zu allen Seiten anlegen:
+builder: (context) => const MainSelectionScreen(), // NavigateToPageName(), //MainSelectionScreen(),*/
 
 import 'package:flutter/material.dart';
 

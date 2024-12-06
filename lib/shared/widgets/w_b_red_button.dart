@@ -1,6 +1,7 @@
 import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:workbuddy/screens/selection_screen.dart';
+import 'package:workbuddy/screens/main_selection_screen.dart';
 
 class WBRedButton extends StatelessWidget {
   const WBRedButton({super.key});
@@ -41,11 +42,11 @@ class WBRedButton extends StatelessWidget {
       ),
       child: GestureDetector(
         onTap: () {
-          log("Wechsle zur Seite 2 = SelectionPage");
+          log("Wechsle zur Seite 2 = MainSelectionScreen");
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const SelectionPage(),
+              builder: (context) => const MainSelectionScreen(),
             ),
           );
         },

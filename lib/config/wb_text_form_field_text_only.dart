@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:workbuddy/config/wb_colors.dart';
 
 class WbTextFormFieldTEXTOnly extends StatelessWidget {
   const WbTextFormFieldTEXTOnly({
@@ -74,9 +75,11 @@ class WbTextFormFieldTEXTOnly extends StatelessWidget {
         /*--- labelStyle ---*/
         labelText: labelText,
         labelStyle: TextStyle(
+                    color: Colors.blue,
+
           fontSize: labelFontSize20,
           fontWeight: FontWeight.bold,
-          backgroundColor: Colors.white,
+          backgroundColor: wbColorLightYellowGreen,
         ),
 
         // /*--- prefixIcon ---*/
@@ -93,7 +96,7 @@ class WbTextFormFieldTEXTOnly extends StatelessWidget {
         hintStyle: TextStyle(
           fontSize: hintTextFontSize16,
           fontWeight: FontWeight.w900,
-          color: Colors.black38,
+          color: Colors.black45,
         ),
 
         // /*--- SuffixIcon ---*/
