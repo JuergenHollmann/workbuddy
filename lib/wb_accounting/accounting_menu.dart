@@ -13,6 +13,8 @@ class AccountingMenu extends StatelessWidget {
   const AccountingMenu({super.key});
   @override
   Widget build(BuildContext context) {
+    log("0016 - AccountingMenu - wird angezeigt");
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 250, 242, 242),
       appBar: AppBar(

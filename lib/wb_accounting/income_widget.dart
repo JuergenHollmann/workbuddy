@@ -1,14 +1,14 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/wb_accounting/accounting_menu.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
-import 'package:workbuddy/config/wb_dropdownmenu.dart';
-import 'package:workbuddy/config/wb_textfield_notice.dart';
 import 'package:workbuddy/config/wb_colors.dart';
+import 'package:workbuddy/config/wb_dropdownmenu.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_textfield_currency.dart';
+import 'package:workbuddy/config/wb_textfield_notice.dart';
 import 'package:workbuddy/config/wb_textfield_quantity.dart';
+import 'package:workbuddy/wb_accounting/accounting_menu.dart';
 
 class IncomeWidget extends StatefulWidget {
   const IncomeWidget({super.key});
@@ -20,6 +20,8 @@ class IncomeWidget extends StatefulWidget {
 class _IncomeWidgetState extends State<IncomeWidget> {
   @override
   Widget build(BuildContext context) {
+    log("0024 - IncomeWidget - wird benutzt");
+
     return Column(
       children: [
 // // ---------- entweder einen Code erstellen, der die Schrift und die Farbe der AppBar ändert, oder die Position verschieben ----------

@@ -11,8 +11,11 @@ import 'package:workbuddy/wb_contacts/contact_screen.dart';
 
 class ContactMenu extends StatelessWidget {
   const ContactMenu({super.key});
+
   @override
   Widget build(BuildContext context) {
+    log("0017 - ContactMenu - wird benutzt");
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 250, 242, 242),
       appBar: AppBar(

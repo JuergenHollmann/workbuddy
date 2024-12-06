@@ -35,6 +35,8 @@ String inputCompanyNNContactPerson = ""; // nur für die "onChanged-Funktion"
 class _CompanyScreenState extends State<CompanyScreen> {
   @override
   Widget build(BuildContext context) {
+    log("0038 - CompanyScreen - wird benutzt");
+
     return Scaffold(
       backgroundColor: wbColorBackgroundBlue,
       appBar: AppBar(
@@ -211,23 +213,21 @@ class _CompanyScreenState extends State<CompanyScreen> {
               ),
               /*--------------------------------- Divider ---*/
               const Divider(thickness: 3, color: wbColorLogoBlue),
+              /*--------------------------------- *** ---*/
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // const Divider(thickness: 3, color: wbColorLogoBlue),
-
                     /*--------------------------------- Kontakt-Status auswählen ---*/
                     /*--- DropdownMenu - einfache Version ---*/
-wbSizedBoxHeight16,
+                    wbSizedBoxHeight16,
                     WbDropDownMenu(),
                     wbSizedBoxHeight8,
 
-
                     // WbDropDownMenu2(hint: hint, value: value, dropdownItems: dropdownItems, onChanged: onChanged)
 
-//DropdownButtonFormField(items: <DropdownMenuItem>["Lieferant", "Kunde"], onChanged: value),
+                    //DropdownButtonFormField(items: <DropdownMenuItem>["Lieferant", "Kunde"], onChanged: value),
 
                     //const CompanyRadioButton1(), // 0193 todo
 
@@ -307,7 +307,7 @@ wbSizedBoxHeight16,
                       hintText:
                           "Welche Waren sind für die Suchfunktion in der App relevant? Beispiele: Schrauben, Werkzeug, etc.?",
                       hintTextFontSize16: 12,
-                      inputTextFontSize22: 14,
+                      inputTextFontSize22: 15,
                       prefixIcon: Icons.shopping_basket_outlined,
                       prefixIconSize28: 24,
                       inputFontWeightW900: FontWeight.w900,
@@ -348,8 +348,8 @@ wbSizedBoxHeight16,
                       labelText: "Zusatzinfo zur Adresse",
                       labelFontSize20: 20,
                       hintText: "c/o-Adresse? | Hinterhaus? | EG?",
-                      hintTextFontSize16: 12,
-                      inputTextFontSize22: 14,
+                      hintTextFontSize16: 15,
+                      inputTextFontSize22: 15,
                       prefixIcon: Icons.location_on_outlined,
                       prefixIconSize28: 24,
                       inputFontWeightW900: FontWeight.w900,

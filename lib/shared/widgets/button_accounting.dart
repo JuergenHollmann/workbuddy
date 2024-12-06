@@ -1,4 +1,5 @@
 import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/wb_accounting/accounting_menu.dart';
 
@@ -12,7 +13,7 @@ class ButtonAccounting extends StatelessWidget {
       height: 180,
       child: GestureDetector(
         onTap: () {
-          log("Wechsle zur Seite Buchhaltung-Menü");
+          log("0018 - ButtonAccounting - Wechsle zur Seite AccountingMenu");
           Navigator.push(
             context,
             MaterialPageRoute(

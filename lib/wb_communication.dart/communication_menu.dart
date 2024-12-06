@@ -13,6 +13,8 @@ class CommunicationMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0016 - CommunicationMenu - wird benutzt");
+    
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 250, 242, 242),
       /*--------------------------------- *** ---*/

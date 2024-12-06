@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/wb_accounting/income_widget.dart';
 import 'package:workbuddy/wb_accounting/expense_widget.dart';
@@ -30,6 +32,8 @@ class _AccountingScreenState extends State<AccountingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    log("0035 - AccountingScreen - wird angezeigt");
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 250, 242, 242),
       appBar: AppBar(

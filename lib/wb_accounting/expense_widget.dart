@@ -1,15 +1,15 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/wb_accounting/accounting_menu.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
-import 'package:workbuddy/config/wb_dropdownmenu.dart';
-import 'package:workbuddy/config/wb_textfield_quantity.dart';
 import 'package:workbuddy/config/wb_colors.dart';
+import 'package:workbuddy/config/wb_dropdownmenu.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_textfield_currency.dart';
 import 'package:workbuddy/config/wb_textfield_notice.dart';
+import 'package:workbuddy/config/wb_textfield_quantity.dart';
 import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
+import 'package:workbuddy/wb_accounting/accounting_menu.dart';
 
 class ExpenseWidget extends StatefulWidget {
   const ExpenseWidget({super.key});
@@ -21,6 +21,8 @@ class ExpenseWidget extends StatefulWidget {
 class _ExpenseWidgetState extends State<ExpenseWidget> {
   @override
   Widget build(BuildContext context) {
+    log("0024 - ExpenseWidget - wird benutzt");
+
     return Column(
       children: [
         // ------ Wo wurde eingekauft? ------

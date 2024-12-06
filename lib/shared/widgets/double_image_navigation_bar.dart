@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/shared/widgets/navigation_bar_green_neon.dart';
 
@@ -13,6 +15,8 @@ class DoubleImageNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0018 - DoubleImageNavigationBar - angeklickt");
+
     //const NavigationBarGreenNeon();
     return AppBar(
       automaticallyImplyLeading: false,

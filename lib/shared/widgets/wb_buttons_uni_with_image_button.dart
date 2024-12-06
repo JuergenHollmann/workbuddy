@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 
@@ -34,6 +36,8 @@ class WbButtonsUniWithImageButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0039 - WbButtonsUniWithImageButton - angeklickt");
+
     return Row(
       children: [
         /*-------------------------------------------------- Container - Button vorne ---*/

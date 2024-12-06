@@ -9,6 +9,7 @@ class WBGreenIncomeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     // Button erstellen:
     return Container(
       width: 380,
@@ -38,7 +39,7 @@ class WBGreenIncomeButton extends StatelessWidget {
 // wechsle die Farbe des Buttons beim Anklicken:
 // String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator
 
-          log("Wechsle zur Seite 2 = MainSelectionScreen");
+          log("0042 - WBGreenIncomeButton - Wechsle zur Seite 2 = MainSelectionScreen");
           Navigator.push(
             context,
             MaterialPageRoute(

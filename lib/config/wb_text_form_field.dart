@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:workbuddy/config/wb_colors.dart';
@@ -45,6 +47,8 @@ class WbTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0051 - WbTextFormField - angeklickt");
+
     return TextFormField(
       // expands: true,
       maxLengthEnforcement: MaxLengthEnforcement.truncateAfterCompositionEnds,

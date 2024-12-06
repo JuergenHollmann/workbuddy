@@ -12,7 +12,7 @@ class ButtonCustomer extends StatelessWidget {
       height: 180,
       child: GestureDetector(
         onTap: () {
-          log("0015 - button_customer => ContactMenu");
+          log("0015 - ButtonCustomer - wechsle zur Seite ContactMenu");
           Navigator.push(
             context,
             MaterialPageRoute(

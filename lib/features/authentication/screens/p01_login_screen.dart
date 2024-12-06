@@ -12,7 +12,7 @@ import 'package:workbuddy/features/authentication/schema/user.dart';
 import 'package:workbuddy/features/authentication/screens/p00_registration_screen.dart';
 import 'package:workbuddy/features/authentication/screens/user_screen.dart';
 import 'package:workbuddy/screens/main_selection_screen.dart';
-import 'package:workbuddy/shared/widgets/w_b_green_button.dart';
+import 'package:workbuddy/shared/widgets/wb_green_button.dart';
 
 class P01LoginScreen extends StatefulWidget {
   const P01LoginScreen({super.key});
@@ -507,7 +507,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             wbIconSize40: 40,
             wbText: "WorkBuddy beenden",
             wbFontSize24:
-                21, // 0513 - ANDERE Schriftgrößen: iOS = 24 | Pixel8 = 27 | SamsungA05 = 21
+                20, // 0513 - ANDERE Schriftgrößen: iOS = 20 | Pixel8 = 27 | SamsungA05 = 21
             wbWidth155: 155, // hat hier keine Auswirkung (warum ?)
             wbHeight60: 60,
             wbOnTap: () {

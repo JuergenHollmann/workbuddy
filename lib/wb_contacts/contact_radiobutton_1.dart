@@ -28,6 +28,8 @@ class _ContactRadioButton1State extends State<ContactRadioButton1> {
 
   @override
   Widget build(BuildContext context) {
+    log("0031 - ContactRadioButton1 - wird benutzt");
+
     return Column(
       children: [
         Container(

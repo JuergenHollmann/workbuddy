@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 
@@ -12,22 +14,21 @@ class WbDropDownMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // String label = "wertzurdesf";  // bringt hier nichts
+    log("0017 - WbDropDownMenu - angeklickt");
 
     return DropdownMenu(
       width: 360,
       textStyle: TextStyle(
-        fontSize: 22,
-        fontWeight: FontWeight.w900,
-        color: wbColorLogoBlue
-        //backgroundColor: Colors.white,
-      ),
+          fontSize: 22, fontWeight: FontWeight.w900, color: wbColorLogoBlue
+          //backgroundColor: Colors.white,
+          ),
       label: Text(
         "Kontakt-Status",
         style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
           color: wbColorButtonBlue,
-          backgroundColor:wbColorLightYellowGreen,
+          backgroundColor: wbColorLightYellowGreen,
         ),
       ),
       leadingIcon: Icon(

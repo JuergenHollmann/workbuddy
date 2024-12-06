@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 
@@ -5,22 +7,25 @@ class WbTextfieldStandardEntry extends StatelessWidget {
   const WbTextfieldStandardEntry({
     super.key,
     required this.headlineText,
-      required this.hintText, required this.wbTextFieldWidth,
+    required this.hintText,
+    required this.wbTextFieldWidth,
   });
 
   final String headlineText;
-   final String hintText;
-   final double wbTextFieldWidth;
+  final String hintText;
+  final double wbTextFieldWidth;
 
   @override
   Widget build(BuildContext context) {
+    log("0019 - WbTextfieldStandardEntry - wird angezeigt");
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         Padding(
+        Padding(
           padding: const EdgeInsets.only(right: 8.0),
-          child: Text(headlineText,
-      
+          child: Text(
+            headlineText,
             style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -30,7 +35,7 @@ class WbTextfieldStandardEntry extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.center,
-          width: wbTextFieldWidth,  // double wbTextFieldWidth = 24;
+          width: wbTextFieldWidth, // double wbTextFieldWidth = 24;
           height: 40,
           padding: const EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
@@ -49,10 +54,10 @@ class WbTextfieldStandardEntry extends StatelessWidget {
               contentPadding: const EdgeInsets.only(bottom: 14),
               hintText: hintText,
               hintStyle: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w900,
-                  color: wbColorAppBarBlue,
-                ),
+                fontSize: 16,
+                fontWeight: FontWeight.w900,
+                color: wbColorAppBarBlue,
+              ),
               border: InputBorder.none,
             ),
           ),

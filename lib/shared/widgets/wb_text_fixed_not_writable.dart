@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class WbTextFixedNotWritable extends StatelessWidget {
@@ -14,6 +16,8 @@ class WbTextFixedNotWritable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0019 - WbTextFixedNotWritable - wird angezeigt");
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

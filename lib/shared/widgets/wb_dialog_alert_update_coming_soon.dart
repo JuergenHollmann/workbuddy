@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class WbDialogAlertUpdateComingSoon extends StatelessWidget {
@@ -12,6 +14,7 @@ class WbDialogAlertUpdateComingSoon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0017 - WbDialogAlertUpdateComingSoon - angeklickt");
     return
 // --------------------------------------------------------------------------
 /* MUSTER - das muß zum Aufruf ab "showDialog" zum Widget hinzugefügt werden:

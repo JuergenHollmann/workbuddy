@@ -1,5 +1,7 @@
 /* https://pub.dev/packages/dropdown_button2 */
 
+import 'dart:developer';
+
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
@@ -62,6 +64,8 @@ class WbDropDownMenu2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0067 - WbDropDownMenu2 - angeklickt");
+
     return DropdownButtonHideUnderline(
       child: DropdownButton2<String>(
         //To avoid long text overflowing.

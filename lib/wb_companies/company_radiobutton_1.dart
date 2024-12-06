@@ -8,6 +8,8 @@ class CompanyRadioButton1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0011 - CompanyRadioButton1 - wird benutzt");
+
     return Column(
       children: [
         Container(

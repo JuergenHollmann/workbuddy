@@ -19,7 +19,7 @@ class NavigationBarGreenNeon extends StatelessWidget {
           //selectedItemColor: Colors.black,
           //indicatorColor: Colors.black,
           onDestinationSelected: (int index) {
-            log("Button $index geklickt");
+            log("0022 - NavigationBarGreenNeon - Button-Index $index angeklickt");
             // currentIndex = index;
             // setState(() {});
           },

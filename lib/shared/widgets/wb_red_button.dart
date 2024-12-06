@@ -8,6 +8,7 @@ class WBRedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0011 - WBRedButton - angeklickt");
     // Button erstellen:
     return Container(
       width: 380,

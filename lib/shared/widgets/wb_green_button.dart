@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 
@@ -8,7 +10,8 @@ class WBGreenButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Button erstellen:
+    log("0011 - WBGreenButton - angeklickt");
+
     return GestureDetector(
       onTap: onTap,
       child: Padding(

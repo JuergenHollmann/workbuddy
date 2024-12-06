@@ -13,6 +13,8 @@ class ContactMenuX extends StatelessWidget {
   const ContactMenuX({super.key});
   @override
   Widget build(BuildContext context) {
+    log("0038 - ContactMenuX - wird benutzt");
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 250, 242, 242),
       appBar: AppBar(

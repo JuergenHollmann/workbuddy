@@ -47,7 +47,7 @@ class Validator {
       return "... muss ein \" # \"enthalten!";
     }
     // if (value == value) {
-    //   return "Die Paßwörter sind NICHT gleich!"; // funzt so nicht! todo
+    //   return "Die Paßwörter sind NICHT gleich!"; // funzt so nicht! 0050 - Validator - todo
     // }
 
     // if (!RegExp(r'^[=]+$').hasMatch(value)) { // [!§%-&/()=?] [a-zA-Z0-9]

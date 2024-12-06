@@ -12,7 +12,7 @@ class ButtonCommunication extends StatelessWidget {
       height: 180,
       child: GestureDetector(
         onTap: () {
-          log("Wechsle zur Seite Kommunikation 1");
+          log("0015 - ButtonCommunication - Wechsle zur Seite CommunicationMenu");
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const CommunicationMenu()),

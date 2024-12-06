@@ -36,11 +36,11 @@ class _UserSelectState extends State<UserSelect> {
     /*--------------------------------- *** ---*/
     // die Gesamt-Anzahl der User in der Liste zeigen (NACH Iterierung NUR EINE Zahl zeigen):
     int searchFieldCounter = users.length;
-    log("0037_custom Counter: $searchFieldCounter");
+    log("0037 - UserSelect - custom Counter: $searchFieldCounter");
     /*--------------------------------- *** ---*/
     // die gefundene Anzahl der User in der Liste zeigen:
     int? searchFieldFoundCounter = usersData.length;
-    log("0245 - user_select - Counter: $searchFieldFoundCounter");
+    log("0245 - UserSelect - Counter: $searchFieldFoundCounter");
     /*--------------------------------- *** ---*/
   }
 
@@ -170,7 +170,7 @@ class _UserSelectState extends State<UserSelect> {
               ),
             ),
             onTap: () {
-              log("0144_custom");
+              log("0173 - UserSelect - searchFieldController.clear");
               setState(() {
                 /*--------------------------------- *** ---*/
                 // diesen Text kann man auf 3 Arten löschen:

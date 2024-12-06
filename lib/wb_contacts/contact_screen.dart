@@ -15,6 +15,8 @@ class ContactScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0018 - ContactScreen - wird benutzt");
+
     return Scaffold(
       backgroundColor: wbColorLightYellowGreen, // sehr helles Gelbgrün
       appBar: AppBar(
