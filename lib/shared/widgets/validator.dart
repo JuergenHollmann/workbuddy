@@ -3,10 +3,10 @@ class Validator {
   static String? isValidUsername(String? value) {
     // Der Benutzername darf nicht leer sein:
     if (value == null || value.isEmpty) {
-      return "Bitte den Benutzernamen angeben!";
+      return "Bitte den Benutzer angeben!";
     }
     if (value.length < 3) {
-      return "... muss mindestens 3 Zeichen haben!";
+      return "... muss min. 3 Zeichen haben!";
     }
     if (value.length > 15) {
       return "... darf max. 15 Zeichen haben!";
@@ -19,16 +19,16 @@ class Validator {
   static String? isValidEmail(String? value) {
     // Die E-Mail darf nicht leer sein:
     if (value == null || value.isEmpty) {
-      return "Die E-Mail muss angegeben werden! ";
+      return "E-Mail muss angegeben werden! ";
     }
     if (value.length < 5) {
-      return "Die E-Mail benötigt min. 5 Zeichen!";
+      return "E-Mail benötigt min. 5 Zeichen!";
     }
     if (!value.contains("@")) {
-      return "Die E-Mail muss ein \" @ \"enthalten!";
+      return "E-Mail muss \" @ \"enthalten!";
     }
     if (!value.contains(".")) {
-      return "Die E-Mail muss einen \" . \" enthalten!";
+      return "E-Mail muss \" . \" enthalten!";
     }
     // wenn null zurückgegeben wird, ist alles OK hier:
     return null;
@@ -41,7 +41,7 @@ class Validator {
       return "Bitte ein Password angeben!";
     }
     if (value.length < 4) {
-      return "... muss mindestens 4 Zeichen haben!";
+      return "... muss min. 4 Zeichen haben!";
     }
         if (!value.contains("#")) {
       return "... muss ein \" # \"enthalten!";

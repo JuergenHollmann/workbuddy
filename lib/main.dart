@@ -26,7 +26,8 @@ class MainApp extends StatelessWidget {
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
   - GestureDetector in allen Button-Widgets fixen - Beispiel: WbButtonUniversal2
-  - "Spacer(flex: 1)" sind das Problem, warum ich nicht mehr die Seite öffnen kann!
+  √ "Spacer(flex: 1)" sind das Problem, warum ich nicht mehr die Seite öffnen kann! √
+  
   - Im Validator "Die Paßwörter sind NICHT gleich!" funzt so nicht! 0050 - Validator
   - App-Icon neu erstellen (Android-Bug? - in Android nur schwarz)
   - Splash-Screen neu erstellen (Android-Bug? - in Android beschnitten)
@@ -59,6 +60,6 @@ class MainApp extends StatelessWidget {
   - Text-Validierung mit "TextEditingController".
   - Text an andere Felder übergeben mit "TextEditingController" und der Funktion "onChange".
   - Den GestureDetector nicht "doppelt" benutzen, sondern die Funktion in den Button-Widget-Vorlagen richtig übergeben und nur einmal nutzen.
-  - Für die Arbeit im Team nicht nur Buttons (ohne Funktion) als Platzhalter anlegen, sondern dann einen Hinweis (showDialog oder "Toast-Message") anzeigen.
+  - Für die Arbeit im Team nicht nur Buttons (ohne Funktion) als Platzhalter anlegen, sondern dann einen Hinweis ("showDialog" oder "snackBar") anzeigen.
   *--------------------------------- *** ---*/
 

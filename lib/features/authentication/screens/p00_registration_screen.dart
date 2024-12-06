@@ -496,9 +496,6 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                           onButtonTap: () {
                             if (_registrationformKey.currentState!.validate()) {
                               log("Alles richtig gemacht");
-                              // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
-                              // player.play(
-                              //     AssetSource("sound/sound05xylophon.wav"));
                               player
                                   .play(AssetSource("sound/sound06pling.wav"));
 
@@ -536,7 +533,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                               ));
                             }
                           },
-                          width: 394),
+                          width: 350),
                     ),
                     /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight16,
