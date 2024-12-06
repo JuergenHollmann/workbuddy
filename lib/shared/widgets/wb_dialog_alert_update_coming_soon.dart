@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/config/wb_colors.dart';
 
 class WbDialogAlertUpdateComingSoon extends StatelessWidget {
   const WbDialogAlertUpdateComingSoon({
