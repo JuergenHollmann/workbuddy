@@ -135,7 +135,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                             // Bild aus dem Internet:
                             // NetworkImage('https://picsum.photos/200'),
                             /*--------------------------------- *** ---*/
-                            radius: 72,
+                            radius:68,
                           ),
                         ),
                         /*--------------------------------- *** ---*/
@@ -163,8 +163,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     Column(
                       children: [
                         Container(
-                          height: 144,
-                          width: 144,
+                          height: 136,
+                          width: 136,
                           // Quadrat mit blauem Hintergrund und Schatten
                           decoration: ShapeDecoration(
                             shadows: const [
@@ -222,7 +222,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     /*--------------------------------- Kontakt-Status auswählen ---*/
                     /*--- DropdownMenu - einfache Version ---*/
                     wbSizedBoxHeight16,
-                    WbDropDownMenu(),
+                    WbDropDownMenu(label: "Kontakt-Status"),
                     wbSizedBoxHeight8,
 
                     // WbDropDownMenu2(hint: hint, value: value, dropdownItems: dropdownItems, onChanged: onChanged)

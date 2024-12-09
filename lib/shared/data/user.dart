@@ -15,7 +15,7 @@ class User {
   // /*--------------------------------------- checkLogin ---*/
   /* Überprüfen ob der Benutzername korrekt ist */
   bool checkLogin(String inputUserName, String inputUserPassword) {
-    String checkUserName = "Jürgen";
+    String checkUserName = "Jürgenx";
     String checkUserPassword = "Pass";
     bool result = false;
     if (checkUserName == inputUserName &&
@@ -30,7 +30,7 @@ class User {
   // /*--------------------------------------- checkUserName ---*/
   /* Überprüfen ob der Benutzername korrekt ist */
   bool checkUserName(String inputUserName) {
-    String checkUserName = "Jürgen";
+    String checkUserName = "Jürgenx";
     bool result = false;
     if (checkUserName == inputUserName) {
       result = true;

@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:workbuddy/config/wb_colors.dart';
 
 class WbDialogAlertUpdateComingSoon extends StatelessWidget {
   const WbDialogAlertUpdateComingSoon({
@@ -16,7 +17,7 @@ class WbDialogAlertUpdateComingSoon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log("0017 - WbDialogAlertUpdateComingSoon - angeklickt");
+    log("0017 - WbDialogAlertUpdateComingSoon - aktiviert");
     return
 /*-----------------------------------------------------------------*/
 /* MUSTER - das muß zum Aufruf ab "showDialog" zum Widget hinzugefügt werden:
@@ -38,19 +39,20 @@ class WbDialogAlertUpdateComingSoon extends StatelessWidget {
       scrollable: true,
       title: Text(
         headlineText,
-        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: Colors.blue),
+        style: const TextStyle(
+            fontSize: 24, fontWeight: FontWeight.w900, color: Colors.blue),
       ),
       content: Text(
         contentText,
         // Individueller Text - Beispiel: 'Diese Funktion kommt bald in einem kostenlosen Update!',
         style: const TextStyle(
           fontSize: 18,
-          fontWeight: FontWeight.w600,
+          fontWeight: FontWeight.bold, color: wbColorLogoBlue,
         ),
       ),
       actions: [
         TextButton(
-          child:  Text(
+          child: Text(
             actionsText, // "OK 👍",
             style: TextStyle(
               color: Colors.blue,
@@ -68,6 +70,7 @@ class WbDialogAlertUpdateComingSoon extends StatelessWidget {
             ),
           ),
           onPressed: () {
+            log("0071 - WbDialogAlertUpdateComingSoon - onPressed");
             Navigator.of(context).pop();
           },
         ),

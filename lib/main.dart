@@ -33,15 +33,18 @@ class MainApp extends StatelessWidget {
   - App-Icon neu erstellen (Android-Bug? - in Android nur schwarz)
   - Splash-Screen neu erstellen (Android-Bug? - in Android beschnitten)
 
+* WbInfoContainer
   - Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927
     - Den "WbInfoContainer" als "Menubar" deklarieren?
     - Im "WbInfoContainer" sollen unten die Änderungen und der Kunde angezeigt werden, wenn keine Änderungen, dann "zuletzt  geändert am" anzeigen.
 
+* Drawer
+  - Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist.
   - Im Drawer eine Liste anlegen (wie ein Inhaltsverzeichnis - nach Themen geordnet), die eine direkte Navigation auf alle möglichen Seiten durch anklicken erstellt. Hinweis: WbButtonUniversal2 
 
   - ANDERE Schriftgrößen automatisch einstellen? Beispiel: iOS = 20 | Pixel8 = 27 | SamsungA05 = 21 (0513)
   - CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern
-  - CompanyScreen: DropDown Lieferant / Kunde / etc. anstatt "CompanyRadioButton1" - 0193
+  √ CompanyScreen: DropDown Lieferant / Kunde / etc. anstatt "CompanyRadioButton1" - 0193 √
   - CompanyScreen: Name der Firma unter dem Logo automatisch eintragen
   - CompanyScreen: Name des Kunden unter dem Bild automatisch eintragen
   - ContactScreen: lässt sich nicht mehr starten!

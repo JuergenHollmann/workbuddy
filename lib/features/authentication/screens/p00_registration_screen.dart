@@ -546,7 +546,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                               ));
                             }
                           },
-                          width: 350),
+                          width: 280),
                     ),
                     /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight16,
