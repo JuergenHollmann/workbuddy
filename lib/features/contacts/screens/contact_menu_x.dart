@@ -5,9 +5,9 @@ import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/features/contacts/screens/contact_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
-import 'package:workbuddy/wb_contacts/contact_screen.dart';
 
 class ContactMenuX extends StatelessWidget {
   const ContactMenuX({super.key});
@@ -54,7 +54,7 @@ class ContactMenuX extends StatelessWidget {
                     /*--------------------------------- Kontakt NEU anlegen ---*/
                     GestureDetector(
                       onTap: () {
-                        log("0056 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
+                        log("0056 - contact_menu - Einen Kontakt NEU anlegen - aktiviert");
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -67,7 +67,7 @@ class ContactMenuX extends StatelessWidget {
                         wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
                         icon: Icons.person_add_alt_1_outlined,
                         onButtonTap: () {
-                          log("0069 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
+                          log("0069 - contact_menu - Einen Kontakt NEU anlegen - aktiviert");
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -83,7 +83,7 @@ class ContactMenuX extends StatelessWidget {
                         thickness: 3, height: 32, color: wbColorLogoBlue),
                     GestureDetector(
                       onTap: () {
-                        log("0085 - contact_menu - Einen Kontakt suchen - Update-Hinweis - CM108 - angeklickt");
+                        log("0085 - contact_menu - Einen Kontakt suchen - Update-Hinweis - CM108 - aktiviert");
                         showDialog(
                           context: context,
                           builder: (context) =>

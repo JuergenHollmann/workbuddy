@@ -5,9 +5,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:searchfield/searchfield.dart';
 import 'package:workbuddy/config/wb_colors.dart';
-import 'package:workbuddy/user_model.dart';
+import 'package:workbuddy/shared/models/user_model.dart';
 
-import 'user_data.dart';
+import '../data/mock_user_data.dart';
+
 
 class UserSelect extends StatefulWidget {
   const UserSelect({super.key});

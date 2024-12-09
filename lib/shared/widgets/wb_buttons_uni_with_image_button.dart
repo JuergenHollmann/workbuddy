@@ -36,7 +36,7 @@ class WbButtonsUniWithImageButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log("0039 - WbButtonsUniWithImageButton - angeklickt");
+    log("0039 - WbButtonsUniWithImageButton - aktiviert");
 
     return Row(
       children: [

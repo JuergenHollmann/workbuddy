@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
+import 'package:workbuddy/features/contacts/widgets/contact_radiobutton_1.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_small_text_center.dart';
 import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
 import 'package:workbuddy/shared/widgets/wb_textfield_standard_entry.dart';
-import 'package:workbuddy/wb_contacts/contact_radiobutton_1.dart';
 
 class ContactScreen extends StatelessWidget {
   const ContactScreen({super.key});
@@ -489,7 +489,7 @@ class ContactScreen extends StatelessWidget {
                 // /*--------------------------------- Button Kontakt speichern ---*/
                 // GestureDetector(
                 //   onTap: () {
-                //     log("00498 - ContactScreen - Kontakt speichern - angeklickt");
+                //     log("00498 - ContactScreen - Kontakt speichern - aktiviert");
                 //     Navigator.push(
                 //       context,
                 //       MaterialPageRoute(

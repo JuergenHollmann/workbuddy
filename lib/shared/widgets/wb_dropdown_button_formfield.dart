@@ -11,7 +11,7 @@
 
 //   @override
 //   Widget build(BuildContext context) {
-        // log("0039 - WbDropdownButtonFormfield - angeklickt");
+//         log("0039 - WbDropdownButtonFormfield - aktiviert");
 
 //     return DropdownButtonFormField(
 //       value: _selectedValue,
@@ -29,13 +29,13 @@
 //           _selectedValue = value;
 //         });
 //       },
-//       validator: (String value) {
-//         if (value.isEmpty) {
-//           return "can't empty";
-//         } else {
-//           return null;
-//         }
-//       },
+//       // validator: (String value) {
+//       //   if (value.isEmpty) {
+//       //     return "can't empty";
+//       //   } else {
+//       //     return null;
+//       //   }
+//       // },
 //       items: listOfValue.map((String val) {
 //         return DropdownMenuItem(
 //           value: val,

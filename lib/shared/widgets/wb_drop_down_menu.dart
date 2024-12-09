@@ -7,13 +7,19 @@ class WbDropDownMenu extends StatelessWidget {
   const WbDropDownMenu({
     super.key,
     required this.label,
+    required this.dropdownItems,
+    required this.leadingIconsInMenu,
   });
 
   final String label;
+  final List<String> dropdownItems;
+  // final IconData leadingIconsInMenu;
+    final List<IconData> leadingIconsInMenu;
+
 
   @override
   Widget build(BuildContext context) {
-    log("0017 - WbDropDownMenu - angeklickt");
+    log("0020 - WbDropDownMenu - aktiviert");
 
     return DropdownMenu(
       width: 360,
@@ -21,7 +27,8 @@ class WbDropDownMenu extends StatelessWidget {
           fontSize: 22, fontWeight: FontWeight.w900, color: wbColorLogoBlue
           //backgroundColor: Colors.white,
           ),
-      label: Text(label!,
+      label: Text(
+        label,
         style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
@@ -29,7 +36,7 @@ class WbDropDownMenu extends StatelessWidget {
           backgroundColor: wbColorLightYellowGreen,
         ),
       ),
-      leadingIcon: Icon(
+      leadingIcon: Icon( // sichtbar im Statusfeld
         Icons.folder_shared_outlined,
         size: 30,
       ),
@@ -49,11 +56,10 @@ class WbDropDownMenu extends StatelessWidget {
           width: 10,
         ),
       ),
-
       /*--------------------------------- *** ---*/
-      dropdownMenuEntries: <DropdownMenuEntry<int>>[
-        /*--------------------------------- *** ---*/
-        DropdownMenuEntry(
+      dropdownMenuEntries: List.generate(
+        dropdownItems.length,
+        (index) => DropdownMenuEntry(
           style: ButtonStyle(
             textStyle: WidgetStatePropertyAll(
               TextStyle(
@@ -61,81 +67,17 @@ class WbDropDownMenu extends StatelessWidget {
               ),
             ),
           ),
-          leadingIcon: Icon(
+          leadingIcon: 
+          // leadingIconsInMenu[index],
+              Icon( // sichtbar im ausgeklappten Auswahlmenü
             Icons.folder_shared_outlined,
             size: 30,
           ),
-          value: 1,
-          label: "Kontakt",
+          value: index,
+          label: dropdownItems[index],
         ),
-        /*--------------------------------- *** ---*/
-        DropdownMenuEntry(
-          style: ButtonStyle(
-            textStyle: WidgetStatePropertyAll(
-              TextStyle(
-                fontSize: 22,
-              ),
-            ),
-          ),
-          leadingIcon: Icon(
-            Icons.folder_shared_outlined,
-            size: 30,
-          ),
-          value: 2,
-          label: "Interessent",
-        ),
-        /*--------------------------------- *** ---*/
-        DropdownMenuEntry(
-          style: ButtonStyle(
-            textStyle: WidgetStatePropertyAll(
-              TextStyle(
-                fontSize: 22,
-              ),
-            ),
-          ),
-          leadingIcon: Icon(
-            Icons.folder_shared_outlined,
-            size: 30,
-          ),
-          value: 3,
-          label: "Kunde",
-        ),
-        /*--------------------------------- *** ---*/
-        DropdownMenuEntry(
-          style: ButtonStyle(
-            textStyle: WidgetStatePropertyAll(
-              TextStyle(
-                fontSize: 22,
-              ),
-            ),
-          ),
-          leadingIcon: Icon(
-            Icons.folder_shared_outlined,
-            size: 30,
-          ),
-          value: 4,
-          label: "Kunde + Lieferant",
-        ),
-        /*--------------------------------- *** ---*/
-        DropdownMenuEntry(
-          style: ButtonStyle(
-            textStyle: WidgetStatePropertyAll(
-              TextStyle(
-                fontSize: 22,
-              ),
-            ),
-          ),
-          leadingIcon: Icon(
-            Icons.folder_shared_outlined,
-            size: 30,
-          ),
-          value: 5,
-          label: "Lieferant",
-        ),
-        /*--------------------------------- *** ---*/
-        // DropdownMenuEntry(value: 6, label: "- nicht zugeordnet -"), // bringt hier nichts
-        /*--------------------------------- *** ---*/
-      ],
+      ).toList(),
+      /*--------------------------------- *** ---*/
     );
   }
 }

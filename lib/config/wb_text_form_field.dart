@@ -47,7 +47,7 @@ class WbTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log("0051 - WbTextFormField - angeklickt");
+    log("0051 - WbTextFormField - aktiviert");
 
     return TextFormField(
       // expands: true,

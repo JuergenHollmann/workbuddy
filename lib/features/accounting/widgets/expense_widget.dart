@@ -8,49 +8,35 @@ import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_textfield_currency.dart';
 import 'package:workbuddy/config/wb_textfield_notice.dart';
 import 'package:workbuddy/config/wb_textfield_quantity.dart';
-import 'package:workbuddy/wb_accounting/accounting_menu.dart';
+import 'package:workbuddy/features/accounting/screens/accounting_menu.dart';
+import 'package:workbuddy/shared/widgets/wb_text_fixed_not_writable.dart';
 
-class IncomeWidget extends StatefulWidget {
-  const IncomeWidget({super.key});
+class ExpenseWidget extends StatefulWidget {
+  const ExpenseWidget({super.key});
 
   @override
-  State<IncomeWidget> createState() => _IncomeWidgetState();
+  State<ExpenseWidget> createState() => _ExpenseWidgetState();
 }
 
-class _IncomeWidgetState extends State<IncomeWidget> {
+class _ExpenseWidgetState extends State<ExpenseWidget> {
   @override
   Widget build(BuildContext context) {
-    log("0024 - IncomeWidget - wird benutzt");
+    log("0024 - ExpenseWidget - wird benutzt");
 
     return Column(
       children: [
-// // ---------- entweder einen Code erstellen, der die Schrift und die Farbe der AppBar ändert, oder die Position verschieben ----------
-//         AppBar(
-//           title: const Text(
-//             'Einnahme erfassen',
-//             style: TextStyle(
-//               fontSize: 30,
-//               fontWeight: FontWeight.w900,
-//               color: Colors.white,
-//             ),
-//           ),
-//           backgroundColor: Colors.green,
-//           foregroundColor: Colors.white,
-//           //toolbarHeight: 60,
-//         ),
-
-        // ------ Wem wurde etwas verkauft (Kunde)? ------
+        // ------ Wo wurde eingekauft? ------
         const WBDropdownMenu(
-          headlineText: "Wem wurde etwas verkauft?",
-          hintText: "Welchem Kunden?",
+          headlineText: "Wo wurde eingekauft?",
+          hintText: "Welches Geschäft oder Lieferant?",
         ),
 
         wbSizedBoxHeight16,
 
-        // ------ Was wurde verkauft? ------
+        // ------ Was wurde eingekauft? ------
         const WBDropdownMenu(
-          headlineText: "Was wurde verkauft?",
-          hintText: "Welches Produkt oder Dienstleistung?",
+          headlineText: "Was wurde eingekauft?",
+          hintText: "Welches Produkt?",
         ),
 
         wbSizedBoxHeight16,
@@ -97,52 +83,21 @@ class _IncomeWidgetState extends State<IncomeWidget> {
 
         wbSizedBoxHeight16,
 
-        Row(
+        const Row(
           children: [
             // ------ MwSt berechnet: ------
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(right: 8.0),
-                    child: Text(
-                      textAlign: TextAlign.right,
-                      "MwSt. berechnet:",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.centerRight,
-                    height: 40,
-                    //margin: const EdgeInsets.only(top: 8),
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-
-                    child: const Text(
-                      "************* €",
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                        fontSize: 24,
-                      ),
-                    ),
-                  ),
-                ],
+              child: WbTextFixedNotWritable(
+                headlineText: "MwSt. berechnet:",
+                hintText: "********** €",
+                wbTextFieldWidth: 200,
               ),
             ),
 
             wbSizedBoxWidth16,
 
             // ------ Endpreis € ------
-            const Expanded(
+            Expanded(
               child: WBTextFieldCurrency(
                 headlineText: "Endpreis in €",
                 hintText: "Endpreis in € eintragen!",
@@ -161,30 +116,28 @@ class _IncomeWidgetState extends State<IncomeWidget> {
 
         wbSizedBoxHeight16,
 
-        // ------ Wer hat verkauft? ------
+        // ------ Wer hat eingekauft? ------
         const WBDropdownMenu(
-          headlineText: "Wer hat den Verkauf gemacht?",
-          hintText: "Bitte Verkäufer*in zuordnen",
+          headlineText: "Wer hat eingekauft?",
+          hintText: "Bitte Einkäufer*in zuordnen",
         ),
 
         wbSizedBoxHeight16,
 
         // ------ Notizen ------
         const WBTextfieldNotice(
-          headlineText: "Notizen zum Verkauf",
-          hintText: "- Notizen zum Verkauf HIER eingeben -",
+          headlineText: "Notizen zum Einkauf",
+          hintText: "- Notizen zum Einkauf HIER eingeben -",
         ),
 
         const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
 
         // Button aus Vorlage verwenden:
         // solange die Pflichtfelder nicht ausgefüllt sind, soll der Button rot sein und beim Anklicken einen Alert ausgeben, sonst Button grün und Daten speichern + Dialog-Bestätigung.
-        //const WBGreenIncomeButton(), // WBGreenIncomeButton(),
-
-        //*-------------------------------------------------- Einnahme SPEICHERN ---*/
+        //WBRedButton(), // WBGreenIncomeButton(),
         GestureDetector(
           onTap: () {
-            log("Auf - ExpenseWidget - Einnahme SPEICHERN - angeklickt");
+            log("Auf - ExpenseWidget - Ausgabe SPEICHERN - aktiviert");
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -193,9 +146,9 @@ class _IncomeWidgetState extends State<IncomeWidget> {
             );
           },
           child: WbButtonUniversal(
-            wbColor: wbColorButtonGreen,
+            wbColor: wbColorButtonDarkRed,
             icon: Icons.payments_outlined,
-            wbButtonUniversalText: "Einnahme SPEICHERN",
+            wbButtonUniversalText: "Ausgabe SPEICHERN",
             onButtonTap: () {},
             width: 398,
           ),

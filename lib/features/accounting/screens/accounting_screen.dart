@@ -1,11 +1,12 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/wb_accounting/income_widget.dart';
-import 'package:workbuddy/wb_accounting/expense_widget.dart';
-import 'package:workbuddy/wb_accounting/radio_button_accounting.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/features/accounting/widgets/expense_widget.dart';
+import 'package:workbuddy/features/accounting/widgets/income_widget.dart';
+import 'package:workbuddy/features/accounting/widgets/radio_button_accounting.dart';
+
 
 class AccountingScreen extends StatefulWidget {
   const AccountingScreen({

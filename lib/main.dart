@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/screens/home_screen.dart';
+import 'package:workbuddy/features/home/screens/home_screen.dart';
 
 void main() => runApp(const MainApp());
 
@@ -27,11 +27,14 @@ class MainApp extends StatelessWidget {
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
   - GestureDetector in allen Button-Widgets fixen - Beispiel: WbButtonUniversal2
   √ "Spacer(flex: 1)" sind das Problem, warum ich nicht mehr die Seite öffnen kann! √
+  - "WbDropdownButtonFormfield" kann gelöscht werden 
+  - "WbDropDownMenu2" kann gelöscht werden
+  - CompanyScreen: leadingIconsInMenu hat hier keine Auswikung // todo 0233 + 0406
   
   - Checklisten-App in WorkBuddy einbauen - ToDo-Liste (Aufgaben)
   - Im Validator "Die Paßwörter sind NICHT gleich!" funzt so nicht! 0050 - Validator
   - App-Icon neu erstellen (Android-Bug? - in Android nur schwarz)
-  - Splash-Screen neu erstellen (Android-Bug? - in Android beschnitten)
+- Splash-Screen neu erstellen (Android-Bug? - in Android beschnitten)
 
 * WbInfoContainer
   - Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927
@@ -44,7 +47,7 @@ class MainApp extends StatelessWidget {
 
   - ANDERE Schriftgrößen automatisch einstellen? Beispiel: iOS = 20 | Pixel8 = 27 | SamsungA05 = 21 (0513)
   - CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern
-  √ CompanyScreen: DropDown Lieferant / Kunde / etc. anstatt "CompanyRadioButton1" - 0193 √
+  √ CompanyScreen: DropDown Lieferant / Kunde / etc. anstatt "CompanyRadioButton1" = deaktiviert - 0193 √
   - CompanyScreen: Name der Firma unter dem Logo automatisch eintragen
   - CompanyScreen: Name des Kunden unter dem Bild automatisch eintragen
   - ContactScreen: lässt sich nicht mehr starten!

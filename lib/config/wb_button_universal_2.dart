@@ -34,7 +34,7 @@ class WbButtonUniversal2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log("0037 - WbButtonUniversal2 - angeklickt");
+    log("0037 - WbButtonUniversal2 - aktiviert");
 
     /*-------------------------------------------------- Button ---*/
     return Padding(

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
-import 'package:workbuddy/user_data.dart';
-import 'package:workbuddy/user_select.dart';
+import 'package:workbuddy/shared/widgets/user_select.dart';
+
+import '../shared/data/mock_user_data.dart';
+
 
 /*--------------------------------- *** ---*/
 class EMailScreen extends StatefulWidget {

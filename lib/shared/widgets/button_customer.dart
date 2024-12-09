@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/wb_contacts/contact_menu.dart';
+import 'package:workbuddy/features/contacts/screens/contact_menu.dart';
+
 
 class ButtonCustomer extends StatelessWidget {
   const ButtonCustomer({super.key});

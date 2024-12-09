@@ -91,7 +91,7 @@ Mache Commit und Push, wenn du fertig bist.
                 /* Hier ist ein Button zum Testen */
                 // ElevatedButton(
                 //   onPressed: () {
-                //     log("Auf - AccountingMenu - Übersicht aller Ausgaben - Update-Hinweis 112 - angeklickt");
+                //     log("Auf - AccountingMenu - Übersicht aller Ausgaben - Update-Hinweis 112 - aktiviert");
                 //     showDialog(
                 //       context: context,
                 //       builder: (context) => AlertDialog(

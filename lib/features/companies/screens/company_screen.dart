@@ -1,12 +1,12 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:workbuddy/backup_screens/main_selection_screen.dart';
 import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
 import 'package:workbuddy/config/wb_text_form_field_text_only.dart';
-import 'package:workbuddy/screens/main_selection_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 import 'package:workbuddy/shared/widgets/wb_drop_down_menu.dart';
@@ -35,7 +35,7 @@ String inputCompanyNNContactPerson = ""; // nur für die "onChanged-Funktion"
 class _CompanyScreenState extends State<CompanyScreen> {
   @override
   Widget build(BuildContext context) {
-    log("0038 - CompanyScreen - wird benutzt");
+    log("0038 - CompanyScreen - aktiviert");
 
     return Scaffold(
       backgroundColor: wbColorBackgroundBlue,
@@ -83,7 +83,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
             children: [
               //const Divider(thickness: 3, color: wbColorLogoBlue),
               Padding(
-                padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+                padding: const EdgeInsets.fromLTRB(8, 24, 16, 8),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,7 +121,6 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                 // AssetImage(
                                 //   "assets/company_logos/obi.png",
                                 // ),
-
                                 // AssetImage("assets/dummy_person_portrait.png",),
                                 // AssetImage("assets/dummy_no_logo.png",),
                                 // AssetImage("assets/workbuddy_logo.png",),
@@ -135,12 +134,11 @@ class _CompanyScreenState extends State<CompanyScreen> {
                             // Bild aus dem Internet:
                             // NetworkImage('https://picsum.photos/200'),
                             /*--------------------------------- *** ---*/
-                            radius:68,
+                            radius: 68,
                           ),
                         ),
                         /*--------------------------------- *** ---*/
-                        // das ist nur der Abstand zwischen dem Logo
-                        //und der Firmenbezeichnung:
+                        // das ist nur der Abstand zwischen dem Logo und der Firmenbezeichnung:
                         const SizedBox(height: 20),
                         /*--------------------------------- Name der Firma unter dem Logo ---*/
                         SizedBox(
@@ -158,7 +156,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       ],
                     ),
                     /*--------------------------------- Abstand --- */
-                    const SizedBox(width: 22), // Zwischenabstand bei Expanded
+                    const SizedBox(width: 14), // Zwischenabstand bei Expanded
                     /*--------------------------------- Ansprechpartner --- */
                     Column(
                       children: [
@@ -219,18 +217,31 @@ class _CompanyScreenState extends State<CompanyScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    /*--------------------------------- Kontakt-Status auswählen ---*/
-                    /*--- DropdownMenu - einfache Version ---*/
+                    /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight16,
-                    WbDropDownMenu(label: "Kontakt-Status"),
+                    /*--------------------------------- Kontakt-Status auswählen ---*/
+                    WbDropDownMenu(
+                      label: "Kontakt-Staus",
+                      dropdownItems: [
+                        "Kontakt",
+                        "Interessent",
+                        "Kunde",
+                        "Lieferant",
+                        "Lieferant und Kunde",
+                        "möglicher Lieferant",
+                      ],
+                      leadingIconsInMenu: [
+                        // hat hier keine Auswikung // todo 0233 + 0406
+                        Icons.access_time,
+                        Icons.airline_seat_legroom_normal,
+                        Icons.access_time,
+                        Icons.dangerous,
+                        Icons.access_time,
+                        Icons.face,
+                      ],
+                    ),
+                    /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight8,
-
-                    // WbDropDownMenu2(hint: hint, value: value, dropdownItems: dropdownItems, onChanged: onChanged)
-
-                    //DropdownButtonFormField(items: <DropdownMenuItem>["Lieferant", "Kunde"], onChanged: value),
-
-                    //const CompanyRadioButton1(), // 0193 todo
-
                     /*--------------------------------- Divider ---*/
                     const Divider(thickness: 3, color: wbColorLogoBlue),
                     /*--------------------------------- Abstand ---*/
@@ -255,33 +266,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       controller: inputCompanyNameTEC,
                       onChanged: (String inputCompanyNameTEC) {
                         log("0189 - company_screen - Eingabe: $inputCompanyNameTEC");
-
                         inputCompanyName = inputCompanyNameTEC;
-
                         setState(() => inputCompanyName = inputCompanyNameTEC);
-
-                        // onChanged: (String inputCompanyNameTECTEC) {
-                        //   log("0189 - company_screen - Eingabe: $inputCompanyNameTECTEC");
-                        //   inputCompanyNameTEC = inputCompanyNameTECTEC;
-                        //   setState(() => inputCompanyNameTEC = inputCompanyNameTECTEC);
-
-                        // if (inputCompanyNameTECTEC == userName) {
-                        //   /*--------------------------------- log ---*/
-                        //   log("Der Benutzername \"$userName\" ist KORREKT 😉");
-
-                        //   /*--------------------------------- Audio ---*/
-                        //   /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
-                        //   // player.play(AssetSource("sound/sound06pling.wav"));
-
-                        //   /*--------------------------------- *** ---*/
-                        //   setState(() {
-                        //     // loginButtonIsEnabled = true; // funzt nicht
-                        //     // WBGreenButton(onTap: () {}); // funzt nicht
-                        //   });
-                        // } else {
-                        //   log("Die Eingabe für den Benutzername ist NICHT korrekt!");
-                        //   //const WBGreenButton(onTap: null); // funzt nicht
-                        // }
                       },
                     ),
                     /*--------------------------------- Branchenzuordnung ---*/
@@ -298,7 +284,6 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       inputFontColor: wbColorLogoBlue,
                       fillColor: wbColorLightYellowGreen,
                     ),
-
                     /*--------------------------------- Notizen zu Warengruppen ---*/
                     wbSizedBoxHeight16,
                     WbTextFormField(
@@ -315,7 +300,6 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       fillColor: wbColorLightYellowGreen,
                       textInputTypeOnKeyboard: TextInputType.multiline,
                     ),
-
                     /*--------------------------------- WbDividerWithTextInCenter ---*/
                     wbSizedBoxHeight8,
                     WbDividerWithTextInCenter(
@@ -326,7 +310,6 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       wbHeight3: 3,
                     ),
                     wbSizedBoxHeight16,
-
                     /*--------------------------------- Straße + Nummer ---*/
                     WbTextFormField(
                       labelText: "Straße und Hausnummer",
@@ -356,7 +339,6 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       inputFontColor: wbColorLogoBlue,
                       fillColor: wbColorLightYellowGreen,
                     ),
-
                     /*--------------------------------- PLZ ---*/
                     wbSizedBoxHeight16,
                     const Row(
@@ -405,51 +387,29 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       wbHeight3: 3,
                     ),
 
-                    // ----------------------------------------------------- Anrede ---
-
-                    // CustomDropdownButton2(
-                    //   hint: "Anrede",
-                    //   value: "value",
-                    //   dropdownItems: [],
-                    //   onChanged: (item) {
-                    //     log("0353 - company_screen - $item");
-                    //     // setState(() {
-                    //     // widget.onChange(value);
-                    //     // });
-                    //   },
-                    // ),
-
-                    // WbTextFormFieldTEXTOnly(
-                    //   labelText: "Anrede",
-                    //   labelFontSize20: 20,
-                    //   hintText: "Anrede",
-                    //   inputTextFontSize22: 22,
-                    //   inputFontWeightW900: FontWeight.w900,
-                    //   inputFontColor: wbColorLogoBlue,
-                    //   fillColor: wbColorLightYellowGreen,
-                    // ),
-
-                    const DropdownMenu(
-                      width: 150,
-                      label: Text(
-                        "Anrede",
-                      ),
-                      menuHeight: 600, // ausklappbare Maximalhöhe
-                      hintText: "auswählen", // funzt nicht?
-                      inputDecorationTheme: InputDecorationTheme(
-                        fillColor: Colors.green, // funzt nicht?
-                      ),
-                      textStyle: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      dropdownMenuEntries: <DropdownMenuEntry<int>>[
-                        DropdownMenuEntry(value: 1, label: "Herr"),
-                        DropdownMenuEntry(value: 2, label: "Frau"),
-                        DropdownMenuEntry(value: 3, label: "Divers"),
-                        DropdownMenuEntry(value: 4, label: "Herr Dr."),
-                        DropdownMenuEntry(value: 5, label: "Frau Dr."),
-                        DropdownMenuEntry(value: 6, label: "Dr."),
+                    wbSizedBoxHeight16,
+                    /*--------------------------------- Anrede ---*/
+                    WbDropDownMenu(
+                      label: "Anrede",
+                      dropdownItems: [
+                        "Herr",
+                        "Frau",
+                        "Divers",
+                        "Herr Dr.",
+                        "Frau Dr.",
+                        "Dr.",
+                        "Herr Prof.",
+                        "Frau Prof.",
+                        "Prof.",
+                      ],
+                      leadingIconsInMenu: [
+                        // hat hier keine Auswikung // todo 0233 + 0406
+                        Icons.access_time,
+                        Icons.airline_seat_legroom_normal,
+                        Icons.access_time,
+                        Icons.dangerous,
+                        Icons.access_time,
+                        Icons.face,
                       ],
                     ),
                     /*--------------------------------- Abstand ---*/
@@ -993,7 +953,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     /*--------------------------------- Button Firma speichern ---*/
                     GestureDetector(
                       onTap: () {
-                        log("Auf - CompanyScreen - Firma speichern - angeklickt");
+                        log("Auf - CompanyScreen - Firma speichern - aktiviert");
                         Navigator.push(
                           context,
                           MaterialPageRoute(

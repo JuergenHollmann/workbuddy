@@ -10,7 +10,7 @@ class WBGreenButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log("0011 - WBGreenButton - angeklickt");
+    log("0011 - WBGreenButton - aktiviert");
 
     return GestureDetector(
       onTap: onTap,

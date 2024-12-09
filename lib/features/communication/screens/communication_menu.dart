@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
-import 'package:workbuddy/screens/email_screen_p043.dart';
+import 'package:workbuddy/backup_screens/email_screen_p043.dart';
 import 'package:workbuddy/shared/widgets/wb_buttons_uni_with_image_button.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 

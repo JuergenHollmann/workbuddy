@@ -5,9 +5,9 @@ import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/features/accounting/screens/accounting_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
-import 'package:workbuddy/wb_accounting/accounting_screen.dart';
 
 class AccountingMenu extends StatelessWidget {
   const AccountingMenu({super.key});
@@ -59,7 +59,7 @@ class AccountingMenu extends StatelessWidget {
                     icon: Icons
                         .payments_outlined, // credit_card, // add_shopping_cart,
                     onButtonTap: () {
-                      log("0060 - AccountingMenu - Eine Ausgabe buchen - angeklickt");
+                      log("0060 - AccountingMenu - Eine Ausgabe buchen - aktiviert");
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -76,7 +76,7 @@ class AccountingMenu extends StatelessWidget {
                   //*-------------------------------------------------- Einnahme buchen ---*/
                   GestureDetector(
                     onTap: () {
-                      log("Auf - AccountingMenu - Eine Einnahme buchen - angeklickt");
+                      log("Auf - AccountingMenu - Eine Einnahme buchen - aktiviert");
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -104,7 +104,7 @@ class AccountingMenu extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                      log("Auf - AccountingMenu - Übersicht aller Ausgaben - Update-Hinweis - AM116 - angeklickt");
+                      log("Auf - AccountingMenu - Übersicht aller Ausgaben - Update-Hinweis - AM116 - aktiviert");
                       showDialog(
                         context: context,
                         builder: (context) =>

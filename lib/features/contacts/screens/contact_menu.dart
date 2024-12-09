@@ -5,9 +5,9 @@ import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
+import 'package:workbuddy/features/contacts/screens/contact_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
-import 'package:workbuddy/wb_contacts/contact_screen.dart';
 
 class ContactMenu extends StatelessWidget {
   const ContactMenu({super.key});
@@ -56,7 +56,7 @@ class ContactMenu extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         /*--------------------------------- WbDialogAlertUpdateComingSoon ---*/
-                        log("0055 - contact_menu - Einen Kontakt NEU anlegen - Update-Hinweis - CM0055 - angeklickt"); // funzt nicht
+                        log("0055 - contact_menu - Einen Kontakt NEU anlegen - Update-Hinweis - CM0055 - aktiviert"); // funzt nicht
                         // showDialog(
                         //   context: context,
                         //   builder: (context) =>
@@ -67,7 +67,7 @@ class ContactMenu extends StatelessWidget {
                         //   ),
                         // );
                         /*--------------------------------- Navigator.push ---*/
-                        log("0067 - contact_menu - Einen Kontakt NEU anlegen - angeklickt"); // funzt nicht
+                        log("0067 - contact_menu - Einen Kontakt NEU anlegen - aktiviert"); // funzt nicht
                         // Navigator.push(
                         //   context,
                         //   MaterialPageRoute(
@@ -82,7 +82,7 @@ class ContactMenu extends StatelessWidget {
                         wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
                         onButtonTap: () {
                           /*--------------------------------- Navigator.push ---*/
-                          log("0090 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
+                          log("0090 - contact_menu - Einen Kontakt NEU anlegen - aktiviert");
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -110,7 +110,7 @@ class ContactMenu extends StatelessWidget {
                       //   wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
                       //   icon: Icons.person_add_alt_1_outlined,
                       //   onButtonTap: () {
-                      //     // log("0069 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
+                      //     // log("0069 - contact_menu - Einen Kontakt NEU anlegen - aktiviert");
                       //     // Navigator.push(
                       //     //   context,
                       //     //   MaterialPageRoute(
@@ -129,7 +129,7 @@ class ContactMenu extends StatelessWidget {
                         thickness: 3, height: 32, color: wbColorLogoBlue),
                     GestureDetector(
                       onTap: () {
-                        log("0085 - contact_menu - Einen Kontakt suchen - Update-Hinweis - CM108 - angeklickt");
+                        log("0085 - contact_menu - Einen Kontakt suchen - Update-Hinweis - CM108 - aktiviert");
                         showDialog(
                           context: context,
                           builder: (context) =>
@@ -155,7 +155,7 @@ class ContactMenu extends StatelessWidget {
                         thickness: 3, height: 32, color: wbColorLogoBlue),
                     GestureDetector(
                       onTap: () {
-                        log("0109 - contact_menu - Mehr Info? - Update-Hinweis - CM109 - angeklickt");
+                        log("0109 - contact_menu - Mehr Info? - Update-Hinweis - CM109 - aktiviert");
                         showDialog(
                           context: context,
                           builder: (context) =>

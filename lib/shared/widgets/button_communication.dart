@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/wb_communication.dart/communication_menu.dart';
+import 'package:workbuddy/features/communication/screens/communication_menu.dart';
+
 
 class ButtonCommunication extends StatelessWidget {
   const ButtonCommunication({super.key});

@@ -15,7 +15,7 @@ class DoubleImageNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log("0018 - DoubleImageNavigationBar - angeklickt");
+    log("0018 - DoubleImageNavigationBar - aktiviert");
 
     //const NavigationBarGreenNeon();
     return AppBar(

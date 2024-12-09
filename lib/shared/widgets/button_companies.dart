@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/wb_companies/company_screen.dart';
+import 'package:workbuddy/features/companies/screens/company_screen.dart';
+
 
 class ButtonCompanies extends StatelessWidget {
   const ButtonCompanies({super.key});
