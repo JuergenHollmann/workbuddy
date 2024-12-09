@@ -29,6 +29,7 @@ class MainApp extends StatelessWidget {
   √ "Spacer(flex: 1)" sind das Problem, warum ich nicht mehr die Seite öffnen kann! √
   - "WbDropdownButtonFormfield" kann gelöscht werden 
   - "WbDropDownMenu2" kann gelöscht werden
+  - "SplashScreen" kann gelöscht werden
   - CompanyScreen: leadingIconsInMenu hat hier keine Auswikung // todo 0233 + 0406
   
   - Checklisten-App in WorkBuddy einbauen - ToDo-Liste (Aufgaben)

@@ -49,85 +49,87 @@ class WbTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     log("0051 - WbTextFormField - aktiviert");
 
-    return TextFormField(
-      // expands: true,
-      maxLengthEnforcement: MaxLengthEnforcement.truncateAfterCompositionEnds,
-      keyboardType: textInputTypeOnKeyboard,
-      textAlignVertical: TextAlignVertical.center,
-      maxLines: null,
-      //validator: Validator.isValidEmail,
-      style: TextStyle(
-        height: 1.1,
-        fontSize: inputTextFontSize22,
-        fontWeight: inputFontWeightW900,
-        color: inputFontColor,
-      ),
-      textAlign: TextAlign.left,
-      textInputAction: textInputAction,
-      //obscureText: visibilityPassword, //Passwort sichtbar?
-      /*--------------------------------- InputDecoration ---*/
-      decoration: InputDecoration(
-        floatingLabelAlignment: FloatingLabelAlignment.start,
-        filled: true,
-        fillColor: fillColor, //wbColorBackgroundBlue
-        //contentPadding: const EdgeInsets.fromLTRB(48, 16, 16, 16),
-        contentPadding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
-
-        /*--- errorStyle ---*/
-        errorStyle: const TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-          color: Colors.red,
-          backgroundColor: Colors.yellow,
+    return SizedBox(width: 400,
+      child: TextFormField(
+        //expands: false,
+        maxLengthEnforcement: MaxLengthEnforcement.truncateAfterCompositionEnds,
+        keyboardType: textInputTypeOnKeyboard,
+        textAlignVertical: TextAlignVertical.center,
+        maxLines: null,
+        //validator: Validator.isValidEmail,
+        style: TextStyle(
+          height: 1.1,
+          fontSize: inputTextFontSize22,
+          fontWeight: inputFontWeightW900,
+          color: inputFontColor,
         ),
-
-        /*--- labelStyle ---*/
-        labelText: labelText,
-        labelStyle: TextStyle(
-          color: Colors.blue,
-          fontSize: labelFontSize20,
-          fontWeight: FontWeight.bold,
-          backgroundColor: wbColorLightYellowGreen,
-        ),
-
-        /*--- prefixIcon ---*/
-        prefixIcon: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Icon(
-            size: prefixIconSize28, //28
-            prefixIcon, //Icons.email_rounded,
+        textAlign: TextAlign.left,
+        textInputAction: textInputAction,
+        //obscureText: visibilityPassword, //Passwort sichtbar?
+        /*--------------------------------- InputDecoration ---*/
+        decoration: InputDecoration(
+          floatingLabelAlignment: FloatingLabelAlignment.start,
+          filled: true,
+          fillColor: fillColor, //wbColorBackgroundBlue
+          //contentPadding: const EdgeInsets.fromLTRB(48, 16, 16, 16),
+          contentPadding: const EdgeInsets.fromLTRB(16, 8, 0, 8),
+      
+          /*--- errorStyle ---*/
+          errorStyle: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.red,
+            backgroundColor: Colors.yellow,
+          ),
+      
+          /*--- labelStyle ---*/
+          labelText: labelText,
+          labelStyle: TextStyle(
+            color: Colors.blue,
+            fontSize: labelFontSize20,
+            fontWeight: FontWeight.bold,
+            backgroundColor: wbColorLightYellowGreen,
+          ),
+      
+          /*--- prefixIcon ---*/
+          prefixIcon: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Icon(
+              size: prefixIconSize28, //28
+              prefixIcon, //Icons.email_rounded,
+            ),
+          ),
+      
+          /*--- hintText ---*/
+          hintText: hintText,
+          hintStyle: TextStyle(
+            fontSize: hintTextFontSize16,
+            fontWeight: FontWeight.w900,
+            color: Colors.black45,
+          ),
+      
+          // /*--- SuffixIcon ---*/
+          // suffixIcon: Padding(
+          //   padding: const EdgeInsets.all(8),
+          //   child: Icon(
+          //     size: suffixIconSize48, //28
+          //     suffixIcon, //Icons.email_rounded,
+          //   ),
+          // ),
+      
+          /*--- border ---*/
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
         ),
-
-        /*--- hintText ---*/
-        hintText: hintText,
-        hintStyle: TextStyle(
-          fontSize: hintTextFontSize16,
-          fontWeight: FontWeight.w900,
-          color: Colors.black45,
-        ),
-
-        // /*--- SuffixIcon ---*/
-        // suffixIcon: Padding(
-        //   padding: const EdgeInsets.all(8),
-        //   child: Icon(
-        //     size: suffixIconSize48, //28
-        //     suffixIcon, //Icons.email_rounded,
-        //   ),
-        // ),
-
-        /*--- border ---*/
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
-        ),
+      
+        /*--- autofillHints ---*/
+        // autofillHints: autofillHints, // wie funzt das?
+      
+        /*--- onChanged ---*/
+        controller: controller,
+        onChanged: onChanged,
       ),
-
-      /*--- autofillHints ---*/
-      // autofillHints: autofillHints, // wie funzt das?
-
-      /*--- onChanged ---*/
-      controller: controller,
-      onChanged: onChanged,
     );
   }
 }

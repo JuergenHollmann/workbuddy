@@ -22,7 +22,7 @@ class WbDropDownMenu extends StatelessWidget {
     log("0020 - WbDropDownMenu - aktiviert");
 
     return DropdownMenu(
-      width: 360,
+      width: 400,
       textStyle: TextStyle(
           fontSize: 22, fontWeight: FontWeight.w900, color: wbColorLogoBlue
           //backgroundColor: Colors.white,

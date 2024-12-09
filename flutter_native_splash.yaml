@@ -1,12 +1,26 @@
 flutter_native_splash:
-  color: "#000000" # Fensterhintergrund | rot = "#ff3b30" | blau = "#007aff"
-  image: assets/splash/workbuddy_glow_logo.png
+  color: "#000000" # Fensterhintergrund
+  image: assets/splash/workbuddy_1152x1152_radius_800.png
   android_12:
     #background_image: assets/splash/workbuddy_glow_logo.png
-    icon_background_color: "#000000" # Hintergrund rundes Icon
-    # android_gravity: fill
-    fullscreen: false
-    image: assets/splash/workbuddy_glow_logo.png
+    icon_background_color: "#111111" # Hintergrund rundes Icon
+    #android_gravity: fill
+    #fullscreen: false
+    image: assets/splash/workbuddy_1152x1152_radius_800.png
+    image_android: assets/splash/workbuddy_1152x1152_radius_800.png
+    background_image_android: "assets/splash/workbuddy_1152x1152_radius_800.png"
+
+
+# -------------------------------------------------------------------------------
+#flutter_native_splash:
+#  color: "#000000" # Fensterhintergrund | rot = "#ff3b30" | blau = "#007aff" | "#42a5f5"
+#  image: assets/splash/workbuddy_glow_logo.png
+#  android_12:
+#    #background_image: assets/splash/workbuddy_glow_logo.png
+#    icon_background_color: "#000000" # Hintergrund rundes Icon
+#    # android_gravity: fill
+#    fullscreen: false
+#    image: assets/splash/workbuddy_glow_logo.png
 # -------------------------------------------------------------------------------
 # Auswahl an splash-screen-logos: 
 # - workbuddy_glow_logo.png 
@@ -54,15 +68,17 @@ flutter_native_splash:
 #image_dark: asset/splash-invert.png
 #branding_dark: asset/dart_dark.png
 
-# Ab Android 12 wird der Begrüßungsbildschirm anders gehandhabt als in früheren Versionen.
+# |---------------|
+# | Ab Android 12 | wird der Begrüßungsbildschirm anders gehandhabt als in früheren Versionen.
+# |---------------|
 # Bitte besuchen Sie https://developer.android.com/guide/topics/ui/splash-screen
 
 # Im Folgenden finden Sie spezifische Parameter für Android 12+.
 
-#android_12:
 # Der Bildparameter legt das Symbolbild des Begrüßungsbildschirms fest. Wenn dieser Parameter nicht angegeben ist, wird stattdessen das Launcher-Symbol der App verwendet. Bitte beachten Sie, dass der Begrüßungsbildschirm auf einen Kreis in der Mitte des Bildschirms zugeschnitten wird.
 # App-Symbol mit Symbolhintergrund: Dieses sollte 960 × 960 Pixel groß sein und in einen Kreis mit 640 Pixel Durchmesser passen.
 # App-Symbol ohne Symbolhintergrund: Dieses sollte 1152 × 1152 Pixel groß sein und in einen Kreis mit 768 Pixel Durchmesser passen.
+
 #image: Assets/android12splash.png
 
 # Hintergrundfarbe des Begrüßungsbildschirms.
