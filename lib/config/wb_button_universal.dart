@@ -6,6 +6,8 @@ String color = isSunny ? 'yellow' : 'blue'; // ternärer Operator? */
 /* anstelle von "MainSelectionScreen" eine Liste mit Verknüpfungen "NavigateToPageName" zu allen Seiten anlegen:
 builder: (context) => const MainSelectionScreen(), // NavigateToPageName(), //MainSelectionScreen(),*/
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class WbButtonUniversal extends StatelessWidget {
@@ -26,6 +28,7 @@ class WbButtonUniversal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0031 - WbButtonUniversal - aktiviert");
     return GestureDetector(
       onTap: onButtonTap,
       child: Container(
@@ -94,8 +97,6 @@ class WbButtonUniversal extends StatelessWidget {
                   letterSpacing: 2, // Zwischenraum der Buchtstaben
                 ),
               ),
-              // ), // Padding
-              // ), // Center
             ),
           ],
         ),

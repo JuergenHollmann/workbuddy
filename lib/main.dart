@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
   }
 }
   /*--------------------------------- TODO's ---
-  √ WbHomePage: WbInfoContainer als Footer programmieren √
+  √ WbHomePage: WbInfoContainer als "Footer" programmieren √
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
   - GestureDetector in allen Button-Widgets fixen:
@@ -32,28 +32,39 @@ class MainApp extends StatelessWidget {
     - WbButtonUniversal2   - Beispiel: Workbuddy beenden 
     - WbButtonUniversal    - Beispiel: Jetzt registrieren
   √ "Spacer(flex: 1)" waren das Problem, warum ich nicht mehr die Seite öffnen konnte! √
+  
   - kann gelöscht werden: "WbDropdownButtonFormfield" 
   - kann gelöscht werden: "WbDropDownMenu2"
   - kann gelöscht werden: "SplashScreen"
+  - kann gelöscht werden: "WBRedButton"
+  - kann gelöscht werden: "ContactMenuX"
+  - kann gelöscht werden: "ContactScreenX"
+
   - CompanyScreen: leadingIconsInMenu hat hier keine Auswikung // todo 0233 + 0406
-  - CommunicationMenu - großer rosa Entwickler Button angeklickt - CM-0249
+
+* Updates:
+  - Kontakt direkt anrufen                        - Update CM-0090
+  - WhatsApp direkt versenden                     - Update CM-0150
+  - mehr Funktionen - E-Mail an den Entwickler    - Update CM-0249
+  - mehr Funktionen - E-Mail an den Entwickler    - Update CM-0132
+  - Alle Kontakte zeigen                          - Update CM-0098
 
   √ Datums-Picker (Geburtstage, etc.) installiert: time_picker_spinner_pop_up: ^2.0.0 √
     x - flutter_rounded_date_picker: ^3.0.4 (nicht installiert)
     x - flutter_holo_date_picker: ^2.0.0    (nicht installiert)
-    x - progressive_time_picker: ^1.0.1    (nur Zeitspanne, aber gut aussehend)
+    x - progressive_time_picker: ^1.0.1     (nur Zeitspanne, aber gut aussehend)
   - Alter anhand vom Geburtstag automatisch berechnen und im Feld eintragen - 0491 - CompanyScreen  
   - Checklisten-App in WorkBuddy einbauen - ToDo-Liste (Aufgaben)
   - Im Validator "Die Paßwörter sind NICHT gleich!" funzt so nicht! 0050 - Validator
   - App-Icon neu erstellen (Android-Bug? - in Android nur schwarz)
 - Splash-Screen neu erstellen (Android-Bug? - in Android beschnitten) - wird nicht besser - selber programmmieren
 
-* WbInfoContainer
+* WbInfoContainer:
   - Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927
     - Den "WbInfoContainer" als "Menubar" deklarieren?
     - Im "WbInfoContainer" sollen unten die Änderungen und der Kunde angezeigt werden, wenn keine Änderungen, dann "zuletzt  geändert am" anzeigen.
 
-* Drawer
+* Drawer:
   - Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist.
   - Im Drawer eine Liste anlegen (wie ein Inhaltsverzeichnis - nach Themen geordnet), die eine direkte Navigation auf alle möglichen Seiten durch anklicken erstellt. Hinweis: WbButtonUniversal2 
 
@@ -64,6 +75,19 @@ class MainApp extends StatelessWidget {
   - Firebase Cloud Messaging-Client für Push-Nachrichten an meine User         → firebase_messaging
   - Mit Cloud Storage - Bilder und Videos hochladen und teilen                 → firebase_storage
   - Crashlytics - Fehlermeldungen und Abstürze der App auswerten               → firebase_crashlytics
+
+* GitHub:  
+  Um die Firebase API-Keys von Github geheim zu halten in die ".gitignore" vom Projektverzeichnis eintragen:
+  #API Keys;
+  /lib/firebase_options.dart
+  /android/app/google-services.json
+  /macos/Runner/GoogleService-Info.plist
+  /ios/Runner/GoogleService-Info.plist
+  Falls bereits ein commit mit den Api Keys unternommen wurde, muss man GitHub mitteilen, dass diese Files nicht mehr beobachtet werden sollen. Dies erreicht man, wenn man im Projekt das Terminal öffnet und folgende Befehle eingibt:
+  git rm --cached lib/firebase_options.dart
+  git rm --cached android/app/google-services.json
+  git rm --cached macos/Runner/GoogleService-Info.plist
+  git rm --cached ios/Runner/GoogleService-Info.plist
 
   - ANDERE Schriftgrößen automatisch einstellen? Beispiel: iOS = 20 | Pixel8 = 27 | SamsungA05 = 21 (0513)
   - CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern
@@ -80,6 +104,8 @@ class MainApp extends StatelessWidget {
   - CompanyScreen: Telefonanruf starten - 0513 - company_screen - Anruf starten
   - autofillHints: autofillHints, // wie funzt das?
   - PRODUCT_BUNDLE_IDENTIFIER = com.example.widgetsIntroductionLiveCoding umbenennen
+
+
 
   *---------------------------------- Was habe ich dazugelernt? ---* 
   - Da in der App möglichst alles groß und kontrastreich dargestellt werden soll, habe ich viel über Styles und "overflows", etc. gelernt.
