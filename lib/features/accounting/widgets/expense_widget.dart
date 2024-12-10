@@ -134,10 +134,9 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
 
         // Button aus Vorlage verwenden:
         // solange die Pflichtfelder nicht ausgefüllt sind, soll der Button rot sein und beim Anklicken einen Alert ausgeben, sonst Button grün und Daten speichern + Dialog-Bestätigung.
-        //WBRedButton(), // WBGreenIncomeButton(),
         GestureDetector(
           onTap: () {
-            log("Auf - ExpenseWidget - Ausgabe SPEICHERN - aktiviert");
+            log("0139 - ExpenseWidget - Ausgabe SPEICHERN - geklickt");
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -149,7 +148,9 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
             wbColor: wbColorButtonDarkRed,
             icon: Icons.payments_outlined,
             wbButtonUniversalText: "Ausgabe SPEICHERN",
-            onButtonTap: () {},
+            onButtonTap: () {
+              log("0152 - ExpenseWidget - Ausgabe SPEICHERN - geklickt");
+            },
             width: 398,
           ),
         ),

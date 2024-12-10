@@ -29,11 +29,11 @@ class WbDialogAlertUpdateComingSoon extends StatelessWidget {
                         showDialog(
                           context: context,
                           builder: (context) =>
-/*-----------------------------------------------------------------*/
                               const WbDialogAlertUpdateComingSoon(
                             headlineText: "Einen Anruf starten",
                             contentText:
-                                "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller anrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-282"),);*/
+                                "Willst Du jetzt die Nummer\n+49-XXX-XXXX-XXXX\nvon Klaus Müller anrufen?\n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CS-0282"),);
+                                */
 /*-----------------------------------------------------------------*/
         AlertDialog(
       scrollable: true,
@@ -44,7 +44,8 @@ class WbDialogAlertUpdateComingSoon extends StatelessWidget {
       ),
       content: Text(
         contentText,
-        // Individueller Text - Beispiel: 'Diese Funktion kommt bald in einem kostenlosen Update!',
+        // Individueller Text - Beispiel:
+        // 'Diese Funktion kommt bald in einem kostenlosen Update!\n\nHinweis: CS-0000'
         style: const TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold, color: wbColorLogoBlue,

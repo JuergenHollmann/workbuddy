@@ -27,6 +27,8 @@ class MainApp extends StatelessWidget {
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
   - GestureDetector in allen Button-Widgets fixen:
     √ WBGreenButton        - Beispiel: Login-Button √
+    √ WbButtonsUniWithImageButton √
+    √ WbDialogAlertUpdateComingSoon √
     - WbButtonUniversal2   - Beispiel: Workbuddy beenden 
     - WbButtonUniversal    - Beispiel: Jetzt registrieren
   √ "Spacer(flex: 1)" waren das Problem, warum ich nicht mehr die Seite öffnen konnte! √
