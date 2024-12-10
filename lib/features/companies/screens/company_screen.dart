@@ -487,9 +487,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
                         ),
                         /*--------------------------------- Abstand ---*/
                         wbSizedBoxWidth8,
-                                                /*--------------------------------- Alter (berechnet) ---*/
-                                                /* Alter anhand vom Geburtstag automatisch berechnen und im Feld eintragen - 0491 - CompanyScreen */
-
+                        /*--------------------------------- Alter (berechnet) ---*/
+                        /* Alter anhand vom Geburtstag automatisch berechnen und im Feld eintragen - 0491 - CompanyScreen */
                         Expanded(
                           child: WbTextFormField(
                             labelText: "Alter",
@@ -542,7 +541,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     Row(
                       children: [
                         Expanded(
-                          child: SizedBox(width: 400,
+                          child: SizedBox(
+                            width: 400,
                             child: WbTextFormField(
                               labelText: "Telefon 1 - Mobil",
                               labelFontSize20: 20,

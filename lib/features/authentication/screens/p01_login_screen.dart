@@ -268,21 +268,16 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                 ));
                 /*--------------------------------- *** ---*/
                 setState(() {
-                  // loginButtonIsEnabled = true; // funzt nicht
-                  // WBGreenButton(onTap: () {}); // funzt nicht
                 });
               } else {
                 log("0274 - p01_login_screen - Die Eingabe für den Benutzername ist NICHT korrekt!");
-                //const WBGreenButton(onTap: null); // funzt nicht
               }
             },
-
             /*--------------------------------- validator ---*/
             // validator: (userNameTEC) {
             //   // Der Benutzername wurde nicht ausgefüllt:
             //   if (userNameTEC == null) {
             //     return "Bitte den Benutzernamen angeben!";
-
             //   }
             //   // Alles ist in Ordnung, keine Probleme
             //   return null;

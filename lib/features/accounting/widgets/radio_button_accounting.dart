@@ -37,16 +37,6 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
               : Colors.red.shade200,
           border: Border.all(color: Colors.grey, width: 5),
           borderRadius: BorderRadius.circular(12),
-          // boxShadow:
-
-          //  Colors.black, blurRadius:8,
-
-          // BoxShadow(
-          //               color: Colors.black,
-          //               blurRadius: 8,
-          //               offset: Offset(4, 4),
-          //               spreadRadius: 0,
-          //             ),
         ),
         child: Row(
           children: [
@@ -58,21 +48,9 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
                   setState(() {
                     groupValue = value!;
                     widget.onChange(value);
-
-                    // groupValue == "Einnahme"
-                    //     ? const RadioButtonInOutGreen()
-                    //     : const RadioButtonInOutRed();
-                    // const RadioButtonInOutGreen();
-                    // const WBGreenIncomeButton();
-                    //const RadioButtonInOutGreen();
-
-                    log("Einnahme wurde angeklickt");
+                    log("0061 - RadioButtonAccounting - Einnahme wurde angeklickt");
                   });
                 }),
-            // Visibility(
-            //   visible: groupValue == "Einnhame",
-            //   child: const WBGreenButton(),
-            // ),
             const Text(
               "Einnahme",
               style: TextStyle(
@@ -81,28 +59,13 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            // const SizedBox(
-            //   width: 20,
-            // ),
-            // Restlichen Raum zwischen "Einnahme" und "Ausgabe" einnehmen.
-            // Spacer(flex: 4),
             Radio(
                 value: "Ausgabe",
                 groupValue: groupValue,
-                //key: Key(AccountingScreen._buttonExpenseKey),
-                //key: AccountingScreen. _buttonExpenseKey,
                 onChanged: (value) {
                   setState(() {
                     groupValue = value!;
                     widget.onChange(value);
-
-                    // groupValue == "Ausgabe"
-                    //     ? const RadioButtonInOutRed()
-                    //     : const RadioButtonInOutGreen();
-                    //const RadioButtonInOutRed();
-                    //const WBRedButton();
-                    //const RadioButtonInOutRed();
-
                     log("Ausgabe wurde angeklickt");
                   });
                 }),
@@ -121,10 +84,6 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
                 ),
               ),
             ),
-            // Spacer(flex: 1),
-            // groupValue == "Einnahme"
-            //     ? const RadioButtonInOutGreen()
-            //     : const RadioButtonInOutRed(),
           ],
         ),
       ),

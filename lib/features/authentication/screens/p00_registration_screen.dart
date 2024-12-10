@@ -143,15 +143,10 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                               ),
                             ),
                           );
-
-                          // WBGreenButton(onTap: () {}); // funzt nicht
                           setState(() {
-                            // loginButtonIsEnabled = true; // funzt nicht
-                            // WBGreenButton(onTap: () {}); // funzt nicht
                           });
                         } else {
                           log("0153 - P00RegistrationScreen - Die Eingabe für den Benutzername ist NICHT korrekt!");
-                          //const WBGreenButton(onTap: null); // funzt nicht
                         }
                       },
                     ),
