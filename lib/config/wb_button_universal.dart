@@ -14,20 +14,18 @@ class WbButtonUniversal extends StatelessWidget {
     required this.wbColor,
     required this.icon,
     required this.wbButtonUniversalText,
-    required this.onButtonTap,
     required this.width,
+    required this.onButtonTap,
   });
 
   final Color wbColor;
   final IconData icon;
-  final String wbButtonUniversalText;
   final double width;
-
+  final String wbButtonUniversalText;
   final void Function() onButtonTap;
 
   @override
   Widget build(BuildContext context) {
-    /*-------------------------------------------------- Button ---*/
     return GestureDetector(
       onTap: onButtonTap,
       child: Container(
@@ -53,14 +51,11 @@ class WbButtonUniversal extends StatelessWidget {
             ),
           ),
         ),
-
-        /*-------------------------------------------------- Gesture ---*/
         child: Row(
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-
-              // -------------------------------------------------- Icon ---*/
+              /*--------------------------------- Icon ---*/
               child: Icon(
                 icon,
                 color: Colors.white,

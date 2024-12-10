@@ -485,8 +485,11 @@ class _CompanyScreenState extends State<CompanyScreen> {
                             textInputTypeOnKeyboard: TextInputType.number,
                           ),
                         ),
-                        /*--------------------------------- Alter (berechnet) ---*/
+                        /*--------------------------------- Abstand ---*/
                         wbSizedBoxWidth8,
+                                                /*--------------------------------- Alter (berechnet) ---*/
+                                                /* Alter anhand vom Geburtstag automatisch berechnen und im Feld eintragen - 0491 - CompanyScreen */
+
                         Expanded(
                           child: WbTextFormField(
                             labelText: "Alter",

@@ -35,37 +35,34 @@ class WbButtonUniversal2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     log("0037 - WbButtonUniversal2 - aktiviert");
-
-    /*-------------------------------------------------- Button ---*/
-    return Padding(
-      padding: const EdgeInsets.only(right: 10),
-      child: Container(
-        width: wbWidth155,
-        height: wbHeight60,
-        decoration: ShapeDecoration(
-          shadows: const [
-            BoxShadow(
-              color: Colors.black,
-              blurRadius: 8,
-              offset: Offset(4, 4),
-              spreadRadius: 0,
-            )
-          ],
-          color: wbColor,
-          shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              width: 2,
-              color: Colors.white,
-            ),
-            borderRadius: BorderRadius.circular(
-              16,
+    /*--------------------------------- *** ---*/
+    return GestureDetector(
+      onTap: wbOnTap,
+      child: Padding(
+        padding: const EdgeInsets.only(right: 10),
+        child: Container(
+          width: wbWidth155,
+          height: wbHeight60,
+          decoration: ShapeDecoration(
+            shadows: const [
+              BoxShadow(
+                color: Colors.black,
+                blurRadius: 8,
+                offset: Offset(4, 4),
+                spreadRadius: 0,
+              )
+            ],
+            color: wbColor,
+            shape: RoundedRectangleBorder(
+              side: const BorderSide(
+                width: 2,
+                color: Colors.white,
+              ),
+              borderRadius: BorderRadius.circular(
+                16,
+              ),
             ),
           ),
-        ),
-
-        /*-------------------------------------------------- Gesture ---*/
-        child: GestureDetector(
-          onTap: wbOnTap,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -75,8 +72,7 @@ class WbButtonUniversal2 extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-
-                    // -------------------------------------------------- Icon ---*/
+                    /*--------------------------------- Icon ---*/
                     child: Icon(
                       wbIcon,
                       color: Colors.white,

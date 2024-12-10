@@ -39,6 +39,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    log("0042 - P00RegistrationScreen - aktiviert");
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 250, 242, 242),
       appBar: AppBar(
@@ -127,15 +128,12 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
 
                       /*--- onChanged ---*/
                       onChanged: (String newInputUsername) {
-                        log("Eingabe: $newInputUsername");
+                        log("0131 - P00RegistrationScreen - Eingabe: $newInputUsername");
                         inputUserName = newInputUsername;
                         setState(() => inputUserName = newInputUsername);
-
                         if (newInputUsername == userName) {
-                          log("Der Benutzername $userName ist KORREKT!");
-                          // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
+                          log("0135 - P00RegistrationScreen - Der Benutzername $userName ist KORREKT!");
                           player.play(AssetSource("sound/sound05xylophon.wav"));
-                          // player.play(AssetSource("sound/sound06pling.wav"));
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: const Text("Benutzername ist KORREKT"),
@@ -152,7 +150,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                             // WBGreenButton(onTap: () {}); // funzt nicht
                           });
                         } else {
-                          log("Die Eingabe für den Benutzername ist NICHT korrekt!");
+                          log("0153 - P00RegistrationScreen - Die Eingabe für den Benutzername ist NICHT korrekt!");
                           //const WBGreenButton(onTap: null); // funzt nicht
                         }
                       },
@@ -210,8 +208,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                         suffixIcon: GestureDetector(
                           onTap: () {
                             setState(() {
-                              log("0213 - lib/features/authentication/screens/p00_registration_screen.dart - suffixIcon");
-
+                              log("0211 - P00RegistrationScreen - setState showDialog Update");
                               showDialog(
                                 context: context,
                                 builder: (context) =>
@@ -220,7 +217,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                                       "Warum soll ich meine WhatsApp-Nummer  angeben?",
                                   contentText:
                                       "Diese Angabe ist freiwillig!\n\nWenn Du deine WhatsApp-Nummer angibst, kann es sein, dass Du direkt vom Entwickler als einer der \"Ersten\" Informationen über Updates erhältst oder zu einem Betatest von neuen Funktionen eingeladen wirst. 🙂\n\nDarüber hinaus kann es auch Bonus-Module für nützliche neue Funktionen geben, die im Normalfall etwas Geld kosten würden.",
-                                    actionsText: "OK 👍",
+                                  actionsText: "OK 👍",
                                 ),
                               );
                             });
@@ -242,15 +239,14 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
 
                       /*--- onChanged ---*/
                       onChanged: (String newInputPassword) {
-                        log("Eingabe: $newInputPassword");
+                        log("0242 - P00RegistrationScreen - Eingabe: $newInputPassword");
                         inputPassword = newInputPassword;
                         setState(() => inputPassword = newInputPassword);
                         if (newInputPassword == userPassword) {
                           log("Das Passwort $userPassword ist KORREKT!");
-                          // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
                           player.play(AssetSource("sound/sound06pling.wav"));
                         } else {
-                          log("Die Eingabe für das Passwort ist NICHT korrekt!");
+                          log("0249 - P00RegistrationScreen - Die Eingabe für das Passwort ist NICHT korrekt!");
                         }
                       },
                     ),
@@ -311,15 +307,14 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
 
                       /*--- onChanged ---*/
                       onChanged: (String newInputPassword) {
-                        log("Eingabe: $newInputPassword");
+                        log("0310 - P00RegistrationScreen - Eingabe: $newInputPassword");
                         inputPassword = newInputPassword;
                         setState(() => inputPassword = newInputPassword);
                         if (newInputPassword == userPassword) {
-                          log("Das Passwort $userPassword ist KORREKT!");
-                          // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
+                          log("0314 - P00RegistrationScreen - Das Passwort $userPassword ist KORREKT!");
                           player.play(AssetSource("sound/sound06pling.wav"));
                         } else {
-                          log("Die Eingabe für das Passwort ist NICHT korrekt!");
+                          log("0317 - P00RegistrationScreen - Die Eingabe für das Passwort ist NICHT korrekt!");
                         }
                       },
                     ),
@@ -398,15 +393,14 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
 
                       /*--- onChanged ---*/
                       onChanged: (String newInputPassword) {
-                        log("Eingabe: $newInputPassword");
+                        log("0396 - P00RegistrationScreen - Eingabe: $newInputPassword");
                         inputPassword = newInputPassword;
                         setState(() => inputPassword = newInputPassword);
                         if (newInputPassword == userPassword) {
-                          log("Das Passwort $userPassword ist KORREKT!");
-                          // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
+                          log("0400 - P00RegistrationScreen - Das Passwort $userPassword ist KORREKT!");
                           player.play(AssetSource("sound/sound06pling.wav"));
                         } else {
-                          log("Die Eingabe für das Passwort ist NICHT korrekt!");
+                          log("0403 - P00RegistrationScreen - Die Eingabe für das Passwort ist NICHT korrekt!");
                         }
                       },
                     ),
@@ -467,15 +461,14 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
 
                       /*--- onChanged ---*/
                       onChanged: (String newInputPassword) {
-                        log("Eingabe: $newInputPassword");
+                        log("0464 - P00RegistrationScreen - Eingabe: $newInputPassword");
                         inputPassword = newInputPassword;
                         setState(() => inputPassword = newInputPassword);
                         if (newInputPassword == userPassword) {
-                          log("Das Passwort $userPassword ist KORREKT!");
-                          // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
+                          log("0474 - P00RegistrationScreen - Das Passwort $userPassword ist KORREKT!");
                           player.play(AssetSource("sound/sound06pling.wav"));
                         } else {
-                          log("Die Eingabe für das Passwort ist NICHT korrekt!");
+                          log("0478 - P00RegistrationScreen - Die Eingabe für das Passwort ist NICHT korrekt!");
                         }
                       },
                     ),
@@ -486,67 +479,46 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                     /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight8,
                     /*--------------------------------- Registrieren-Button ---*/
-                    GestureDetector(
-                      onTap: () {
-                        //   if (_registrationformKey.currentState!.validate()) {
-                        //     log("Alles richtig gemacht :) ");
-                        //     ScaffoldMessenger.of(context)
-                        //         .showSnackBar(const SnackBar(
-                        //       content: Text("Alle Felder korrekt ausgefüllt!"),
-                        //     ));
-                        //   } else {
-                        //     log("Da sind noch Fehler in den Feldern");
-                        //     ScaffoldMessenger.of(context)
-                        //         .showSnackBar(const SnackBar(
-                        //       content: Text("Bitte Felder richtig ausfüllen!"),
-                        //     ));
-                        //   }
+                    WbButtonUniversal(
+                      wbColor: wbColorButtonBlue,
+                      icon: Icons.app_registration_outlined,
+                      wbButtonUniversalText: "Jetzt REGISTRIEREN",
+                      width: 280,
+                      onButtonTap: () {
+                        if (_registrationformKey.currentState!.validate()) {
+                          log("0496 - P00RegistrationScreen - Alles richtig gemacht");
+                          player.play(AssetSource("sound/sound06pling.wav"));
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
+                            backgroundColor: wbColorButtonGreen,
+                            content: Text(
+                              "Die Registrierung wird jetzt durchgeführt ... Bitte warten ...",
+                              style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ));
+                        } else {
+                          log("0511 - P00RegistrationScreen - Da sind noch Fehler in den Feldern");
+                          player
+                              .play(AssetSource("sound/sound03enterprise.wav"));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              backgroundColor: wbColorButtonDarkRed,
+                              content: Text(
+                                "Bitte noch die angezeigten Fehler korrigieren ... 😉",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          );
+                        }
                       },
-                      child: WbButtonUniversal(
-                          wbColor: wbColorButtonBlue,
-                          icon: Icons.app_registration_outlined,
-                          wbButtonUniversalText: "Jetzt REGISTRIEREN",
-                          onButtonTap: () {
-                            if (_registrationformKey.currentState!.validate()) {
-                              log("Alles richtig gemacht");
-                              player
-                                  .play(AssetSource("sound/sound06pling.wav"));
-
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(const SnackBar(
-                                backgroundColor: wbColorButtonGreen,
-                                content: Text(
-                                  "Die Registrierung wird jetzt durchgeführt ... Bitte warten ...",
-                                  style: TextStyle(
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ));
-                            } else {
-                              log("Da sind noch Fehler in den Feldern");
-                              // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
-                              ///player.play(AssetSource("sound/sound05xylophon.wav"));
-                              // player.play(AssetSource("sound/sound06pling.wav"));
-                              player.play(
-                                  AssetSource("sound/sound03enterprise.wav"));
-
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(const SnackBar(
-                                backgroundColor: wbColorButtonDarkRed,
-                                content: Text(
-                                  "Bitte noch die angezeigten Fehler korrigieren ... 😉",
-                                  style: TextStyle(
-                                    fontSize: 28,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ));
-                            }
-                          },
-                          width: 280),
                     ),
                     /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight16,

@@ -25,17 +25,25 @@ class MainApp extends StatelessWidget {
   √ WbHomePage: WbInfoContainer als Footer programmieren √
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
-  - GestureDetector in allen Button-Widgets fixen - Beispiel: WbButtonUniversal2
+  - GestureDetector in allen Button-Widgets fixen:
+    √ WBGreenButton      - Beispiel: Login-Button √
+    √ WbButtonUniversal2 - Beispiel: Workbuddy beenden √ 
+    - WbButtonUniversal  - Beispiel: Jetzt registrieren
   √ "Spacer(flex: 1)" sind das Problem, warum ich nicht mehr die Seite öffnen kann! √
-  - "WbDropdownButtonFormfield" kann gelöscht werden 
-  - "WbDropDownMenu2" kann gelöscht werden
-  - "SplashScreen" kann gelöscht werden
+  - kann gelöscht werden: "WbDropdownButtonFormfield" 
+  - kann gelöscht werden: "WbDropDownMenu2"
+  - kann gelöscht werden: "SplashScreen"
   - CompanyScreen: leadingIconsInMenu hat hier keine Auswikung // todo 0233 + 0406
-  
+
+  √ Datums-Picker (Geburtstage, etc.) installiert: time_picker_spinner_pop_up: ^2.0.0 √
+    x - flutter_rounded_date_picker: ^3.0.4 (nicht installiert)
+    x - flutter_holo_date_picker: ^2.0.0    (nicht installiert)
+    x - progressive_time_picker: ^1.0.1    (nur Zeitspanne, aber gut aussehend)
+  - Alter anhand vom Geburtstag automatisch berechnen und im Feld eintragen - 0491 - CompanyScreen  
   - Checklisten-App in WorkBuddy einbauen - ToDo-Liste (Aufgaben)
   - Im Validator "Die Paßwörter sind NICHT gleich!" funzt so nicht! 0050 - Validator
   - App-Icon neu erstellen (Android-Bug? - in Android nur schwarz)
-- Splash-Screen neu erstellen (Android-Bug? - in Android beschnitten)
+- Splash-Screen neu erstellen (Android-Bug? - in Android beschnitten) - wird nicht besser - selber programmmieren
 
 * WbInfoContainer
   - Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927

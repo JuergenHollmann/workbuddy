@@ -435,12 +435,11 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Login-Button ---*/
           WBGreenButton(
             onTap: () {
-              // HIER drin bringt der Aufruf JETZT WAS!
+              // GestureDetector gefixt: HIER drin bringt der Aufruf JETZT WAS!
               /*--------------------------------- checkUserAndPassword ---*/
               log("0440 - P01LoginScreen - überprüfe Benutzer UND Passwort");
               if (userName == "Jürgen" && userPassword == "Pass") {
                 log("0442 - P01LoginScreen - nach Prüfung wechsle zur MainSelectionScreen");
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -463,9 +462,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                   ),
                 ));
                 /*--------------------------------- *** ---*/
-                //result = false;
               }
-              //return result;
             },
           ),
           /*--------------------------------- Abstand ---*/
