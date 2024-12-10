@@ -37,8 +37,8 @@ class MainApp extends StatelessWidget {
   - kann gelöscht werden: "WbDropDownMenu2"
   - kann gelöscht werden: "SplashScreen"
   - kann gelöscht werden: "WBRedButton"
-  - kann gelöscht werden: "ContactMenuX"
-  - kann gelöscht werden: "ContactScreenX"
+  √ ist gelöscht worden: "ContactMenuX" √
+  √ ist gelöscht worden: "ContactScreenX" √
 
   - CompanyScreen: leadingIconsInMenu hat hier keine Auswikung // todo 0233 + 0406
 
