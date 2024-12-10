@@ -1,11 +1,12 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:workbuddy/backup_screens/email_screen_p043.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
-import 'package:workbuddy/backup_screens/email_screen_p043.dart';
 import 'package:workbuddy/shared/widgets/wb_buttons_uni_with_image_button.dart';
+import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 
 class CommunicationMenu extends StatelessWidget {
@@ -14,7 +15,7 @@ class CommunicationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     log("0016 - CommunicationMenu - wird benutzt");
-    
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 250, 242, 242),
       /*--------------------------------- *** ---*/
@@ -51,13 +52,13 @@ class CommunicationMenu extends StatelessWidget {
               child: ListView(
                 padding: const EdgeInsets.all(8),
                 children: [
-                  /*--------------------------------- WbButtonUniversal2 - Telefonanruf ---*/
+                  /*--------------------------------- WbButtonsUniWithImageButton - Telefonanruf ---*/
                   WbButtonsUniWithImageButton(
                     wbColor: wbColorButtonDarkRed,
                     wbIcon: Icons.phone_forwarded,
                     wbIconSize40: 40,
                     wbText: "Kontakt anrufen",
-                    wbFontSize24: 24,
+                    wbFontSize24: 22,
                     wbWidth276: 276,
                     wbHeight90: 90,
                     wbHeightAssetImage90: 90,
@@ -66,7 +67,18 @@ class CommunicationMenu extends StatelessWidget {
                     ),
                     wbImageButtonRadius12: 12,
                     wbOnTapTextButton: () {
-                      log("0065_communication_menu"); // nur das Smartphone starten:
+                      log("0069 - CommunicationMenu - großer roter Button angeklickt"); // nur das Smartphone starten
+                      showDialog(
+                        context: context,
+                        builder: (context) =>
+                            const WbDialogAlertUpdateComingSoon(
+                          headlineText: "Kontakt anrufen?",
+                          contentText:
+                              "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CM-0090",
+                          actionsText: "OK 👍",
+                        ),
+                      );
+                      /*--------------------------------- *** ---*/
                       // Navigator.push(
                       //   context,
                       //   MaterialPageRoute(
@@ -75,7 +87,18 @@ class CommunicationMenu extends StatelessWidget {
                       // );
                     },
                     wbOnTapImageButton: () {
-                      log("0074_communication_menu"); // erst Kontakt auswählen, dann anrufen:
+                      log("0069 - CommunicationMenu - Icon Kontakt anrufen angeklickt"); // erst Kontakt auswählen, dann anrufen:
+                      showDialog(
+                        context: context,
+                        builder: (context) =>
+                            const WbDialogAlertUpdateComingSoon(
+                          headlineText: "Kontakt anrufen?",
+                          contentText:
+                              "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CM-0090",
+                          actionsText: "OK 👍",
+                        ),
+                      );
+                      /*--------------------------------- *** ---*/
                       // Navigator.push(
                       //   context,
                       //   MaterialPageRoute(
@@ -84,25 +107,6 @@ class CommunicationMenu extends StatelessWidget {
                       // );
                     },
                   ),
-                  /*--------------------------------- *** ---*/
-                  // WbButtonUniversal2(
-                  //   wbColor: wbColorButtonDarkRed,
-                  //   wbIcon: Icons.phone_forwarded,
-                  //   wbIconSize40: 40,
-                  //   wbText: "Einen Telefonanruf starten",
-                  //   wbFontSize24: 24,
-                  //   wbWidth155: 398,
-                  //   wbHeight60: 90,
-                  //   wbOnTap: () {
-                  //     log("0059_communication_menu");
-                  //     Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //         builder: (context) => const ContactScreen(),
-                  //       ),
-                  //     );
-                  //   },
-                  // ),
                   /*--------------------------------- *** ---*/
                   wbSizedBoxHeight8,
                   /*--------------------------------- *** ---*/
@@ -114,7 +118,7 @@ class CommunicationMenu extends StatelessWidget {
                     wbIcon: Icons.phonelink_ring_outlined,
                     wbIconSize40: 40,
                     wbText: "WhatsApp versenden",
-                    wbFontSize24: 24,
+                    wbFontSize24: 22,
                     wbWidth276: 276,
                     wbHeight90: 90,
                     wbHeightAssetImage90: 90,
@@ -123,7 +127,18 @@ class CommunicationMenu extends StatelessWidget {
                     ),
                     wbImageButtonRadius12: 12,
                     wbOnTapTextButton: () {
-                      log("0101_communication_menu");
+                      log("0031 - CommunicationMenu - großer grüner WhatsApp Button angeklickt");
+                      showDialog(
+                        context: context,
+                        builder: (context) =>
+                            const WbDialogAlertUpdateComingSoon(
+                          headlineText: "WhatsApp versenden?",
+                          contentText:
+                              "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CM-0136",
+                          actionsText: "OK 👍",
+                        ),
+                      );
+                      /*--------------------------------- *** ---*/
                       // Navigator.push(
                       //   context,
                       //   MaterialPageRoute(
@@ -132,7 +147,18 @@ class CommunicationMenu extends StatelessWidget {
                       // );
                     },
                     wbOnTapImageButton: () {
-                      log("0110_communication_menu");
+                      log("0150 - CommunicationMenu - großer grüner WhatsApp Button angeklickt");
+                      showDialog(
+                        context: context,
+                        builder: (context) =>
+                            const WbDialogAlertUpdateComingSoon(
+                          headlineText: "WhatsApp versenden?",
+                          contentText:
+                              "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CM-0150",
+                          actionsText: "OK 👍",
+                        ),
+                      );
+                      /*--------------------------------- *** ---*/
                       // Navigator.push(
                       //   context,
                       //   MaterialPageRoute(
@@ -143,17 +169,16 @@ class CommunicationMenu extends StatelessWidget {
                   ),
                   /*--------------------------------- *** ---*/
                   wbSizedBoxHeight8,
-                  /*--------------------------------- *** ---*/
+                  /*--------------------------------- Divider ---*/
                   const Divider(
                       thickness: 3, height: 32, color: wbColorLogoBlue),
                   /*--------------------------------- E-Mail senden ---*/
-
                   WbButtonsUniWithImageButton(
                     wbColor: wbColorButtonBlue,
                     wbIcon: Icons.forward_to_inbox_outlined,
                     wbIconSize40: 40,
                     wbText: "E-Mail versenden",
-                    wbFontSize24: 24,
+                    wbFontSize24: 22,
                     wbWidth276: 276,
                     wbHeight90: 90,
                     wbHeightAssetImage90: 90,
@@ -181,32 +206,7 @@ class CommunicationMenu extends StatelessWidget {
                     },
                   ),
                   /*--------------------------------- *** ---*/
-                  wbSizedBoxHeight8,
-                  /*--------------------------------- *** ---*/
-                  // const Divider(
-                  //     thickness: 3, height: 32, color: wbColorLogoBlue),
-
-                  // WbButtonUniversal2(
-                  //   wbColor: wbColorButtonBlue,
-                  //   wbIcon: Icons.forward_to_inbox_outlined,
-                  //   wbIconSize40: 40,
-                  //   wbText: "Eine E-Mail versenden",
-                  //   wbFontSize24: 24,
-                  //   wbWidth155: 398,
-                  //   wbHeight60: 90,
-                  //   wbOnTap: () {
-                  //     log("communication_menu.dart - 0110");
-                  //     Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //         builder: (context) => const ContactScreen(),
-                  //       ),
-                  //     );
-                  //   },
-                  // ),
-
-                  /*--------------------------------- *** ---*/
-                  wbSizedBoxHeight8,
+                  wbSizedBoxHeight16,
                   /*--------------------------------- *** ---*/
                   const Divider(
                       thickness: 3, height: 32, color: wbColorLogoBlue),
@@ -217,36 +217,40 @@ class CommunicationMenu extends StatelessWidget {
                     wbIconSize40: 40,
                     wbText:
                         "Möchtest Du\nMEHR Funktionen?\nSchreibe einfach eine\nE-Mail an den Entwickler.",
-                    wbFontSize24: 15,
+                    wbFontSize24: 14,
                     wbWidth155: 398,
-                    wbHeight60: 130,
-                    wbOnTap: () {},
+                    wbHeight60: 110,
+                    wbOnTap: () {
+                      log("0249 - CommunicationMenu - großer rosa Entwickler Button angeklickt");
+                      showDialog(
+                        context: context,
+                        builder: (context) =>
+                            const WbDialogAlertUpdateComingSoon(
+                          headlineText: "Mehr Funktionen?",
+                          contentText:
+                              "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: CM-0249",
+                          actionsText: "OK 👍",
+                        ),
+                      );
+                    },
                   ),
                   /*--------------------------------- *** ---*/
                   const SizedBox(height: 8),
+                  /*--------------------------------- Divider ---*/
+                  const Divider(
+                      thickness: 3, height: 32, color: wbColorLogoBlue),
                   /*--------------------------------- *** ---*/
                 ],
               ),
             ),
-            /*--------------------------------- *** ---*/
-
-
-
-
-
-            /*--------------------------------- MiniFooter ---*/
-            // const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
-            // const Column(
-            //   children: [
-            //     Text("WorkBuddy • save time and money • Version 0.001"),
-            //   ],
-            // ),
-            // const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
-            /*--------------------------------- MiniFooter ENDE ---*/
+            // /*--------------------------------- WbInfoContainer ---*/
+            // WbInfoContainer(
+            //   infoText: "WorkBuddy • Free-BASIC-Version 0.003",
+            // )
+            // /*--------------------------------- WbInfoContainer ENDE ---*/
           ],
         ),
       ),
-      //   ),
     );
   }
 }

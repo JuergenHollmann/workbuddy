@@ -26,14 +26,15 @@ class MainApp extends StatelessWidget {
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
   - GestureDetector in allen Button-Widgets fixen:
-    √ WBGreenButton      - Beispiel: Login-Button √
-    - WbButtonUniversal2 - Beispiel: Workbuddy beenden 
-    - WbButtonUniversal  - Beispiel: Jetzt registrieren
-  √ "Spacer(flex: 1)" sind das Problem, warum ich nicht mehr die Seite öffnen kann! √
+    √ WBGreenButton        - Beispiel: Login-Button √
+    - WbButtonUniversal2   - Beispiel: Workbuddy beenden 
+    - WbButtonUniversal    - Beispiel: Jetzt registrieren
+  √ "Spacer(flex: 1)" waren das Problem, warum ich nicht mehr die Seite öffnen konnte! √
   - kann gelöscht werden: "WbDropdownButtonFormfield" 
   - kann gelöscht werden: "WbDropDownMenu2"
   - kann gelöscht werden: "SplashScreen"
   - CompanyScreen: leadingIconsInMenu hat hier keine Auswikung // todo 0233 + 0406
+  - CommunicationMenu - großer rosa Entwickler Button angeklickt - CM-0249
 
   √ Datums-Picker (Geburtstage, etc.) installiert: time_picker_spinner_pop_up: ^2.0.0 √
     x - flutter_rounded_date_picker: ^3.0.4 (nicht installiert)
@@ -53,6 +54,14 @@ class MainApp extends StatelessWidget {
 * Drawer
   - Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist.
   - Im Drawer eine Liste anlegen (wie ein Inhaltsverzeichnis - nach Themen geordnet), die eine direkte Navigation auf alle möglichen Seiten durch anklicken erstellt. Hinweis: WbButtonUniversal2 
+
+* Firebase Services:
+  - Mit Analytics werden Nutzungs- und Verhaltensdaten für meine App erfasst   → firebase_analytics
+  - Authentication zur Identifizierung meiner User                             → firebase_auth
+  - Cloud Firestore-Datenbank zur Speicherung von Daten in der Cloud           → cloud_firestore
+  - Firebase Cloud Messaging-Client für Push-Nachrichten an meine User         → firebase_messaging
+  - Mit Cloud Storage - Bilder und Videos hochladen und teilen                 → firebase_storage
+  - Crashlytics - Fehlermeldungen und Abstürze der App auswerten               → firebase_crashlytics
 
   - ANDERE Schriftgrößen automatisch einstellen? Beispiel: iOS = 20 | Pixel8 = 27 | SamsungA05 = 21 (0513)
   - CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern

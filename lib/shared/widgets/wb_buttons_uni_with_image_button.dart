@@ -40,7 +40,7 @@ class WbButtonsUniWithImageButton extends StatelessWidget {
 
     return Row(
       children: [
-        /*-------------------------------------------------- Container - Button vorne ---*/
+        /*--------------------------------- Container - Button vorne ---*/
         Expanded(
           child: Container(
             width: wbWidth276,
@@ -65,8 +65,7 @@ class WbButtonsUniWithImageButton extends StatelessWidget {
                 ),
               ),
             ),
-
-            /*-------------------------------------------------- Gesture - TextButton vorne ---*/
+            /*--------------------------------- Gesture - TextButton vorne ---*/
             child: GestureDetector(
               onTap: wbOnTapTextButton,
               child: Column(
@@ -77,8 +76,7 @@ class WbButtonsUniWithImageButton extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
-
-                        // -------------------------------------------------- Icon - TextButton vorne ---*/
+                        /*--------------------------------- Icon - TextButton vorne ---*/
                         child: Icon(
                           wbIcon,
                           color: Colors.white,
