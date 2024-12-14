@@ -1,3 +1,8 @@
+/*
+Das kann später evtl. gelöscht werden: lib/shared/data/user.dart
+ */
+
+
 class User {
   String userName;
   String userPassword;

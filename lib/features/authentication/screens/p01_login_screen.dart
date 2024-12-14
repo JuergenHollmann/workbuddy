@@ -6,12 +6,14 @@ import 'package:workbuddy/backup_screens/main_selection_screen.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_dialog_2buttons.dart';
+import 'package:workbuddy/config/wb_imagebutton_no_text.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/authentication/logic/user_service.dart';
 import 'package:workbuddy/features/authentication/schema/server_user_response.dart';
 import 'package:workbuddy/features/authentication/schema/user.dart';
 import 'package:workbuddy/features/authentication/screens/p00_registration_screen.dart';
 import 'package:workbuddy/features/authentication/screens/user_screen.dart';
+import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 import 'package:workbuddy/shared/widgets/wb_green_button.dart';
 
 class P01LoginScreen extends StatefulWidget {
@@ -267,8 +269,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                   ),
                 ));
                 /*--------------------------------- *** ---*/
-                setState(() {
-                });
+                setState(() {});
               } else {
                 log("0274 - p01_login_screen - Die Eingabe für den Benutzername ist NICHT korrekt!");
               }
@@ -463,6 +464,65 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight16,
           /*--------------------------------- Divider ---*/
+          WbDividerWithTextInCenter(
+            wbColor: wbColorButtonGreen,
+            wbText: "Login mit deinem Account?",
+            wbTextColor: wbColorButtonGreen,
+            wbFontSize12: 16,
+            wbHeight3: 4,
+          ),
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight8,
+          /*--------------------------------- Login intern mit Google ---*/
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(children: [
+              Expanded(
+                child: WbImageButtonNoText(
+                  wbColor: const Color.fromARGB(255, 209, 209, 209),
+                  wbImage: Image(image: AssetImage("assets/logo_google.png")),
+                  wbWidth60: 60,
+                  wbHeight60: 60,
+                  wbBorderRadius16: 16,
+                  hasShadow: true,
+                  wbOnTap: () {},
+                ),
+              ),
+                   SizedBox(width: 16),
+            
+              /*--------------------------------- Login intern mit Apple ---*/
+              Expanded(
+                child: WbImageButtonNoText(
+                  wbColor: wbColorButtonBlue,
+                  wbImage: Image(image: AssetImage("assets/logo_apple.png")),
+                  wbWidth60: 60,
+                  wbHeight60: 60,
+                  wbBorderRadius16: 16,
+                  hasShadow: true,
+                  wbOnTap: () {},
+                ),
+              ),
+              SizedBox(width: 16),
+            
+              /*--------------------------------- Login intern mit WorkBuddy ---*/
+              Expanded(
+                child: WbImageButtonNoText(
+                  wbColor: wbColorButtonGreen,
+                  wbImage:
+                      Image(image: AssetImage("assets/workbuddy_glow_logo.png")),
+                  wbWidth60: 60,
+                  wbHeight60: 60,
+                  wbBorderRadius16: 16,
+                  hasShadow: true,
+                  wbOnTap: () {},
+                ),
+              ),
+            ]),
+          ),
+
+          /*--------------------------------- Abstand ---*/
+          wbSizedBoxHeight16,
+          /*--------------------------------- Divider ---*/
           const Divider(thickness: 4, color: wbColorButtonGreen),
           /*--------------------------------- Text ---*/
           GestureDetector(
@@ -518,14 +578,6 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           ),
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight16,
-          // /*--------------------------------- WbDividerWithTextInCenter ---*/
-          // const WbDividerWithTextInCenter(
-          //   wbColor: wbColorButtonDarkRed,
-          //   wbText: "WorkBuddy • Version 0.002",
-          //   wbTextColor: wbColorButtonDarkRed,
-          //   wbFontSize12: 12,
-          //   wbHeight3: 3,
-          // )
           /*--------------------------------- ENDE ---*/
         ],
       ),

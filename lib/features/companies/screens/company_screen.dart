@@ -1,9 +1,11 @@
 import 'dart:developer';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:workbuddy/backup_screens/main_selection_screen.dart';
-import 'package:workbuddy/config/wb_button_universal.dart';
+import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
+import 'package:workbuddy/config/wb_imagebutton_no_text.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
 import 'package:workbuddy/config/wb_text_form_field_text_only.dart';
@@ -33,6 +35,8 @@ String inputCompanyVNContactPerson =
 String inputCompanyNNContactPerson = ""; // nur für die "onChanged-Funktion"
 
 class _CompanyScreenState extends State<CompanyScreen> {
+  late AudioPlayer player = AudioPlayer();
+
   @override
   Widget build(BuildContext context) {
     log("0038 - CompanyScreen - aktiviert");
@@ -508,6 +512,22 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     ),
                     /*--------------------------------- Notizen zum Ansprechpartner ---*/
                     wbSizedBoxHeight16,
+                    /*--------------------------------- WbImageButtonNoText ---*/
+                    WbImageButtonNoText(
+                      wbColor: wbColorButtonBlue,
+                      wbImage: Image(
+                          image: AssetImage("assets/workbuddy_glow_logo.png")),
+                      wbWidth60: 60,
+                      wbHeight60: 60,
+                      wbBorderRadius16: 16,
+                      hasShadow: false,
+                      wbOnTap: () {
+                        log("0525 - CompanyScreen - WbImageButtonNoText angeklickt");
+                      },
+                    ),
+                    /*--------------------------------- *** ---*/
+                    wbSizedBoxHeight16,
+
                     WbTextFormField(
                       labelText: "Notizen zum Ansprechpartner",
                       labelFontSize20: 20,
@@ -953,24 +973,40 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     const Divider(thickness: 3, color: wbColorLogoBlue),
                     wbSizedBoxHeight8,
                     /*--------------------------------- Button Firma speichern ---*/
-                    GestureDetector(
-                      onTap: () {
-                        log("Auf - CompanyScreen - Firma speichern - aktiviert");
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const MainSelectionScreen(),
-                          ),
-                        );
-                      },
-                      child: WbButtonUniversal(
+                    WbButtonUniversal2(
                         wbColor: wbColorButtonGreen,
-                        icon: Icons.save_rounded,
-                        wbButtonUniversalText: "Firma SPEICHERN",
-                        onButtonTap: () {},
-                        width: 398,
-                      ),
-                    ),
+                        wbIcon: Icons.save_rounded,
+                        wbIconSize40: 40,
+                        wbText: "Firma SPEICHERN",
+                        wbFontSize24: 24,
+                        wbWidth155: 398,
+                        wbHeight60: 60,
+                        wbOnTap: () {
+                          log("0965 - CompanyScreen - Firma speichern - geklick");
+                          /*--------------------------------- Snackbar ---*/
+
+                          player.play(AssetSource("sound/sound06pling.wav"));
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
+                            backgroundColor: wbColorButtonGreen,
+                            content: Text(
+                              "Die Speicherung wird jetzt durchgeführt ... Bitte warten ...",
+                              style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ));
+
+                          /*--------------------------------- Navigator.push ---*/
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const MainSelectionScreen(),
+                            ),
+                          );
+                        }),
                     /*--------------------------------- *** ---*/
                     wbSizedBoxHeight16,
                     const Divider(thickness: 3, color: wbColorLogoBlue),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 
@@ -19,6 +21,8 @@ class WbDividerWithTextInCenter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("0022 - WbDividerWithTextInCenter - aktiviert");
+    
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

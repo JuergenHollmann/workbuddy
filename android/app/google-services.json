@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "864507836729",
+    "project_id": "workbuddy-testapp",
+    "storage_bucket": "workbuddy-testapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864507836729:android:4e634264c6ba39e4e110e8",
+        "android_client_info": {
+          "package_name": "com.work"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4M9eL95YqEX-soFW_Q4AHow3TkUDPBUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,12 +1,36 @@
 import 'dart:developer';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:workbuddy/features/home/screens/home_screen.dart';
+// import 'package:workbuddy/shared/repositories/auth_repository.dart';
+// import 'package:workbuddy/shared/repositories/database_repository.dart';
+// import 'package:workbuddy/shared/repositories/firebase_auth_repository.dart';
+// import 'package:workbuddy/shared/repositories/mock_database.dart';
 
-void main() => runApp(const MainApp());
+import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // final DatabaseRepository databaseRepository = MockDatabase();
+  // final AuthRepository authRepository = FirebaseAuthRepository();
+
+  runApp(MainApp(
+    // databaseRepository: databaseRepository,
+    // authRepository: authRepository,
+  ));
+}
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  const MainApp({
+    super.key,
+    // required DatabaseRepository databaseRepository,
+    // required AuthRepository authRepository,
+  });
   /*--------------------------------- *** ---*/
   static const appTitle = 'WorkBuddy • save time and money!';
   /*--------------------------------- *** ---*/
@@ -21,10 +45,43 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+
+  /*--------------------------------- Projekt 20: Firerbase Auth ---
+  1) AuthRepository
+  √ Implementiere ein AuthRepository in deiner App.
+  Dieses soll Methoden bieten, um an einen Benutzer zu kommen
+  und Benutzer zu registrieren und anzumelden.
+  Implementiere außerdem ein MockAuthRepository, das das AuthRepository implementiert
+  und den Login etc. ermöglicht.
+  Hinweis: Nutze die Anleitung im Classroom und den Code der Beispiel-App!
+  Hinweis: Wenn du bereits ein Repository für Login und Registrierung nutzt,
+  musst du nur den Code dafür kopieren.
+  Erzeuge dann an der Wurzel deiner App eine Instanz dieser Klasse
+  und reiche sie durch den Widget Tree an alle Widgets (Screens) weiter,
+  die sie benötigen (z.B. zum Login oder Logout).
+  Nutze die Funktionen deines AuthRepository nun in deinen Screens.
+  Wie sieht dein AuthRepository und dein MockAuthRepository aus? Kopiere den Code.
+  Deine Antwort:
+
+  2) Binde nun Firebase Auth ein.
+  Baue dies in ein FirebaseAuthRepository ein, das AuthRepository implementiert.
+  In diesem sollst du FirebaseAuth verwenden.
+  Ermögliche es, dass der Benutzer sich einloggt.
+  Reagiere außerdem im FirebaseAuthRepository auf den Stream authStateChanges
+  und gib die Benutzerdaten weiter.
+  Reagiere in der UI mit einem StreamBuilder, sodass du deine Nutzer je nach Login-Status
+  auf den LoginScreen bzw. deinen Hauptscreen leiten kannst.
+  Hinweis: Nutze die Anleitung im Classroom und den Code der Beispiel-App!
+  Wie sieht dein Code jetzt aus? Kopiere ihn in das Antwortfeld.
+
+* Firebase:
+  √ für iOS muss im ios/Podfile ---> platform :ios, '13.0' eingestellt werden √ 
+
   /*--------------------------------- TODO's ---
   √ WbHomePage: WbInfoContainer als "Footer" programmieren √
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
+  - WbImageButtonNoText: Abfrage ob mit oder ohne Schatten - 0038
   - GestureDetector in allen Button-Widgets fixen:
     √ WBGreenButton        - Beispiel: Login-Button √
     √ WbButtonsUniWithImageButton √
@@ -33,6 +90,8 @@ class MainApp extends StatelessWidget {
     - WbButtonUniversal    - Beispiel: Jetzt registrieren
   √ "Spacer(flex: 1)" waren das Problem, warum ich nicht mehr die Seite öffnen konnte! √
   
+  - Das kann später evtl. gelöscht werden: lib/shared/data/user.dart
+  - kann gelöscht werden: "WbDividerWithSmallTextCenter"
   - kann gelöscht werden: "WbDropdownButtonFormfield" 
   - kann gelöscht werden: "WbDropDownMenu2"
   - kann gelöscht werden: "SplashScreen"
@@ -115,4 +174,4 @@ class MainApp extends StatelessWidget {
   - Den GestureDetector nicht "doppelt" benutzen, sondern die Funktion in den Button-Widget-Vorlagen richtig übergeben und nur einmal nutzen.
   - Für die Arbeit im Team nicht nur Buttons (ohne Funktion) als Platzhalter anlegen, sondern dann einen Hinweis ("showDialog" oder "snackBar") anzeigen.
   *--------------------------------- *** ---*/
-
+*/

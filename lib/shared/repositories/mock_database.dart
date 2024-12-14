@@ -1,7 +1,8 @@
 // import 'dart:developer';
 
 // import 'package:workbuddy/features/authentication/screens/p01_login_screen.dart';
-// import 'package:workbuddy/shared/data/user.dart';
+// //import 'package:workbuddy/shared/data/user.dart';
+// import 'package:workbuddy/shared/models/user_data.dart';
 
 // import 'database_repository.dart';
 
@@ -67,7 +68,7 @@
 //   @override
 //   Future<String> getUser() async {
 //     await Future.delayed(const Duration(seconds: 1));
-//         User getUser = User(userName: userName);
+//     User getUser = User(userName: userName);
 //     return null; //_users;
 //   }
 
@@ -96,9 +97,9 @@
 // /*--------------------------------------- getAllUsers ---*/
 // // Alle vorhandenen User zurückgeben.
 //   @override
-// //Future<List<User>> getAllUsers() { // Future<List<String>>
+//   // Future<List<User>> getAllUsers() async {//O
+//     Future<List<UserData>> getAllUsers() async {
 
-//   Future<List<User>> getAllUsers() async {
 //     await Future.delayed(const Duration(seconds: 1));
 //     return Future.value(_users);
 //   }

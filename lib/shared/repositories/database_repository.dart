@@ -4,7 +4,8 @@ Momentan existieren 2 "class User" Modelle für userName und UserPasswort:
 - shared/data/user.dart'; <-- diese wird benutzt --
 */
 
-import 'package:workbuddy/shared/data/user.dart';
+//import 'package:workbuddy/shared/data/user.dart';
+import 'package:workbuddy/shared/models/user_data.dart';
 
 abstract class DatabaseRepository {
   /*--------------------------------------- Login ---*/
@@ -28,7 +29,9 @@ abstract class DatabaseRepository {
   Future<String> deleteUser();
   /*--------------------------------------- getAllUsers ---*/
   /* Alle vorhandenen User zurückgeben */
-  Future<List<User>> getAllUsers();
+  //Future<List<User>> getAllUsers();//O
+    Future<List<UserData>> getAllUsers();
+
   /*--------------------------------------- Logout ---*/
   Future<void> logout();
 
