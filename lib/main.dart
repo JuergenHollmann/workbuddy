@@ -15,7 +15,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  /*--------------------------------- *** ---*/
   // final DatabaseRepository databaseRepository = MockDatabase();
   // final AuthRepository authRepository = FirebaseAuthRepository();
 
@@ -91,14 +91,15 @@ class MainApp extends StatelessWidget {
     - WbButtonUniversal    - Beispiel: Jetzt registrieren
   √ "Spacer(flex: 1)" waren das Problem, warum ich nicht mehr die Seite öffnen konnte! √
   
-  - Das kann später evtl. gelöscht werden: lib/shared/data/user.dart
+  - kann später evtl. gelöscht werden: lib/shared/data/user.dart
   - kann gelöscht werden: "WbDividerWithSmallTextCenter"
   - kann gelöscht werden: "WbDropdownButtonFormfield" 
   - kann gelöscht werden: "WbDropDownMenu2"
   - kann gelöscht werden: "SplashScreen"
-  √ ist gelöscht worden: "WBRedButton" √
-  √ ist gelöscht worden: "ContactMenuX" √
-  √ ist gelöscht worden: "ContactScreenX" √
+  √ wurde gelöscht: "WBRedButton" √
+  √ wurde gelöscht: "ContactMenuX" √
+  √ wurde gelöscht: "ContactScreenX" √
+  √ wurde gelöscht: "WbButtonUniShadow" √
 
   - CompanyScreen: leadingIconsInMenu hat hier keine Auswikung // todo 0233 + 0406
 
@@ -107,10 +108,16 @@ class MainApp extends StatelessWidget {
   - WhatsApp direkt versenden                     - Update CM-0150
   - mehr Funktionen - E-Mail an den Entwickler    - Update CM-0249
   - mehr Funktionen - E-Mail an den Entwickler    - Update CM-0132
+  - mehr Funktionen - E-Mail an den Entwickler    - Update AM-0249
   - Alle Kontakte zeigen                          - Update CM-0098
   - Mit Google-Account einloggen                  - Update LS-0495
   - Mit Apple-Account einloggen                   - Update LS-0573
   - Mit WorkBuddy-Account einloggen               - Update LS-0555
+  - Alle Ausgaben als Liste zeigen                - Update AM-0115
+  - Alle Einnahmen als Liste zeigen               - Update AM-0146
+  - Alle Ausgaben suchen und finden               - Update AM-0180
+  - Alle Einnahmen suchen und finden              - Update AM-0212
+
 
   √ Datums-Picker (Geburtstage, etc.) installiert: time_picker_spinner_pop_up: ^2.0.0 √
     x - flutter_rounded_date_picker: ^3.0.4 (nicht installiert)

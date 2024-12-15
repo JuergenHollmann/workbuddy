@@ -35,82 +35,75 @@ class WbButtonUniversal2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     log("0037 - WbButtonUniversal2 - aktiviert");
-    /*--------------------------------- *** ---*/
+    /*--------------------------------- GestureDetector ---*/
     return GestureDetector(
       onTap: wbOnTap,
-      // Standard-Padding damit alle Schatten außen herum zu sehen sind:
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(2, 0, 12, 0),
-        child: Container(
-          width: wbWidth155,
-          height: wbHeight60,
-          decoration: ShapeDecoration(
-            shadows: const [
-              BoxShadow(
-                color: Colors.black,
-                blurRadius: 8,
-                offset: Offset(4, 4),
-                spreadRadius: 0,
-              )
-            ],
-            color: wbColor,
-            shape: RoundedRectangleBorder(
-              side: const BorderSide(
-                width: 2,
-                color: Colors.white,
-              ),
-              borderRadius: BorderRadius.circular(
-                16,
-              ),
+      /*--------------------------------- Container ---*/
+      child: Container(
+        width: wbWidth155,
+        height: wbHeight60,
+        decoration: ShapeDecoration(
+          shadows: const [
+            BoxShadow(
+              color: Colors.black,
+              blurRadius: 8,
+              offset: Offset(4, 4),
+              spreadRadius: 0,
+            )
+          ],
+          color: wbColor,
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(
+              width: 2,
+              color: Colors.white,
+            ),
+            borderRadius: BorderRadius.circular(
+              16,
             ),
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    /*--------------------------------- Icon ---*/
-                    child: Icon(
-                      wbIcon,
-                      color: Colors.white,
-                      size: wbIconSize40,
-                      shadows: const [
-                        BoxShadow(
-                          color: Colors.black,
-                          blurRadius: 8,
-                          offset: Offset(4, 4),
-                          spreadRadius: 0,
-                        )
-                      ],
-                    ),
-                  ),
-                  Text(
-                    maxLines: null,
-                    wbText,
-                    style: TextStyle(
-                      color: Colors.white,
-                      shadows: const [
-                        BoxShadow(
-                          color: Colors.black,
-                          blurRadius: 8,
-                          offset: Offset(4, 4),
-                          spreadRadius: 0,
-                        )
-                      ],
-                      fontSize: wbFontSize24,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 2, // Zwischenraum der Buchtstaben
-                    ),
-                  ),
+        ),
+        /*--------------------------------- Inhalt des Buttons ---*/
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              /*--------------------------------- Icon ---*/
+              child: Icon(
+                wbIcon,
+                color: Colors.white,
+                size: wbIconSize40,
+                shadows: const [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 8,
+                    offset: Offset(4, 4),
+                    spreadRadius: 0,
+                  )
                 ],
               ),
-            ],
-          ),
+            ),
+            /*--------------------------------- Text ---*/
+            Text(
+              maxLines: null,
+              wbText,
+              style: TextStyle(
+                color: Colors.white,
+                shadows: const [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 8,
+                    offset: Offset(4, 4),
+                    spreadRadius: 0,
+                  )
+                ],
+                fontSize: wbFontSize24,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 2, // Zwischenraum der Buchtstaben
+              ),
+            ),
+          ],
         ),
+        /*--------------------------------- *** ---*/
       ),
     );
   }

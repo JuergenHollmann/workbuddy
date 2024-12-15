@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/config/wb_button_universal.dart';
+import 'package:workbuddy/config/wb_button_uni_shadow.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
@@ -38,7 +38,7 @@ class AccountingMenu extends StatelessWidget {
               image: AssetImage("assets/workbuddy_glow_schriftzug.png"),
             ),
 
-            // ------------------------------------------------------- Buchhaltung-Menü ---
+            /*--------------------------------- Divider Buchhaltung ---*/
             const WbDividerWithTextInCenter(
               wbColor: wbColorLogoBlue,
               wbText: "Buchhaltung",
@@ -46,192 +46,210 @@ class AccountingMenu extends StatelessWidget {
               wbFontSize12: 28,
               wbHeight3: 3,
             ),
-            // ------------------------------------------------------- Listview mit AuswahlButtons ---
-
+            /*--------------------------------- Listview mit AuswahlButtons ---*/
             Expanded(
               child: ListView(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.fromLTRB(2, 0, 12, 0),
                 children: [
-                  //*-------------------------------------------------- Ausgabe buchen ---*/
-                  WbButtonUniversal(
-                    wbColor: wbColorButtonDarkRed,
-                    wbButtonUniversalText: "Ausgabe buchen",
-                    icon: Icons
-                        .payments_outlined, // credit_card, // add_shopping_cart,
-                    onButtonTap: () {
-                      log("0060 - AccountingMenu - Eine Ausgabe buchen - aktiviert");
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const AccountingScreen(
-                              startGroupValue: "Ausgabe"),
-                        ),
-                      );
-                    },
-                    width: 398,
-                  ),
-
-                  wbSizedBoxHeight16,
-
-                  //*-------------------------------------------------- Einnahme buchen ---*/
-                  GestureDetector(
-                    onTap: () {
-                      log("Auf - AccountingMenu - Eine Einnahme buchen - aktiviert");
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const AccountingScreen(
-                            startGroupValue: "Einnahme",
-                          ),
-                        ),
-                      );
-                    },
-                    child: WbButtonUniversal(
-                      wbColor: wbColorButtonGreen,
-                      wbButtonUniversalText: "Einnahme buchen",
-                      icon: Icons
-                          .add_card_outlined, // credit_score_outlined, //payments_outlined,
-                      onButtonTap: () {},
-                      /* das geht hier nur, weil es eine (leere) Funktion ist. */
-                      width: 398,
-                    ),
-                  ),
-
-                  // ---------- Übersicht aller Ausgaben ----------
-                  wbSizedBoxHeight8,
-                  const Divider(
-                      thickness: 3, height: 32, color: wbColorLogoBlue),
-
-                  GestureDetector(
-                    onTap: () {
-                      log("Auf - AccountingMenu - Übersicht aller Ausgaben - Update-Hinweis - AM116 - aktiviert");
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            const WbDialogAlertUpdateComingSoon(
-                          headlineText: 'Update-Hinweis - AM116',
-                          contentText:
-                              'Diese Funktion kommt bald in einem kostenlosen Update!',
-                          actionsText: "OK 👍",
-                        ),
-                      );
-                    },
-
-                    /* Dieser Button ist OHNE Icon (nur Text und Farbe) */
-                    // child: const WbButtonUniShadow(
-                    //     wbColor: wbColorButtonDarkRed,
-                    //     wbButtonUniShadowText: "Alle Ausgaben zeigen"),
-
-                    child: WbButtonUniversal(
-                      wbColor: wbColorAppBarBlue,
-                      wbButtonUniversalText: "Alle Ausgaben",
-                      icon: Icons.receipt_long_outlined,
-                      onButtonTap: () {},
-                      width: 398,
-                    ),
-                  ),
-
-                  // ---------- Übersicht aller Einnahmen ----------
-                  wbSizedBoxHeight16,
-                  //const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
-                  GestureDetector(
-                    onTap: () {
-                      log("Update-Hinweis - AM141");
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            const WbDialogAlertUpdateComingSoon(
-                          headlineText: 'Update-Hinweis - AM141',
-                          contentText:
-                              'Diese Funktion kommt bald in einem kostenlosen Update!',
-                          actionsText: "OK 👍",
-                        ),
-                      );
-                    },
-                    child: WbButtonUniversal(
-                      wbColor: wbColorAppBarBlue,
-                      wbButtonUniversalText: "Alle Einnahmen",
-                      icon: Icons.receipt_long_outlined,
-                      onButtonTap: () {},
-                      width: 398,
-                    ),
-                  ),
-
-                  // ---------- Ausgaben-Beleg finden ----------
-                  wbSizedBoxHeight8,
-                  const Divider(
-                      thickness: 3, height: 32, color: wbColorLogoBlue),
-                  GestureDetector(
-                    onTap: () {
-                      log("Update-Hinweis - AM164");
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            const WbDialogAlertUpdateComingSoon(
-                          headlineText: 'Update-Hinweis - AM164',
-                          contentText:
-                              'Diese Funktion kommt bald in einem kostenlosen Update!',
-                          actionsText: "OK 👍",
-                        ),
-                      );
-                    },
-                    child: WbButtonUniversal(
-                      wbColor: wbColorOrangeDarker,
-                      wbButtonUniversalText: "Ausgaben finden",
-                      icon: Icons.manage_search_outlined,
-                      onButtonTap: () {},
-                      width: 398,
-                    ),
-                  ),
-
-                  // ---------- Einnahme-Beleg finden ----------
-                  wbSizedBoxHeight16,
-                  // const Divider(thickness: 3, height: 32, color: wbColorLogoBlue),
-                  GestureDetector(
-                    onTap: () {
-                      log("Update-Hinweis - AM188");
-                      showDialog(
-                        context: context,
-                        builder: (context) =>
-                            const WbDialogAlertUpdateComingSoon(
-                          headlineText: 'Update-Hinweis - AM188',
-                          contentText:
-                              'Diese Funktion kommt bald in einem kostenlosen Update!',
-                          actionsText: "OK 👍",
-                        ),
-                      );
-                    },
-                    child: WbButtonUniversal(
-                      wbColor: wbColorOrangeDarker,
-                      wbButtonUniversalText: "Einnahmen finden",
-                      icon: Icons.query_stats, //receipt_long_outlined,
-                      onButtonTap: () {}, width: 398,
-                    ),
-                  ),
-
-                  wbSizedBoxHeight8,
-                  const Divider(
-                      thickness: 3, height: 32, color: wbColorLogoBlue),
-
+                  /*--------------------------------- Ausgabe buchen ---*/
                   WbButtonUniversal2(
-                    wbColor: const Color.fromARGB(255, 255, 102, 219),
-                    wbIcon: Icons.forward_to_inbox_outlined,
-                    wbIconSize40: 40,
-                    wbText:
-                        "Möchtest Du\nMEHR Funktionen?\nSchreibe einfach eine\nE-Mail an den Entwickler.",
-                    wbFontSize24: 15,
-                    wbWidth155: 398,
-                    wbHeight60: 130,
-                    wbOnTap: () {},
-                  ),
-
-                  const SizedBox(height: 8),
-
-                  // const Column(
-                  //   children: [
-                  //     Text("WorkBuddy - save time and money - Version 0.001"),
-                  //   ],
-                  // ),
+                      wbColor: wbColorButtonDarkRed,
+                      wbIcon: Icons.payments_outlined,
+                      wbIconSize40: 40,
+                      wbText: "Ausgabe buchen",
+                      wbFontSize24: 22,
+                      wbWidth155: 398, // hat hier keine Auswirkung
+                      wbHeight60: 80,
+                      wbOnTap: () {
+                        log("0064 - AccountingMenu - Eine Ausgabe buchen - angeklickt");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AccountingScreen(
+                                  startGroupValue: "Ausgabe"),
+                            ));
+                      }),
+                  /*--------------------------------- Abstand ---*/
+                  wbSizedBoxHeight16,
+                  /*--------------------------------- Einnahme buchen ---*/
+                  WbButtonUniversal2(
+                      wbColor: wbColorButtonGreen,
+                      wbIcon: Icons.add_card_outlined,
+                      wbIconSize40: 40,
+                      wbText: "Einnahme buchen",
+                      wbFontSize24: 22,
+                      wbWidth155: 398, // hat hier keine Auswirkung
+                      wbHeight60: 80,
+                      wbOnTap: () {
+                        log("0084 - AccountingMenu - Eine Einnahme buchen - angeklickt");
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AccountingScreen(
+                                  startGroupValue: "Einnahme"),
+                            ));
+                      }),
+                  /*--------------------------------- Abstand ---*/
+                  wbSizedBoxHeight8,
+                  const Divider(
+                      thickness: 3, height: 32, color: wbColorLogoBlue),
+                  /*--------------------------------- Ausgaben zeigen ---*/
+                  WbButtonUniversal2(
+                      wbColor: wbColorButtonDarkRed,
+                      wbIcon: Icons.receipt_long_outlined,
+                      wbIconSize40: 40,
+                      wbText: "Alle Ausgaben\nals Liste zeigen",
+                      wbFontSize24: 22,
+                      wbWidth155: 398, // hat hier keine Auswirkung
+                      wbHeight60: 80,
+                      wbOnTap: () {
+                        log('0106 - AccountingMenu - "Alle Ausgaben als Liste zeigen" - angeklickt');
+                        /*--------------------------------- showDialog ---*/
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: "Alle Ausgaben als Liste zeigen?",
+                            contentText:
+                                "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nUpdate AM-0115",
+                            actionsText: "OK 👍",
+                          ),
+                        );
+                        /*--------------------------------- showDialog ENDE ---*/
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //       builder: (context) => const AccountingScreen(
+                        //           startGroupValue: "Einnahme"),
+                        //     ));
+                      }),
+                  /*--------------------------------- Abstand ---*/
+                  wbSizedBoxHeight16,
+                  /*--------------------------------- Einnahmen zeigen ---*/
+                  WbButtonUniversal2(
+                      wbColor: wbColorButtonGreen,
+                      wbIcon: Icons.receipt_long_outlined,
+                      wbIconSize40: 40,
+                      wbText: "Alle Einnahmen\nals Liste zeigen",
+                      wbFontSize24: 22,
+                      wbWidth155: 398, // hat hier keine Auswirkung
+                      wbHeight60: 80,
+                      wbOnTap: () {
+                        log('0106 - AccountingMenu - "Alle Einnahmen als Liste zeigen" - angeklickt');
+                        /*--------------------------------- showDialog ---*/
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: "Alle Einnahmen als Liste zeigen?",
+                            contentText:
+                                "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nUpdate AM-0146",
+                            actionsText: "OK 👍",
+                          ),
+                        );
+                        /*--------------------------------- showDialog ENDE ---*/
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //       builder: (context) => const AccountingScreen(
+                        //           startGroupValue: "Einnahme"),
+                        //     ));
+                      }),
+                  /*--------------------------------- Abstand ---*/
+                  wbSizedBoxHeight8,
+                  const Divider(
+                      thickness: 3, height: 32, color: wbColorLogoBlue),
+                  /*--------------------------------- Ausgaben finden ---*/
+                  WbButtonUniversal2(
+                      wbColor: wbColorOrangeDarker,
+                      wbIcon: Icons.manage_search_outlined,
+                      wbIconSize40: 40,
+                      wbText: "Alle Ausgaben\nsuchen und finden",
+                      wbFontSize24: 22,
+                      wbWidth155: 398, // hat hier keine Auswirkung
+                      wbHeight60: 80,
+                      wbOnTap: () {
+                        log('0172 - AccountingMenu - "Alle Ausgaben suchen und finden" - angeklickt');
+                        /*--------------------------------- showDialog ---*/
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: "Alle Ausgaben suchen und finden?",
+                            contentText:
+                                "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nUpdate AM-0180",
+                            actionsText: "OK 👍",
+                          ),
+                        );
+                        /*--------------------------------- showDialog ENDE ---*/
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //       builder: (context) => const AccountingScreen(
+                        //           startGroupValue: "Einnahme"),
+                        //     ));
+                      }),
+                  /*--------------------------------- Abstand ---*/
+                  wbSizedBoxHeight16,
+                  /*--------------------------------- Einnahmen finden ---*/
+                  WbButtonUniversal2(
+                      wbColor: wbColorOrangeDarker,
+                      wbIcon: Icons.manage_search_outlined,
+                      wbIconSize40: 40,
+                      wbText: "Alle Einnahmen\nsuchen und finden",
+                      wbFontSize24: 22,
+                      wbWidth155: 398, // hat hier keine Auswirkung
+                      wbHeight60: 80,
+                      wbOnTap: () {
+                        log('0204 - AccountingMenu - "Alle Einnahmen suchen und finden" - angeklickt');
+                        /*--------------------------------- showDialog ---*/
+                        showDialog(
+                          context: context,
+                          builder: (context) =>
+                              const WbDialogAlertUpdateComingSoon(
+                            headlineText: "Alle Einnahmen suchen und finden?",
+                            contentText:
+                                "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nUpdate AM-0212",
+                            actionsText: "OK 👍",
+                          ),
+                        );
+                        /*--------------------------------- showDialog ENDE ---*/
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //       builder: (context) => const AccountingScreen(
+                        //           startGroupValue: "Einnahme"),
+                        //     ));
+                      }),
+                  /*--------------------------------- Abstand ---*/
+                  wbSizedBoxHeight8,
+                  const Divider(
+                      thickness: 3, height: 32, color: wbColorLogoBlue),
+                  /*--------------------------------- Mehr Funktionen ---*/
+                  WbButtonUniversal2(
+                      wbColor: const Color.fromARGB(255, 255, 102, 219),
+                      wbIcon: Icons.forward_to_inbox_outlined,
+                      wbIconSize40: 40,
+                      wbText:
+                          "Möchtest Du\nMEHR Funktionen?\nSchreibe einfach eine\nE-Mail an den Entwickler.",
+                      wbFontSize24: 15,
+                      wbWidth155: 398, // hat hier keine Auswirkung
+                      wbHeight60: 110,
+                      wbOnTap: () {
+                        log("0249 - CommunicationMenu - großer rosa Entwickler Button angeklickt");
+                        showDialog(
+                            context: context,
+                            builder: (context) =>
+                                const WbDialogAlertUpdateComingSoon(
+                                  headlineText: "Mehr Funktionen?",
+                                  contentText:
+                                      "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nUpdate AM-0249",
+                                  actionsText: "OK 👍",
+                                ));
+                      }),
+                  /*--------------------------------- Abstand ---*/
+                  wbSizedBoxHeight16,
+                  /*--------------------------------- *** ---*/
                 ],
               ),
             ),
@@ -239,7 +257,7 @@ class AccountingMenu extends StatelessWidget {
             const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
             const Column(
               children: [
-                Text("WorkBuddy • save time and money • Version 0.001"),
+                Text("WorkBuddy • save time and money • Version 0.003"),
               ],
             ),
             const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
@@ -247,7 +265,6 @@ class AccountingMenu extends StatelessWidget {
           ],
         ),
       ),
-      //   ),
     );
   }
 }

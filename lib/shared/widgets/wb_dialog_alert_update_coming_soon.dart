@@ -71,7 +71,7 @@ class WbDialogAlertUpdateComingSoon extends StatelessWidget {
             ),
           ),
           onPressed: () {
-            log("0071 - WbDialogAlertUpdateComingSoon - onPressed");
+            log("0071 - WbDialogAlertUpdateComingSoon - angeklickt");
             Navigator.of(context).pop();
           },
         ),
