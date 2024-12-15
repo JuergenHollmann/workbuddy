@@ -78,19 +78,28 @@ class MainApp extends StatelessWidget {
   √ für iOS muss im ios/Podfile ---> platform :ios, '13.0' eingestellt werden √ 
 
   /*--------------------------------- TODO's ---
+  - WbImageButtonNoText: Abfrage ob mit oder ohne Schatten - 0038
+  - In allen Buttons eine Soundfunktion (ClicK) einfügen
   √ WbHomePage: WbInfoContainer als "Footer" programmieren √
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
-  - WbImageButtonNoText: Abfrage ob mit oder ohne Schatten - 0038
-  - In allen Buttons eine Soundfunktion (ClicK) einfügen
-  - GestureDetector in allen Button-Widgets fixen:
-    √ WBGreenButton        - Beispiel: Login-Button √
-    √ WbButtonsUniWithImageButton √
-    √ WbDialogAlertUpdateComingSoon √
-    - WbButtonUniversal2   - Beispiel: Workbuddy beenden 
+  √ GestureDetector in allen Button-Widgets fixen √
+  √ WBGreenButton - Beispiel: Login-Button √
+  √ WbButtonsUniWithImageButton √
+  √ WbDialogAlertUpdateComingSoon √
+  √ WbButtonUniversal2 - Beispiel: Workbuddy beenden √
   √ "Spacer(flex: 1)" waren das Problem, warum ich nicht mehr die Seite öffnen konnte! √
   
-  - kann später evtl. gelöscht werden: lib/shared/data/user.dart
+- kann später evtl. gelöscht werden: lib/shared/data/user.dart
+- kann später evtl. gelöscht werden: lib/features/authentication/repositories/mock_user_database.dart
+- kann später evtl. gelöscht werden: lib/features/authentication/repositories/mock_user_repository.dart
+- kann später evtl. gelöscht werden: lib/features/authentication/schema/server_user_response.dart
+- kann später evtl. gelöscht werden: lib/features/authentication/schema/user.dart
+- kann später evtl. gelöscht werden: lib/features/authentication/repositories/user_repository.dart
+- kann später evtl. gelöscht werden: lib/features/authentication/logic/user_service.dart
+- kann später evtl. gelöscht werden: lib/features/authentication/screens/user_screen.dart
+
+  - kann gelöscht werden: "WBTextfieldNotice"
   - kann gelöscht werden: "WbDividerWithSmallTextCenter"
   - kann gelöscht werden: "WbDropdownButtonFormfield" 
   - kann gelöscht werden: "WbDropDownMenu2"

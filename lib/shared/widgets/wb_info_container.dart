@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 class WbInfoContainer extends StatelessWidget {
   const WbInfoContainer({
     super.key,
-    required this.infoText,
+    required this.infoText, required this.wbColors,
   });
 
   final String infoText;
+  final Color wbColors;
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +16,11 @@ class WbInfoContainer extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.symmetric(
           horizontal: BorderSide(
-            //
             color: Colors.black,
             width: 3,
           ),
         ),
-        color: Colors.yellow,
+        color: wbColors, // Colors.yellow,
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),

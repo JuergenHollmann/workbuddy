@@ -7,8 +7,7 @@ import 'package:flutter/material.dart';
 //import 'package:searchfield/searchfield.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 
-
-import '../widgets/user_select.dart';
+import '../widgets/email_user_selection.dart';
 
 // void main() {
 //   runApp(const EMailScreen());
@@ -137,7 +136,6 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
   /*--------------------------------- *** ---*/
   @override
   Widget build(BuildContext context) {
-    
     // Widget searchChild(x, {bool isSelected = false}) => Padding(
     //       padding: const EdgeInsets.symmetric(horizontal: 12),
     //       child: Text(x,
@@ -145,9 +143,6 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
     //               fontSize: 18,
     //               color: isSelected ? Colors.green : Colors.black)),
     //     );
-
-
-
 
     return Scaffold(
       // appBar: AppBar(
@@ -158,7 +153,7 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
         child: ListView(
           children: [
             /*--------------------------------- *** ---*/
-            const UserSelect(),
+            const EmailUserSelection(),
             const SizedBox(
               height: 20,
             ),
@@ -209,9 +204,6 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
             // ),
             /*--------------------------------- *** ---*/
 
-
-
-
             // Padding(
             //   padding: const EdgeInsets.all(8.0),
             //   child: SearchField<String>(
@@ -238,10 +230,6 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
             //         .toList(),
             //   ),
             // ),
-
-
-
-
 
             /*--------------------------------- *** ---*/
             const SizedBox(
@@ -418,7 +406,7 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
 //     final dropDownKey = GlobalKey<DropdownSearchState>();
 
 
-// // Future<List<UserModel>> getData(filter) async {
+// // Future<List<EmailUserModel>> getData(filter) async {
 // //   var response = await Dio().get(
 // //     "https://63c1210999c0a15d28e1ec1d.mockapi.io/users",
 // //     queryParameters: {"filter": filter},
@@ -426,7 +414,7 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
 
 // //   final data = response.data;
 // //   if (data != null) {
-// //     return UserModel.fromJsonList(data);
+// //     return EmailUserModel.fromJsonList(data);
 // //   }
 
 // //   return [];
@@ -510,7 +498,7 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
         
 //         // void main() => runApp(EMailScreen());
         
-//         // Future<List<UserModel>> getData(filter) async {
+//         // Future<List<EmailUserModel>> getData(filter) async {
 //         //   var response = await Dio().get(
 //         //     "https://63c1210999c0a15d28e1ec1d.mockapi.io/users",
 //         //     queryParameters: {"filter": filter},
@@ -518,7 +506,7 @@ class _SearchFieldSampleState extends State<SearchFieldSample> {
         
 //         //   final data = response.data;
 //         //   if (data != null) {
-//         //     return UserModel.fromJsonList(data);
+//         //     return EmailUserModel.fromJsonList(data);
 //         //   }
         
 //         //   return [];

@@ -1,4 +1,4 @@
-final usersData = [
+final emailUsersData = [
   {
     'id': 1,
     'firstName': 'Tony',

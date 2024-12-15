@@ -5,28 +5,26 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:searchfield/searchfield.dart';
 import 'package:workbuddy/config/wb_colors.dart';
-import 'package:workbuddy/shared/models/user_model.dart';
+import 'package:workbuddy/shared/models/email_user_model.dart';
+import '../data/mock_email_users_data.dart';
 
-import '../data/mock_user_data.dart';
-
-
-class UserSelect extends StatefulWidget {
-  const UserSelect({super.key});
+class EmailUserSelection extends StatefulWidget {
+  const EmailUserSelection({super.key});
 
   @override
-  State<UserSelect> createState() => _UserSelectState();
+  State<EmailUserSelection> createState() => _EmailUserSelectionState();
 }
 
-class _UserSelectState extends State<UserSelect> {
-  final List<UserModel> users = [];
+class _EmailUserSelectionState extends State<EmailUserSelection> {
+  final List<EmailUserModel> users = [];
 
   @override
   void initState() {
     super.initState();
     /*--------------------------------- *** ---*/
     // durch alle Elemente in der Liste iterieren:
-    for (var element in usersData) {
-      users.add(UserModel.fromJson(element));
+    for (var element in emailUsersData) {
+      users.add(EmailUserModel.fromJson(element));
       // nur zur Kontrolle: zeigt bei JEDEM Durchgang die Anzahl aus "users.length" an:
       // int searchFieldCounter = users.length;
       // log("0028_custom Counter: $searchFieldCounter");
@@ -37,11 +35,11 @@ class _UserSelectState extends State<UserSelect> {
     /*--------------------------------- *** ---*/
     // die Gesamt-Anzahl der User in der Liste zeigen (NACH Iterierung NUR EINE Zahl zeigen):
     int searchFieldCounter = users.length;
-    log("0037 - UserSelect - custom Counter: $searchFieldCounter");
+    log("0037 - EmailUserSelection - custom Counter: $searchFieldCounter");
     /*--------------------------------- *** ---*/
     // die gefundene Anzahl der User in der Liste zeigen:
-    int? searchFieldFoundCounter = usersData.length;
-    log("0245 - UserSelect - Counter: $searchFieldFoundCounter");
+    int? searchFieldFoundCounter = emailUsersData.length;
+    log("0245 - EmailUserSelection - Counter: $searchFieldFoundCounter");
     /*--------------------------------- *** ---*/
   }
 
@@ -133,7 +131,7 @@ class _UserSelectState extends State<UserSelect> {
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
-      child: SearchField<UserModel>(
+      child: SearchField<EmailUserModel>(
         // maxLength: 10, // maximale Anzahl der Ziffern für die Suche
         // dynamicHeight: true,
         // maxSuggestionBoxHeight: 200,
@@ -171,7 +169,7 @@ class _UserSelectState extends State<UserSelect> {
               ),
             ),
             onTap: () {
-              log("0173 - UserSelect - searchFieldController.clear");
+              log("0173 - EmailUserSelection - searchFieldController.clear");
               setState(() {
                 /*--------------------------------- *** ---*/
                 // diesen Text kann man auf 3 Arten löschen:
@@ -217,7 +215,7 @@ class _UserSelectState extends State<UserSelect> {
         marginColor: Colors.black, //Colors.grey.shade300,
         /*--------------------------------- *** ---*/
         // das hier gibt eine Fehlermeldung!
-        // initialValue: SearchFieldListItem<UserModel>(
+        // initialValue: SearchFieldListItem<EmailUserModel>(
         //   users[2].firstName,
         //   child: Container(
         //     color: Colors.red,
@@ -232,13 +230,13 @@ class _UserSelectState extends State<UserSelect> {
         /*--------------------------------- *** ---*/
         suggestions: users
             .map(
-              (userModel) => SearchFieldListItem<UserModel>(
+              (emailUserModel) => SearchFieldListItem<EmailUserModel>(
                 // todo: Wie kann ich hier nach mehreren Kriterien suchen oder filtern?
                 // diese Daten werden in das "SearchFieldListItem" beim Anklicken übergeben:
-                userModel.email,
+                emailUserModel.email,
                 /*--------------------------------- *** ---*/
                 child: UserTile(
-                  user: userModel,
+                  user: emailUserModel,
                 ),
               ),
             )
@@ -249,7 +247,7 @@ class _UserSelectState extends State<UserSelect> {
 }
 
 class UserTile extends StatelessWidget {
-  final UserModel user;
+  final EmailUserModel user;
 
   const UserTile({super.key, required this.user});
 
@@ -274,7 +272,7 @@ class UserTile extends StatelessWidget {
       title: Text(
         "${user.firstName} ${user.lastName}",
         style: const TextStyle(
-          fontSize: 18,
+          fontSize: 16,
           fontWeight: FontWeight.w900,
         ),
       ),
@@ -282,7 +280,7 @@ class UserTile extends StatelessWidget {
       subtitle: Text(
         "${user.status2}-${user.status1} (${user.age})\n💼 ${user.role}", // \n${user.email}",
         style: const TextStyle(
-          fontSize: 18,
+          fontSize: 16,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -290,7 +288,7 @@ class UserTile extends StatelessWidget {
       trailing: Text(
         "[${user.category}]  ",
         style: const TextStyle(
-          fontSize: 18,
+          fontSize: 16,
           fontWeight: FontWeight.bold,
         ),
       ),

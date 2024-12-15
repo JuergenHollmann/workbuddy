@@ -1,5 +1,5 @@
-class UserModel {
-  UserModel({
+class EmailUserModel {
+  EmailUserModel({
     required this.id,
     required this.firstName,
     required this.lastName,
@@ -25,8 +25,8 @@ class UserModel {
   final String avatar;
   final String email;
 
-  factory UserModel.fromJson(Map<String, dynamic> json) {
-    return UserModel(
+  factory EmailUserModel.fromJson(Map<String, dynamic> json) {
+    return EmailUserModel(
       id: json['id'],
       firstName: json['firstName'],
       lastName: json['lastName'],

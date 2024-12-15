@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/backup_screens/main_selection_screen.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
-import 'package:workbuddy/config/wb_imagebutton_no_text.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
 import 'package:workbuddy/config/wb_text_form_field_text_only.dart';
@@ -64,7 +63,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
               // children: [
               TextSpan(
                 text:
-                    "$inputCompanyName • $inputCompanyVNContactPerson $inputCompanyNNContactPerson",
+                    "• $inputCompanyName\n• $inputCompanyVNContactPerson $inputCompanyNNContactPerson",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w900,
@@ -510,27 +509,11 @@ class _CompanyScreenState extends State<CompanyScreen> {
                         ),
                       ],
                     ),
+                    /*--------------------------------- Abstand ---*/
+                    wbSizedBoxHeight16,
                     /*--------------------------------- Notizen zum Ansprechpartner ---*/
-                    wbSizedBoxHeight16,
-                    /*--------------------------------- WbImageButtonNoText ---*/
-                    WbImageButtonNoText(
-                      wbColor: wbColorButtonBlue,
-                      wbImage: Image(
-                          image: AssetImage("assets/workbuddy_glow_logo.png")),
-                      wbImagePadding: 5,
-                      wbWidth60: 60,
-                      wbHeight60: 60,
-                      wbBorderRadius16: 16,
-                      hasShadow: false,
-                      wbOnTap: () {
-                        log("0525 - CompanyScreen - WbImageButtonNoText angeklickt");
-                      },
-                    ),
-                    /*--------------------------------- *** ---*/
-                    wbSizedBoxHeight16,
-
                     WbTextFormField(
-                      labelText: "Notizen zum Ansprechpartner",
+                      labelText: "Notizen Ansprechpartner",
                       labelFontSize20: 20,
                       hintText:
                           "Beispiele: Hobbys, Lieblingswein, Verein, etc.",
@@ -1008,7 +991,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                             ),
                           );
                         }),
-                    /*--------------------------------- *** ---*/
+                    /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight16,
                     const Divider(thickness: 3, color: wbColorLogoBlue),
                     wbSizedBoxHeight16,
@@ -1019,9 +1002,13 @@ class _CompanyScreenState extends State<CompanyScreen> {
               /*--------------------------------- WbInfoContainer ---*/
               // Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 todo
               WbInfoContainer(
-                  infoText:
-                      "$inputCompanyName • $inputCompanyVNContactPerson $inputCompanyNNContactPerson"),
-              /*--------------------------------- WbInfoContainer ENDE ---*/
+                infoText:
+                    "$inputCompanyName • $inputCompanyVNContactPerson $inputCompanyNNContactPerson",
+                wbColors: Colors.yellow,
+              ),
+              /*--------------------------------- Abstand ---*/
+              wbSizedBoxHeight16,
+              /*--------------------------------- ENDE ---*/
             ],
           ),
         ),

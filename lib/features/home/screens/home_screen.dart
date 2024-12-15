@@ -84,7 +84,10 @@ class _WbHomePageState extends State<WbHomePage> {
             Expanded(child: const P01LoginScreen()),
             // _widgetDrawerOptions[_selectedDrawerIndex],
             /*--------------------------------- WbInfoContainer ---*/
-            WbInfoContainer(infoText: 'WorkBuddy • Free-BASIC-Version 0.002'),
+            WbInfoContainer(
+              infoText: 'WorkBuddy • Free-BASIC-Version 0.002',
+              wbColors: Colors.yellow,
+            ),
             /*--------------------------------- WbInfoContainer ENDE ---*/
           ],
         ),

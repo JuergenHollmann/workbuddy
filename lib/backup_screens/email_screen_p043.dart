@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
-import 'package:workbuddy/shared/widgets/user_select.dart';
+import 'package:workbuddy/shared/widgets/email_user_selection.dart';
 
-import '../shared/data/mock_user_data.dart';
-
+import '../shared/data/mock_email_users_data.dart';
 
 /*--------------------------------- *** ---*/
 class EMailScreen extends StatefulWidget {
@@ -25,11 +24,12 @@ class _EMailScreenState extends State<EMailScreen> {
 
   /*--------------------------------- *** ---*/
   // die Gesamt-Anzahl aller User in der Liste zeigen:
-  int searchFieldCounter043 = usersData.length;
+  int searchFieldCounter043 = emailUsersData.length;
 
   /*--------------------------------- *** ---*/
   // die gefundene Anzahl aller User in der Liste zeigen:
-  int searchFieldFoundCounter043 = usersData.length; //usersData.length;
+  int searchFieldFoundCounter043 =
+      emailUsersData.length; //emailUsersData.length;
 
   /*--------------------------------- Scaffold ---*/
   @override
@@ -69,7 +69,7 @@ class _EMailScreenState extends State<EMailScreen> {
                     ),
                   ),
                   /*--------------------------------- *** ---*/
-                  const UserSelect(),
+                  const EmailUserSelection(),
                   /*--------------------------------- Abstand ---*/
                   wbSizedBoxHeight16,
                   /*--------------------------------- E-Mail Betreff ---*/

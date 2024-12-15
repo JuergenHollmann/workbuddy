@@ -2,7 +2,6 @@
 Das kann später evtl. gelöscht werden: lib/shared/data/user.dart
  */
 
-
 class User {
   String userName;
   String userPassword;
@@ -86,7 +85,7 @@ class User {
 
   // /*--------------------------------------- addUser ---*/
   // /* Einen User hinzufügen */
-  // static void createUser(UserModel userModel) {}
+  // static void createUser(EmailUserModel EmailUserModel) {}
   // // code
   /*--------------------------------------- getAllUsers ---*/
   /* Alle vorhandenen User zurückgeben */
