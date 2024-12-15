@@ -481,33 +481,6 @@ class ContactScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-
-                // /*--------------------------------- Abstand ---*/
-                // wbSizedBoxHeight16,
-                // const Divider(thickness: 3, color: wbColorLogoBlue),
-                // wbSizedBoxHeight8,
-                // /*--------------------------------- Button Kontakt speichern ---*/
-                // GestureDetector(
-                //   onTap: () {
-                //     log("00498 - ContactScreen - Kontakt speichern - aktiviert");
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //         builder: (context) => const MainSelectionScreen(),
-                //       ),
-                //     );
-                //   },
-                //   child: WbButtonUniversal(
-                //     wbColor: wbColorButtonGreen,
-                //     icon: Icons.save_rounded,
-                //     wbButtonUniversalText: "Kontakt SPEICHERN",
-                //     onButtonTap: () {},
-                //     width: 398,
-                //   ),
-                // ),
-                // wbSizedBoxHeight16,
-                // const Divider(thickness: 3, color: wbColorLogoBlue),
-                // wbSizedBoxHeight16,
                 // /*--------------------------------- *** ---*/
               ],
             ),

@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/config/wb_button_universal.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
@@ -52,13 +51,17 @@ class ContactMenu extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   children: [
                     /*--------------------------------- Kontakt NEU anlegen ---*/
-                    WbButtonUniversal(
+                    WbButtonUniversal2(
                       wbColor: wbColorButtonGreen,
-                      icon: Icons.person_add_alt_1_outlined,
-                      wbButtonUniversalText: "Einen Kontakt \nNEU anlegen",
-                      onButtonTap: () {
+                      wbIcon: Icons.person_add_alt_1_outlined,
+                      wbIconSize40: 40,
+                      wbText: 'Einen Kontakt \nNEU anlegen',
+                      wbFontSize24: 22,
+                      wbWidth155: 398,
+                      wbHeight60: 80,
+                      wbOnTap: () {
                         /*--------------------------------- Navigator.push ---*/
-                        log("0090 - contact_menu - Einen Kontakt NEU anlegen - aktiviert");
+                        log("0090 - contact_menu - Einen Kontakt NEU anlegen - angeklickt");
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -66,19 +69,23 @@ class ContactMenu extends StatelessWidget {
                           ),
                         );
                       },
-                      width: 100,
                     ),
-                    /*--------------------------------- *** ---*/
+                    /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight8,
                     /*--------------------------------- *** ---*/
                     const Divider(
                         thickness: 3, height: 32, color: wbColorLogoBlue),
-                    WbButtonUniversal(
+                    /*--------------------------------- *** ---*/
+                    WbButtonUniversal2(
                       wbColor: wbColorAppBarBlue,
-                      wbButtonUniversalText: "ALLE Kontakte suchen und zeigen",
-                      icon: Icons.person_search_outlined,
-                      onButtonTap: () {
-                        log("0085 - contact_menu - Einen Kontakt suchen - Update-Hinweis - CM108 - aktiviert");
+                      wbIcon: Icons.person_search_outlined,
+                      wbIconSize40: 40,
+                      wbText: 'ALLE Kontakte\nsuchen und zeigen',
+                      wbFontSize24: 20,
+                      wbWidth155: 398,
+                      wbHeight60: 80,
+                      wbOnTap: () {
+                        log("0085 - contact_menu - Einen Kontakt suchen - Update-Hinweis - CM108 - angeklickt");
                         showDialog(
                           context: context,
                           builder: (context) =>
@@ -90,11 +97,12 @@ class ContactMenu extends StatelessWidget {
                           ),
                         );
                       },
-                      width: 398,
                     ),
+                    /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight8,
                     const Divider(
                         thickness: 3, height: 32, color: wbColorLogoBlue),
+                    /*--------------------------------- Mehr Funktionen? ---*/
                     WbButtonUniversal2(
                       wbColor: const Color.fromARGB(255, 255, 102, 219),
                       wbIcon: Icons.forward_to_inbox_outlined,
@@ -105,7 +113,7 @@ class ContactMenu extends StatelessWidget {
                       wbWidth155: 300, // hat keine Auswirkung
                       wbHeight60: 110,
                       wbOnTap: () {
-                        log("0109 - contact_menu - Mehr Info? - Update-Hinweis - CM109 - aktiviert");
+                        log("0109 - contact_menu - Mehr Info? - Update-Hinweis - CM109 - angeklickt");
                         showDialog(
                           context: context,
                           builder: (context) =>
@@ -118,9 +126,11 @@ class ContactMenu extends StatelessWidget {
                         );
                       },
                     ),
-                    const SizedBox(height: 8),
+                    /*--------------------------------- Abstand ---*/
+                    wbSizedBoxHeight8,
                     const Divider(
                         thickness: 3, height: 32, color: wbColorLogoBlue),
+                    /*--------------------------------- ENDE ---*/
                   ],
                 ),
               ),

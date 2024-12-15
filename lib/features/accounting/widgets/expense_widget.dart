@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/config/wb_button_universal.dart';
+import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_dropdownmenu.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
@@ -134,24 +134,26 @@ class _ExpenseWidgetState extends State<ExpenseWidget> {
 
         // Button aus Vorlage verwenden:
         // solange die Pflichtfelder nicht ausgefüllt sind, soll der Button rot sein und beim Anklicken einen Alert ausgeben, sonst Button grün und Daten speichern + Dialog-Bestätigung.
-        GestureDetector(
-          onTap: () {
-            log("0139 - ExpenseWidget - Ausgabe SPEICHERN - geklickt");
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const AccountingMenu(),
-              ),
-            );
-          },
-          child: WbButtonUniversal(
+        /*--------------------------------- Ausgabe speichern ---*/
+        Padding(
+          padding: const EdgeInsets.fromLTRB(2, 0, 12, 0),
+          child: WbButtonUniversal2(
             wbColor: wbColorButtonDarkRed,
-            icon: Icons.payments_outlined,
-            wbButtonUniversalText: "Ausgabe SPEICHERN",
-            onButtonTap: () {
-              log("0152 - ExpenseWidget - Ausgabe SPEICHERN - geklickt");
+            wbIcon: Icons.payments_outlined,
+            wbIconSize40: 40,
+            wbText: 'Ausgabe SPEICHERN',
+            wbFontSize24: 19,
+            wbWidth155: 398,
+            wbHeight60: 60,
+            wbOnTap: () {
+              log("0139 - ExpenseWidget - Ausgabe SPEICHERN - geklickt");
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AccountingMenu(),
+                ),
+              );
             },
-            width: 398,
           ),
         ),
       ],

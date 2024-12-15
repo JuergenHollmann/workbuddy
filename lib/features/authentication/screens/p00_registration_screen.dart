@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/config/wb_button_universal.dart';
+import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/authentication/screens/p01_login_screen.dart';
@@ -143,8 +143,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                               ),
                             ),
                           );
-                          setState(() {
-                          });
+                          setState(() {});
                         } else {
                           log("0153 - P00RegistrationScreen - Die Eingabe für den Benutzername ist NICHT korrekt!");
                         }
@@ -474,12 +473,15 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                     /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight8,
                     /*--------------------------------- Registrieren-Button ---*/
-                    WbButtonUniversal(
+                    WbButtonUniversal2(
                       wbColor: wbColorButtonBlue,
-                      icon: Icons.app_registration_outlined,
-                      wbButtonUniversalText: "Jetzt REGISTRIEREN",
-                      width: 280,
-                      onButtonTap: () {
+                      wbIcon: Icons.app_registration_outlined,
+                      wbIconSize40: 40,
+                      wbText: 'Jetzt\nREGISTRIEREN',
+                      wbFontSize24: 20,
+                      wbWidth155: 280,
+                      wbHeight60: 80,
+                      wbOnTap: () {
                         if (_registrationformKey.currentState!.validate()) {
                           log("0496 - P00RegistrationScreen - Alles richtig gemacht");
                           player.play(AssetSource("sound/sound06pling.wav"));
@@ -519,6 +521,8 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                     wbSizedBoxHeight16,
                     /*--------------------------------- Divider ---*/
                     const Divider(thickness: 4, color: wbColorButtonBlue),
+                    /*--------------------------------- Abstand ---*/
+                    wbSizedBoxHeight16,
                     /*--------------------------------- ENDE ---*/
                   ],
                 ),

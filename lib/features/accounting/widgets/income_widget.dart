@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:workbuddy/config/wb_button_universal.dart';
+import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_dropdownmenu.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
@@ -181,25 +181,23 @@ class _IncomeWidgetState extends State<IncomeWidget> {
         // solange die Pflichtfelder nicht ausgefüllt sind, soll der Button rot sein und beim Anklicken einen Alert ausgeben, sonst Button grün und Daten speichern + Dialog-Bestätigung.
         //const WBGreenIncomeButton(), // WBGreenIncomeButton(),
 
-        //*-------------------------------------------------- Einnahme SPEICHERN ---*/
-        GestureDetector(
-          onTap: () {
-            log("Auf - ExpenseWidget - Einnahme SPEICHERN - aktiviert");
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const AccountingMenu(),
-              ),
-            );
-          },
-          child: WbButtonUniversal(
+        /*--------------------------------- Einnahme SPEICHERN ---*/
+        WbButtonUniversal2(
             wbColor: wbColorButtonGreen,
-            icon: Icons.payments_outlined,
-            wbButtonUniversalText: "Einnahme SPEICHERN",
-            onButtonTap: () {},
-            width: 398,
-          ),
-        ),
+            wbIcon: Icons.payments_outlined,
+            wbIconSize40: 40,
+            wbText: 'Einnahme SPEICHERN',
+            wbFontSize24: 19,
+            wbWidth155: 398,
+            wbHeight60: 80,
+            wbOnTap: () {
+              log("00195 - ExpenseWidget - Einnahme SPEICHERN - angeklickt");
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AccountingMenu(),
+                  ));
+            }),
       ],
     );
   }

@@ -479,7 +479,6 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Login-Button ---*/
           WBGreenButton(
             onTap: () {
-              // GestureDetector gefixt: HIER drin bringt der Aufruf JETZT WAS!
               /*--------------------------------- checkUserAndPassword ---*/
               log("0440 - P01LoginScreen - überprüfe Benutzer UND Passwort");
               if (userName == "Jürgen" && userPassword == "Pass") {
@@ -542,7 +541,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                       builder: (context) => const WbDialogAlertUpdateComingSoon(
                         headlineText: "Mit deinem Google-Account einloggen?",
                         contentText:
-                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0495",
+                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nUpdate LS-0495",
                         actionsText: "OK 👍",
                       ),
                     );
@@ -570,7 +569,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                       builder: (context) => const WbDialogAlertUpdateComingSoon(
                         headlineText: "Mit deinem Apple-Account einloggen?",
                         contentText:
-                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0573",
+                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nUpdate LS-0573",
                         actionsText: "OK 👍",
                       ),
                     );
@@ -598,7 +597,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                       builder: (context) => const WbDialogAlertUpdateComingSoon(
                         headlineText: "Mit deinem Facebook-Account einloggen?",
                         contentText:
-                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0601",
+                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nUpdate LS-0601",
                         actionsText: "OK 👍",
                       ),
                     );
@@ -628,7 +627,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                         headlineText:
                             "Mit deinem INTERNEN WorkBuddy-Account einloggen?",
                         contentText:
-                            "HINWEIS: Für deinen INTERNEN WorkBuddy-Account wird keine Internet-Verbindung benötigt.\n\nDeine Daten werden NUR INTERN in einer Datenbank auf deinem Smartphone gespeichert.\n\nEs gibt auch keine weitere automatische Datensicherung!\n\nSpäter können diese Daten aber durch eine Registrierung und Synchronisierung über das Internet gesichert werden. \n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0555",
+                            "HINWEIS: Für deinen INTERNEN WorkBuddy-Account wird keine Internet-Verbindung benötigt.\n\nDeine Daten werden NUR INTERN in einer Datenbank auf deinem Smartphone gespeichert.\n\nEs gibt auch keine weitere automatische Datensicherung!\n\nSpäter können diese Daten aber durch eine Registrierung und Synchronisierung über das Internet gesichert werden. \n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nUpdate LS-0555",
                         actionsText: "OK 👍",
                       ),
                     );
@@ -670,31 +669,31 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight8,
           /*--------------------------------- WbButtonUniversal ---*/
-          WbButtonUniversal2(
-            wbColor: wbColorButtonDarkRed,
-            wbIcon: Icons.report_outlined,
-            wbIconSize40: 40,
-            wbText: "WorkBuddy beenden",
-            wbFontSize24:
-                20, // 0513 - ANDERE Schriftgrößen: iOS = 20 | Pixel8 = 27 | SamsungA05 = 21
-            wbWidth155: 155, // hat hier keine Auswirkung (warum ?)
-            wbHeight60: 60,
-            wbOnTap: () {
-              /*--------------------------------- AlertDialog ---*/
-              // Abfrage ob die App geschlossen werden soll:
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) => const WBDialog2Buttons(
-                        headLineText:
-                            "Möchtest Du jetzt wirklich diese tolle WorkBuddy-App beenden?",
-                        descriptionText:
-                            "Bevor Du diese tolle WorkBuddy-App beendest, denke bitte daran:\n\n Bei aller Aufregung sollten wir aber nicht vergessen, dass Al Bundy im Jahr 1966 vier Touchdowns in einem Spiel gemacht hat und damit den den Polk High School Panthers zur Stadtmeisterschaft verholfen hat!\n\nAußerdem sollte man auf gesunde Ernährung achten, deshalb empfehle ich täglich ein gutes Käsebrot (für Vegetarier und Veganer natürlich auch gerne mit veganer Butter).\n\nWenn du keinen Käse magst, dann kannst du natürlich auch ein Wurstbrot essen, aber dann ist das logischerweise wiederum nicht vegan (aber es gibt ja auch vegane Wurst) und in diesem Falle kannst du eben auch die Wurst weglassen, wenn Du eine vegane Butter auf dem Brot hast. \n\nWarum schreibe ich das alles hier hin?\n\nGanz einfach:\nWeil ich zeigen wollte, dass diese Textzeilen SCROLLBAR sind.",
-                      ));
-              /*--------------------------------- AlertDialog ---*/
-            },
+          Padding(
+            padding: const EdgeInsets.fromLTRB(2, 0, 12, 0),
+            child: WbButtonUniversal2(
+              wbColor: wbColorButtonDarkRed,
+              wbIcon: Icons.report_outlined,
+              wbIconSize40: 40,
+              wbText: 'WorkBuddy beenden',
+              wbFontSize24: 20,
+              wbWidth155: 155, // hat hier keine Auswirkung
+              wbHeight60: 60,
+              wbOnTap: () {
+                /*--------------------------------- AlertDialog ---*/
+                // Abfrage ob die App geschlossen werden soll:
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) => const WBDialog2Buttons(
+                          headLineText:
+                              "Möchtest Du jetzt wirklich diese tolle WorkBuddy-App beenden?",
+                          descriptionText:
+                              "Bevor Du diese tolle WorkBuddy-App beendest, denke bitte daran:\n\n Bei aller Aufregung sollten wir aber nicht vergessen, dass Al Bundy im Jahr 1966 vier Touchdowns in einem Spiel gemacht hat und damit den den Polk High School Panthers zur Stadtmeisterschaft verholfen hat!\n\nAußerdem sollte man auf gesunde Ernährung achten, deshalb empfehle ich täglich ein gutes Käsebrot (für Vegetarier und Veganer natürlich auch gerne mit veganer Butter).\n\nWenn du keinen Käse magst, dann kannst du natürlich auch ein Wurstbrot essen, aber dann ist das logischerweise wiederum nicht vegan (aber es gibt ja auch vegane Wurst) und in diesem Falle kannst du eben auch die Wurst weglassen, wenn Du eine vegane Butter auf dem Brot hast. \n\nWarum schreibe ich das alles hier hin?\n\nGanz einfach:\nWeil ich zeigen wollte, dass diese Textzeilen SCROLLBAR sind.",
+                        ));
+                /*--------------------------------- AlertDialog ---*/
+              },
+            ),
           ),
-          /*--------------------------------- Abstand ---*/
-          // wbSizedBoxHeight8,
           /*--------------------------------- ENDE ---*/
         ],
       ),
