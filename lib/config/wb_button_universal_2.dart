@@ -38,8 +38,8 @@ class WbButtonUniversal2 extends StatelessWidget {
     /*--------------------------------- *** ---*/
     return GestureDetector(
       onTap: wbOnTap,
+      // Standard-Padding damit alle Schatten außen herum zu sehen sind:
       child: Padding(
-        // Standard-Padding damit alle Schatten außen herum zu sehen sind:
         padding: const EdgeInsets.fromLTRB(2, 0, 12, 0),
         child: Container(
           width: wbWidth155,

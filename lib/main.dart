@@ -82,6 +82,7 @@ class MainApp extends StatelessWidget {
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
   - WbImageButtonNoText: Abfrage ob mit oder ohne Schatten - 0038
+  - In allen Buttons eine Soundfunktion (ClicK) einfügen
   - GestureDetector in allen Button-Widgets fixen:
     √ WBGreenButton        - Beispiel: Login-Button √
     √ WbButtonsUniWithImageButton √
@@ -95,7 +96,7 @@ class MainApp extends StatelessWidget {
   - kann gelöscht werden: "WbDropdownButtonFormfield" 
   - kann gelöscht werden: "WbDropDownMenu2"
   - kann gelöscht werden: "SplashScreen"
-  - kann gelöscht werden: "WBRedButton"
+  √ ist gelöscht worden: "WBRedButton" √
   √ ist gelöscht worden: "ContactMenuX" √
   √ ist gelöscht worden: "ContactScreenX" √
 
@@ -107,6 +108,9 @@ class MainApp extends StatelessWidget {
   - mehr Funktionen - E-Mail an den Entwickler    - Update CM-0249
   - mehr Funktionen - E-Mail an den Entwickler    - Update CM-0132
   - Alle Kontakte zeigen                          - Update CM-0098
+  - Mit Google-Account einloggen                  - Update LS-0495
+  - Mit Apple-Account einloggen                   - Update LS-0573
+  - Mit WorkBuddy-Account einloggen               - Update LS-0555
 
   √ Datums-Picker (Geburtstage, etc.) installiert: time_picker_spinner_pop_up: ^2.0.0 √
     x - flutter_rounded_date_picker: ^3.0.4 (nicht installiert)
@@ -136,8 +140,8 @@ class MainApp extends StatelessWidget {
   - Crashlytics - Fehlermeldungen und Abstürze der App auswerten               → firebase_crashlytics
 
 * GitHub:  
-  Um die Firebase API-Keys von Github geheim zu halten in die ".gitignore" vom Projektverzeichnis eintragen:
-  #API Keys;
+  In die ".gitignore" vom Projektverzeichnis eintragen:
+  # Um die Firebase API-Keys bei GitHub geheim zu halten:
   /lib/firebase_options.dart
   /android/app/google-services.json
   /macos/Runner/GoogleService-Info.plist

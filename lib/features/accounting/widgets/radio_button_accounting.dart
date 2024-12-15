@@ -27,7 +27,7 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
   @override
   Widget build(BuildContext context) {
     log("0029 - RadioButtonAccounting - wird benutzt");
-    
+
     return Expanded(
       child: Container(
         height: 60,
@@ -48,7 +48,7 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
                   setState(() {
                     groupValue = value!;
                     widget.onChange(value);
-                    log("0061 - RadioButtonAccounting - Einnahme wurde angeklickt");
+                    log("0061 - RadioButtonAccounting - Radio - Einnahme wurde angeklickt");
                   });
                 }),
             const Text(
@@ -66,13 +66,9 @@ class _RadioButtonAccountingState extends State<RadioButtonAccounting> {
                   setState(() {
                     groupValue = value!;
                     widget.onChange(value);
-                    log("Ausgabe wurde angeklickt");
+                    log("0069 - RadioButtonAccounting - Radio - Ausgabe wurde angeklickt");
                   });
                 }),
-            // Visibility(
-            //   visible: groupValue == "Ausgabe",
-            //   child: const WBRedButton(),
-            // ),
             Padding(
               padding: const EdgeInsets.only(right: 16),
               child: const Text(

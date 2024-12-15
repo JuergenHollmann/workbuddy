@@ -126,7 +126,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
   String inputPassword = ""; // nur für die "onChanged-Funktion"
 
   /*--------------------------------- Login Button automatisch anklicken ---*/
-  void automaticButtonClick() {}
+  // void automaticButtonClick() {} // wird hier nicht benötigt
 
   // /*--------------------------------- isValidEmail ---*/
   // String? isValidEmail(String? value) {
@@ -194,224 +194,271 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight16,
           /*--------------------------------- Benutzername - Feld ---*/
-          TextFormField(
-            style: const TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.w900,
-              color: wbColorButtonGreen,
-            ),
-
-            textAlign: TextAlign.left,
-            textInputAction: TextInputAction.next,
-
-            decoration: const InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              contentPadding: EdgeInsets.all(16),
-
-              /*--------------------------------- labelStyle ---*/
-              labelText: 'Benutzername',
-              labelStyle: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                backgroundColor: Colors.white,
-              ),
-
-              /*--------------------------------- prefixIcon ---*/
-              prefixIcon: Padding(
-                padding: EdgeInsets.all(16),
-                child: Icon(
-                  size: 40,
-                  Icons.person,
+          Padding(
+            padding: const EdgeInsets.fromLTRB(2, 0, 12, 0),
+            child: Container(
+              decoration: ShapeDecoration(
+                shadows: const [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 8,
+                    offset: Offset(4, 4),
+                    spreadRadius: 0,
+                  )
+                ],
+                // color: wbColor,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(
+                    width: 2,
+                    color: Colors.white,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                    16,
+                  ),
                 ),
               ),
-
-              /*--------------------------------- hintText ---*/
-              hintText: "Bitte Benutzername eingeben",
-              hintStyle: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w900,
-                color: Colors.black38,
-              ),
-
-              /*--------------------------------- border ---*/
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
-              ),
-            ),
-
-            /*--------------------------------- onChanged ---*/
-            controller: userNameTEC,
-            onChanged: (String userNameTEC) {
-              log("0243 - p01_login_screen - Eingabe: $userNameTEC");
-
-              inputUserName = userNameTEC;
-              setState(() => inputUserName = userNameTEC);
-
-              if (userNameTEC == userName) {
-                /*--------------------------------- log ---*/
-                log("0249 - p01_login_screen - Der Benutzername \"$userName\" ist KORREKT 😉");
-
-                /*--------------------------------- Audio ---*/
-                /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
-                player.play(AssetSource("sound/sound06pling.wav"));
-
-                /*--------------------------------- Snackbar ---*/
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                  backgroundColor: wbColorButtonGreen,
-                  duration: Duration(milliseconds: 400),
-                  content: Text(
-                    "Hinweis:\nDer Benutzername \"$userName\" ist KORREKT 😉",
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+              child: TextFormField(
+                style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w900,
+                  color: wbColorButtonGreen,
+                ),
+              
+                textAlign: TextAlign.left,
+                textInputAction: TextInputAction.next,
+              
+                decoration: const InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: EdgeInsets.all(16),
+              
+                  /*--------------------------------- labelStyle ---*/
+                  labelText: 'Benutzername',
+                  labelStyle: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    backgroundColor: Colors.white,
+                  ),
+              
+                  /*--------------------------------- prefixIcon ---*/
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Icon(
+                      size: 40,
+                      Icons.person,
                     ),
                   ),
-                ));
-                /*--------------------------------- *** ---*/
-                setState(() {});
-              } else {
-                log("0274 - p01_login_screen - Die Eingabe für den Benutzername ist NICHT korrekt!");
-              }
-            },
-            /*--------------------------------- validator ---*/
-            // validator: (userNameTEC) {
-            //   // Der Benutzername wurde nicht ausgefüllt:
-            //   if (userNameTEC == null) {
-            //     return "Bitte den Benutzernamen angeben!";
-            //   }
-            //   // Alles ist in Ordnung, keine Probleme
-            //   return null;
-            // },
+              
+                  /*--------------------------------- hintText ---*/
+                  hintText: "Benutzername eingeben",
+                  hintStyle: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.black38,
+                  ),
+              
+                  /*--------------------------------- border ---*/
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                  ),
+                ),
+              
+                /*--------------------------------- onChanged ---*/
+                controller: userNameTEC,
+                onChanged: (String userNameTEC) {
+                  log("0243 - p01_login_screen - Eingabe: $userNameTEC");
+              
+                  inputUserName = userNameTEC;
+                  setState(() => inputUserName = userNameTEC);
+              
+                  if (userNameTEC == userName) {
+                    /*--------------------------------- log ---*/
+                    log("0249 - p01_login_screen - Der Benutzername \"$userName\" ist KORREKT 😉");
+              
+                    /*--------------------------------- Audio ---*/
+                    /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
+                    player.play(AssetSource("sound/sound06pling.wav"));
+              
+                    /*--------------------------------- Snackbar ---*/
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      backgroundColor: wbColorButtonGreen,
+                      duration: Duration(milliseconds: 400),
+                      content: Text(
+                        "Hinweis:\nDer Benutzername \"$userName\" ist KORREKT 😉",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ));
+                    /*--------------------------------- *** ---*/
+                    setState(() {});
+                  } else {
+                    log("0274 - p01_login_screen - Die Eingabe für den Benutzername ist NICHT korrekt!");
+                  }
+                },
+                /*--------------------------------- validator ---*/
+                // validator: (userNameTEC) {
+                //   // Der Benutzername wurde nicht ausgefüllt:
+                //   if (userNameTEC == null) {
+                //     return "Bitte den Benutzernamen angeben!";
+                //   }
+                //   // Alles ist in Ordnung, keine Probleme
+                //   return null;
+                // },
+              ),
+            ),
           ),
           /*--------------------------------- Abstand ---*/
-          wbSizedBoxHeight32,
+          wbSizedBoxHeight16,
           /*--------------------------------- Passwort - Feld ---*/
-          TextFormField(
-            //validator: isValidEmail(),
-            style: const TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.w900,
-              color: wbColorButtonDarkRed,
-            ),
-            textAlign: TextAlign.left,
-            textInputAction: TextInputAction.next,
-            obscureText: visibilityPassword,
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              contentPadding: const EdgeInsets.all(16),
-
-              /*--------------------------------- labelStyle ---*/
-              labelText: 'Passwort',
-              labelStyle: const TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                backgroundColor: Colors.white,
-              ),
-
-              /*--------------------------------- prefixIcon ---*/
-              prefixIcon: const Padding(
-                padding: EdgeInsets.all(16),
-                child: Icon(
-                  size: 40,
-                  Icons.lock,
-                ),
-              ),
-
-              /*--------------------------------- hintText ---*/
-              hintText: "Bitte Passwort eingeben",
-              hintStyle: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w900,
-                color: Colors.black38,
-              ),
-
-              /*--------------------------------- suffixIcon ---*/
-              suffixIcon: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    visibilityPassword = !visibilityPassword;
-                  });
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Icon(
-                    size: 40,
-                    visibilityPassword
-                        ? Icons.visibility_outlined
-                        : Icons.visibility_off_outlined,
+          Padding(
+            padding: const EdgeInsets.fromLTRB(2, 0, 12, 0),
+            child: Container(
+              decoration: ShapeDecoration(
+                shadows: const [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 8,
+                    offset: Offset(4, 4),
+                    spreadRadius: 0,
+                  )
+                ],
+                // color: wbColor,
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(
+                    width: 2,
+                    color: Colors.white,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                    16,
                   ),
                 ),
               ),
-
-              /*--------------------------------- border ---*/
-              border: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(16)),
-              ),
-            ),
-
-            /*--------------------------------- onChanged ---*/
-            onChanged: (String userPasswordTEC) {
-              log("Eingabe: $userPasswordTEC");
-              inputPassword = userPasswordTEC;
-              setState(() => inputPassword = userPasswordTEC);
-
-              if (userPasswordTEC == userPassword &&
-                  inputUserName == userName) {
-                log("Das Passwort \"$userPassword\" ist KORREKT!");
-
-                /*--------------------------------- Audio ---*/
-                /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
-                player.play(AssetSource("sound/sound06pling.wav"));
-
-                /*--------------------------------- Snackbar ---*/
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                  backgroundColor: wbColorButtonGreen,
-                  duration: Duration(milliseconds: 500),
-                  content: Text(
-                    "Hinweis:\nDas Passwort \"$userPassword\" ist KORREKT 😉",
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+              child: TextFormField(
+                //validator: isValidEmail(),
+                style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w900,
+                  color: wbColorButtonDarkRed,
+                ),
+                textAlign: TextAlign.left,
+                textInputAction: TextInputAction.next,
+                obscureText: visibilityPassword,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  contentPadding: const EdgeInsets.all(16),
+              
+                  /*--------------------------------- labelStyle ---*/
+                  labelText: 'Passwort',
+                  labelStyle: const TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    backgroundColor: Colors.white,
+                  ),
+              
+                  /*--------------------------------- prefixIcon ---*/
+                  prefixIcon: const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Icon(
+                      size: 40,
+                      Icons.lock,
                     ),
                   ),
-                ));
-                /*--------------------------------- *** ---*/
-                automaticButtonClick;
-                // /*--------------------------------- checkUserAndPassword ---*/
-                // } else if (userName == "Jürgen" && userPassword == "Pass") {
-                //   // userPasswordTEC
-                log("Nach Prüfung 307 wechsle zur MainSelectionScreen ");
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const MainSelectionScreen(),
+              
+                  /*--------------------------------- hintText ---*/
+                  hintText: "Passwort eingeben",
+                  hintStyle: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.black38,
                   ),
-                );
-              } else {
-                log("Die Eingabe für das Passwort ist NICHT korrekt!");
-              }
-            },
-
-            /*--------------------------------- validator ---*/
-            validator: (userPassword) {
-              // Password wurde nicht ausgefüllt:
-              if (userPassword == null) {
-                // return "Bitte Passwort angeben";
-                log("Password wurde nicht ausgefüllt");
-              } else if (userPassword == "Pass") {
-                // } else if (userPassword == userPasswordTEC) {
-
-                // return "Passwort ist korrekt";
-                log("Password ist korrekt");
-              }
-              // Passwort und Benutzername sind beide korrekt:
-              return null;
-            },
+              
+                  /*--------------------------------- suffixIcon ---*/
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        visibilityPassword = !visibilityPassword;
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Icon(
+                        size: 40,
+                        visibilityPassword
+                            ? Icons.visibility_outlined
+                            : Icons.visibility_off_outlined,
+                      ),
+                    ),
+                  ),
+              
+                  /*--------------------------------- border ---*/
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                  ),
+                ),
+              
+                /*--------------------------------- onChanged ---*/
+                onChanged: (String userPasswordTEC) {
+                  log("Eingabe: $userPasswordTEC");
+                  inputPassword = userPasswordTEC;
+                  setState(() => inputPassword = userPasswordTEC);
+              
+                  if (userPasswordTEC == userPassword &&
+                      inputUserName == userName) {
+                    log("Das Passwort \"$userPassword\" ist KORREKT!");
+              
+                    /*--------------------------------- Audio ---*/
+                    /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
+                    player.play(AssetSource("sound/sound06pling.wav"));
+              
+                    /*--------------------------------- Snackbar ---*/
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      backgroundColor: wbColorButtonGreen,
+                      duration: Duration(milliseconds: 500),
+                      content: Text(
+                        "Hinweis:\nDas Passwort \"$userPassword\" ist KORREKT 😉",
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ));
+                    // /*--------------------------------- checkUserAndPassword ---*/
+                    // } else if (userName == "Jürgen" && userPassword == "Pass") {
+                    //   // userPasswordTEC
+                    log("0435 - P01LoginScreen - nach erfolgreicher Prüfung wechsle zur MainSelectionScreen");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MainSelectionScreen(),
+                      ),
+                    );
+                  } else {
+                    log("Die Eingabe für das Passwort ist NICHT korrekt!");
+                  }
+                },
+              
+                /*--------------------------------- validator ---*/
+                validator: (userPassword) {
+                  // Password wurde nicht ausgefüllt:
+                  if (userPassword == null) {
+                    // return "Bitte Passwort angeben";
+                    log("Password wurde nicht ausgefüllt");
+                  } else if (userPassword == "Pass") {
+                    // } else if (userPassword == userPasswordTEC) {
+              
+                    // return "Passwort ist korrekt";
+                    log("Password ist korrekt");
+                  }
+                  // Passwort und Benutzername sind beide korrekt:
+                  return null;
+                },
+              ),
+            ),
           ),
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight8,
@@ -436,7 +483,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               /*--------------------------------- checkUserAndPassword ---*/
               log("0440 - P01LoginScreen - überprüfe Benutzer UND Passwort");
               if (userName == "Jürgen" && userPassword == "Pass") {
-                log("0442 - P01LoginScreen - nach Prüfung wechsle zur MainSelectionScreen");
+                log("0489 - P01LoginScreen - nach erfolgreicher Prüfung wechsle zur MainSelectionScreen");
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -488,7 +535,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                   wbBorderRadius16: 16,
                   hasShadow: true,
                   wbOnTap: () {
-                    log("0490 - P01_Loginscreeen - Google angeklickt");
+                    log("0490 - P01LoginScreen - Google angeklickt");
                     /*--------------------------------- showDialog ---*/
                     showDialog(
                       context: context,
@@ -516,14 +563,14 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                   wbBorderRadius16: 16,
                   hasShadow: true,
                   wbOnTap: () {
-                    log("0508 - P01_Loginscreeen - Apple angeklickt");
+                    log("0508 - P01LoginScreen - Apple angeklickt");
                     /*--------------------------------- showDialog ---*/
                     showDialog(
                       context: context,
                       builder: (context) => const WbDialogAlertUpdateComingSoon(
                         headlineText: "Mit deinem Apple-Account einloggen?",
                         contentText:
-                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0495",
+                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0573",
                         actionsText: "OK 👍",
                       ),
                     );
@@ -545,7 +592,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                   wbBorderRadius16: 16,
                   hasShadow: true,
                   wbOnTap: () {
-                    log("0532 - P01_Loginscreeen - Workbuddy angeklickt");
+                    log("0532 - P01LoginScreen - Workbuddy angeklickt");
                     /*--------------------------------- showDialog ---*/
                     showDialog(
                       context: context,
@@ -581,7 +628,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               );
             },
             child: const Text(
-              "Neuer Benutzer? Hier registrieren 👉",
+              "Neuer Benutzer? Hier registrieren ... ➡️",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w900,
@@ -619,7 +666,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             },
           ),
           /*--------------------------------- Abstand ---*/
-          wbSizedBoxHeight16,
+          // wbSizedBoxHeight8,
           /*--------------------------------- ENDE ---*/
         ],
       ),

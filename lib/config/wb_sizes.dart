@@ -12,4 +12,5 @@ const wbSizedBoxHeight32 = SizedBox(height: 32);
 
 const wbSizedBoxWidth8 = SizedBox(width: 8);
 const wbSizedBoxWidth16 = SizedBox(width: 16);
-
+const wbSizedBoxWidth24 = SizedBox(width: 24);
+const wbSizedBoxWidth32 = SizedBox(width: 32);
