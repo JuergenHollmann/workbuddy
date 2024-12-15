@@ -88,7 +88,6 @@ class MainApp extends StatelessWidget {
     √ WbButtonsUniWithImageButton √
     √ WbDialogAlertUpdateComingSoon √
     - WbButtonUniversal2   - Beispiel: Workbuddy beenden 
-    - WbButtonUniversal    - Beispiel: Jetzt registrieren
   √ "Spacer(flex: 1)" waren das Problem, warum ich nicht mehr die Seite öffnen konnte! √
   
   - kann später evtl. gelöscht werden: lib/shared/data/user.dart
@@ -96,6 +95,7 @@ class MainApp extends StatelessWidget {
   - kann gelöscht werden: "WbDropdownButtonFormfield" 
   - kann gelöscht werden: "WbDropDownMenu2"
   - kann gelöscht werden: "SplashScreen"
+  √ wurde gelöscht: "WbButtonUniversal" √
   √ wurde gelöscht: "WBRedButton" √
   √ wurde gelöscht: "ContactMenuX" √
   √ wurde gelöscht: "ContactScreenX" √
