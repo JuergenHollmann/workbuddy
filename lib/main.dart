@@ -112,6 +112,7 @@ class MainApp extends StatelessWidget {
   - Alle Kontakte zeigen                          - Update CM-0098
   - Mit Google-Account einloggen                  - Update LS-0495
   - Mit Apple-Account einloggen                   - Update LS-0573
+  - Mit Facebook-Account einloggen                - Update LS-0601
   - Mit WorkBuddy-Account einloggen               - Update LS-0555
   - Alle Ausgaben als Liste zeigen                - Update AM-0115
   - Alle Einnahmen als Liste zeigen               - Update AM-0146

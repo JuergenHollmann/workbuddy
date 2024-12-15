@@ -223,15 +223,15 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                   fontWeight: FontWeight.w900,
                   color: wbColorButtonGreen,
                 ),
-              
+
                 textAlign: TextAlign.left,
                 textInputAction: TextInputAction.next,
-              
+
                 decoration: const InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
                   contentPadding: EdgeInsets.all(16),
-              
+
                   /*--------------------------------- labelStyle ---*/
                   labelText: 'Benutzername',
                   labelStyle: TextStyle(
@@ -239,7 +239,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                     fontWeight: FontWeight.bold,
                     backgroundColor: Colors.white,
                   ),
-              
+
                   /*--------------------------------- prefixIcon ---*/
                   prefixIcon: Padding(
                     padding: EdgeInsets.all(16),
@@ -248,7 +248,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                       Icons.person,
                     ),
                   ),
-              
+
                   /*--------------------------------- hintText ---*/
                   hintText: "Benutzername eingeben",
                   hintStyle: TextStyle(
@@ -256,29 +256,29 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                     fontWeight: FontWeight.w900,
                     color: Colors.black38,
                   ),
-              
+
                   /*--------------------------------- border ---*/
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                   ),
                 ),
-              
+
                 /*--------------------------------- onChanged ---*/
                 controller: userNameTEC,
                 onChanged: (String userNameTEC) {
                   log("0243 - p01_login_screen - Eingabe: $userNameTEC");
-              
+
                   inputUserName = userNameTEC;
                   setState(() => inputUserName = userNameTEC);
-              
+
                   if (userNameTEC == userName) {
                     /*--------------------------------- log ---*/
                     log("0249 - p01_login_screen - Der Benutzername \"$userName\" ist KORREKT 😉");
-              
+
                     /*--------------------------------- Audio ---*/
                     /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
                     player.play(AssetSource("sound/sound06pling.wav"));
-              
+
                     /*--------------------------------- Snackbar ---*/
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       backgroundColor: wbColorButtonGreen,
@@ -350,7 +350,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                   filled: true,
                   fillColor: Colors.white,
                   contentPadding: const EdgeInsets.all(16),
-              
+
                   /*--------------------------------- labelStyle ---*/
                   labelText: 'Passwort',
                   labelStyle: const TextStyle(
@@ -358,7 +358,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                     fontWeight: FontWeight.bold,
                     backgroundColor: Colors.white,
                   ),
-              
+
                   /*--------------------------------- prefixIcon ---*/
                   prefixIcon: const Padding(
                     padding: EdgeInsets.all(16),
@@ -367,7 +367,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                       Icons.lock,
                     ),
                   ),
-              
+
                   /*--------------------------------- hintText ---*/
                   hintText: "Passwort eingeben",
                   hintStyle: const TextStyle(
@@ -375,7 +375,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                     fontWeight: FontWeight.w900,
                     color: Colors.black38,
                   ),
-              
+
                   /*--------------------------------- suffixIcon ---*/
                   suffixIcon: GestureDetector(
                     onTap: () {
@@ -393,27 +393,27 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                       ),
                     ),
                   ),
-              
+
                   /*--------------------------------- border ---*/
                   border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                   ),
                 ),
-              
+
                 /*--------------------------------- onChanged ---*/
                 onChanged: (String userPasswordTEC) {
                   log("Eingabe: $userPasswordTEC");
                   inputPassword = userPasswordTEC;
                   setState(() => inputPassword = userPasswordTEC);
-              
+
                   if (userPasswordTEC == userPassword &&
                       inputUserName == userName) {
                     log("Das Passwort \"$userPassword\" ist KORREKT!");
-              
+
                     /*--------------------------------- Audio ---*/
                     /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
                     player.play(AssetSource("sound/sound06pling.wav"));
-              
+
                     /*--------------------------------- Snackbar ---*/
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       backgroundColor: wbColorButtonGreen,
@@ -441,7 +441,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                     log("Die Eingabe für das Passwort ist NICHT korrekt!");
                   }
                 },
-              
+
                 /*--------------------------------- validator ---*/
                 validator: (userPassword) {
                   // Password wurde nicht ausgefüllt:
@@ -450,7 +450,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                     log("Password wurde nicht ausgefüllt");
                   } else if (userPassword == "Pass") {
                     // } else if (userPassword == userPasswordTEC) {
-              
+
                     // return "Passwort ist korrekt";
                     log("Password ist korrekt");
                   }
@@ -521,7 +521,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           ),
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight8,
-          /*--------------------------------- Login intern mit Google ---*/
+          /*--------------------------------- Login mit Google ---*/
           Padding(
             padding: const EdgeInsets.fromLTRB(2, 0, 12, 0),
             child: Row(children: [
@@ -552,7 +552,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               ),
               /*--------------------------------- Abstand ---*/
               SizedBox(width: 24),
-              /*--------------------------------- Login intern mit Apple ---*/
+              /*--------------------------------- Login mit Apple ---*/
               Expanded(
                 child: WbImageButtonNoText(
                   wbColor: wbColorButtonBlue,
@@ -571,6 +571,34 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                         headlineText: "Mit deinem Apple-Account einloggen?",
                         contentText:
                             "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0573",
+                        actionsText: "OK 👍",
+                      ),
+                    );
+                    /*--------------------------------- showDialog ENDE ---*/
+                  },
+                ),
+              ),
+              /*--------------------------------- Abstand ---*/
+              SizedBox(width: 24),
+              /*--------------------------------- Login mit Facebook ---*/
+              Expanded(
+                child: WbImageButtonNoText(
+                  wbColor: wbColorDrawerOrangeLight,
+                  wbImage: Image(image: AssetImage("assets/logo_facebook.png")),
+                  wbImagePadding: 8,
+                  wbWidth60: 60,
+                  wbHeight60: 60,
+                  wbBorderRadius16: 16,
+                  hasShadow: true,
+                  wbOnTap: () {
+                    log("0594 - P01LoginScreen - Facebook angeklickt");
+                    /*--------------------------------- showDialog ---*/
+                    showDialog(
+                      context: context,
+                      builder: (context) => const WbDialogAlertUpdateComingSoon(
+                        headlineText: "Mit deinem Facebook-Account einloggen?",
+                        contentText:
+                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0601",
                         actionsText: "OK 👍",
                       ),
                     );
