@@ -517,6 +517,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                       wbColor: wbColorButtonBlue,
                       wbImage: Image(
                           image: AssetImage("assets/workbuddy_glow_logo.png")),
+                      wbImagePadding: 5,
                       wbWidth60: 60,
                       wbHeight60: 60,
                       wbBorderRadius16: 16,

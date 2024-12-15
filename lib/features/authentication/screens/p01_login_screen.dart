@@ -13,6 +13,7 @@ import 'package:workbuddy/features/authentication/schema/server_user_response.da
 import 'package:workbuddy/features/authentication/schema/user.dart';
 import 'package:workbuddy/features/authentication/screens/p00_registration_screen.dart';
 import 'package:workbuddy/features/authentication/screens/user_screen.dart';
+import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 import 'package:workbuddy/shared/widgets/wb_green_button.dart';
 
@@ -475,51 +476,93 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           wbSizedBoxHeight8,
           /*--------------------------------- Login intern mit Google ---*/
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.fromLTRB(2, 0, 12, 0),
             child: Row(children: [
               Expanded(
                 child: WbImageButtonNoText(
                   wbColor: const Color.fromARGB(255, 209, 209, 209),
                   wbImage: Image(image: AssetImage("assets/logo_google.png")),
+                  wbImagePadding: 8,
                   wbWidth60: 60,
                   wbHeight60: 60,
                   wbBorderRadius16: 16,
                   hasShadow: true,
-                  wbOnTap: () {},
+                  wbOnTap: () {
+                    log("0490 - P01_Loginscreeen - Google angeklickt");
+                    /*--------------------------------- showDialog ---*/
+                    showDialog(
+                      context: context,
+                      builder: (context) => const WbDialogAlertUpdateComingSoon(
+                        headlineText: "Mit deinem Google-Account einloggen?",
+                        contentText:
+                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0495",
+                        actionsText: "OK 👍",
+                      ),
+                    );
+                    /*--------------------------------- showDialog ENDE ---*/
+                  },
                 ),
               ),
-                   SizedBox(width: 16),
-            
+              /*--------------------------------- Abstand ---*/
+              SizedBox(width: 24),
               /*--------------------------------- Login intern mit Apple ---*/
               Expanded(
                 child: WbImageButtonNoText(
                   wbColor: wbColorButtonBlue,
                   wbImage: Image(image: AssetImage("assets/logo_apple.png")),
+                  wbImagePadding: 8,
                   wbWidth60: 60,
                   wbHeight60: 60,
                   wbBorderRadius16: 16,
                   hasShadow: true,
-                  wbOnTap: () {},
+                  wbOnTap: () {
+                    log("0508 - P01_Loginscreeen - Apple angeklickt");
+                    /*--------------------------------- showDialog ---*/
+                    showDialog(
+                      context: context,
+                      builder: (context) => const WbDialogAlertUpdateComingSoon(
+                        headlineText: "Mit deinem Apple-Account einloggen?",
+                        contentText:
+                            "Diese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0495",
+                        actionsText: "OK 👍",
+                      ),
+                    );
+                    /*--------------------------------- showDialog ENDE ---*/
+                  },
                 ),
               ),
-              SizedBox(width: 16),
-            
+              /*--------------------------------- Abstand ---*/
+              SizedBox(width: 24),
               /*--------------------------------- Login intern mit WorkBuddy ---*/
               Expanded(
                 child: WbImageButtonNoText(
                   wbColor: wbColorButtonGreen,
-                  wbImage:
-                      Image(image: AssetImage("assets/workbuddy_glow_logo.png")),
+                  wbImage: Image(
+                      image: AssetImage("assets/workbuddy_glow_logo.png")),
+                  wbImagePadding: 8,
                   wbWidth60: 60,
                   wbHeight60: 60,
                   wbBorderRadius16: 16,
                   hasShadow: true,
-                  wbOnTap: () {},
+                  wbOnTap: () {
+                    log("0532 - P01_Loginscreeen - Workbuddy angeklickt");
+                    /*--------------------------------- showDialog ---*/
+                    showDialog(
+                      context: context,
+                      builder: (context) => const WbDialogAlertUpdateComingSoon(
+                        headlineText:
+                            "Mit deinem INTERNEN WorkBuddy-Account einloggen?",
+                        contentText:
+                            "HINWEIS: Für deinen INTERNEN WorkBuddy-Account wird keine Internet-Verbindung benötigt.\n\nDeine Daten werden NUR INTERN in einer Datenbank auf deinem Smartphone gespeichert.\n\nEs gibt auch keine weitere automatische Datensicherung!\n\nSpäter können diese Daten aber durch eine Registrierung und Synchronisierung über das Internet gesichert werden. \n\nDiese Funktion kommt bald in einem KOSTENLOSEN Update!\n\nHinweis: LS-0555",
+                        actionsText: "OK 👍",
+                      ),
+                    );
+                    /*--------------------------------- showDialog ENDE ---*/
+                  },
                 ),
               ),
             ]),
           ),
-
           /*--------------------------------- Abstand ---*/
           wbSizedBoxHeight16,
           /*--------------------------------- Divider ---*/
@@ -527,7 +570,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
           /*--------------------------------- Text ---*/
           GestureDetector(
             onTap: () {
-              log("Auf - P00RegistrationScreen gehen - aktiviert");
+              log("0532 - P01Loginscreeen - zum P00RegistrationScreen gehen");
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -547,7 +590,6 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               textAlign: TextAlign.right,
             ),
           ),
-
           /*--------------------------------- Divider ---*/
           const Divider(thickness: 4, color: wbColorButtonGreen),
           /*--------------------------------- Abstand ---*/

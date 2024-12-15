@@ -15,7 +15,7 @@ class WBGreenButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(right: 10),
+        padding: const EdgeInsets.fromLTRB(2, 0, 12, 0),
         child: Container(
           width: 398,
           height: 60,

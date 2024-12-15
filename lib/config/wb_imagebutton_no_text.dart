@@ -9,6 +9,7 @@ class WbImageButtonNoText extends StatelessWidget {
     super.key,
     required this.wbColor,
     required this.wbImage,
+    required this.wbImagePadding,
     required this.wbWidth60,
     required this.wbHeight60,
     required this.wbBorderRadius16,
@@ -18,6 +19,7 @@ class WbImageButtonNoText extends StatelessWidget {
 
   final Color wbColor;
   final Image wbImage;
+  final double wbImagePadding;
   final double wbWidth60;
   final double wbHeight60;
   final double wbBorderRadius16;
@@ -58,7 +60,7 @@ class WbImageButtonNoText extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(3),
+          padding: EdgeInsets.all(wbImagePadding),
           child: wbImage,
         ),
       ),
