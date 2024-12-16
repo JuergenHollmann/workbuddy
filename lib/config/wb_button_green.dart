@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
-import 'package:workbuddy/backup_screens/main_selection_screen.dart';
+import 'package:workbuddy/features/home/screens/main_selection_screen.dart';
 
 class WBGreenIncomeButton extends StatelessWidget {
   const WBGreenIncomeButton({super.key});

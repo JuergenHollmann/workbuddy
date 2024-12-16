@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
-import 'package:workbuddy/shared/widgets/email_user_selection.dart';
-
-import '../shared/data/mock_email_users_data.dart';
+import 'package:workbuddy/features/email/email_user_selection.dart';
+import 'mock_email_users_data.dart';
 
 /*--------------------------------- *** ---*/
-class EMailScreen extends StatefulWidget {
-  const EMailScreen({super.key});
+class EMailScreenP043 extends StatefulWidget {
+  const EMailScreenP043({super.key});
 /*--------------------------------- *** ---*/
   @override
-  State<EMailScreen> createState() => _EMailScreenState();
+  State<EMailScreenP043> createState() => _EMailScreenP043State();
 }
 
 /*--------------------------------- *** ---*/
-class _EMailScreenState extends State<EMailScreen> {
+class _EMailScreenP043State extends State<EMailScreenP043> {
 /*--------------------------------- *** ---*/
   @override
   void initState() {
@@ -25,12 +24,10 @@ class _EMailScreenState extends State<EMailScreen> {
   /*--------------------------------- *** ---*/
   // die Gesamt-Anzahl aller User in der Liste zeigen:
   int searchFieldCounter043 = emailUsersData.length;
-
   /*--------------------------------- *** ---*/
   // die gefundene Anzahl aller User in der Liste zeigen:
   int searchFieldFoundCounter043 =
       emailUsersData.length; //emailUsersData.length;
-
   /*--------------------------------- Scaffold ---*/
   @override
   Widget build(BuildContext context) {
@@ -101,15 +98,6 @@ class _EMailScreenState extends State<EMailScreen> {
                 ],
               ),
             ),
-            /*--------------------------------- *** ---*/
-            //const WbTextFormField(),
-            /*--------------------------------- *** ---*/
-            // deaktivieren:
-            // const WBTextfieldNotice(
-            //   headlineText: "E-Mail-Nachricht:",
-            //   hintText: "- HIER - den Text der E-Mail eingeben:",
-            // ),
-
             /*--------------------------------- MiniFooter ---*/
             const Divider(thickness: 3, height: 16, color: wbColorLogoBlue),
             Column(

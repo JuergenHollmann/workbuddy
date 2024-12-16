@@ -40,6 +40,7 @@ class MainSelectionScreen extends StatelessWidget {
               /*--------------------------------- Buttons ---*/
               Column(
                 children: [
+                  // Hier auf GridPad umbauen - MainSelectionScreen - 0043
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [ButtonAccounting(), ButtonCommunication()],

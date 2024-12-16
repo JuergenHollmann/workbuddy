@@ -1,4 +1,15 @@
 /*----------------------------------------------------------------------------------*/
+    return StreamBuilder(
+stream: context.read<AuthRepository>().authStateChanges(), 
+builder: (context, snapshot) {
+return Container ();
+}, );
+
+
+
+
+
+
 - Der SplashScreen wurde installiert mit "flutter_native_splash".
 /*----------------------------------------------------------------------------------*/
 /* App-Icon generieren und installieren mit"flutter_launcher_icons":

@@ -2,11 +2,12 @@ import 'dart:developer';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:workbuddy/features/home/screens/home_screen.dart';
-// import 'package:workbuddy/shared/repositories/auth_repository.dart';
-// import 'package:workbuddy/shared/repositories/database_repository.dart';
-// import 'package:workbuddy/shared/repositories/firebase_auth_repository.dart';
-// import 'package:workbuddy/shared/repositories/mock_database.dart';
+import 'package:workbuddy/shared/repositories/auth_repository.dart';
+import 'package:workbuddy/shared/repositories/database_repository.dart';
+import 'package:workbuddy/shared/repositories/firebase_auth_repository.dart';
+import 'package:workbuddy/shared/repositories/mock_database.dart';
 
 import 'firebase_options.dart';
 
@@ -16,20 +17,32 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   /*--------------------------------- *** ---*/
-  // final DatabaseRepository databaseRepository = MockDatabase();
-  // final AuthRepository authRepository = FirebaseAuthRepository();
+  final DatabaseRepository databaseRepository = MockDatabase();
+  final AuthRepository authRepository = FirebaseAuthRepository();
 
-  runApp(MainApp(
-    // databaseRepository: databaseRepository,
-    // authRepository: authRepository,
+  runApp(MultiProvider(
+    providers: [
+      Provider<DatabaseRepository>(
+        create: (_) => databaseRepository,
+      ),
+      Provider<AuthRepository>(
+        create: (_) => authRepository,
+      ),
+    ],
+    child: MainApp(
+      databaseRepository: databaseRepository,
+      authRepository: authRepository,
+    ),
   ));
 }
 
 class MainApp extends StatelessWidget {
   const MainApp({
     super.key,
-    // required DatabaseRepository databaseRepository,
-    // required AuthRepository authRepository,
+    DatabaseRepository?
+        databaseRepository, // mit Fragezeigen --> nicht "required" + "nullable"
+    AuthRepository?
+        authRepository, // mit Fragezeigen --> nicht "required" + "nullable"
   });
   /*--------------------------------- *** ---*/
   static const appTitle = 'WorkBuddy • save time and money!';
@@ -45,8 +58,15 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+  /*--------------------------------- Projekt 21: Provider ---
+  1) Provider
+  √ Implementiere Provider in deiner App.
+  Entferne alle Klassenattribute und Parameter aus allen Widgets, die Repositories entgegennehmen und speichern.
+  Nutze stattdessen Provider, um deine Repositories zu holen und zu verwenden.
+  Hinweis: Folge der Anleitung aus der Vorlesung und nutze den Code der Batch App als Hilfe!
+  Wie sieht dein Code aus, um Repositories zur Verfügung zu stellen und zu verwenden?
 
-  /*--------------------------------- Projekt 20: Firerbase Auth ---
+  /*--------------------------------- Projekt 20: Firebase Auth ---
   1) AuthRepository
   √ Implementiere ein AuthRepository in deiner App.
   Dieses soll Methoden bieten, um an einen Benutzer zu kommen
@@ -75,11 +95,18 @@ class MainApp extends StatelessWidget {
   Wie sieht dein Code jetzt aus? Kopiere ihn in das Antwortfeld.
 
 * Firebase:
-  √ für iOS muss im ios/Podfile ---> platform :ios, '13.0' eingestellt werden √ 
+  √ für iOS muss im ios/Podfile     ---> platform :ios, '13.0'  eingestellt werden √ 
+  √ für macOS muss im macos/Podfile ---> platform :osx, '10.15' eingestellt werden √ 
 
   /*--------------------------------- TODO's ---
   - WbImageButtonNoText: Abfrage ob mit oder ohne Schatten - 0038
   - In allen Buttons eine Soundfunktion (ClicK) einfügen
+  - "ButtonAccounting"    umbauen und mit Text erweitern - MainSelectionScreen - 0043
+  - "ButtonCommunication" umbauen und mit Text erweitern - MainSelectionScreen - 0043
+  - "ButtonCustomer"      umbauen und mit Text erweitern - MainSelectionScreen - 0043
+  - "ButtonCompanies"     umbauen und mit Text erweitern - MainSelectionScreen - 0043
+
+  - auf GridPad umbauen - MainSelectionScreen - 0043
   √ WbHomePage: WbInfoContainer als "Footer" programmieren √
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
@@ -98,6 +125,7 @@ class MainApp extends StatelessWidget {
 - kann später evtl. gelöscht werden: lib/features/authentication/repositories/user_repository.dart
 - kann später evtl. gelöscht werden: lib/features/authentication/logic/user_service.dart
 - kann später evtl. gelöscht werden: lib/features/authentication/screens/user_screen.dart
+- kann später evtl. gelöscht werden: "backup_screens" mit allen Unterordnern
 
   - kann gelöscht werden: "WBTextfieldNotice"
   - kann gelöscht werden: "WbDividerWithSmallTextCenter"
@@ -170,11 +198,11 @@ class MainApp extends StatelessWidget {
   git rm --cached ios/Runner/GoogleService-Info.plist
 
   - ANDERE Schriftgrößen automatisch einstellen? Beispiel: iOS = 20 | Pixel8 = 27 | SamsungA05 = 21 (0513)
-  - CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern
+  √ CompanyScreen: Button "Firma speichern" auf dynamische Größe ändern √
   √ CompanyScreen: DropDown Lieferant / Kunde / etc. anstatt "CompanyRadioButton1" = deaktiviert - 0193 √
-  - CompanyScreen: Name der Firma unter dem Logo automatisch eintragen
-  - CompanyScreen: Name des Kunden unter dem Bild automatisch eintragen
-  - ContactScreen: lässt sich nicht mehr starten!
+  √ CompanyScreen: Name der Firma unter dem Logo automatisch eintragen √
+  √ CompanyScreen: Name des Kunden unter dem Bild automatisch eintragen √
+  √ ContactScreen: lässt sich nicht mehr starten - gelöst, Seite komplett neu aufgebaut √
   - WbButtonUniversal: Warum hat "width" keine Auswirkung?
   - WbHomePage: Drawer fertig programmieren
   - P01LoginScreen: 0513 - andere Schriftgrößen: iOS = 24 | Pixel8 = 27
@@ -195,4 +223,4 @@ class MainApp extends StatelessWidget {
   - Den GestureDetector nicht "doppelt" benutzen, sondern die Funktion in den Button-Widget-Vorlagen richtig übergeben und nur einmal nutzen.
   - Für die Arbeit im Team nicht nur Buttons (ohne Funktion) als Platzhalter anlegen, sondern dann einen Hinweis ("showDialog" oder "snackBar") anzeigen.
   *--------------------------------- *** ---*/
-*/
+*/*/

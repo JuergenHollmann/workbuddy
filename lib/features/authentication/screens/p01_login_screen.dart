@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/backup_screens/main_selection_screen.dart';
+import 'package:workbuddy/features/home/screens/main_selection_screen.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_dialog_2buttons.dart';
@@ -110,12 +110,6 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
         MaterialPageRoute(builder: (context) => UserScreen(user: user)));
   }
 
-  /*--------------------------------- *** ---*/
-  //  String userName = "Jürgen";
-  //  String userPassword = "pass";
-  // // bool visibilityPassword = false;
-  // bool loginButtonIsEnabled = false;
-
   /*--------------------------------- Controller ---*/
   final TextEditingController userNameTEC = TextEditingController();
   final TextEditingController userPasswordTEC = TextEditingController();
@@ -124,20 +118,6 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
   bool visibilityPassword = true;
   String inputUserName = ""; // nur für die "onChanged-Funktion"
   String inputPassword = ""; // nur für die "onChanged-Funktion"
-
-  /*--------------------------------- Login Button automatisch anklicken ---*/
-  // void automaticButtonClick() {} // wird hier nicht benötigt
-
-  // /*--------------------------------- isValidEmail ---*/
-  // String? isValidEmail(String? value) {
-  //   // E-Mail soll aus Zeichen bestehen, also nicht leer sein.
-  //   if (value == null) return "Die E-Mail muss angegeben werden! ";
-  //   // E-Mail soll mindestens 5 Zeichen lang sein (a@b.d)
-  //   if (value.length < 5) return "Die E-Mail benötigt mindestens 5 Zeichen!";
-  //   // E-Mail soll ein "@" enthalten.
-  //   if (!value.contains("@")) return "Die E-Mail muss ein @ enthalten!";
-  //   return null;
-  // }
 
   @override
   Widget build(BuildContext context) {

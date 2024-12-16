@@ -80,7 +80,7 @@ class ContactMenu extends StatelessWidget {
                       wbColor: wbColorAppBarBlue,
                       wbIcon: Icons.person_search_outlined,
                       wbIconSize40: 40,
-                      wbText: 'ALLE Kontakte\nsuchen und zeigen',
+                      wbText: 'In allen Kontakten\nsuchen und finden',
                       wbFontSize24: 20,
                       wbWidth155: 398,
                       wbHeight60: 80,

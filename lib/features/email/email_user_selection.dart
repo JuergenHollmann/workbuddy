@@ -5,8 +5,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:searchfield/searchfield.dart';
 import 'package:workbuddy/config/wb_colors.dart';
-import 'package:workbuddy/shared/models/email_user_model.dart';
-import '../data/mock_email_users_data.dart';
+import 'package:workbuddy/features/email/email_user_model.dart';
+import 'mock_email_users_data.dart';
 
 class EmailUserSelection extends StatefulWidget {
   const EmailUserSelection({super.key});
@@ -16,7 +16,7 @@ class EmailUserSelection extends StatefulWidget {
 }
 
 class _EmailUserSelectionState extends State<EmailUserSelection> {
-  final List<EmailUserModel> users = [];
+  final List<EmailUserModel> emailUser = [];
 
   @override
   void initState() {
@@ -24,9 +24,9 @@ class _EmailUserSelectionState extends State<EmailUserSelection> {
     /*--------------------------------- *** ---*/
     // durch alle Elemente in der Liste iterieren:
     for (var element in emailUsersData) {
-      users.add(EmailUserModel.fromJson(element));
-      // nur zur Kontrolle: zeigt bei JEDEM Durchgang die Anzahl aus "users.length" an:
-      // int searchFieldCounter = users.length;
+      emailUser.add(EmailUserModel.fromJson(element));
+      // nur zur Kontrolle: zeigt bei JEDEM Durchgang die Anzahl aus "emailUser.length" an:
+      // int searchFieldCounter = emailUser.length;
       // log("0028_custom Counter: $searchFieldCounter");
 
       // String searchFieldItems = "$firstName $lastName $email";
@@ -34,7 +34,7 @@ class _EmailUserSelectionState extends State<EmailUserSelection> {
     }
     /*--------------------------------- *** ---*/
     // die Gesamt-Anzahl der User in der Liste zeigen (NACH Iterierung NUR EINE Zahl zeigen):
-    int searchFieldCounter = users.length;
+    int searchFieldCounter = emailUser.length;
     log("0037 - EmailUserSelection - custom Counter: $searchFieldCounter");
     /*--------------------------------- *** ---*/
     // die gefundene Anzahl der User in der Liste zeigen:
@@ -61,74 +61,6 @@ class _EmailUserSelectionState extends State<EmailUserSelection> {
   @override
   Widget build(BuildContext context) {
     /*--------------------------------- E-Mail-Adresse ---*/
-    // return TextFormField(
-    //   style: const TextStyle(
-    //     fontSize: 28,
-    //     fontWeight: FontWeight.w900,
-    //     color: wbColorButtonDarkRed,
-    //   ),
-    //   textAlign: TextAlign.left,
-    //   textInputAction: TextInputAction.next,
-    //   //obscureText: visibilityPassword,
-    //   decoration: InputDecoration(
-    //     filled: true,
-    //     fillColor: Colors.white,
-    //     contentPadding: const EdgeInsets.all(16),
-    //     errorStyle: const TextStyle(
-    //       fontSize: 18,
-    //       fontWeight: FontWeight.bold,
-    //       color: Colors.red,
-    //       backgroundColor: Colors.yellow,
-    //     ),
-
-    //     /*--------------------------------- labelStyle ---*/
-    //     labelText: 'E-Mail-Adresse',
-    //     labelStyle: const TextStyle(
-    //       fontSize: 28,
-    //       fontWeight: FontWeight.bold,
-    //       backgroundColor: Colors.white,
-    //     ),
-
-    //     /*--------------------------------- prefixIcon ---*/
-    //     prefixIcon: const Padding(
-    //       padding: EdgeInsets.all(16),
-    //       child: Icon(
-    //         size: 40,
-    //         Icons.smartphone_outlined,
-    //       ),
-    //     ),
-
-    //     /*--------------------------------- hintText ---*/
-    //     hintText: "Bitte E-Mail eingeben",
-    //     hintStyle: const TextStyle(
-    //       fontSize: 18,
-    //       fontWeight: FontWeight.w900,
-    //       color: Colors.black38,
-    //     ),
-
-    //     /*--------------------------------- suffixIcon ---*/
-    //     suffixIcon: GestureDetector(
-    //       onTap: () {
-    //         setState(() {
-    //           // Hilfetext anzeigen:
-    //         });
-    //       },
-    //       child: const Padding(
-    //         padding: EdgeInsets.all(16.0),
-    //         child: Icon(
-    //           size: 40,
-    //           Icons.help_outline,
-    //         ),
-    //       ),
-    //     ),
-
-    //     /*--------------------------------- border ---*/
-    //     border: const OutlineInputBorder(
-    //       borderRadius: BorderRadius.all(Radius.circular(16)),
-    //     ),
-    //   ),
-    // );
-
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
       child: SearchField<EmailUserModel>(
@@ -136,7 +68,7 @@ class _EmailUserSelectionState extends State<EmailUserSelection> {
         // dynamicHeight: true,
         // maxSuggestionBoxHeight: 200,
         controller: searchFieldController,
-        maxSuggestionsInViewPort: 5,
+        maxSuggestionsInViewPort: 4,
         itemHeight: 110,
         /*--------------------------------- SearchInputDecoration - Suchfeld ---*/
         searchInputDecoration: SearchInputDecoration(
@@ -214,21 +146,7 @@ class _EmailUserSelectionState extends State<EmailUserSelection> {
         ),
         marginColor: Colors.black, //Colors.grey.shade300,
         /*--------------------------------- *** ---*/
-        // das hier gibt eine Fehlermeldung!
-        // initialValue: SearchFieldListItem<EmailUserModel>(
-        //   users[2].firstName,
-        //   child: Container(
-        //     color: Colors.red,
-        //     width: 100,
-        //     alignment: Alignment.center,
-        //     child: Text(
-        //       users[2].firstName,
-        //       style: const TextStyle(color: Colors.white),
-        //     ),
-        //   ),
-        // ),
-        /*--------------------------------- *** ---*/
-        suggestions: users
+        suggestions: emailUser
             .map(
               (emailUserModel) => SearchFieldListItem<EmailUserModel>(
                 // todo: Wie kann ich hier nach mehreren Kriterien suchen oder filtern?
