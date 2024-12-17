@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:workbuddy/shared/models/user_data.dart';
+import 'package:workbuddy/shared/data/user_data.dart';
 import 'database_repository.dart';
 
 class MockDatabase implements DatabaseRepository {
@@ -35,11 +35,11 @@ class MockDatabase implements DatabaseRepository {
     throw UnimplementedError();
   }
 
-  @override
-  Future<String> deleteUser() {
-    // todo: implement deleteUser
-    throw UnimplementedError();
-  }
+  // @override
+  // Future<String> deleteUser() {
+  //   // todo: implement deleteUser
+  //   throw UnimplementedError();
+  // }
 
   @override
   Future<List<UserData>> getAllUsers() {
@@ -47,11 +47,11 @@ class MockDatabase implements DatabaseRepository {
     throw UnimplementedError();
   }
 
-  @override
-  Future<String> getUser() {
-    // todo: implement getUser
-    throw UnimplementedError();
-  }
+  // @override
+  // Future<String> getUser() {
+  //   // todo: implement getUser
+  //   throw UnimplementedError();
+  // }
 
   @override
   Future<void> logout() {
@@ -59,11 +59,11 @@ class MockDatabase implements DatabaseRepository {
     throw UnimplementedError();
   }
 
-  @override
-  Future<String> updateUser() {
-    // todo: implement updateUser
-    throw UnimplementedError();
-  }
+  // @override
+  // Future<String> updateUser() {
+  //   // todo: implement updateUser
+  //   throw UnimplementedError();
+  // }
 /* (2) Überprüfen ob der User schon angemeldet ist */
 // for (User currentUser in _users) {
 //   if (currentUser.userName == userName) {

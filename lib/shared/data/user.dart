@@ -2,6 +2,8 @@
 Das kann später evtl. gelöscht werden: lib/shared/data/user.dart
  */
 
+import 'dart:developer';
+
 class User {
   String userName;
   String userPassword;
@@ -14,10 +16,11 @@ class User {
   @override
   String toString() {
     return "($userName $userPassword)";
+    // return "($userName, ********)"; // geht das auch mit Sternchen?
   }
 
   // /*--------------------------------------- checkLogin ---*/
-  /* Überprüfen ob der Benutzername korrekt ist */
+  /* Überprüfen ob der Benutzername UND das Passwort korrekt ist */
   bool checkLogin(String inputUserName, String inputUserPassword) {
     String checkUserName = "Jürgenx";
     String checkUserPassword = "Pass";
@@ -28,6 +31,7 @@ class User {
     } else {
       result = false;
     }
+        log('0034 - User - Benutzername UND Passwort sind korrekt --> $result');
     return result;
   }
 

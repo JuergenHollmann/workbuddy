@@ -86,4 +86,6 @@ class FirebaseAuthRepository implements AuthRepository {
     // todo: implement login
     throw UnimplementedError();
   }
+  
+
 }

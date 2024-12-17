@@ -4,7 +4,6 @@ Momentan existieren 2 "class User" Modelle für userName und UserPasswort:
 - shared/data/user.dart'; <-- diese wird benutzt --
 */
 
-
 abstract class AuthRepository {
   /*--------------------------------------- Login ---*/
   /* Den User einloggen */
@@ -12,6 +11,10 @@ abstract class AuthRepository {
     required String userName,
     required String userPassword,
   });
+  /*--------------------------------------- authStateChanges ---*/
+  // Future<String> authStateChanges({
+
+  // });
   /*--------------------------------------- getUser ---*/
   /* Einen User aufrufen */
   /* Falls kein User eingeloggt ist, wird "null" zurückgegeben. */

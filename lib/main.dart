@@ -19,7 +19,7 @@ void main() async {
   /*--------------------------------- *** ---*/
   final DatabaseRepository databaseRepository = MockDatabase();
   final AuthRepository authRepository = FirebaseAuthRepository();
-
+  /*--------------------------------- *** ---*/
   runApp(MultiProvider(
     providers: [
       Provider<DatabaseRepository>(
@@ -28,6 +28,10 @@ void main() async {
       Provider<AuthRepository>(
         create: (_) => authRepository,
       ),
+      // StreamProvider(
+      //   create: (_) => context.read<AuthRepository>.authStateChanges,
+      //   initialData: null,
+      // ),
     ],
     child: MainApp(
       databaseRepository: databaseRepository,
@@ -36,6 +40,7 @@ void main() async {
   ));
 }
 
+/*--------------------------------- *** ---*/
 class MainApp extends StatelessWidget {
   const MainApp({
     super.key,
@@ -61,7 +66,7 @@ class MainApp extends StatelessWidget {
   /*--------------------------------- Projekt 21: Provider ---
   1) Provider
   √ Implementiere Provider in deiner App.
-  Entferne alle Klassenattribute und Parameter aus allen Widgets, die Repositories entgegennehmen und speichern.
+  √ Entferne alle Klassenattribute und Parameter aus allen Widgets, die Repositories entgegennehmen und speichern.
   Nutze stattdessen Provider, um deine Repositories zu holen und zu verwenden.
   Hinweis: Folge der Anleitung aus der Vorlesung und nutze den Code der Batch App als Hilfe!
   Wie sieht dein Code aus, um Repositories zur Verfügung zu stellen und zu verwenden?
@@ -99,8 +104,9 @@ class MainApp extends StatelessWidget {
   √ für macOS muss im macos/Podfile ---> platform :osx, '10.15' eingestellt werden √ 
 
   /*--------------------------------- TODO's ---
+  - Anzeigen auf dem "WbInfoContainer", welcher Benutzer gerade angemeldet ist.
   - WbImageButtonNoText: Abfrage ob mit oder ohne Schatten - 0038
-  - In allen Buttons eine Soundfunktion (ClicK) einfügen
+  - In allen Buttons eine Soundfunktion (Click) einfügen
   - "ButtonAccounting"    umbauen und mit Text erweitern - MainSelectionScreen - 0043
   - "ButtonCommunication" umbauen und mit Text erweitern - MainSelectionScreen - 0043
   - "ButtonCustomer"      umbauen und mit Text erweitern - MainSelectionScreen - 0043
