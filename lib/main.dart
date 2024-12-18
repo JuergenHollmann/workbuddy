@@ -4,12 +4,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:workbuddy/features/home/screens/home_screen.dart';
+import 'package:workbuddy/firebase_options.dart';
 import 'package:workbuddy/shared/repositories/auth_repository.dart';
 import 'package:workbuddy/shared/repositories/database_repository.dart';
 import 'package:workbuddy/shared/repositories/firebase_auth_repository.dart';
 import 'package:workbuddy/shared/repositories/mock_database.dart';
 
-import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -112,7 +112,9 @@ class MainApp extends StatelessWidget {
   - "ButtonCustomer"      umbauen und mit Text erweitern - MainSelectionScreen - 0043
   - "ButtonCompanies"     umbauen und mit Text erweitern - MainSelectionScreen - 0043
 
-  - auf GridPad umbauen - MainSelectionScreen - 0043
+  - auf GridView umbauen - MainSelectionScreen - 0043
+  - "WbInfoContainer" auf ein BottomSheet legen
+  - Die grüne Neon-Linie "neon_green_line" wieder einbauen - wurde vorübergehend ausgeblendet - 0047 - NavigationBarGreenNeon
   √ WbHomePage: WbInfoContainer als "Footer" programmieren √
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √

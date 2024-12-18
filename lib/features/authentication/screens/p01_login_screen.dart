@@ -656,6 +656,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               },
             ),
           ),
+          wbSizedBoxHeight24,
           /*--------------------------------- ENDE ---*/
         ],
       ),

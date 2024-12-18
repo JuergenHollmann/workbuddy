@@ -10,7 +10,6 @@ flutter_native_splash:
     image_android: assets/splash/workbuddy_1152x1152_radius_800.png
     background_image_android: "assets/splash/workbuddy_1152x1152_radius_800.png"
 
-
 # -------------------------------------------------------------------------------
 #flutter_native_splash:
 #  color: "#000000" # Fensterhintergrund | rot = "#ff3b30" | blau = "#007aff" | "#42a5f5"
