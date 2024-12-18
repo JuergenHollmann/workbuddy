@@ -111,9 +111,10 @@ class MainApp extends StatelessWidget {
   - "ButtonCommunication" umbauen und mit Text erweitern - MainSelectionScreen - 0043
   - "ButtonCustomer"      umbauen und mit Text erweitern - MainSelectionScreen - 0043
   - "ButtonCompanies"     umbauen und mit Text erweitern - MainSelectionScreen - 0043
+  - "wbImageAssetImage"   hat keine Auswirkung!          - MainSelectionScreen - 0124
 
   - auf GridView umbauen - MainSelectionScreen - 0043
-  - "WbInfoContainer" auf ein BottomSheet legen
+  - "WbInfoContainer" auf ein BottomSheet legen?
   - Die grüne Neon-Linie "neon_green_line" wieder einbauen - wurde vorübergehend ausgeblendet - 0047 - NavigationBarGreenNeon
   √ WbHomePage: WbInfoContainer als "Footer" programmieren √
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
@@ -176,9 +177,9 @@ class MainApp extends StatelessWidget {
 - Splash-Screen neu erstellen (Android-Bug? - in Android beschnitten) - wird nicht besser - selber programmmieren
 
 * WbInfoContainer:
-  - Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927
-    - Den "WbInfoContainer" als "Menubar" deklarieren?
-    - Im "WbInfoContainer" sollen unten die Änderungen und der Kunde angezeigt werden, wenn keine Änderungen, dann "zuletzt  geändert am" anzeigen.
+  √ Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 √
+  √ Den "WbInfoContainer" als "bottomSheet" deklarieren √
+    - Im "WbInfoContainer" sollen unten die Änderungen und der Kunde angezeigt werden, wenn keine Änderungen, dann "zuletzt geändert am" anzeigen.
 
 * Drawer:
   - Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist.

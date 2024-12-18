@@ -120,22 +120,8 @@ class _MainSelectionScreenState extends State<MainSelectionScreen> {
         ),
       ),
       /*--------------------------------- NavigationBar ---*/
-      bottomNavigationBar: NavigationBarTheme(
-        data: NavigationBarThemeData(
-            labelTextStyle: WidgetStateProperty.resolveWith<TextStyle>(
-          (Set<WidgetState> states) => states.contains(WidgetState.selected)
-              ? const TextStyle(
-                  color: Colors.white,
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
-                )
-              : const TextStyle(
-                  color: Colors.yellow,
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
-                ),
-        )),
-        child: const WbNavigationbar(),
+      bottomNavigationBar: WbNavigationbar(
+        wbImageAssetImage: AssetImage("assets/button_settings.png"), // hat keine Auswirkung! - 0124 - MainSelectionScreen
       ),
       /*--------------------------------- *** ---*/
     );

@@ -2,12 +2,12 @@ import 'dart:developer';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/features/home/screens/main_selection_screen.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
 import 'package:workbuddy/config/wb_text_form_field_text_only.dart';
+import 'package:workbuddy/features/home/screens/main_selection_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 import 'package:workbuddy/shared/widgets/wb_drop_down_menu.dart';
@@ -43,43 +43,56 @@ class _CompanyScreenState extends State<CompanyScreen> {
     return Scaffold(
       backgroundColor: wbColorBackgroundBlue,
       appBar: AppBar(
-        toolbarHeight: 100,
+        /*--- "toolbarHeight" wird hier nicht mehr benötigt, weil jetzt "WbInfoContainer" die Daten anzeigt */
+        // toolbarHeight: 100,
+        title: Text(
+          'Firma bearbeiten',
+          style: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.w900,
+            color: Colors.yellow,
+          ),
+        ),
         centerTitle: true,
         backgroundColor: wbColorLogoBlue, // Hintergrundfarbe
         foregroundColor: Colors.white, // Icon-/Button-/Chevron-Farbe
         shadowColor: Colors.black,
         //elevation: 10,
         //scrolledUnderElevation: 10,
-        title: RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            text: "Firma bearbeiten\n",
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.w900,
-              color: Colors.yellow,
-            ),
-            children: <TextSpan>[
-              // children: [
-              TextSpan(
-                text:
-                    "• $inputCompanyName\n• $inputCompanyVNContactPerson $inputCompanyNNContactPerson",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-        ),
-
-        shape: Border.symmetric(
-          horizontal: BorderSide(
-            width: 3,
-          ),
-        ),
+        /*--------------------------------- *** ---*/
+        /*--- "RichText" wird hier nicht mehr benötigt, weil jetzt "WbInfoContainer" die Daten anzeigt */
+        // title: RichText(
+        //   textAlign: TextAlign.center,
+        //   text: TextSpan(
+        //     text: "Firma bearbeiten\n",
+        //     style: TextStyle(
+        //       fontSize: 28,
+        //       fontWeight: FontWeight.w900,
+        //       color: Colors.yellow,
+        //     ),
+        //     children: <TextSpan>[
+        //       // children: [
+        //       TextSpan(
+        //         text:
+        //             "• $inputCompanyName\n• $inputCompanyVNContactPerson $inputCompanyNNContactPerson",
+        //         style: TextStyle(
+        //           fontSize: 18,
+        //           fontWeight: FontWeight.w900,
+        //           color: Colors.white,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        // /*--------------------------------- *** ---*/
+        // shape: Border.symmetric(
+        //   horizontal: BorderSide(
+        //     width: 3,
+        //   ),
+        // ),
+        // /*--------------------------------- *** ---*/
       ),
+      /*--------------------------------- *** ---*/
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -140,8 +153,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                             radius: 68,
                           ),
                         ),
-                        /*--------------------------------- *** ---*/
-                        // das ist nur der Abstand zwischen dem Logo und der Firmenbezeichnung:
+                        /*--- Das ist der Abstand zwischen dem Logo und der Firmenbezeichnung ---*/
                         const SizedBox(height: 20),
                         /*--------------------------------- Name der Firma unter dem Logo ---*/
                         SizedBox(
@@ -158,8 +170,8 @@ class _CompanyScreenState extends State<CompanyScreen> {
                         ),
                       ],
                     ),
-                    /*--------------------------------- Abstand --- */
-                    const SizedBox(width: 14), // Zwischenabstand bei Expanded
+                    /*--- Das ist der Zwischenabstand bei Expanded --- */
+                    const SizedBox(width: 14),
                     /*--------------------------------- Ansprechpartner --- */
                     Column(
                       children: [
@@ -994,25 +1006,31 @@ class _CompanyScreenState extends State<CompanyScreen> {
                     /*--------------------------------- Abstand ---*/
                     wbSizedBoxHeight16,
                     const Divider(thickness: 3, color: wbColorLogoBlue),
+                    wbSizedBoxHeight32,
+                    wbSizedBoxHeight32,
                     wbSizedBoxHeight16,
+                    /* das sorgt für die automatische Anpassung der Höhe, wenn mehr Text hineingeschrieben wird */
+                    SizedBox(
+                        height:
+                            double.tryParse('.')) // hat hier keine Auswirkung!
                     /*--------------------------------- ENDE ---*/
                   ],
                 ),
               ),
-              /*--------------------------------- WbInfoContainer ---*/
-              // Der "WbInfoContainer" soll außerhalb der Scrollview am Bottom fixiert sein - 0927 todo
-              WbInfoContainer(
-                infoText:
-                    "$inputCompanyName • $inputCompanyVNContactPerson $inputCompanyNNContactPerson",
-                wbColors: Colors.yellow,
-              ),
               /*--------------------------------- Abstand ---*/
               wbSizedBoxHeight16,
-              /*--------------------------------- ENDE ---*/
+              /*--------------------------------- *** ---*/
             ],
           ),
         ),
       ),
+      /*--------------------------------- WbInfoContainer ---*/
+      bottomSheet: WbInfoContainer(
+        infoText:
+            '$inputCompanyName • $inputCompanyVNContactPerson $inputCompanyNNContactPerson\nAngemeldet zur Bearbeitung: JH-01\nLetzte Änderung: Am 18.12.2024 um 22:51 Uhr',
+        wbColors: Colors.yellow,
+      ),
+      /*--------------------------------- ENDE ---*/
     );
   }
 }
