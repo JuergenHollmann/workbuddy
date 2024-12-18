@@ -4,7 +4,7 @@ import 'package:workbuddy/shared/widgets/button_accounting.dart';
 import 'package:workbuddy/shared/widgets/button_communication.dart';
 import 'package:workbuddy/shared/widgets/button_companies.dart';
 import 'package:workbuddy/shared/widgets/button_customer.dart';
-import 'package:workbuddy/shared/widgets/navigation_bar_green_neon.dart';
+import 'package:workbuddy/shared/widgets/wb_navigationbar.dart';
 
 class MainSelectionScreen extends StatefulWidget {
   const MainSelectionScreen({super.key});
@@ -135,7 +135,7 @@ class _MainSelectionScreenState extends State<MainSelectionScreen> {
                   fontWeight: FontWeight.bold,
                 ),
         )),
-        child: const NavigationBarGreenNeon(),
+        child: const WbNavigationbar(),
       ),
       /*--------------------------------- *** ---*/
     );
