@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
@@ -37,7 +37,7 @@ const String userPassword = "Pass";
 class _P01LoginScreenState extends State<P01LoginScreen> {
   /*--------------------------------- AudioPlayer ---*/
   // ACHTUNG: Beim player den sound OHNE "assets/...", sondern gleich mit "sound/..." eintragen (siehe unten):
-  late AudioPlayer player = AudioPlayer();
+  // late AudioPlayer player = AudioPlayer(); // deaktiviert weil es Probleme mit macOS-Version 10.14 gibt - 0040 - P01LoginScreen
 
   /*--------------------------------- GlobalKey ---*/
   // Brauchen wir, damit wir alle TextFormFields validieren können
@@ -129,6 +129,12 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
+
+
+
+
+
+      /*--------------------------------- *** ---*/
       child: ListView(
         children: [
           /*--------------------------------- Image Logo ---*/
@@ -253,7 +259,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                     log("0249 - p01_login_screen - Der Benutzername \"$userName\" ist KORREKT 😉");
                     /*--------------------------------- Audio ---*/
                     /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
-                    player.play(AssetSource("sound/sound06pling.wav"));
+                    //player.play(AssetSource("sound/sound06pling.wav"));
                     /*--------------------------------- Snackbar ---*/
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       backgroundColor: wbColorButtonGreen,
@@ -368,7 +374,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
                     log("Das Passwort \"$userPassword\" ist KORREKT!");
                     /*--------------------------------- Audio ---*/
                     /* Überprüfe ob der AudioPlayer in den Settings(Jingles) "an" oder "aus" ist. */ //todo
-                    player.play(AssetSource("sound/sound06pling.wav"));
+                    //player.play(AssetSource("sound/sound06pling.wav"));
                     /*--------------------------------- Snackbar ---*/
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       backgroundColor: wbColorButtonGreen,
@@ -445,7 +451,7 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
               } else {
                 /*--------------------------------- Snackbar ---*/
                 log("Das Passwort oder der Benutzername sind nicht korrekt ... 😉");
-                player.play(AssetSource("sound/sound03enterprise.wav"));
+                //player.play(AssetSource("sound/sound03enterprise.wav"));
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   backgroundColor: wbColorButtonDarkRed,
                   content: Text(
@@ -657,9 +663,13 @@ class _P01LoginScreenState extends State<P01LoginScreen> {
             ),
           ),
           wbSizedBoxHeight24,
-          /*--------------------------------- ENDE ---*/
         ],
       ),
+      /*--------------------------------- ENDE ---*/
+
+
+
+
     );
   }
 }

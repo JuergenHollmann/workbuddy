@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class ContactListP051 extends StatefulWidget {
@@ -9,7 +8,7 @@ class ContactListP051 extends StatefulWidget {
 }
 
 class _ContactListP051State extends State<ContactListP051>{
-    late AudioPlayer player = AudioPlayer();
+    //late AudioPlayer player = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {

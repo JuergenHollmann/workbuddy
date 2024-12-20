@@ -34,8 +34,8 @@ void main() async {
       // ),
     ],
     child: MainApp(
-      databaseRepository: databaseRepository,
-      authRepository: authRepository,
+      // databaseRepository: databaseRepository,
+      // authRepository: authRepository,
     ),
   ));
 }
@@ -44,10 +44,10 @@ void main() async {
 class MainApp extends StatelessWidget {
   const MainApp({
     super.key,
-    DatabaseRepository?
-        databaseRepository, // mit Fragezeigen --> nicht "required" + "nullable"
-    AuthRepository?
-        authRepository, // mit Fragezeigen --> nicht "required" + "nullable"
+    // DatabaseRepository?
+    //     databaseRepository, // mit Fragezeigen --> nicht "required" + "nullable"
+    // AuthRepository?
+    //     authRepository, // mit Fragezeigen --> nicht "required" + "nullable"
   });
   /*--------------------------------- *** ---*/
   static const appTitle = 'WorkBuddy • save time and money!';
@@ -104,7 +104,9 @@ class MainApp extends StatelessWidget {
   √ für macOS muss im macos/Podfile ---> platform :osx, '10.15' eingestellt werden √ 
 
   /*--------------------------------- TODO's ---
-  - Anzeigen auf dem "WbInfoContainer", welcher Benutzer gerade angemeldet ist.
+  - AudioPlayer wurde deaktiviert weil es Probleme mit macOS-Version 10.14 gibt - 0040 - P01LoginScreen
+    - Pfad: macos/Flutter/GeneratedPluginRegistrant.swift wurde auskommentiert
+  - Anzeigen in Echtzeit auf dem "WbInfoContainer", welcher Benutzer gerade angemeldet ist.
   - WbImageButtonNoText: Abfrage ob mit oder ohne Schatten - 0038
   - In allen Buttons eine Soundfunktion (Click) einfügen
   - "ButtonAccounting"    umbauen und mit Text erweitern - MainSelectionScreen - 0043
@@ -114,9 +116,9 @@ class MainApp extends StatelessWidget {
   - "wbImageAssetImage"   hat keine Auswirkung!          - MainSelectionScreen - 0124
 
   - auf GridView umbauen - MainSelectionScreen - 0043
-  - "WbInfoContainer" auf ein BottomSheet legen?
   - Die grüne Neon-Linie "neon_green_line" wieder einbauen - wurde vorübergehend ausgeblendet - 0047 - NavigationBarGreenNeon
   √ WbHomePage: WbInfoContainer als "Footer" programmieren √
+  √ "WbInfoContainer" auf ein BottomSheet legen - funzt √
   √ Icons sollen beim Aussuchen sichtbar sein (Einstellungen in VSCode) √
   √ CompanyScreen: Logo und Bild oben sind noch zu groß für SamsungA05 √
   √ GestureDetector in allen Button-Widgets fixen √

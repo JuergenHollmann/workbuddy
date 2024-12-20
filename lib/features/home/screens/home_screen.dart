@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/authentication/screens/p01_login_screen.dart';
+import 'package:workbuddy/features/home/screens/main_selection_screen.dart';
+import 'package:workbuddy/shared/repositories/auth_repository.dart';
 import 'package:workbuddy/shared/widgets/wb_info_container.dart';
 
 class WbHomePage extends StatefulWidget {
@@ -51,7 +53,6 @@ class _WbHomePageState extends State<WbHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: wbColorBackgroundBlue,
-
       /*--------------------------------- AppBar ---*/
       appBar: AppBar(
         backgroundColor: wbColorAppBarBlue,
@@ -75,13 +76,29 @@ class _WbHomePageState extends State<WbHomePage> {
           },
         ),
       ),
-
       /*--------------------------------- P01LoginScreen ---*/
       body: Center(
         child: Column(
           children: [
             wbSizedBoxHeight8,
-            Expanded(child: const P01LoginScreen()),
+            Expanded(
+              child: StreamBuilder(
+                stream: AuthRepository().authInstance.authStateChanges(),
+                builder: (context, snapshot) {
+                  /* Wenn KORREKT eingeloggt ... */
+                  if (snapshot.hasData &&
+                      snapshot.connectionState == ConnectionState.active) {
+                    /* ... dann zeige  */
+                    return (const MainSelectionScreen());
+                    /* wenn NICHT korrekt eingeloggt ... */
+                  } else {
+                    /* ... dann zeige */
+                    return const P01LoginScreen();
+                  }
+                },
+                // child: const P01LoginScreen(),
+              ),
+            ),
             // _widgetDrawerOptions[_selectedDrawerIndex],
             /*--------------------------------- WbInfoContainer ---*/
             WbInfoContainer(

@@ -5,7 +5,6 @@ import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/features/email/email_screen_p043.dart';
-import 'package:workbuddy/features/email/email_user_selection.dart';
 import 'package:workbuddy/shared/widgets/wb_buttons_uni_with_image_button.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
@@ -59,7 +58,7 @@ class CommunicationMenu extends StatelessWidget {
                     wbIcon: Icons.phone_forwarded,
                     wbIconSize40: 40,
                     wbText: "Kontakt anrufen",
-                    wbFontSize24: 22,
+                    wbFontSize24: 20,
                     wbWidth276: 276,
                     wbHeight90: 90,
                     wbHeightAssetImage90: 90,
@@ -119,7 +118,7 @@ class CommunicationMenu extends StatelessWidget {
                     wbIcon: Icons.phonelink_ring_outlined,
                     wbIconSize40: 40,
                     wbText: "WhatsApp versenden",
-                    wbFontSize24: 22,
+                    wbFontSize24: 20,
                     wbWidth276: 276,
                     wbHeight90: 90,
                     wbHeightAssetImage90: 90,
@@ -179,7 +178,7 @@ class CommunicationMenu extends StatelessWidget {
                     wbIcon: Icons.forward_to_inbox_outlined,
                     wbIconSize40: 40,
                     wbText: "E-Mail versenden",
-                    wbFontSize24: 22,
+                    wbFontSize24: 20,
                     wbWidth276: 276,
                     wbHeight90: 90,
                     wbHeightAssetImage90: 90,
@@ -195,7 +194,7 @@ class CommunicationMenu extends StatelessWidget {
                           // builder: (context) => const EMailScreenP043(),
                           // direkten Weg finden:
                           builder: (context) =>
-                              const EmailUserSelection(), // funzt noch nicht
+                              const EMailScreenP043(), // EmailUserSelection(), // funzt noch nicht
                         ),
                       );
                     },
