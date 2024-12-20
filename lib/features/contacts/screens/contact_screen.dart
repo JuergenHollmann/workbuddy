@@ -1,13 +1,13 @@
 import 'dart:developer';
 
-import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:workbuddy/features/home/screens/main_selection_screen.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
 import 'package:workbuddy/config/wb_sizes.dart';
 import 'package:workbuddy/config/wb_text_form_field.dart';
 import 'package:workbuddy/config/wb_text_form_field_text_only.dart';
+import 'package:workbuddy/features/home/screens/main_selection_screen.dart';
 import 'package:workbuddy/shared/widgets/wb_dialog_alert_update_coming_soon.dart';
 import 'package:workbuddy/shared/widgets/wb_divider_with_text_in_center.dart';
 import 'package:workbuddy/shared/widgets/wb_drop_down_menu.dart';
@@ -35,7 +35,7 @@ String inputCompanyVNContactPerson =
 String inputCompanyNNContactPerson = ""; // nur für die "onChanged-Funktion"
 
 class _ContactScreenState extends State<ContactScreen> {
-  late AudioPlayer player = AudioPlayer();
+  // late AudioPlayer player = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -945,7 +945,7 @@ class _ContactScreenState extends State<ContactScreen> {
                         wbOnTap: () {
                           log("0965 - ContactScreen - Kontakt speichern - angeklickt");
                           /*--------------------------------- Snackbar ---*/
-                          player.play(AssetSource("sound/sound06pling.wav"));
+                          // player.play(AssetSource("sound/sound06pling.wav"));
                           ScaffoldMessenger.of(context)
                               .showSnackBar(const SnackBar(
                             backgroundColor: wbColorButtonGreen,

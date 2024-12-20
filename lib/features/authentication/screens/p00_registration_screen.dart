@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
@@ -26,7 +26,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
   // GlobalKey<FormState> brauchen wir, damit wir alle TextFormFields validieren können:
   final GlobalKey<FormState> _registrationformKey = GlobalKey<FormState>();
 
-  late AudioPlayer player = AudioPlayer();
+  //late AudioPlayer player = AudioPlayer();
 
 /*--------------------------------- Controller ---*/
   final TextEditingController userNameTEC = TextEditingController();
@@ -133,7 +133,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                         setState(() => inputUserName = newInputUsername);
                         if (newInputUsername == userName) {
                           log("0135 - P00RegistrationScreen - Der Benutzername $userName ist KORREKT!");
-                          player.play(AssetSource("sound/sound05xylophon.wav"));
+                          // player.play(AssetSource("sound/sound05xylophon.wav"));
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: const Text("Benutzername ist KORREKT"),
@@ -238,7 +238,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                         setState(() => inputPassword = newInputPassword);
                         if (newInputPassword == userPassword) {
                           log("Das Passwort $userPassword ist KORREKT!");
-                          player.play(AssetSource("sound/sound06pling.wav"));
+                          // player.play(AssetSource("sound/sound06pling.wav"));
                         } else {
                           log("0249 - P00RegistrationScreen - Die Eingabe für das Passwort ist NICHT korrekt!");
                         }
@@ -306,7 +306,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                         setState(() => inputPassword = newInputPassword);
                         if (newInputPassword == userPassword) {
                           log("0314 - P00RegistrationScreen - Das Passwort $userPassword ist KORREKT!");
-                          player.play(AssetSource("sound/sound06pling.wav"));
+                          // player.play(AssetSource("sound/sound06pling.wav"));
                         } else {
                           log("0317 - P00RegistrationScreen - Die Eingabe für das Passwort ist NICHT korrekt!");
                         }
@@ -392,7 +392,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                         setState(() => inputPassword = newInputPassword);
                         if (newInputPassword == userPassword) {
                           log("0400 - P00RegistrationScreen - Das Passwort $userPassword ist KORREKT!");
-                          player.play(AssetSource("sound/sound06pling.wav"));
+                          // player.play(AssetSource("sound/sound06pling.wav"));
                         } else {
                           log("0403 - P00RegistrationScreen - Die Eingabe für das Passwort ist NICHT korrekt!");
                         }
@@ -460,7 +460,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                         setState(() => inputPassword = newInputPassword);
                         if (newInputPassword == userPassword) {
                           log("0474 - P00RegistrationScreen - Das Passwort $userPassword ist KORREKT!");
-                          player.play(AssetSource("sound/sound06pling.wav"));
+                          // player.play(AssetSource("sound/sound06pling.wav"));
                         } else {
                           log("0478 - P00RegistrationScreen - Die Eingabe für das Passwort ist NICHT korrekt!");
                         }
@@ -484,7 +484,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                       wbOnTap: () {
                         if (_registrationformKey.currentState!.validate()) {
                           log("0496 - P00RegistrationScreen - Alles richtig gemacht");
-                          player.play(AssetSource("sound/sound06pling.wav"));
+                          // player.play(AssetSource("sound/sound06pling.wav"));
                           ScaffoldMessenger.of(context)
                               .showSnackBar(const SnackBar(
                             backgroundColor: wbColorButtonGreen,
@@ -499,8 +499,7 @@ class _P00RegistrationScreenState extends State<P00RegistrationScreen> {
                           ));
                         } else {
                           log("0511 - P00RegistrationScreen - Da sind noch Fehler in den Feldern");
-                          player
-                              .play(AssetSource("sound/sound03enterprise.wav"));
+                          // player.play(AssetSource("sound/sound03enterprise.wav"));
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               backgroundColor: wbColorButtonDarkRed,

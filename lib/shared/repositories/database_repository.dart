@@ -12,20 +12,22 @@ abstract class DatabaseRepository {
   /*--------------------------------------- Login ---*/
   /* Den User einloggen */
   Future<bool> login({
-    required String userName,
-    required String userPassword,
+    required String eMail,// userName,
+    required String password, // userPassword,
   });
-  /*--------------------------------------- getUser ---*/
+  /*--------------------------------------- getCurrentUser ---*/
   /* Einen User aufrufen */
   /* Falls kein User eingeloggt ist, wird "null" zurückgegeben. */
-  // Future<User?> getUser();
-  /*--------------------------------------- createUser ---*/
+  Future<UserData?> getCurrentUser();
+  /*--------------------------------------- addUser ---*/
   /* Einen User neu hinzufügen */
-  Future<String?> createUser();
-  /*--------------------------------------- updateUser ---*/
+  // Future<String?> createUser();
+    Future<bool> addUser(String newUserName, String newPassword);
+  /*--------------------------------------- editUser ---*/
   /* Die Daten eines Users ändern */
   // Future<void> updateUser(User user);
   // Future<String> updateUser();
+    Future<void> editUser(User user);
   /*--------------------------------------- deleteUser ---*/
   /* Einen User löschen */
   // Future<String> deleteUser();
@@ -33,8 +35,9 @@ abstract class DatabaseRepository {
   /*--------------------------------------- getAllUsers ---*/
   /* Alle vorhandenen User zurückgeben */
   //Future<List<User>> getAllUsers();//O
-    Future<List<UserData>> getAllUsers();
+    // Future<List<UserData>> getAllUsers();
+        Future<List<User>> getAllUsers();
   /*--------------------------------------- Logout ---*/
-  Future<void> logout();
+    Future<void> logoutUser();
   /*--------------------------------------- *** ---*/
 }

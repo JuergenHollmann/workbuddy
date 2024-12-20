@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:workbuddy/config/wb_button_universal_2.dart';
 import 'package:workbuddy/config/wb_colors.dart';
@@ -34,7 +34,7 @@ String inputCompanyVNContactPerson =
 String inputCompanyNNContactPerson = ""; // nur für die "onChanged-Funktion"
 
 class _CompanyScreenState extends State<CompanyScreen> {
-  late AudioPlayer player = AudioPlayer();
+  // late AudioPlayer player = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -981,7 +981,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                           log("0965 - CompanyScreen - Firma speichern - geklick");
                           /*--------------------------------- Snackbar ---*/
 
-                          player.play(AssetSource("sound/sound06pling.wav"));
+                          // player.play(AssetSource("sound/sound06pling.wav"));
                           ScaffoldMessenger.of(context)
                               .showSnackBar(const SnackBar(
                             backgroundColor: wbColorButtonGreen,

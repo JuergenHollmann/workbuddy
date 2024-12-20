@@ -22,6 +22,8 @@ class _WbNavigationbarState extends State<WbNavigationbar> {
   //String imageButton;
   get wbImageAssetImage =>
       Image(image: AssetImage("assets/button_info.png")); //OK
+            // Image(image: AssetImage("assets/iconbuttons/icon_button_homescreen.png")); //OK
+
 
   @override
   Widget build(BuildContext context) {
